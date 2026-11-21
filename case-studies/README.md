@@ -80,4 +80,4 @@ Property B was researched with standalone ARIS tools and distilled into MathRSI 
 
 [Version and maintenance records](../development/README.md) document each release's changes and verification checks. New studies run in their own [task workspace](../docs/WORKSPACE.md).
 
-The [v7 release candidate](../docs/V7_CHANGES.md) draws workflow lessons from the latest Q7 and Happy Ending follow-ups; v6 remains the latest published release.
+[MathRSI v7](../docs/V7_CHANGES.md) incorporates the methods from the Q₇ and Happy Ending follow-ups.

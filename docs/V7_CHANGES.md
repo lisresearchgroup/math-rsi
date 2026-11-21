@@ -1,10 +1,10 @@
-# MathRSI v7 release candidate
+# MathRSI v7
 
-The seven-dimensional Ruskey–Savage working proof now covers every matching. The Happy Ending manuscripts give smaller numbers of points sufficient to force convex octagons and nonagons and add a bound for decagons. The candidate brings both methods into the existing route, proof and verification stages. The fixed release preceding this candidate is [v6](https://github.com/lisresearchgroup/math-rsi/releases/tag/v6).
+The seven-dimensional Ruskey–Savage working proof now covers every matching. The Happy Ending manuscripts give smaller numbers of points sufficient to force convex octagons and nonagons and add a bound for decagons. Version 7 brings both methods into the existing route, proof and verification stages. The preceding release is [v6](https://github.com/lisresearchgroup/math-rsi/releases/tag/v6).
 
 ## Results by setting
 
-| Problem | Earlier result | Candidate snapshot |
+| Problem | Earlier result | v7 snapshot |
 | --- | --- | --- |
 | Matching extension in the 7-cube | v5 covered every matching with at least 57 edges. The fixed v6 tag covered every matching with at least 56. | Every matching, including the empty and perfect matchings, lies on a Hamilton cycle through all 128 vertices. The author working proof first entered main in [#50](https://github.com/lisresearchgroup/math-rsi/pull/50). |
 | Convex heptagon | ES(7) ≤ 77 in the preceding manuscript | ES(7) ≤ 77 |

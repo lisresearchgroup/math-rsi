@@ -95,10 +95,10 @@ $mathrsi-research 继续 ../my-problem/ 中的研究
 - **Q₇ 后续维护 · 2026-11-20：** `main` 吸收原项目 11 月 19 日接受的完整 R7 作者工作证明。研究使用 v3 本地适配；固定 v5（≥57 边）与 v6（≥56 边）快照不变。[证明导读](https://github.com/lisresearchgroup/math-rsi/blob/main/plugins/hypercube-hamilton/knowledge/q7-closure-proof.md) · [复算范围](https://github.com/lisresearchgroup/math-rsi/blob/main/plugins/hypercube-hamilton/archive/q7-closure/README.md)
 - **延续既有能力：** 保留 v5 的受控辅助选择、跨等价表示复用定理、先消化返回结果再派发新任务，以及 v4 的把取等情形收成可用见证、全局进展重评和 ECC 分支计算共享。
 
-**[v6 是最新已发布版本](docs/V6_CHANGES.md)；[v7 为候选版](docs/V7_CHANGES.md)，尚未发布。** 可直接下载 [v6 快照 ZIP](https://github.com/lisresearchgroup/math-rsi/archive/refs/tags/v6.zip) 或 [`main` ZIP](https://github.com/lisresearchgroup/math-rsi/archive/refs/heads/main.zip)，也可克隆仓库使用。`v1`–`v6` 各版本标签均作为固定快照保留；需要严格复现某次运行时请记录对应 commit。[演进与实现记录](development/README.md) · [维护指南](docs/EVOLUTION_WORKFLOW.md)
+**[MathRSI v7 是最新正式版](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7)。** [更新说明](docs/V7_CHANGES.md) · [下载 v7](https://github.com/lisresearchgroup/math-rsi/archive/refs/tags/v7.zip) · [下载 main](https://github.com/lisresearchgroup/math-rsi/archive/refs/heads/main.zip) · [演进记录](development/README.md) · [维护指南](docs/EVOLUTION_WORKFLOW.md)
 
 <details>
-<summary>历史版本概览（v0–v6）</summary>
+<summary>历史版本概览（v0–v7）</summary>
 
 - **v0：** 统一框架形成前的 Property B 与 ECC 独立研究工具阶段（无 Git 标签）。
 - **[v1](https://github.com/lisresearchgroup/math-rsi/tree/v1)：** 五阶段流程、三层架构分离、对抗式路线迭代与首批领域插件。
@@ -107,6 +107,7 @@ $mathrsi-research 继续 ../my-problem/ 中的研究
 - **[v4](https://github.com/lisresearchgroup/math-rsi/tree/v4)：** 把取等情形收成可用的见证，深化 Happy Ending 与 Degree–Diameter 方法。[更新说明](docs/V4_CHANGES.md)
 - **[v5](https://github.com/lisresearchgroup/math-rsi/tree/v5)：** 受控辅助选择、跨合法表示复用定理与有限计划覆盖；深化 Hamilton 与 DD D5 方法。[更新说明](docs/V5_CHANGES.md)
 - **[v6](https://github.com/lisresearchgroup/math-rsi/tree/v6)：** 最难分支试探准入、上下界协同搜索与修补误差停机判据；深化超立方体极值与完整 $Q_7$ E16 Hamilton 方法。[更新说明](docs/V6_CHANGES.md)
+- **[v7](https://github.com/lisresearchgroup/math-rsi/tree/v7)：** 从超立方体匹配与凸多边形研究中提炼极大补全和同一输入上的缺额计数。[更新说明](docs/V7_CHANGES.md)
 
 [历史 v2／v3 架构配图](figures/mathrsi/README.md#historical-diagrams)
 

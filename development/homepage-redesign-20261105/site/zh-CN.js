@@ -1382,8 +1382,6 @@ Object.assign(window.MATHRSI_ZH, {
 });
 
 Object.assign(window.MATHRSI_ZH, {
-  "Published": "已发布",
-  "Candidate": "候选预览",
   "Same-input deficits & terminal completion": "同一输入缺额与终态补全",
   "Keep the same actual input": "保持同一实际输入",
   "Charge every deficit on the same input; retain shared endpoints, all penultimate choices and joint compatibility.": "所有缺额均计于同一输入；保留共同端点、全部倒数第二点选择和联合相容性。",
@@ -1392,27 +1390,33 @@ Object.assign(window.MATHRSI_ZH, {
   "Keep deficits and equality constraints attached to the same actual input, rather than adding bounds attained on different objects.": "缺额与等号约束始终对应同一实际输入，不能叠加在不同对象上达到的界。",
   "After a dense theorem, preserve the original input during monotone completion and exclude every remaining terminal obstruction.": "得到稠密范围定理后，单调补全时保留原输入，并排除全部剩余终态障碍。",
   "Q7 maximal completion; Happy Ending same-input sector budgets.": "Q7 极大补全；Happy Ending 同一输入扇区预算。",
-  "Candidate preview, not a published release. Full Q7 R7 was already received in v6 main maintenance; v7 distills its terminal-completion method. Happy Ending retains ES(7) ≤ 77 and adds working ES(8) ≤ 294 (Schroeder comparator 319), ES(9) ≤ 1100 (previous working 1148), and ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean.": "候选预览，尚未发布。完整 Q7 R7 已在 v6 主线维护接收；v7 提炼其终态补全方法。Happy Ending 保留 ES(7) ≤ 77，新增工作推论 ES(8) ≤ 294（Schroeder 比较界319）、ES(9) ≤ 1100（此前工作界1148）与 ES(10) ≤ 3980。有界 macOS 有限核验已通过；独立数学审阅待完成，无 Lean。",
+  "Full Q7 R7 was already received in v6 main maintenance; v7 distills its terminal-completion method. Happy Ending retains ES(7) ≤ 77 and adds working ES(8) ≤ 294 (Schroeder comparator 319), ES(9) ≤ 1100 (previous working 1148), and ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean.": "完整 Q7 R7 已在 v6 主线维护接收；v7 提炼其终态补全方法。Happy Ending 保留 ES(7) ≤ 77，新增工作推论 ES(8) ≤ 294（Schroeder 比较界319）、ES(9) ≤ 1100（此前工作界1148）与 ES(10) ≤ 3980。有界 macOS 有限核验已通过；独立数学审阅待完成，无 Lean。",
   "Same-input sector deficits": "同一输入的扇区缺额",
   "Working ES(7) ≤ 77 unchanged; ES(8) ≤ 294 versus Schroeder 319, ES(9) ≤ 1100 versus previous working 1148, ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean.": "工作界 ES(7) ≤ 77 不变；ES(8) ≤ 294 对比 Schroeder 的319，ES(9) ≤ 1100 对比此前工作界1148，ES(10) ≤ 3980。有界 macOS 有限核验通过；独立数学审阅待完成，无 Lean。",
+  "MathRSI harness · v6 · Release": "MathRSI 框架 · v6 · 正式版",
+  "MathRSI harness · v7 · Current": "MathRSI 框架 · v7 · 当前版",
+  "MathRSI harness · v8+ · Future": "MathRSI 框架 · v8+ · 后续规划",
+  "Shared base & workflow details in v7": "v7 通用研究流程与工作流详情",
+  "Show MathRSI harness v7: Same-input deficits & terminal completion": "显示 MathRSI v7：同一输入的缺额与极大补全",
+  "Show MathRSI harness v8+: Next research, next evolution": "显示 MathRSI v8+：下一轮研究与演进",
   "v6 main result → v7 method intake": "v6 主线成果 → v7 方法纳入",
   "Working manuscripts · review pending": "工作手稿 · 待独立审阅",
   "The bounded portable finite checker and negative control passed on macOS. This does not replay the omitted large DRAT bodies or complete the independent mathematical review; Linux replay remains unexecuted.": "有界便携有限核验器与负对照已在 macOS 通过。未重放省略的大型 DRAT 主体，独立数学审阅仍未完成；Linux 重放尚未执行。",
   "Signotope capacities and planar bounds across m = 7–10": "m = 7–10 的 signotope 容量与平面界",
   "Same-input sector manuscript; Schroeder’s planar comparator is 319.": "同一输入扇区工作手稿；Schroeder 的平面比较界为319。",
   "Same-input sector manuscript, improving the previous working 1148. ES(10) ≤ 3980 is a further working corollary.": "同一输入扇区工作稿，改进此前工作界1148；进一步工作推论为 ES(10) ≤ 3980。",
-  "Q₇: every matching extends (v7 candidate intake; v6 main result).": "Q₇：任意匹配均可延拓（v7候选纳入；v6主线成果）。",
+  "Q₇: every matching extends.": "Q₇：任意匹配均可延拓。",
   "Happy Ending: ES(7) ≤ 77 · ES(8) ≤ 294 · ES(9) ≤ 1100 · ES(10) ≤ 3980 working.": "Happy Ending：工作推论 ES(7) ≤ 77 · ES(8) ≤ 294 · ES(9) ≤ 1100 · ES(10) ≤ 3980。"
 });
 
-Object.assign(window.MATHRSI_ZH, {"Same-input sector budgets give working ES(8) ≤ 294, ES(9) ≤ 1100 and ES(10) ≤ 3980, while ES(7) ≤ 77 is unchanged.": "同一输入的扇区预算给出工作推论 ES(8) ≤ 294、ES(9) ≤ 1100 与 ES(10) ≤ 3980；ES(7) ≤ 77 保持不变。", "Keep actual source sets, shared locks and all penultimate choices on the same input; charge row slack and sector deficits together.": "保留同一输入上的实际源集、共享锁与全部倒数第二点选择；共同计算行松弛和扇区缺额。", "v6 published. v7 candidate: full Q₇ method intake and Happy Ending same-input deficits. v8+ remains future.": "v6 已发布。v7 候选：完整 Q₇ 方法纳入与 Happy Ending 同一输入缺额。v8+ 留作未来演进。", "m = 7–10 overview ↗": "m = 7–10 总览 ↗", "working · comparator 319": "工作稿 · 比较界319", "Earlier m = 9 native-trace route": "此前 m = 9 原生迹路线"});
+Object.assign(window.MATHRSI_ZH, {"Same-input sector budgets give working ES(8) ≤ 294, ES(9) ≤ 1100 and ES(10) ≤ 3980, while ES(7) ≤ 77 is unchanged.": "同一输入的扇区预算给出工作推论 ES(8) ≤ 294、ES(9) ≤ 1100 与 ES(10) ≤ 3980；ES(7) ≤ 77 保持不变。", "Keep actual source sets, shared locks and all penultimate choices on the same input; charge row slack and sector deficits together.": "保留同一输入上的实际源集、共享锁与全部倒数第二点选择；共同计算行松弛和扇区缺额。", "MathRSI v7 brings the full Q₇ matching extension and the Happy Ending counting method into the shared workflow.": "MathRSI v7 将七维超立方体的完整匹配延拓方法与凸多边形问题的计数方法纳入通用研究流程。", "m = 7–10 overview ↗": "m = 7–10 总览 ↗", "working · comparator 319": "工作稿 · 比较界319", "Earlier m = 9 native-trace route": "此前 m = 9 原生迹路线"});
 
-Object.assign(window.MATHRSI_ZH, {"The v7 candidate distills terminal completion from the full Q7 result already integrated into v6 main maintenance; fixed v5 ≥57 and v6 ≥56 snapshots remain unchanged.": "v7 候选从已纳入 v6 主线维护的完整 Q7 成果提炼终态补全；固定 v5 ≥57 与 v6 ≥56 快照保持不变。", "Happy Ending results & methods ↗": "Happy Ending 成果与方法 ↗"});
+Object.assign(window.MATHRSI_ZH, {"MathRSI v7 incorporates the full Q₇ working proof and its maximal-matching argument. The v5 and v6 releases covered matchings with at least 57 and 56 edges, respectively.": "MathRSI v7 收录了 Q₇ 完整工作证明及其极大匹配论证。v5 和 v6 正式版分别覆盖至少 57 条和至少 56 条边的匹配。", "Happy Ending results & methods ↗": "Happy Ending 成果与方法 ↗"});
 
 Object.assign(window.MATHRSI_ZH, {
   "Bounded macOS replay passed · mathematical review pending": "有界 macOS 重放通过 · 独立数学审阅待完成",
-  "Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7 candidate.": "Happy Ending · ES(7) ≤ 77 不变；工作推论 ES(8) ≤ 294、ES(9) ≤ 1100、ES(10) ≤ 3980。同一输入缺额 → v7 候选。",
-  "Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in the v7 candidate.": "Happy Ending · 固定 v6：m = 7–9 容量，工作界 ES(9) ≤ 1148；后续扇区缺额见 v7 候选。",
+  "Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7.": "Happy Ending · ES(7) ≤ 77 不变；工作推论 ES(8) ≤ 294、ES(9) ≤ 1100、ES(10) ≤ 3980。同一输入缺额 → v7。",
+  "Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in v7.": "Happy Ending · 固定 v6：m = 7–9 容量，工作界 ES(9) ≤ 1148；后续扇区缺额见 v7。",
   "Results · m = 7–10 working planar bounds; earlier certificate route retained": "成果 · m = 7–10 平面工作界；保留此前证书路线",
   "working · previous 1148": "工作稿 · 此前1148"
 });

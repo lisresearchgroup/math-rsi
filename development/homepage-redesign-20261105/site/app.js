@@ -191,7 +191,7 @@ const VERS = [
 },
   {
   "tag": "v6",
-  "state": "Published",
+  "state": "Release",
   "name": "Hardest-remainder gates & coevolution",
   "base": [
     [
@@ -228,7 +228,7 @@ const VERS = [
 },
   {
     "tag": "v7",
-    "state": "Candidate",
+    "state": "Current",
     "name": "Same-input deficits & terminal completion",
     "base": [
       [
@@ -263,7 +263,7 @@ const VERS = [
       ]
     ],
     "pluginNote": "Q7 maximal completion; Happy Ending same-input sector budgets.",
-    "sum": "Candidate preview, not a published release. Full Q7 R7 was already received in v6 main maintenance; v7 distills its terminal-completion method. Happy Ending retains ES(7) ≤ 77 and adds working ES(8) ≤ 294 (Schroeder comparator 319), ES(9) ≤ 1100 (previous working 1148), and ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."
+    "sum": "Full Q7 R7 was already received in v6 main maintenance; v7 distills its terminal-completion method. Happy Ending retains ES(7) ≤ 77 and adds working ES(8) ≤ 294 (Schroeder comparator 319), ES(9) ≤ 1100 (previous working 1148), and ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."
   },
   { tag:'v8+', state:'Future', name:'Next research, next evolution',
     base:[["Learn from the next problem", "", "Use new research successes and failures to identify the next concrete workflow improvement."]],
@@ -571,7 +571,7 @@ function paintTraceHint(id) {
   if (overview) { overview.classList.toggle('on', !focus); overview.setAttribute('aria-pressed', String(!focus)); }
   if (!hint) return;
   if (!id) hint.textContent = 'Choose a case to follow its results across versions.';
-  else if (id === 'he') hint.textContent = t >= HE_V7_TIME ? 'Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7 candidate.' : t >= HE_V6_TIME ? 'Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in the v7 candidate.' : 'Happy Ending · ES(7) upper bound 78 → 77; the 25-point witness is separate.';
+  else if (id === 'he') hint.textContent = t >= HE_V7_TIME ? 'Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7.' : t >= HE_V6_TIME ? 'Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in v7.' : 'Happy Ending · ES(7) upper bound 78 → 77; the 25-point witness is separate.';
   else if (id === 'q6') hint.textContent = 'Ruskey–Savage · Q₆ → Q₇ ≥57 (v5) → ≥56 (fixed v6) → every matching (v6 main author working proof). Run: v3 local adaptation.';
   else if (id === 'e86') hint.textContent = 'Erdős 86 · v3 asymptotic Q₄ bound → v6 Q₇ 304 (≤ source), Q₈ 682–683 & Q∞ ≤ 0.5912405943. Run: v3 + coevolution.';
   else if (id === 'dd') hint.textContent = 'Degree–Diameter · v2 historical results → v4 + local DD updates → two D5 improvements feeding v5 maintenance.';

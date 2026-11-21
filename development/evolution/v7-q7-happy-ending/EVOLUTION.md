@@ -1,6 +1,6 @@
 # November 21, 2026 · v7 integration
 
-The [candidate changelog](../../../docs/V7_CHANGES.md) describes the mathematical results, their verification status and the changes in the two plugins. The integration takes the full Q₇ result from main at `9970b302` and the Happy Ending contribution from [PR #52](https://github.com/lisresearchgroup/math-rsi/pull/52) at `fee685d9`. The bilingual README and site preserve both contributions where the incoming branch diverged.
+The [v7 changelog](../../../docs/V7_CHANGES.md) describes the mathematical results, their verification status and the changes in the two plugins. The integration takes the full Q₇ result from main at `9970b302` and the Happy Ending contribution from [PR #52](https://github.com/lisresearchgroup/math-rsi/pull/52) at `fee685d9`. The bilingual README and site preserve both contributions where the incoming branch diverged.
 
 ## Use in the base
 

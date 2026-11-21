@@ -95,10 +95,10 @@ Two tracks evolve together: **shared base behavior** becomes stronger, while **d
 - **Q₇ follow-up · 2026-11-20:** `main` absorbs the full R7 author working proof accepted in the source project on 19 November. The research used v3 with local adaptations; fixed v5 (≥57 edges) and v6 (≥56 edges) snapshots remain unchanged. [Proof guide](https://github.com/lisresearchgroup/math-rsi/blob/main/plugins/hypercube-hamilton/knowledge/q7-closure-proof.md) · [Recomputation scope](https://github.com/lisresearchgroup/math-rsi/blob/main/plugins/hypercube-hamilton/archive/q7-closure/README.md)
 - **Inherited behavior:** v5's controlled auxiliary choices, cross-representation theorem reuse and consuming returned results before dispatching new work, together with v4's equality-to-witness steps, global progress checks and ECC branch reuse.
 
-**[v6 is the latest published release](docs/V6_CHANGES.md); [v7 is a release candidate](docs/V7_CHANGES.md), not yet published.** Download the [v6 snapshot ZIP](https://github.com/lisresearchgroup/math-rsi/archive/refs/tags/v6.zip) or [`main` ZIP](https://github.com/lisresearchgroup/math-rsi/archive/refs/heads/main.zip), or clone the repository. Release tags `v1`–`v6` remain fixed snapshots; record the commit hash when handing off a reproducible run. [Evolution & implementation records](development/README.md) · [Maintenance guide](docs/EVOLUTION_WORKFLOW.md)
+**[MathRSI v7 is the latest release](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7).** [Release notes](docs/V7_CHANGES.md) · [Download v7](https://github.com/lisresearchgroup/math-rsi/archive/refs/tags/v7.zip) · [Download main](https://github.com/lisresearchgroup/math-rsi/archive/refs/heads/main.zip) · [Evolution records](development/README.md) · [Maintenance guide](docs/EVOLUTION_WORKFLOW.md)
 
 <details>
-<summary>Release history (v0–v6)</summary>
+<summary>Release history (v0–v7)</summary>
 
 - **v0:** standalone Property B and ECC research tools prior to the shared harness (no Git tag).
 - **[v1](https://github.com/lisresearchgroup/math-rsi/tree/v1):** five solving stages, three-layer separation, adversarial route iteration and initial plugins.
@@ -107,6 +107,7 @@ Two tracks evolve together: **shared base behavior** becomes stronger, while **d
 - **[v4](https://github.com/lisresearchgroup/math-rsi/tree/v4):** turning tight equalities into usable witnesses, plus Happy Ending and Degree–Diameter methods. [Changes](docs/V4_CHANGES.md)
 - **[v5](https://github.com/lisresearchgroup/math-rsi/tree/v5):** controlled auxiliary choices, theorem reuse across legal representations and finite-plan coverage; deeper Hamilton and DD D5 methods. [Changes](docs/V5_CHANGES.md)
 - **[v6](https://github.com/lisresearchgroup/math-rsi/tree/v6):** hardest-branch split probes, primal–dual coevolution and repair-residual stopping; deeper hypercube extremal and complete $Q_7$ E16 Hamilton methods. [Changes](docs/V6_CHANGES.md)
+- **[v7](https://github.com/lisresearchgroup/math-rsi/tree/v7):** terminal matching extension and shared deficit estimates from the Hamilton and Happy Ending plugins. [Changes](docs/V7_CHANGES.md)
 
 [Historical v2/v3 architecture diagrams](figures/mathrsi/README.md#historical-diagrams)
 

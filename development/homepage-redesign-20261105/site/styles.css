@@ -682,7 +682,3 @@ html:lang(zh-CN) :is(.sub,.sec-head h2,.card h3,.panel h3,.evo-title){line-heigh
 #results .e86-slist .r-n{font-size:18px;color:color-mix(in srgb,var(--c) 80%,#000)}
 #results .e86-slist .e86-scope{width:100%;font-size:12.5px;color:var(--muted);line-height:1.4}
 @media(max-width:720px){.e86-setting-table th,.e86-setting-table td{display:block;padding:6px 0;border-bottom:0}.e86-setting-table tr{display:block;padding:10px 0;border-bottom:1px solid var(--hair)}.e86-setting-table thead{display:none}}
-
-/* Candidate intake stays visually distinct from published release columns. */
-.s-candidate { background:#fff0d7; color:#86500b; border:1px solid #d59d43; }
-.s-published { background:#e4f1e9; color:#245f40; }
