@@ -1,8 +1,8 @@
 \section{Reduction to Classified Subcodes}
 \label{sec:reduction}
-We prove Theorem~\ref{thm:main} using E1, E2, and Proposition~\ref{prop:computed}; the latter is established by the finite computation of Section~\ref{sec:computation}. The reduction has three steps. We first show that every hypothetical code has a dual word of weight four. Shortening on its support then produces a classified subcode. Finally, the hypothetical code is recovered from this subcode by an extension whose feasibility depends only on three cosets.
+We prove Theorem~\ref{thm:main} using E1, E2, and Proposition~\ref{prop:computed}; the latter is established by the finite computation of Section~\ref{sec:computation}. The reduction has three steps. We first show that every hypothetical code has a dual codeword of weight four. Shortening on its support then produces a classified subcode. Finally, the hypothetical code is recovered from this subcode by an extension whose feasibility depends only on three cosets.
 
-\subsection{A forced dual word of weight four}
+\subsection{A forced dual codeword of weight four}
 Suppose that $C_0$ is a $\codege{43}{10}{17}$ code. Its parity extension $C$ is an even $\codege{44}{10}{18}$ code: an odd weight at least 17 increases by one, and an even weight at least 17 is already at least 18. Conversely, puncturing any coordinate of an even $\codege{44}{10}{18}$ code gives a $\codege{43}{10}{17}$ code; this does not require the punctured coordinate to be a parity coordinate. Thus it suffices to exclude $C$.
 
 \begin{lemma}\label{lem:three}
@@ -26,11 +26,11 @@ The polynomial $P$ is negative only on $(18,20)\cup(24,26)$, and neither interva
 \[
  224640\le\sum_w A_wP(w)=1536B_4+206336.
 \]
-Therefore $B_4\ge143/12$, hence $B_4\ge12$. In particular, $C^\perp$ contains a word of weight four. Only one nonnegative polynomial is needed; no linear program has to be solved.
+Therefore $B_4\ge143/12$, hence $B_4\ge12$. In particular, $C^\perp$ contains a codeword of weight four. Only one nonnegative polynomial is needed; no linear program has to be solved.
 
 \subsection{Shortening gives a full-support subcode}
 \begin{lemma}\label{lem:mother}
-Shortening $C$ on the support of a weight-four dual word produces an even full-support $[40,7,18]$ code $K$.
+Shortening $C$ on the support of a weight-four codeword of $C^\perp$ produces an even full-support $[40,7,18]$ code $K$.
 \end{lemma}
 \begin{proof}
 Permute the four support coordinates to the end. Their generator columns $v_1,v_2,v_3,v_4\in\F^{10}$ satisfy $v_1+v_2+v_3+v_4=0$. Any three are independent, so the projection rank is three. Shortening therefore has dimension $10-3=7$, length 40, and distance at least 18. All its words remain even. If its distance exceeded 18, it would be at least 20, contradicting $g_2(7,20)=42>40$.
