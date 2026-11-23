@@ -14,7 +14,11 @@ The uniform $k\ge12$ theorem and $m(5)\ge33,34$ have end-to-end Lean proofs; $m(
 
 ## Error-correcting codes
 
-**Four exact binary-code distances:** $d_2(43,10)=16$, $d_2(44,10)=17$, $d_2(44,11)=16$ and $d_2(42,16)=12$. The first three combine a complete 172-parent exclusion with matching constructions; $d_2(42,16)=12$ follows from a published 2020 theorem. The remaining case narrows to $16\le d_2(45,11)\le17$.
+**The v8 constructions improve 18 lower bounds.** A downloadable 43-by-72 binary matrix encodes 43 bits with minimum distance 11. That code guarantees correction of five bit errors. All 18 settings have generator matrices, including five obtained by extending or puncturing a neighboring code. [Download the codes](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#lower)
+
+**On the upper-bound side**, 32 new deductions rule out larger distances, settling nine optima in combination with known constructions. Two further proposed optima await the source project's final acceptance. Together with the five historical entries below, the reader tracks 57 distinct settings. [Upper bounds and their proofs](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#upper) · [v8 verification](../plugins/ecc/evidence/v8-20261123/REVIEW.md)
+
+**The original five-parameter study** established four exact binary-code distances, $d_2(43,10)=16$, $d_2(44,10)=17$, $d_2(44,11)=16$ and $d_2(42,16)=12$. The first three combine a complete 172-parent exclusion with matching constructions; $d_2(42,16)=12$ follows from a published 2020 theorem. The remaining case narrows to $16\le d_2(45,11)\le17$.
 
 **Historical context.** Verhoeff's *Updating a table of bounds on the minimum distance of binary linear codes* (1985), [Appendix I, block (1,0), PDF p.45](https://pure.tue.nl/ws/portalfiles/portal/2264214/253220.pdf#page=45), listed $(43,10)$ at 16–17, $(44,10)$ at **16–18**, $(44,11)$ at 16–17 and $(45,11)$ at 16–18. Our exclusion settles the first three at 16, 17 and 16 and narrows $(45,11)$ to 16–17; see also CodeTables (checked 2026-11-12) for [43/10](https://www.codetables.de/BKLC/BKLC.php?q=2&n=43&k=10), [44/10](https://www.codetables.de/BKLC/BKLC.php?q=2&n=44&k=10), [44/11](https://www.codetables.de/BKLC/BKLC.php?q=2&n=44&k=11) and [45/11](https://www.codetables.de/BKLC/BKLC.php?q=2&n=45&k=11).
 

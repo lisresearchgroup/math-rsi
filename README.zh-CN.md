@@ -12,13 +12,14 @@
 
 ## 📢 版本动态
 
+- **[v8](https://github.com/lisresearchgroup/math-rsi/releases/tag/v8)** · 2026-11-23 — 18 组参数有了更好的二元线性码，生成矩阵可以直接下载。上界方面，从已发表的定理推出了 32 项改进，其中 9 项确定了最优距离。另有两项等待原研究项目最终验收。
 - **[v7](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7)** · 2026-11-22 — 七维超立方体的工作证明已覆盖所有匹配，每个匹配都能延拓为哈密顿圈。凸多边形研究的新稿给出了 ES(8) ≤ 294、ES(9) ≤ 1,100、ES(10) ≤ 3,980 三个上界。
 - **[v6](https://github.com/lisresearchgroup/math-rsi/releases/tag/v6)** · 2026-11-20 — 七维超立方体中，保证匹配能延拓为哈密顿圈的门槛从至少 57 条边降至至少 56 条。八维超立方体中，无四边形子图的最大边数被限定在 682 与 683 之间。
-- **[v5](https://github.com/lisresearchgroup/math-rsi/releases/tag/v5)** · 2026-11-14 — 在七维超立方体中，至少含 57 条边的匹配都能延拓为哈密顿圈。证明通过改变同一个匹配的表示来复用已有定理，这个技巧也进入了通用工作流。
 
 <details>
-<summary>早期版本（v1–v4）</summary>
+<summary>早期版本（v1–v5）</summary>
 
+- **[v5](https://github.com/lisresearchgroup/math-rsi/releases/tag/v5)** · 2026-11-14 — 在七维超立方体中，至少含 57 条边的匹配都能延拓为哈密顿圈。证明通过改变同一个匹配的表示来复用已有定理，这个技巧也进入了通用工作流。
 - **[v4](https://github.com/lisresearchgroup/math-rsi/releases/tag/v4)** · 2026-11-08 — 从凸多边形的证明中，团队提炼出一种方法，沿不等式逐步回溯，找出必须同时取等的条件。度–直径插件也加入了构造更大图的方法。
 - **[v3](https://github.com/lisresearchgroup/math-rsi/tree/v3)** · 2026-11-04 — 新增三个插件，分别研究超立方体中的无四边形子图、超立方体匹配延拓和凸多边形。MathRSI 由此覆盖六个数学领域。
 - **[v2](https://github.com/lisresearchgroup/math-rsi/tree/v2)** · 2026-11-03 — 度–直径插件加入 MathRSI。团队用这个插件首次试行版本维护流程，把图构造中积累的经验写回通用工作流。
@@ -68,10 +69,10 @@ $mathrsi-research 继续 ../my-problem/ 中的研究
 
 六个领域的研究同时积累数学结果和可复用方法。[公开主页](https://lisresearchgroup.github.io/math-rsi/) · [本地运行方法](docs/HOMEPAGE.md)。**[中英可视化导览](https://lisresearchgroup.github.io/math-rsi/)**展示问题、成果与演进；**[六题统一索引](case-studies/README.md)**连接证明、核验范围和可运行工具。
 
-[![六题数学成果速览](figures/mathrsi/results-overview/results-overview.zh.svg?v=6-q7-20261120)](case-studies/README.md)
+[![六题数学成果速览](figures/mathrsi/results-overview/results-overview.zh.svg?v=8-ecc)](case-studies/README.md)
 
 - **Property B：** $k=5,\ldots,12$ 的具体下界，以及所有 $k\ge12$ 随参数指数增长的加性增益。[成果与证明范围](case-studies/property-b/README.md)
-- **纠错码：** 闭合三组 1985 年已有的缺口，得到四组精确距离（含一项文献推论）并收窄一组区间。[结果、方法与开放参数](case-studies/README.md#error-correcting-codes)
+- **纠错码。** 18 组参数的生成矩阵可下载。在 37 项有证据支持的上界改进中，13 项与已有码的距离相等，确定了最优值。另有两项等待原项目最终验收。 [查看构造与矩阵](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#lower) · [查看上界与证明](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#upper)
 - **Degree–Diameter：** 四组展示参数的构造： $(10,4)$ 为 2,567 点； $(11,5)$ 为 37,632 点； $(12,5)$ 为 42,433 点； $(16,4)$ 为 16,416 点。[构造、日期比较与核验范围](case-studies/degree-diameter/README.zh-CN.md)
 - **Erdős 第 86 题：** $Q_7$ 为 $304$（304 边构造已验证；304 上界按原包报告，本次未复验），$682\le\mathrm{ex}(Q_8,C_4)\le683$，渐近密度上界从 $0.60318$ 推进至 $\le0.5912405943$（`T3`）／$\le0.5912405942$（`T4`）。[结果与核验范围](case-studies/erdos-86/README.md)
 - **Ruskey–Savage：** 完整作者工作证明覆盖 $Q_7$ 的任意匹配（包括空匹配与完美匹配），保留 $Q_6$ 全称结果；待外部同行评议，无 Lean。[证明、局部复算与版本历史](case-studies/ruskey-savage-q7/README.md)
@@ -108,12 +109,14 @@ $mathrsi-research 继续 ../my-problem/ 中的研究
 
 两条线共同演进：**共享 Base 的行为持续强化**，**领域 Plugins 持续扩展与深化**。独立的 [`mathrsi-meta-evolve`](base/skills/mathrsi-meta-evolve/SKILL.md) 维护流程把研究证据转成实际改动。
 
+- **v8 通用流程与 ECC 插件。** 从一个构造推到相邻参数时，把变换后的对象一并交付。同组参数保留最强的见证。对于很少触发的排除条件，用已知应被拒的输入检验。ECC 插件据此导出 18 份生成矩阵，也保留了每项上界推导所用的前提。[方法与实例](docs/V8_CHANGES.md)
+
 - **v6 通用流程：** 采纳新分类前，先在最难的未闭合分支上做小规模试探，并在同一输入上统计新增覆盖；上下界协同搜索中把证明目标与对抗搜索目标分开，轮换四路归一化带符号残差，并在全部历史构造上检验候选不等式；当浮点 SDP 或完全正规划的单轮增益不高于有理化修补误差时及时停机。
 - **深化领域插件：** `hypercube-extremal` 新增渐近 COP + $m=1024$ 广义度数势上界（`T3` / `T4`）、同一子图耦合三组测度的有限维拉回（$Q_8 \le 683$）、$Q_7$ 304 边构造与原包报告归档，以及可复用的 `cube_coevolve` 引擎；`hypercube-hamilton` 完成 $Q_7$ 完整 E16（$\ge 56$ 边，涵盖全部 $\mu=0..4$），加入参数化 $Q_6$ $\Delta=2$ 双桥、$Q_6$ $A_8$ 及大面 $S_6$ 独立孔表与小面符号原孔的组合建模；`happy-ending` 新增 $m=7,8,9$ signotope 受限容量的跨平台核验器与精选归档（$N(8,6,6)\le 61$ 共享标签 CEGAR、$N(9,8,8)\le 688$ 与 $D_9\le 458$ 参数化稀疏整数对偶及松弛封顶停机判据；由 **Trellis + ARIS + v3** 做出，并入主线维护，固定 `v6` 标签不变）。
 - **Q₇ 后续维护 · 2026-11-20：** `main` 吸收原项目 11 月 19 日接受的完整 R7 作者工作证明。研究使用 v3 本地适配；固定 v5（≥57 边）与 v6（≥56 边）快照不变。[证明导读](https://github.com/lisresearchgroup/math-rsi/blob/main/plugins/hypercube-hamilton/knowledge/q7-closure-proof.md) · [复算范围](https://github.com/lisresearchgroup/math-rsi/blob/main/plugins/hypercube-hamilton/archive/q7-closure/README.md)
 - **延续既有能力：** 保留 v5 的受控辅助选择、跨等价表示复用定理、先消化返回结果再派发新任务，以及 v4 的把取等情形收成可用见证、全局进展重评和 ECC 分支计算共享。
 
-**[MathRSI v7 是最新正式版](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7)。** [更新说明](docs/V7_CHANGES.md) · [下载 v7](https://github.com/lisresearchgroup/math-rsi/archive/refs/tags/v7.zip) · [下载 main](https://github.com/lisresearchgroup/math-rsi/archive/refs/heads/main.zip) · [演进记录](development/README.md) · [维护指南](docs/EVOLUTION_WORKFLOW.md)
+**[MathRSI v8 是最新正式版](https://github.com/lisresearchgroup/math-rsi/releases/tag/v8)。** [更新说明](docs/V8_CHANGES.md) · [下载 v8](https://github.com/lisresearchgroup/math-rsi/archive/refs/tags/v8.zip) · [下载 main](https://github.com/lisresearchgroup/math-rsi/archive/refs/heads/main.zip) · [演进记录](development/README.md) · [维护指南](docs/EVOLUTION_WORKFLOW.md)
 
 v0 记录通用框架形成前的 Property B 和编码研究。首个版本标签是 v1。 [历版动态](#news) · [早期架构图](figures/mathrsi/README.md#historical-diagrams)
 

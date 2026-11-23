@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """Check final LaTeX/PDF deliverable. Requires PyMuPDF after compilation."""
 from pathlib import Path
-import re,json
+import argparse,re,json
 import pymupdf as fitz
-ROOT=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--paper-dir',type=Path,default=Path(__file__).resolve().parents[1],
+                    help='Directory containing the compiled main.tex/main.pdf/main.log/main.aux')
+parser.add_argument('--output-dir',type=Path,
+                    help='Write reports here instead of PAPER_DIR/validation')
+args=parser.parse_args()
+ROOT=args.paper_dir.resolve()
+OUT=args.output_dir.resolve() if args.output_dir else ROOT/'validation'
 texfiles=[ROOT/'main.tex',*sorted((ROOT/'sections').glob('*.tex'))]
 tex='\n'.join(p.read_text() for p in texfiles)
 cited=set()
@@ -22,5 +29,6 @@ fonts=[]
 for xref in sorted({f[0] for page in pdf for f in page.get_fonts()}):
  name,ext,typ,data=pdf.extract_font(xref);assert data,name;fonts.append(dict(name=name,format=ext,type=typ,embedded=True))
 report=dict(status='PASS',total_pages=len(pdf),main_body_ends_page=end,main_body_limit=8,bibliography_entries=len(bib),undefined_references=0,undefined_citations=0,overfull_boxes=0,missing_glyphs=0,font_substitutions=0,fonts=fonts,pdf_bytes=(ROOT/'main.pdf').stat().st_size,remaining_warnings='Underfull boxes only')
-(ROOT/'validation/pdf-check.json').write_text(json.dumps(report,indent=2)+'\n');(ROOT/'validation/pdf-text.txt').write_text(text)
+OUT.mkdir(parents=True,exist_ok=True)
+(OUT/'pdf-check.json').write_text(json.dumps(report,indent=2)+'\n');(OUT/'pdf-text.txt').write_text(text)
 print(json.dumps({k:v for k,v in report.items() if k!='fonts'},indent=2))

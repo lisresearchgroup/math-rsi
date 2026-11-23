@@ -1,6 +1,6 @@
 # 已发生的失败、修正与重试条件
 
-本页保留真正改变行动的反例和停止机制。来源为 [旧原交接](../../../archive/legacy-context/MATH_RSI_DOMAIN_HANDOFF.md) §3–4、[发布论文](../../../archive/source/paper/sections/06-ai-formal.tex) 与 [本次阅读范围](../../../archive/intake/READING.md)。原交接中的外部工作区详细报告没有全数随新发布包提供；不把摘要当原始失败文件已齐。当前可直接执行的矩阵与证书例子见ecc-certificate。
+本页保留真正改变行动的反例和停止机制。来源为 [旧原交接](../../../archive/legacy-context/MATH_RSI_DOMAIN_HANDOFF.md) §3–4、[论文附录的复现与形式化说明](../../../archive/source/paper/sections/08-appendix.tex) 与 [本次阅读范围](../../../archive/intake/READING.md)。原交接中的外部工作区详细报告没有全数随新发布包提供；不把摘要当原始失败文件已齐。当前可直接执行的矩阵与证书例子见ecc-certificate。
 
 ## 种子通过秩和枚举，仍可能距目标差一
 

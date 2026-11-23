@@ -21,10 +21,17 @@ def render(lang):
    t(x,y+218,'k = 5–12 · '+('相对指定参考界的增益' if z else 'gains over stated references'),16)
    t(x,y+246,'统一定理：所有 k ≥ 12' if z else 'Uniform theorem: every k ≥ 12',18,c,550)
   elif key=='ecc':
-   t(x,y+50,'4 个精确值 · 1 个收紧区间' if z else '4 exact values · 1 narrower interval',18,'#0B1220',550)
-   for j,r in enumerate(D[key]['rows']):
-    yy=y+84+j*31;t(x,yy,r[0],17);t(x+120,yy,r[1],17,'#667085');t(x+215,yy,'→',18);t(x+250,yy,r[2],19,c,650);t(x+340,yy,('开放' if z else 'open') if j==4 else ('文献*' if z else 'lit.*') if j==3 else '',15)
-   t(x,y+256,'* 文献定理推论' if z else '* Literature corollary',15)
+   e=D[key]['current'];counts=e['counts']
+   t(x,y+50,'v8 · 57 个收紧区间' if z else 'v8 · 57 tightened intervals',18,'#0B1220',550)
+   t(x,y+89,'构造下界' if z else 'Constructive lower bounds',17,'#3D4655',550)
+   t(x+380,y+91,counts['lower'],30,c,650,'end')
+   line(x,y+109,x+390,y+109,'#E4E7EC')
+   t(x,y+143,'已确立的上界改进' if z else 'Established upper updates',17,'#3D4655',550)
+   t(x+380,y+145,counts['established_upper'],30,c,650,'end')
+   t(x,y+176,'另有 2 个暂定上界 · 待来源方验收' if z else '+ 2 provisional upper updates · source-pending',16,'#667085')
+   t(x,y+215,'13 个已确认精确值 + 2 个待验收' if z else '13 confirmed exact values + 2 pending',17,c,600)
+   t(x,y+244,'此前 5 个 + 新增 52 个 · 含文献推论' if z else '5 previous + 52 added · includes corollaries',15)
+   t(x,y+265,'构造与排除分别计数；并非 57 个新定理' if z else 'Constructions and exclusions counted separately',14,'#667085')
   elif key=='dd':
    t(x,y+50,'各组参数下的最佳构造' if z else 'Our best constructions by setting',18,'#0B1220',550)
    for j,r in enumerate(D[key]['settings']):

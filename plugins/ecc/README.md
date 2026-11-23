@@ -13,7 +13,11 @@
 
 每次新推进先匹配已有分枝；未匹配时说明父域、未覆盖余类或共用依赖，归属未知则先核对。实际流程接在 mathrsi-ecc，范围验收接在 ecc-certificate。读[节点研究协议](skills/mathrsi-ecc/references/node-research.md)、[可填写工作包](skills/mathrsi-ecc/examples/node-work-package.md)与[72/36分枝示例](skills/mathrsi-ecc/examples/node-research.md)。沿用任务的节点账本和 ARIS wiki，固定身份而非预设统一分枝数量；局部排除与全域解答分开，共用计算不重复派发。
 
-## 五项案例的准确状态
+## v8 的构造与上界
+
+18 组参数有了距离更好的码，每组都能导出实际生成矩阵。其中 10 组把保证可纠正的错误数提高了一位。上界方面，32 项新推论来自已发表的不存在性定理，9 项使上下界相等。另两项依赖同一份新计算证明，等待原研究项目最终验收。以下五项保留其早期归属。[下载生成矩阵和查看逐格上下界](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html) · [复核记录](evidence/v8-20261123/REVIEW.md)
+
+## 早期五项结果
 
 |参数|本包支持的结果|来源关系|
 |---|---|---|

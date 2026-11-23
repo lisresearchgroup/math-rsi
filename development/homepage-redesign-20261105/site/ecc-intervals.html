@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      57 ECC interval updates, including 2 pending · MathRSI
+    </title>
+    <link rel="stylesheet" href="ecc-intervals.css">
+    <script defer src="ecc-intervals-zh.js">
+    </script>
+    <script defer src="i18n.js">
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to results
+    </a>
+    <header>
+      <a class="brand" href="index.html">
+        MathRSI
+      </a>
+      <div class="language-switch" role="group" aria-label="Language / 语言" data-no-i18n>
+        <button type="button" data-lang="en">
+          EN
+        </button>
+        <button type="button" data-lang="zh-CN">
+          中文
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <p class="eyebrow">
+        ECC · 2026-11-23
+      </p>
+      <h1>
+        Better binary codes and tighter distance bounds
+      </h1>
+      <p class="lead">
+        Fix the code length n and the number of information bits k. Constructing a code shows what distance is achievable. Ruling out a larger distance tightens the upper bound. Here are the results for 57 settings.
+      </p>
+      <p class="code-example">
+        A [72,43,11] code encodes 43 bits into 72 and guarantees correction of any five flipped bits—one more than guaranteed by the old distance-10 lower bound.
+      </p>
+      <div class="stats">
+        <a href="#lower">
+          <b>
+            18
+          </b>
+          constructive lower bounds
+        </a>
+        <a href="#upper">
+          <b>
+            37
+          </b>
+          upper-bound updates
+        </a>
+        <a href="#pending">
+          <b>
+            2
+          </b>
+          awaiting final acceptance
+        </a>
+      </div>
+      <p>
+        The tables compare the 22 November 2026 CodeTables snapshot with the MathRSI results collected on 23 November.
+      </p>
+      <aside>
+        To encode k information bits, use them to select rows of the k-by-n matrix and add the selected rows bit by bit modulo two. The leftmost bit is coordinate zero.
+      </aside>
+      <section id="lower">
+        <h2>
+          18 codes that improve lower bounds
+        </h2>
+        <p>
+          Each row has a generator matrix you can download. Thirteen come directly from the search. Five (†) come from adding a parity bit or removing a coordinate from a neighboring code. All 18 attain the stated lower bound. Their optimal distances remain open.
+        </p>
+        <p class="table-hint">
+          On a narrow screen, scroll the table horizontally for downloads and evidence.
+        </p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="18 codes that improve lower bounds">
+          <table>
+            <caption>
+              Intervals for the optimal binary linear-code distance d₂(n,k)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  Cell [n,k]
+                </th>
+                <th scope="col">
+                  Table · 2026-11-22
+                </th>
+                <th scope="col">
+                  Reported · 2026-11-23
+                </th>
+                <th scope="col">
+                  Code / status
+                </th>
+                <th scope="col">
+                  Evidence
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-cell="72-43" data-group="lower">
+                <th scope="row">
+                  [72,43]
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [11, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-72-43.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/72-43/71-42-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/72-43/71-42-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="73-43" data-group="lower">
+                <th scope="row">
+                  [73,43] †
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-73-43.txt" href="assets/ecc-codes/73-43.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/DERIVED_CELLS.md">
+                    Construction
+                  </a>
+                  · Parity extension
+                </td>
+              </tr>
+              <tr data-cell="74-43" data-group="lower">
+                <th scope="row">
+                  [74,43]
+                </th>
+                <td>
+                  [11, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-74-43.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/74-43/73-42-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/74-43/73-42-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="74-44" data-group="lower">
+                <th scope="row">
+                  [74,44]
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [11, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-74-44.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/74-44/74-43-A/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/74-44/74-43-A/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="75-37" data-group="lower">
+                <th scope="row">
+                  [75,37]
+                </th>
+                <td>
+                  [14, 18]
+                </td>
+                <td>
+                  <strong>
+                    [15, 18]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-75-37.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/75-37/74-36-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/75-37/74-36-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="75-44" data-group="lower">
+                <th scope="row">
+                  [75,44] †
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-75-44.txt" href="assets/ecc-codes/75-44.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/DERIVED_CELLS.md">
+                    Construction
+                  </a>
+                  · Parity extension
+                </td>
+              </tr>
+              <tr data-cell="76-37" data-group="lower">
+                <th scope="row">
+                  [76,37] †
+                </th>
+                <td>
+                  [15, 18]
+                </td>
+                <td>
+                  <strong>
+                    [16, 18]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-76-37.txt" href="assets/ecc-codes/76-37.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/DERIVED_CELLS.md">
+                    Construction
+                  </a>
+                  · Parity extension
+                </td>
+              </tr>
+              <tr data-cell="76-44" data-group="lower">
+                <th scope="row">
+                  [76,44]
+                </th>
+                <td>
+                  [11, 15]
+                </td>
+                <td>
+                  <strong>
+                    [12, 15]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-76-44.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/76-44/75-43-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/76-44/75-43-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="76-45" data-group="lower">
+                <th scope="row">
+                  [76,45]
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [11, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-76-45.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/76-45/76-44-A/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/76-45/76-44-A/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="77-45" data-group="lower">
+                <th scope="row">
+                  [77,45]
+                </th>
+                <td>
+                  [11, 15]
+                </td>
+                <td>
+                  <strong>
+                    [12, 15]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-77-45.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/77-45/77-44-A/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/77-45/77-44-A/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="77-46" data-group="lower">
+                <th scope="row">
+                  [77,46] †
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [11, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-77-46.txt" href="assets/ecc-codes/77-46.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/DERIVED_CELLS.md">
+                    Construction
+                  </a>
+                  · Puncture last coordinate
+                </td>
+              </tr>
+              <tr data-cell="78-46" data-group="lower">
+                <th scope="row">
+                  [78,46]
+                </th>
+                <td>
+                  [11, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-78-46.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/78-46/78-45-A/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/78-46/78-45-A/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="79-47" data-group="lower">
+                <th scope="row">
+                  [79,47]
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [11, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-79-47.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/79-47/78-46-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/79-47/78-46-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="80-47" data-group="lower">
+                <th scope="row">
+                  [80,47]
+                </th>
+                <td>
+                  [11, 15]
+                </td>
+                <td>
+                  <strong>
+                    [12, 15]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-80-47.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/80-47/79-46-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/80-47/79-46-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="81-43" data-group="lower">
+                <th scope="row">
+                  [81,43]
+                </th>
+                <td>
+                  [12, 18]
+                </td>
+                <td>
+                  <strong>
+                    [13, 18]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-81-43.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/81-43/80-42-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/81-43/80-42-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="82-43" data-group="lower">
+                <th scope="row">
+                  [82,43] †
+                </th>
+                <td>
+                  [13, 18]
+                </td>
+                <td>
+                  <strong>
+                    [14, 18]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-82-43.txt" href="assets/ecc-codes/82-43.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/DERIVED_CELLS.md">
+                    Construction
+                  </a>
+                  · Parity extension
+                </td>
+              </tr>
+              <tr data-cell="136-100" data-group="lower">
+                <th scope="row">
+                  [136,100]
+                </th>
+                <td>
+                  [10, 14]
+                </td>
+                <td>
+                  <strong>
+                    [11, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-136-100.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/136-100/135-99-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/136-100/135-99-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+              <tr data-cell="137-100" data-group="lower">
+                <th scope="row">
+                  [137,100]
+                </th>
+                <td>
+                  [11, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 14]
+                  </strong>
+                </td>
+                <td>
+                  <a download="G-137-100.txt" href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/137-100/136-99-L/G.txt">
+                    Download G.txt
+                  </a>
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/4-scan-lower-bounds/hits/137-100/136-99-L/DERIVATION.md">
+                    Construction
+                  </a>
+                  · Direct matrix
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="upper">
+        <h2>
+          37 tighter upper bounds
+        </h2>
+        <p>
+          These include five earlier results and 32 new consequences of three published theorems and 54 existing table bounds. In 13 settings the upper bound meets a known code, settling the optimum.
+        </p>
+        <p class="table-hint">
+          On a narrow screen, scroll the table horizontally for downloads and evidence.
+        </p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="37 tighter upper bounds">
+          <table>
+            <caption>
+              Intervals for the optimal binary linear-code distance d₂(n,k)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  Cell [n,k]
+                </th>
+                <th scope="col">
+                  Table · 2026-11-22
+                </th>
+                <th scope="col">
+                  Reported · 2026-11-23
+                </th>
+                <th scope="col">
+                  Code / status
+                </th>
+                <th scope="col">
+                  Evidence
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-cell="43-10" data-group="upper">
+                <th scope="row">
+                  [43,10]
+                </th>
+                <td>
+                  [16, 17]
+                </td>
+                <td>
+                  <strong>
+                    [16, 16]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/source/proofs/01-main-43-10.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="44-10" data-group="upper">
+                <th scope="row">
+                  [44,10]
+                </th>
+                <td>
+                  [17, 18]
+                </td>
+                <td>
+                  <strong>
+                    [17, 17]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/source/proofs/02-three-corollaries.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="44-11" data-group="upper">
+                <th scope="row">
+                  [44,11]
+                </th>
+                <td>
+                  [16, 17]
+                </td>
+                <td>
+                  <strong>
+                    [16, 16]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/source/proofs/02-three-corollaries.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="45-11" data-group="upper">
+                <th scope="row">
+                  [45,11]
+                </th>
+                <td>
+                  [16, 18]
+                </td>
+                <td>
+                  <strong>
+                    [16, 17]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/source/proofs/02-three-corollaries.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="42-16" data-group="upper">
+                <th scope="row">
+                  [42,16]
+                </th>
+                <td>
+                  [12, 13]
+                </td>
+                <td>
+                  <strong>
+                    [12, 12]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/2-reduction-42-16/results/NONEXISTENCE_42_16_13_CANDIDATE.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="40-14" data-group="upper">
+                <th scope="row">
+                  [40,14]
+                </th>
+                <td>
+                  [12, 13]
+                </td>
+                <td>
+                  <strong>
+                    [12, 12]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="41-15" data-group="upper">
+                <th scope="row">
+                  [41,15]
+                </th>
+                <td>
+                  [12, 13]
+                </td>
+                <td>
+                  <strong>
+                    [12, 12]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="42-15" data-group="upper">
+                <th scope="row">
+                  [42,15]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="43-16" data-group="upper">
+                <th scope="row">
+                  [43,16]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="46-10" data-group="upper">
+                <th scope="row">
+                  [46,10]
+                </th>
+                <td>
+                  [18, 19]
+                </td>
+                <td>
+                  <strong>
+                    [18, 18]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="52-25" data-group="upper">
+                <th scope="row">
+                  [52,25]
+                </th>
+                <td>
+                  [12, 13]
+                </td>
+                <td>
+                  <strong>
+                    [12, 12]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="53-25" data-group="upper">
+                <th scope="row">
+                  [53,25]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="53-26" data-group="upper">
+                <th scope="row">
+                  [53,26]
+                </th>
+                <td>
+                  [11, 13]
+                </td>
+                <td>
+                  <strong>
+                    [11, 12]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="54-26" data-group="upper">
+                <th scope="row">
+                  [54,26]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="54-27" data-group="upper">
+                <th scope="row">
+                  [54,27]
+                </th>
+                <td>
+                  [11, 13]
+                </td>
+                <td>
+                  <strong>
+                    [11, 12]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="55-27" data-group="upper">
+                <th scope="row">
+                  [55,27]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="55-28" data-group="upper">
+                <th scope="row">
+                  [55,28]
+                </th>
+                <td>
+                  [11, 13]
+                </td>
+                <td>
+                  <strong>
+                    [11, 12]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="56-28" data-group="upper">
+                <th scope="row">
+                  [56,28]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="56-29" data-group="upper">
+                <th scope="row">
+                  [56,29]
+                </th>
+                <td>
+                  [11, 13]
+                </td>
+                <td>
+                  <strong>
+                    [11, 12]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="57-29" data-group="upper">
+                <th scope="row">
+                  [57,29]
+                </th>
+                <td>
+                  [12, 14]
+                </td>
+                <td>
+                  <strong>
+                    [12, 13]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="65-15" data-group="upper">
+                <th scope="row">
+                  [65,15]
+                </th>
+                <td>
+                  [24, 25]
+                </td>
+                <td>
+                  <strong>
+                    [24, 24]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="66-15" data-group="upper">
+                <th scope="row">
+                  [66,15]
+                </th>
+                <td>
+                  [24, 26]
+                </td>
+                <td>
+                  <strong>
+                    [24, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="66-16" data-group="upper">
+                <th scope="row">
+                  [66,16]
+                </th>
+                <td>
+                  [24, 25]
+                </td>
+                <td>
+                  <strong>
+                    [24, 24]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="67-16" data-group="upper">
+                <th scope="row">
+                  [67,16]
+                </th>
+                <td>
+                  [24, 26]
+                </td>
+                <td>
+                  <strong>
+                    [24, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="67-17" data-group="upper">
+                <th scope="row">
+                  [67,17]
+                </th>
+                <td>
+                  [24, 25]
+                </td>
+                <td>
+                  <strong>
+                    [24, 24]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="68-17" data-group="upper">
+                <th scope="row">
+                  [68,17]
+                </th>
+                <td>
+                  [24, 26]
+                </td>
+                <td>
+                  <strong>
+                    [24, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="75-24" data-group="upper">
+                <th scope="row">
+                  [75,24]
+                </th>
+                <td>
+                  [20, 25]
+                </td>
+                <td>
+                  <strong>
+                    [20, 24]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="76-24" data-group="upper">
+                <th scope="row">
+                  [76,24]
+                </th>
+                <td>
+                  [21, 26]
+                </td>
+                <td>
+                  <strong>
+                    [21, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="76-25" data-group="upper">
+                <th scope="row">
+                  [76,25]
+                </th>
+                <td>
+                  [20, 25]
+                </td>
+                <td>
+                  <strong>
+                    [20, 24]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="77-25" data-group="upper">
+                <th scope="row">
+                  [77,25]
+                </th>
+                <td>
+                  [21, 26]
+                </td>
+                <td>
+                  <strong>
+                    [21, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="77-26" data-group="upper">
+                <th scope="row">
+                  [77,26]
+                </th>
+                <td>
+                  [20, 25]
+                </td>
+                <td>
+                  <strong>
+                    [20, 24]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="78-26" data-group="upper">
+                <th scope="row">
+                  [78,26]
+                </th>
+                <td>
+                  [20, 26]
+                </td>
+                <td>
+                  <strong>
+                    [20, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="78-27" data-group="upper">
+                <th scope="row">
+                  [78,27]
+                </th>
+                <td>
+                  [20, 25]
+                </td>
+                <td>
+                  <strong>
+                    [20, 24]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="79-27" data-group="upper">
+                <th scope="row">
+                  [79,27]
+                </th>
+                <td>
+                  [20, 26]
+                </td>
+                <td>
+                  <strong>
+                    [20, 25]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="84-9" data-group="upper">
+                <th scope="row">
+                  [84,9]
+                </th>
+                <td>
+                  [38, 39]
+                </td>
+                <td>
+                  <strong>
+                    [38, 38]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="161-10" data-group="upper">
+                <th scope="row">
+                  [161,10]
+                </th>
+                <td>
+                  [76, 77]
+                </td>
+                <td>
+                  <strong>
+                    [76, 76]
+                  </strong>
+                </td>
+                <td>
+                  Exact value
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="162-10" data-group="upper">
+                <th scope="row">
+                  [162,10]
+                </th>
+                <td>
+                  [76, 78]
+                </td>
+                <td>
+                  <strong>
+                    [76, 77]
+                  </strong>
+                </td>
+                <td>
+                  Open interval
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/3-corollaries-32/DERIVATIONS.md">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="pending">
+        <h2>
+          Two proposed upper bounds awaiting final acceptance
+        </h2>
+        <p>
+          The supplementary Gemini Carbon review passed all six frozen questions under the imported assumptions. The source project’s final acceptance of the [41,12] result and its [42,12] corollary is pending.
+        </p>
+        <p class="table-hint">
+          On a narrow screen, scroll the table horizontally for downloads and evidence.
+        </p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Two proposed upper bounds awaiting final acceptance">
+          <table>
+            <caption>
+              Intervals for the optimal binary linear-code distance d₂(n,k)
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  Cell [n,k]
+                </th>
+                <th scope="col">
+                  Table · 2026-11-22
+                </th>
+                <th scope="col">
+                  Reported · 2026-11-23
+                </th>
+                <th scope="col">
+                  Code / status
+                </th>
+                <th scope="col">
+                  Evidence
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-cell="41-12" data-group="pending">
+                <th scope="row">
+                  [41,12]
+                </th>
+                <td>
+                  [14, 15]
+                </td>
+                <td>
+                  <strong>
+                    [14, 14]
+                  </strong>
+                </td>
+                <td>
+                  Final acceptance pending
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/5-theorem-41-12/PROOF.tex">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+              <tr data-cell="42-12" data-group="pending">
+                <th scope="row">
+                  [42,12]
+                </th>
+                <td>
+                  [15, 16]
+                </td>
+                <td>
+                  <strong>
+                    [15, 15]
+                  </strong>
+                </td>
+                <td>
+                  Final acceptance pending
+                </td>
+                <td>
+                  <a href="../../../plugins/ecc/archive/intervals-57-20261123/5-theorem-41-12/PROOF.tex">
+                    Proof and sources
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2>
+          Share the figures with acceptance status
+        </h2>
+        <p>
+          The status strip identifies [41,12] and [42,12]: supplementary review passed; the source project’s final acceptance is pending. The source chart’s 15 exact values include these two; 13 are accepted in the package.
+        </p>
+        <p>
+          <a href="../../../figures/ecc-intervals-20261123/ecc-intervals-status-en.png">
+            English figure · status included · PNG
+          </a>
+          ·
+          <a href="../../../figures/ecc-intervals-20261123/ecc-intervals-status-en.pdf">
+            PDF
+          </a>
+          ·
+          <a href="../../../figures/ecc-intervals-20261123/ecc-intervals-status-zh.png">
+            Chinese figure · status included · PNG
+          </a>
+          ·
+          <a href="../../../figures/ecc-intervals-20261123/ecc-intervals-status-zh.pdf">
+            PDF
+          </a>
+        </p>
+        <a data-figure-lang="en" href="../../../figures/ecc-intervals-20261123/ecc-intervals-status-en.png">
+          <img src="../../../figures/ecc-intervals-20261123/ecc-intervals-status-en.png" alt="57 reported ECC interval updates, including 2 pending rows [41,12] and [42,12]" loading="lazy">
+        </a>
+        <a data-figure-lang="zh-CN" href="../../../figures/ecc-intervals-20261123/ecc-intervals-status-zh.png">
+          <img src="../../../figures/ecc-intervals-20261123/ecc-intervals-status-zh.png" alt="57 reported ECC interval updates, including 2 pending rows [41,12] and [42,12]" loading="lazy">
+        </a>
+      </section>
+      <section>
+        <h2>
+          What supports these updates
+        </h2>
+        <p>
+          The original archive supplied no separate matrices for the five derived values. Their v8 downloads apply standard transformations and check rank, using the original accepted distance guarantees rather than new exhaustive distance replays.
+        </p>
+        <p>
+          Constructive hits have explicit generators and two archived exhaustive distance implementations. Five stronger displayed values follow standard parity extension or puncturing; the downloads construct these matrices deterministically. All 18 exported generators were checked for full rank. Local independent exhaustive spot replays covered [72,43] and [74,43], not all 22 archived source matrices.
+        </p>
+        <p>
+          Upper-bound arguments use published nonexistence and classification results; the 32 corollaries also use 54 earlier table bounds. Supplementary review has passed for [41,12]; final source-project acceptance remains pending.
+        </p>
+        <p>
+          <a href="../../../plugins/ecc/evidence/v8-20261123/REVIEW.md">v8 verification record</a>
+          ·
+          <a href="../../../plugins/ecc/archive/intervals-57-20261123/README.md">
+            Full package and trust conditions
+          </a>
+          ·
+          <a href="../../../plugins/ecc/archive/intervals-57-20261123/cells.csv">
+            All 57 cells · CSV
+          </a>
+          ·
+          <a href="../../../plugins/ecc/skills/mathrsi-ecc/references/constructive-intervals.md">
+            CLI export and reproducibility
+          </a>
+        </p>
+      </section>
+    </main>
+    <footer>
+      MathRSI · ECC · 2026-11-23
+    </footer>
+  </body>
+</html>

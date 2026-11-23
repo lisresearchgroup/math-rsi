@@ -89,61 +89,23 @@
     },
 
     ecc: {
-      resultLabel:
-        'Binary linear code minimum distance improvements across five parameters: d2(43,10) from 16–17 to 16, d2(44,10) from 17–18 to 17, d2(44,11) from 16–17 to 16, d2(42,16) from 12–13 to 12, and d2(45,11) narrowed from 16–18 to 16–17 (open).',
-      resultCap:
-        'Results · five code parameters (prior range → settled optimal d₂ or narrowed interval)',
+      resultLabel: 'Examples of a higher achievable distance and a lower upper bound',
+      resultCap: 'Compared with the 22 November 2026 code table.',
       links: [
-        { label: 'Full figure ↗', href: 'assets/result-figures/ecc-five-parameters.png', sourceLanguage: '中文' },
-        { label: 'Method ↗', href: 'assets/result-figures/ecc-method-results.png', sourceLanguage: '中文', sub: true }
+        { label: 'All 57 entries ↗', href: 'ecc-intervals.html', sourceLanguage: 'EN + 中文' }
       ],
       render() {
-        const rows = [
-          { p: '[43, 10]', prev: '16–17', cur: '16', kind: 'exact', status: 'Exact' },
-          { p: '[44, 10]', prev: '17–18', cur: '17', kind: 'exact', status: 'Exact' },
-          { p: '[44, 11]', prev: '16–17', cur: '16', kind: 'exact', status: 'Exact' },
-          { p: '[42, 16]', prev: '12–13', cur: '12*', kind: 'lit', status: 'Exact*' },
-          { p: '[45, 11]', prev: '16–18', cur: '16–17', kind: 'open', status: 'Open' }
-        ];
-        let body = `
-          <defs>
-            <pattern id="rv-ecc-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <rect width="6" height="6" fill="#fff"/>
-              <line x1="0" y1="0" x2="0" y2="6" stroke="var(--ecc)" stroke-opacity="0.32" stroke-width="2"/>
-            </pattern>
-            <marker id="rv-ecc-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M1 1L7 4L1 7" fill="none" stroke="var(--ecc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </marker>
-          </defs>
-          <text class="rv-h" x="18" y="23">Optimal distance d₂(n, k)</text>
-          <text class="rv-meta" x="362" y="23" text-anchor="end">prior range → result</text>`;
-
-        rows.forEach((r, i) => {
-          const y = 34 + i * 38;
-          const cy = y + 17;
-          let badge = '';
-          if (r.kind === 'exact') {
-            badge = `<rect x="210" y="${y + 5}" width="62" height="24" rx="6" fill="var(--ecc)"/>
-                     <text x="241" y="${cy + 4}" text-anchor="middle" font-size="13.5" font-weight="650" fill="#fff">${r.cur}</text>`;
-          } else if (r.kind === 'lit') {
-            badge = `<rect x="210" y="${y + 5}" width="62" height="24" rx="6" fill="var(--ecc)" fill-opacity="0.14" stroke="var(--ecc)" stroke-width="1.4"/>
-                     <text x="241" y="${cy + 4}" text-anchor="middle" font-size="13.5" font-weight="650" class="rv-accent">${r.cur}</text>`;
-          } else {
-            badge = `<rect x="210" y="${y + 5}" width="62" height="24" rx="6" fill="url(#rv-ecc-hatch)" stroke="var(--ecc)" stroke-width="1.4" stroke-dasharray="3 2"/>
-                     <text x="241" y="${cy + 4}" text-anchor="middle" font-size="12.5" font-weight="650" fill="var(--ink)">${r.cur}</text>`;
-          }
-          body += `
-            <rect class="rv-panel" x="14" y="${y}" width="352" height="34" rx="8"/>
-            <text x="28" y="${cy + 4}" font-size="13" font-weight="640" fill="var(--ink)">${r.p}</text>
-            <rect x="112" y="${y + 6}" width="58" height="22" rx="5" fill="#F1F3F7"/>
-            <text x="141" y="${cy + 4}" text-anchor="middle" font-size="12" font-weight="540" fill="var(--muted)">${r.prev}</text>
-            <line x1="178" y1="${cy}" x2="202" y2="${cy}" stroke="var(--ecc)" stroke-width="1.5" marker-end="url(#rv-ecc-arr)"/>
-            ${badge}
-            <text x="352" y="${cy + 4}" text-anchor="end" font-size="11.5" font-weight="${r.kind === 'open' ? '500' : '620'}" fill="${r.kind === 'open' ? 'var(--muted)' : 'color-mix(in srgb,var(--ecc) 82%,#000)'}">${r.status}</text>`;
-        });
-
-        body += `<text class="rv-meta" x="190" y="241" text-anchor="middle">4 exact values · 1 narrowed interval</text>`;
-        return svgWrap(this.resultLabel, body);
+        return svgWrap(this.resultLabel, `
+          <rect class="rv-panel" x="14" y="12" width="352" height="107" rx="8"/>
+          <text class="rv-h" x="28" y="36">Achievable distance</text>
+          <text class="rv-meta" x="350" y="36" text-anchor="end">[72,43]</text>
+          <text x="28" y="78" font-size="30" font-weight="650" class="rv-accent">10 → 11</text>
+          <text class="rv-sub" x="28" y="103">Guaranteed correction: 4 → 5 bit flips</text>
+          <rect class="rv-panel" x="14" y="134" width="352" height="107" rx="8"/>
+          <text class="rv-h" x="28" y="158">Upper limit on distance</text>
+          <text class="rv-meta" x="350" y="158" text-anchor="end">[52,25]</text>
+          <text x="28" y="200" font-size="30" font-weight="650" fill="var(--ink)">13 → 12</text>
+          <text class="rv-sub" x="28" y="225">A code reaches 12. That settles the optimum.</text>`);
       }
     },
 
