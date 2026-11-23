@@ -44,5 +44,6 @@ window.MATHRSI_ZH = {
   "awaiting final acceptance": "待最终验收",
   "The tables compare the 22 November 2026 CodeTables snapshot with the MathRSI results collected on 23 November.": "表中比较的是 2026 年 11 月 22 日的 CodeTables 快照和次日汇总的 MathRSI 结果。",
   "To encode k information bits, use them to select rows of the k-by-n matrix and add the selected rows bit by bit modulo two. The leftmost bit is coordinate zero.": "矩阵有 k 行、n 列。信息位为 1 就选中对应的行，把选中的行按位做模 2 加法，便得到一个 n 位码字。最左一列是第 0 个坐标。",
+  "Original five-parameter paper (PDF)": "早期五参数论文（PDF）",
   "v8 verification record": "v8 核验记录"
 };

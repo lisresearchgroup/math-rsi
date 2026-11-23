@@ -1445,13 +1445,9 @@ Object.assign(window.MATHRSI_ZH, {
   "Propagate published upper exclusions with exact premises; separate established results from source-pending claims.": "按精确前提传播文献上界排除，区分已确立结果与待来源方验收的工作结果。",
   "Other 5 domains retained": "保留其余五个领域",
   "v8 · constructive witnesses, rejection branches and exclusion propagation.": "v8 · 构造见证、拒绝分支与排除传播。",
-  "18 lower · 34 upper": "18 下界 · 34 上界",
-  "57 intervals · 2 pending": "57 个区间 · 2 个待验收",
-  "13 exact + 2 pending · v8": "13 个精确值 + 2 个待验收 · v8",
-  "Constructions and exclusions tighten 57 intervals": "构造与排除收紧 57 个区间",
+  "From 4 to 13 exact code distances": "已确定最优距离的参数从 4 组增至 13 组",
   "v8 · 2 working upper bounds pending source-owner acceptance": "v8 · 2 个工作稿上界待来源方验收",
   "new lower bounds": "新增下界",
-  "new upper bounds · 2 working": "新增上界 · 2 个工作稿",
   "total intervals": "累计区间",
   "v9+": "v9+",
   "MathRSI harness · v8 · Current": "MathRSI 框架 · v8 · 当前版",
@@ -1460,16 +1456,13 @@ Object.assign(window.MATHRSI_ZH, {
   "Show MathRSI harness v9+: Next research, next evolution": "显示 MathRSI v9+：下一轮研究与演进",
   "Shared base & workflow details in v8": "v8 通用研究流程与工作流详情",
   "Shared base & workflow details in v9+": "v9+ 通用研究流程与工作流详情",
-  "52 added intervals · v8": "新增 52 个区间 · v8",
   "ECC intervals & methods ↗": "ECC 区间与方法 ↗",
   "ECC · historical main maintenance": "ECC · 历史主线维护",
   "Historical five-interval snapshot: three exact distances were settled at v0, and d₂(42,16)=12 follows from a 2020 theorem; the reusable checkers cover the 172 parent exclusions, and 16 ≤ d₂(45,11) ≤ 17 remains open.": "历史五区间快照：前三组精确距离在 v0 阶段确定，d₂(42,16)=12 由 2020 年文献定理推出；可复用检查器覆盖全部 172 个母码排除，16 ≤ d₂(45,11) ≤ 17 仍未闭合。",
-  "ECC: 18 lower · 34 upper; 57 intervals · 2 pending, 13 exact + 2 pending · v8. Inspect this result.": "ECC：新增 18 个下界、34 个上界；累计 57 个区间；13 个已确认精确值与 2 个待来源方验收的精确闭合。查看成果。",
-  "ECC adds 52 table intervals to the previous 5: 18 lower-bound improvements and 34 upper-bound improvements, including 2 working upper bounds awaiting source-owner acceptance. Total: 57 intervals, with 13 confirmed exact values and 2 pending exact closures. The 32 literature-derived upper bounds and the 2 new working exclusions retain separate evidence and status. The v8 release preserves that source-pending status.": "ECC 在此前 5 个区间基础上新增 52 个：18 个下界改进、34 个上界改进，其中 2 个工作稿上界待来源方验收。累计 57 个区间、13 个已确认精确值与 2 个待验收精确闭合。32 个文献上界推论与 2 个新工作稿排除保留各自证据和状态。v8 正式版保留这两项的待验收状态。",
-  "18 new lower-bound intervals and 34 new upper-bound intervals (2 working). Together with the previous 5: 57 intervals; 13 confirmed exact values plus 2 pending exact closures. Source-owner acceptance for the 2 working upper bounds remains pending.": "新增 18 个下界区间、34 个上界区间（2 个工作稿）。加上此前 5 个，累计 57 个区间；13 个已确认精确值，另有 2 个精确闭合待验收。2 个工作稿上界仍待来源方验收。",
-  "5 previous + 52 added = 57 intervals. 13 confirmed exact values + 2 pending exact closures. Lower bounds come from constructions and their derived codes; upper bounds come from exclusions and literature-derived corollaries. The 2 working upper bounds await source-owner acceptance.": "此前 5 个 + 新增 52 个 = 57 个区间。13 个已确认精确值，另有 2 个精确闭合待验收。下界来自构造及派生码；上界来自排除和文献推论。2 个工作稿上界仍待来源方验收。",
-  "ECC · 5 previous + 52 added = 57 intervals; 18 new lower, 34 new upper (2 working). 13 confirmed exact + 2 pending. v8.": "ECC · 此前 5 个 + 新增 52 个 = 57 个区间；新增 18 个下界、34 个上界（2 个工作稿）。13 个已确认精确值 + 2 个待来源方验收。v8。",
-  "Research results across v0–v8 and v9+ future work. ECC adds 18 lower-bound and 34 upper-bound intervals, including 2 working upper bounds pending source-owner acceptance: 57 intervals total, 13 confirmed exact values and 2 pending exact closures. Other cases retain their historical evidence and review status.": "展示 v0–v8 研究成果及 v9+ 后续研究。ECC 新增 18 个下界和 34 个上界区间，其中 2 个工作稿上界待来源方验收：累计 57 个区间、13 个已确认精确值及 2 个待验收精确闭合。其余课题保留历史证据与审阅状态。"
+  "MathRSI went from four settled code distances to thirteen. This round alone settled nine by matching known codes with tighter upper bounds. New constructions improved the lower bound at 18 other settings. Two further upper bounds await final acceptance.": "早期几轮，MathRSI 共确定了 4 组最优距离。这一轮把已知码的距离和更紧的上界对上，一次又定下 9 组，累计 13 组。另外 18 组找到了更好的码，还有两项上界待最终验收。",
+  "MathRSI settled three settings in v0 and one more by v2. In v8, it connected published exclusions to known codes and settled nine more in one round.": "MathRSI 在 v0 确定了 3 组最优距离，到 v2 累计 4 组。这一轮把已有构造与文献中的排除定理接起来，一次又确定了 9 组。",
+  "ECC · From 4 to 13 exact distances. Nine more settled in v8. Select a block for lower or upper bounds.": "ECC · 已确定的最优距离从 4 组增至 13 组，本轮新增 9 组。点「下界」看构造，点「上界」看证明。",
+  "Research results across v0–v8 and v9+ future work. In ECC, v8 takes the number of settled optimal distances from 4 to 13. Select the lower-bound and upper-bound blocks to explore the results.": "v0 至 v8 的研究成果及 v9+ 展望。在纠错编码研究中，已确定最优距离的参数从 4 组增至 13 组。选择下界或上界方块，查看对应成果。",
 });
 
 Object.assign(window.MATHRSI_ZH, {
@@ -1485,10 +1478,25 @@ Object.assign(window.MATHRSI_ZH, {
   "For 52-bit codes carrying 25 bits of information, the table allowed a distance of 12 or 13. A known code attains 12. A deduction from a published theorem rules out 13, so 12 is optimal.": "用 52 位承载 25 位信息，原码表把最优距离圈在 12 和 13 之间。已有的码能做到 12，从已发表的定理又能排除 13，于是最优值就定在了 12。",
   "See the upper bounds and proofs ↗": "查看上界与证明 ↗",
   "All 57 entries ↗": "查看全部 57 组参数 ↗",
-  "Five-parameter paper ↗": "五组参数论文 ↗",
+  "Five-parameter paper ↗": "五参数论文 ↗",
   "Achievable distance": "构造达到的距离",
   "Upper limit on distance": "最优距离的上限",
   "Guaranteed correction: 4 → 5 bit flips": "保证能纠正的错误从 4 位增至 5 位",
   "A code reaches 12. That settles the optimum.": "已有码达到 12，因此 12 就是最优值。",
   "The 57 entries include five earlier upper bounds, 32 new consequences of published results, 18 constructions and two further upper bounds awaiting final acceptance in the source project. Thirteen optimal distances are settled. The original five-parameter paper includes Lean reductions with explicit assumptions.": "57 格包括此前的 5 项上界、从已发表结果推出的 32 项上界、18 项构造下界，以及等待原项目最终验收的 2 项上界。已有 13 格确定最优值。此前的五参数论文附有 Lean 归约，其中列明了依赖的外部前提。"
+});
+
+Object.assign(window.MATHRSI_ZH, {
+  "new upper-bound deductions": "新推出的上界",
+  "18 settings have better codes with downloadable generator matrices.": "18 组参数有了更好的码，每组都可下载生成矩阵。",
+  "32 new upper bounds settle nine optimal distances. Two further proposed upper bounds await acceptance.": "本轮收紧 32 组上界，其中 9 组确定了最优距离。另两项上界待最终验收。",
+  "Constructive lower bounds": "构造下界",
+  "Upper-bound deductions": "上界推论",
+  "LB": "下界",
+  "UB": "上界",
+  "9 more in this round": "本轮一次确定 9 组",
+  "Original five-parameter paper (PDF)": "早期五参数论文（PDF）",
+  "4 → 13": "4 → 13 组",
+  "settled optimal distances": "已确定最优距离",
+  "ECC: 4 → 13; settled optimal distances, 9 more in this round. Inspect this result.": "ECC 已确定的最优距离从 4 组增至 13 组，本轮新增 9 组。查看详情。"
 });
