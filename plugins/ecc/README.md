@@ -43,6 +43,6 @@ python3 -B plugins/ecc/tools/replay_one.py --index 169 \
 
 ## 随仓原件与分发边界
 
-[archive/README](archive/README.md) 说明原件层，精确清单见 [INVENTORY](archive/INVENTORY.json)。`archive/source/` 保留证明、论文源/PDF、两Lean工程（无缓存）、全部下界/母码数据、172例双扫描输入/结果/接受集、检查器及验证报告。随仓完整保留母码169的546个F代表和148785字节pair流；其余171大pair流未分发，逐项保留原包相对路径与字节数。精简插件不能声称全172流可自包含重放，原完整发布README的全流描述须连同外层范围阅读。
+[archive/README](archive/README.md) 说明原件层，精确清单见 [INVENTORY](archive/INVENTORY.json)。`archive/source/` 保留证明、论文源/PDF、两Lean工程（无缓存）、全部下界/母码数据、172例双扫描输入/结果/接受集、检查器及验证报告。论文当前稿在 [`archive/source/paper/`](archive/source/paper/README.md)，其证据与可复现包在同级 [`archive/source/paper-reproduction/`](archive/source/paper-reproduction/README-REPO.md)。随仓完整保留母码169的546个F代表和148785字节pair流；其余171大pair流未分发，逐项保留原包相对路径与字节数。精简插件不能声称全172流可自包含重放，原完整发布README的全流描述须连同外层范围阅读。
 
 `archive/legacy-context/` 是本仓此前接收的两份历史交接，`archive/intake/` 是已读范围明确的派生笔记；缺失的原研究wiki、完整失败轨迹、模型对话与第三方全文未冒充已拥有。新任务输出和wiki写自己的工作区，归档保持只读。

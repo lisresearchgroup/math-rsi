@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "extracted_to": "/private/tmp/ecc-math-v3-unpack-e8cn6ucs",
+  "checks": {
+    "build": {
+      "returncode": 0,
+      "passed": true
+    },
+    "finite_data": {
+      "returncode": 0,
+      "passed": true
+    },
+    "case_plan": {
+      "returncode": 0,
+      "passed": true
+    }
+  }
+}

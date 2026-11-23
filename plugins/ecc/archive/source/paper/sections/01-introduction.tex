@@ -1,27 +1,50 @@
 \section{Introduction}
-A binary linear code is a subspace of $\F^n$. Determining the largest possible minimum distance at fixed length and dimension is a finite problem, but a negative answer must cover every subspace, including those far from familiar constructions. A failed search for a generator matrix supplies no such coverage. This makes code nonexistence a useful setting for studying how AI-assisted mathematical work can produce independently checkable results.
+For positive integers $n$ and $k$ with $1\le k\le n$, let $\dopt(n,k)$ denote the largest integer $d$ such that a binary linear code of length $n$, dimension $k$, and minimum distance $d$ exists, that is, a $k$-dimensional subspace of $\F^n$ in which every nonzero vector has Hamming weight at least $d$. Determining these values is one of the basic finite problems of coding theory. Its values for small parameters have been collected in tables for more than five decades: \citet{helgert1973} tabulated bounds for lengths below 128, and the tables were updated by \citet{verhoeff1987} and \citet{brouwer1993}. The online tables of \citet{grasslTables} continue this effort. Outside the dimensions for which complete classifications are available, many entries are still intervals rather than exact values. Each improvement of an upper bound requires a nonexistence proof for a specific triple $(n,k,d)$.
 
-We study five parameter targets through two proof routes. The main route starts with a hypothetical $[43,10,\ge17]$ code. Parity extension, a low-weight dual-word argument, and shortening force a full-support $[40,7,18]$ subcode. A published classification then reduces the unrestricted existence question to 172 concrete mother codes. Each mother has $2^{32}$ even cosets to examine. The successful reduction is stronger than an unsuccessful extension search: every pair of distinct admissible cosets is incompatible, so the three cosets required for an extension cannot exist.
-
-The second route illustrates a different useful outcome of AI-assisted research. An apparent target, $[42,16,\ge13]$, is already excluded by a short consequence of a published theorem. Parity extension and two shortenings produce a $[41,14,\ge14]$ code; an exact-distance normalization connects it to the published exclusion of $[41,14,14]$. The contribution here is the explicit, checked connection to the requested target.
+This paper settles four such entries and narrows a fifth. All five parameter pairs already appear with unresolved intervals in Verhoeff's 1985 report \citep{verhoeff1985}, which preceded the journal table of \citet{verhoeff1987}. Table~\ref{tab:history} compares the published intervals with our results. Between 1985 and 1993 only two of these intervals were narrowed, and the 1993 intervals coincide with those in the online tables retrieved on 3~November~2026.
 
 \begin{table}[t]
-\caption{Five excluded targets and the resulting optimum information. Lower bounds use explicit matrices. The first three exact values and the fourth upper bound share one main proof; the last row is a consequence of published Proposition~2.}
-\label{tab:results}
+\caption{Bounds on $\dopt(n,k)$. The 1985 and 1993 columns are taken from \citet[Appendix~I]{verhoeff1985} and \citet[Table~I]{brouwer1993}; the online column is the record of \citet{grasslTables} retrieved on 3~November~2026. The $(42,16)$ entry follows from a published theorem; see Theorem~\ref{thm:42}.}
+\label{tab:history}
 \centering\small
-\begin{tabular}{@{}lll@{}}
+\begin{tabular}{@{}lcccc@{}}
 \toprule
-Excluded target & Proof route &  $\dopt(n,k)$\\
+$(n,k)$ & 1985 & 1993 & Online & This paper\\
 \midrule
-$[43,10,\ge17]$ & Main exclusion & $16$\\
-$[44,10,\ge18]$ & Puncturing & $17$\\
-$[44,11,\ge17]$ & Shortening & $16$\\
-$[45,11,\ge18]$ & Puncturing & $[16,17]$\\
-$[42,16,\ge13]$ & E3 reduction & $12$\\
+$(43,10)$ & 16--17 & 16--17 & 16--17 & 16\\
+$(44,10)$ & 16--18 & 17--18 & 17--18 & 17\\
+$(44,11)$ & 16--17 & 16--17 & 16--17 & 16\\
+$(45,11)$ & 16--18 & 16--18 & 16--18 & 16--17\\
+$(42,16)$ & 12--14 & 12--13 & 12--13 & 12\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:results} states the mathematical outcomes. The evidence accompanying them has three components: a structural proof covering arbitrary binary linear codes; concrete matrices, complete enumeration records, and rejection witnesses; and Lean proofs of the reductions with named external inputs. AI contributes to literature discovery, proof development, implementation, and review. Acceptance depends on these evidence components rather than on the model's confidence or the number of favorable reviews.
+We use $[n,k,d]$ for a binary linear code with minimum distance exactly $d$, and $\codege{n}{k}{d}$ when only a lower bound is specified. Zero and repeated generator columns are allowed. Our main result is the following.
 
-For AI-assisted mathematics, the case study highlights a specific verification issue: checking that every saved candidate is valid does not show that a search saved every valid candidate. Here that distinction led to a second complete enumeration with different coordinates and traversal. The mathematical argument, computation, and recorded AI interventions are presented together so that each claimed contribution can be assessed at its actual scope.
+\begin{theorem}\label{thm:main}
+There is no binary linear $\codege{43}{10}{17}$ code.
+\end{theorem}
+
+Puncturing and shortening give three immediate consequences: binary linear $\codege{44}{10}{18}$, $\codege{44}{11}{17}$, and $\codege{45}{11}{18}$ codes do not exist. We also deduce the nonexistence of $\codege{42}{16}{13}$ codes from Proposition~2 of \citet{bouyuklieva2020}. Together with the explicit generators in Appendix~\ref{app:lower}, these exclusions yield
+\begin{align*}
+ \dopt(43,10)&=16,&\dopt(44,10)&=17,\\
+ \dopt(44,11)&=16,&\dopt(42,16)&=12,
+\end{align*}
+and $16\le\dopt(45,11)\le17$.
+
+\paragraph{Contributions.}
+\begin{itemize}
+\item \emph{A structural reduction.} A degree-four polynomial in the MacWilliams identities forces a codeword of weight four in the dual code in every hypothetical even $\codege{44}{10}{18}$ code. Shortening on its support produces a full-support $[40,7,18]$ subcode, which places the problem inside the classification of \citet{bouyukliev2001}.
+\item \emph{A coset-compatibility obstruction.} An extension of a classified subcode to a hypothetical code is equivalent to a triangle in a graph on admissible even cosets. For each of the 172 classified codes, the even quotient has $2^{32}$ elements, and the graph turns out to have no edges at all.
+\item \emph{Separated verification obligations.} Completeness of the admissible sets and rejection of every pair are verified separately: two independent complete enumerations agree on 429,024 admissible cosets, and an independent checker replays 619,053,789 pair witnesses. The deductive part is formalized in Lean~4, with the published classification results and the finite computation as explicit hypotheses.
+\item \emph{Consequences.} The main theorem yields three further exclusions. A short reduction to the published nonexistence of $[41,14,14]$ codes closes the $(42,16)$ entry; we claim no priority for this deduction.
+\end{itemize}
+
+\paragraph{Outline of the proof.}
+Parity extension takes a hypothetical $\codege{43}{10}{17}$ code to an even $\codege{44}{10}{18}$ code $C$. The exclusion of $[41,8,18]$ codes \citep{bouyukliev2000} forces any three generator columns of $C$ to be independent. A MacWilliams-identity argument then forces a weight-four word in $C^\perp$. Shortening on its support gives an even, full-support $[40,7,18]$ code $K$. Thus $K$ belongs to one of the 172 classified equivalence classes.
+
+To extend $K$ to $C$, one needs three distinct even cosets $a_i+K$, each at distance at least 16 from $K$, whose pairwise sums also have distance at least 16. The even quotient has dimension 32. We enumerate it completely for every classified code and find a stronger obstruction: no two distinct admissible cosets have an admissible sum. The extension is therefore impossible before the condition on the sum of all three cosets is even needed. The length-42 result instead follows from parity extension, two shortenings, and exact-distance normalization, using the published $[41,14,14]$ exclusion.
+
+\paragraph{Organization.}
+Section~\ref{sec:related} reviews related work. Section~\ref{sec:preliminaries} collects elementary tools and the published classification inputs. Section~\ref{sec:reduction} proves the structural reduction, and Section~\ref{sec:computation} describes the finite computation and its verification. Section~\ref{sec:consequences} derives the remaining results, and Section~\ref{sec:conclusion} concludes. The appendices give reproduction details, formal interfaces, source locations, and explicit generators.

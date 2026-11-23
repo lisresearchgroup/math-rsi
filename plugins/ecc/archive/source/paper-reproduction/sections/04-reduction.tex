@@ -1,0 +1,70 @@
+\section{Reduction to Classified Subcodes}
+\label{sec:reduction}
+We prove Theorem~\ref{thm:main} using E1, E2, and Proposition~\ref{prop:computed}; the latter is established by the finite computation of Section~\ref{sec:computation}. The reduction has three steps. We first show that every hypothetical code has a dual codeword of weight four. Shortening on its support then produces a classified subcode. Finally, the hypothetical code is recovered from this subcode by an extension whose feasibility depends only on three cosets.
+
+\subsection{A forced dual codeword of weight four}
+Suppose that $C_0$ is a $\codege{43}{10}{17}$ code. Its parity extension $C$ is an even $\codege{44}{10}{18}$ code: an odd weight at least 17 increases by one, and an even weight at least 17 is already at least 18. Conversely, puncturing any coordinate of an even $\codege{44}{10}{18}$ code gives a $\codege{43}{10}{17}$ code; this does not require the punctured coordinate to be a parity coordinate. Thus it suffices to exclude $C$.
+
+\begin{lemma}\label{lem:three}
+Every three columns of a generator matrix for $C$ are linearly independent.
+\end{lemma}
+\begin{proof}
+If three columns had rank at most two, shortening on them would give a length-41 code of dimension at least eight and distance at least 18. Taking an eight-dimensional subcode contradicts E1, since the Griesmer bound excludes distance at least 19.
+\end{proof}
+Lemma~\ref{lem:three} says that $C^\perp$ has minimum distance at least four, so $B_1=B_2=B_3=0$ in the notation of \eqref{eq:macwilliams} with $n=44$ and $k=10$. Consider the polynomial
+\begin{align}
+ P(w)&=(w-18)(w-20)(w-24)(w-26)\notag\\
+ &=\tfrac32K_4(w)+22K_2(w)+\tfrac{403}{2}K_0(w).
+ \label{eq:polynomial}
+\end{align}
+The expansion can be checked directly: with $z=44-2w$,
+\begin{align*}
+ K_0(w)&=1,\qquad K_2(w)=\frac{z^2-44}{2},\\
+ K_4(w)&=\frac{z^4-256z^2+5544}{24}.
+\end{align*}
+The polynomial $P$ is negative only on $(18,20)\cup(24,26)$, and neither interval contains an even integer. Every nonzero weight of $C$ is even and at least 18, so $P(w)\ge0$ on all of them. Since $P(0)=224640$, $A_0=B_0=1$, and $B_2=0$, the identities \eqref{eq:macwilliams} give
+\[
+ 224640\le\sum_w A_wP(w)=1536B_4+206336.
+\]
+Therefore $B_4\ge143/12$, hence $B_4\ge12$. In particular, $C^\perp$ contains a codeword of weight four. Only one nonnegative polynomial is needed; no linear program has to be solved.
+
+\subsection{Shortening gives a full-support subcode}
+\begin{lemma}\label{lem:mother}
+Shortening $C$ on the support of a weight-four codeword of $C^\perp$ produces an even full-support $[40,7,18]$ code $K$.
+\end{lemma}
+\begin{proof}
+Permute the four support coordinates to the end. Their generator columns $v_1,v_2,v_3,v_4\in\F^{10}$ satisfy $v_1+v_2+v_3+v_4=0$. Any three are independent, so the projection rank is three. Shortening therefore has dimension $10-3=7$, length 40, and distance at least 18. All its words remain even. If its distance exceeded 18, it would be at least 20, contradicting $g_2(7,20)=42>40$.
+
+Let $U=\langle v_1,v_2,v_3\rangle$. A remaining coordinate would vanish on every shortened word precisely if its generator column belonged to $U$. The seven nonzero vectors of $U$ are the four support columns and their three distinct pair sums. An outside column equal to a support column would give a dependent pair; an outside column equal to a pair sum would give a dependent triple. The zero vector is also excluded by Lemma~\ref{lem:three}. Thus no outside coordinate vanishes, and $K$ has full support.
+\end{proof}
+The characterization of vanishing coordinates in the proof uses the nondegenerate dot product on the message space $\F^{10}$. The messages of the shortened code form $U^\perp$, and a column $v$ vanishes on all of them if and only if $v\in(U^\perp)^\perp=U$. Because $\dim U=3$ and $v_4=v_1+v_2+v_3$, the nonzero vectors of $U$ are exactly $v_1,v_2,v_3,v_4$, $v_1+v_2$, $v_1+v_3$, and $v_2+v_3$.
+
+By E2 and the verified inequivalence of the 172 catalogue representatives, $K$ is coordinate-equivalent to a catalogue member. A permutation of its 40 coordinates, extended by the identity on the last four coordinates, preserves every distance condition below. We may therefore assume that $K$ is a catalogue member.
+
+\subsection{Every extension requires compatible cosets}
+The projection of $C$ onto the final four coordinates has kernel $K$ (after deleting those coordinates) and image orthogonal to $(1,1,1,1)$. By the rank computation above, the image is the full three-dimensional even-weight subspace of $\F^4$. Choose lifts of $1001$, $0101$, and $0011$, and prepend a basis of the kernel. Row operations, which do not change the code, give
+\begin{equation}\label{eq:normal}
+ G_C=\begin{pmatrix}
+ G_K&0000\\
+ a_1&1001\\
+ a_2&0101\\
+ a_3&0011
+ \end{pmatrix}.
+\end{equation}
+The $a_i\in\F^{40}$ have even weight because $C$ is even. For a vector $a$, set $\dist_K(a)=\min_{c\in K}\wt(a+c)$. For $s\in\F^3$ and $c\in K$, every word of $C$ has the form
+\[
+ \Bigl(c+\textstyle\sum_i s_ia_i,\ s_1(1001)+s_2(0101)+s_3(0011)\Bigr).
+\]
+For $s=0$ the weight is at least 18 unless the word is zero. For $\wt(s)\in\{1,2\}$ the tail has weight two, and for $s=(1,1,1)$ it has weight four. Consequently the distance condition for \eqref{eq:normal} is exactly
+\begin{align}
+ \dist_K(a_i)&\ge16 &&(1\le i\le3),\notag\\
+ \dist_K(a_i+a_j)&\ge16 &&(i<j),\label{eq:extension}\\
+ \dist_K(a_1+a_2+a_3)&\ge14.\notag
+\end{align}
+Replacing $a_i$ by another vector of $a_i+K$ amounts to adding kernel rows, so all conditions depend only on the cosets $a_i+K$.
+
+Let $E_{40}$ be the even-weight subspace of $\F^{40}$. Since $K\subset E_{40}$, the quotient $E_{40}/K$ has dimension $39-7=32$. Define
+\[
+ F_K=\{a+K\in E_{40}/K:\dist_K(a)\ge16\}.
+\]
+Parity is constant on each coset because $K$ is even. Join distinct cosets $a+K,b+K\in F_K$ when $\dist_K(a+b)\ge16$. Conditions~\eqref{eq:extension} require a triangle in this graph; the three cosets must be distinct because equal cosets have sum-distance zero. The computation of Section~\ref{sec:computation} shows that all 172 graphs have no edges. This stronger obstruction rules out \eqref{eq:normal} before the triple-sum condition is needed, and proves Theorem~\ref{thm:main}.

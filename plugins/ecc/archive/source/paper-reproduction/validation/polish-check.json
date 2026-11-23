@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "date": "2026-11-18",
+  "revision": "polish-v7",
+  "main_body_ends_page": 7,
+  "main_body_pages_approx": 7.0,
+  "total_pages": 18,
+  "bibliography_entries": 27,
+  "new_bibliography_entries": {
+    "helgert1973": "Crossref DOI 10.1109/TIT.1973.1055009",
+    "verhoeff1985": "original PDF read 2026-11-03 (ecc-five-case-history-20261103/sources/Verhoeff-1985.pdf), Appendix I table block 1,0",
+    "verhoeff1987": "Crossref DOI 10.1109/TIT.1987.1057356",
+    "brouwer1993": "Crossref DOI 10.1109/18.212301; Table I col. 1 p.665 read from author PDF 2026-11-03",
+    "ytrehus1990": "dblp journals/tit/YtrehusH90 (no DOI recorded)",
+    "baumert1973": "Crossref DOI 10.1109/TIT.1973.1054939; content claim per Kurz 2021 introduction",
+    "vantilborg1981": "Crossref DOI 10.1016/0012-365X(81)90166-7; content claim per Kurz 2021 introduction",
+    "kurz2021": "Crossref DOI 10.3934/amc.2020074; arXiv 1906.02621v2 abstract/introduction read locally",
+    "jaffe2000": "Crossref DOI 10.1016/S0012-365X(99)00135-1; length<=30 classification per Bouyukliev-Bouyuklieva-Kurz introduction",
+    "kaski2006": "book DOI prefix 10.1007/3-540-28991-7 confirmed via Crossref chapter records",
+    "feulner2014": "Crossref DOI 10.1007/s10623-012-9700-8 (print 2014, online 2012)",
+    "bouyukliev2011": "Crossref DOI 10.1109/TIT.2011.2162264; arXiv 1006.0109 abstract read locally",
+    "bouyukliev2021": "Crossref DOI 10.1109/TIT.2021.3114280; arXiv 2002.07826 abstract read locally",
+    "macwilliams1963": "Crossref DOI 10.1002/j.1538-7305.1963.tb04003.x",
+    "macwilliams1977": "bibliographic record from ecc-pr-references-20261104/REFERENCES_FOR_PR.md",
+    "schrijver2005": "Crossref DOI 10.1109/TIT.2005.851748",
+    "lam1989": "Crossref DOI 10.4153/CJM-1989-049-4",
+    "mckay2014": "Crossref DOI 10.1016/j.jsc.2013.09.003"
+  },
+  "citation_policy": "Every new entry was checked against Crossref, dblp, or a locally read original; author names follow the verified record (initials where the record gives only initials). Each content claim in Related Work is taken from the cited work's abstract/title or from a verified secondary statement noted above.",
+  "mathematical_blocks": 14,
+  "mathematical_blocks_identical_to_v6": 13,
+  "changed_block": "proof of Corollary 6.4: added the word 'codes' and 'a ... code' (no mathematical change)",
+  "moved_from_appendix_to_main": [
+    "A.1 operations -> Sec 3.1",
+    "A.2 Griesmer proof -> Sec 3.2",
+    "A.3 MacWilliams derivation and Krawtchouk forms -> Sec 3.3, 4.1",
+    "A.4 full support and normal form -> Sec 4.2, 4.3",
+    "A.5 unique representatives -> Sec 5.1",
+    "A.6 normalization remarks -> Sec 6",
+    "B.1 certificate semantics and witness histogram -> Sec 5 intro, 5.3, Table 3",
+    "B.2 mask computation -> Sec 5.2"
+  ],
+  "checks": {
+    "validate_paper": "PASS (scripts/validate_paper.py, PyMuPDF 1.26.5)",
+    "check_data": "PASS (scripts/check_data.py, Python 3.11)",
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "undefined_citations": 0
+  },
+  "scope": "Exposition, introduction, related work and layout; no exhaustive scans, Lean builds, or independent proof review rerun.",
+  "layout_note": "Lean scope summary returned to Appendix B and conclusion tightened so the main body fills exactly 7 pages."
+}

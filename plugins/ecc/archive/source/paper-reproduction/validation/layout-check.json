@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "date": "2026-11-08",
+  "revision": "spacing-v6",
+  "code_parameter_occurrences_fixed": 35,
+  "main_body_pages": 4,
+  "references_start_page": 5,
+  "appendix_start_page": 6,
+  "total_pages": 16,
+  "authors": [
+    "Zuhao Zhang",
+    "Ruofeng Yang",
+    "Haitong Ma",
+    "Rasul Tutunov",
+    "Dimitris",
+    "Zhinuo Zhou",
+    "Haitham Bou Ammar",
+    "Qiaosheng Zhang",
+    "Jun Wang",
+    "Shuai Li"
+  ],
+  "mathematical_blocks_preserved": 14,
+  "proof_check_scope": "normalize typography macro and equivalent puncturing wording before comparison",
+  "data_native_formal_scripts": "byte-identical to v5",
+  "references_citations_and_font_embedding": "PASS",
+  "overfull_boxes": 0,
+  "remaining_warnings": "underfull boxes; no undefined citations, missing glyphs or font substitutions",
+  "scope": "typography and equivalent prose edits; no exhaustive scans or independent proof review rerun"
+}

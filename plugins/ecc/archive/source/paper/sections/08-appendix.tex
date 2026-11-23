@@ -1,101 +1,23 @@
-\section{Auxiliary Proofs and Exact Dependencies}
-\label{app:algebra}
-This appendix expands the mathematical ingredients used in the main text. Theorems~\ref{thm:main} and~\ref{thm:42} retain their original unrestricted code domains. E1, E2, and E3 are published inputs as specified in Section~2; Proposition~\ref{prop:computed} is the external finite computation.
-
-\subsection{Puncturing, shortening, and parity}
-For a set $S$ of $t$ coordinates, puncturing has kernel consisting of codewords supported in $S$. If $t<d(C)$, the kernel is zero, so dimension is preserved. Every remaining word loses at most $t$ ones, establishing the lower bound $d(C)-t$.
-
-Let $\pi_S:C\to\F^S$ be coordinate projection, with rank $r$. The shortened code is the image of $\ker\pi_S$ after deleting $S$. This deletion is injective on the kernel because its members are zero on $S$. Rank-nullity gives dimension $\dim C-r$. No weight changes. For one coordinate, $r\le1$; if an exact smaller dimension is needed, choose a subspace of that dimension. This includes a coordinate that was identically zero before shortening.
-
-Parity extension is an injective linear map because its first $n$ coordinates recover its input. Its weight is $\wt(x)$ for even-weight $x$ and $\wt(x)+1$ for odd-weight $x$. The minimum distance is therefore at least the least even integer greater than or equal to the original lower bound. Puncturing any coordinate of an even $[44,10,\ge18]$ code preserves dimension and gives distance at least 17. This proves the equivalence used at the start of Section~\ref{sec:reduction} without assuming that the punctured coordinate was originally a parity coordinate.
-
-\subsection{A proof of the binary Griesmer bound}
-For completeness, the needed inequality can be obtained by induction on dimension. Let $c\in C$ have minimum weight $D$, and puncture the $D$ positions in its support. The kernel is $\langle c\rangle$: any other nonzero word supported there has weight at least $D$ and thus equals $c$. The residual image has dimension $k-1$. For a nonzero residual word, take its two preimages $x,x+c$. If the common weight outside the support is $b$ and the weight of $x$ inside is $a$, then
-\[
- a+b\ge D,\qquad D-a+b\ge D.
-\]
-Adding yields $b\ge\lceil D/2\rceil$. By induction,
-\[
- n-D\ge\sum_{j=0}^{k-2}\left\lceil\frac{\lceil D/2\rceil}{2^j}\right\rceil
-       =\sum_{j=1}^{k-1}\left\lceil\frac D{2^j}\right\rceil.
-\]
-The base $k=1$ is $n\ge D$. Monotonicity in $D$ gives \eqref{eq:griesmer} for a distance lower bound. In particular,
-\[
- g_2(8,19)=19+10+5+3+2+1+1+1=42,
- \qquad g_2(7,20)=20+10+5+3+2+1+1=42.
-\]
-Both exceed 41 and 40, respectively. E1 plus the first inequality rules out distance at least 18 at parameters $(41,8)$.
-
-\subsection{MacWilliams identity and the forcing polynomial}
-For any $y\in\F^{44}$, character orthogonality gives
-\[
- \sum_{x\in C}(-1)^{x\cdot y}=
- \begin{cases}2^{10},&y\in C^\perp,\\0,&y\notin C^\perp.\end{cases}
-\]
-In the second case, choose $x_0\in C$ with $x_0\cdot y=1$ and pair each $x$ with $x+x_0$. Summing over all $y$ of weight $j$, then interchanging two finite sums, yields
-\[
- 2^{10}B_j=\sum_{x\in C}\sum_{\wt(y)=j}(-1)^{x\cdot y}
- =\sum_{w=0}^{44} A_wK_j(w).
-\]
-For $z=44-2w$, the needed polynomials are
-\[
- K_0(w)=1,\quad K_2(w)=\frac{z^2-44}{2},\quad
- K_4(w)=\frac{z^4-256z^2+5544}{24}.
-\]
-Substitution or direct expansion proves \eqref{eq:polynomial}. The potential negative intervals of $P(w)$ are $(18,20)$ and $(24,26)$, neither of which contains an even integer. Thus $P(w)\ge0$ at every allowed nonzero weight. Since $A_0=B_0=1$ and $B_2=0$,
-\[
- \tfrac32\,2^{10}B_4+\tfrac{403}{2}\,2^{10}\ge224640,
- \qquad B_4\ge\frac{224640-206336}{1536}=\frac{143}{12}.
-\]
-This supplies the weight-four dual word without solving a linear program.
-
-\subsection{Full support and the extension normal form}
-The full-support claim uses the nondegenerate dot product on the message space $\F^{10}$. The shortened messages are $U^\perp$, where $U$ is the span of the four tail columns. A remaining column $v$ vanishes on all shortened messages if and only if $v\in(U^\perp)^\perp=U$. Because $\dim U=3$ and $v_4=v_1+v_2+v_3$, its nonzero vectors are exactly
-\[
- v_1,v_2,v_3,v_4,\quad v_1+v_2,v_1+v_3,v_2+v_3.
-\]
-Each possibility contradicts independence of every three original columns, as explained in Lemma~\ref{lem:mother}. The shortening is therefore genuinely in the full-support class covered by E2.
-
-The tail projection has kernel $K$ and image the dimension-three even subspace of $\F^4$. Choose lifts of $1001,0101,0011$ and prepend a basis for the kernel. This yields \eqref{eq:normal} by row operations, without restricting the code. For $s\in\F^3$ and $c\in K$, every word has the form
-\[
- \left(c+s_1a_1+s_2a_2+s_3a_3,\ s_1(1001)+s_2(0101)+s_3(0011)\right).
-\]
-For $s=0$ the weight is at least 18 unless the word is zero. For $\wt(s)=1$ or 2 the tail weight is 2, and for $s=(1,1,1)$ it is 4. This proves necessity and sufficiency of \eqref{eq:extension}. Replacing an $a_i$ by a vector in its coset amounts to adding kernel rows, so all conditions depend only on cosets. A coordinate permutation of $K$ extends by the identity on the tail and preserves every condition.
-
-\subsection{Unique even representatives and pair invariance}
-In systematic form, $(r_i)_{p_j}=\delta_{ij}$. Hence $N_K(x)$ in \eqref{eq:normalizer} is zero at every pivot and $N_K(x+r_i)=N_K(x)$. Conversely, $N_K(x)=0$ implies $x=\sum_i x_{p_i}r_i\in K$. The map induces a bijection between the quotient and its zero-pivot image. Since the rows of $K$ are even, it preserves parity. On the zero-pivot subspace, evenness is the nonzero equation that the 33 free bits sum to zero; its dimension is 32. All coset and pair distances are unchanged under this normalization because $N_K(x)+x\in K$ and the map is linear.
-
-\subsection{Distance normalization and the fifth target}
-The condition $d\ge1$ in Lemma~\ref{lem:normalize} is essential to its dimension argument. If one punctured all $D$ positions of a minimum word to obtain target zero, that word would enter the kernel. For positive target $d$, only $D-d<D$ positions are removed, so no nonzero word is lost. Zero padding is permitted because our original domain is the full class of binary linear codes.
-
-After parity extension of a hypothetical $[42,16,\ge13]$ code, two one-coordinate shortenings give dimension at least 14 and distance at least 14. Selecting a 14-dimensional subspace preserves that distance lower bound. Normalization then produces exact distance 14 at the same length and dimension. This argument discharges the exact-distance hypothesis of E3; no assertion about preserving a chosen minimum word under shortening is needed.
-
-\section{Certificate Semantics and Reproduction}
+\section{Reproduction}
 \label{app:reproduction}
-\subsection{Finite checks and completeness}
-A complete checker for a mother $K$ must verify three independent properties:
-\begin{enumerate}
-\item The supplied matrix defines an even, full-support $[40,7,18]$ code and matches the coordinates used by the scan.
-\item The list $F_K$ equals the entire set of even cosets at distance at least 16; membership and completeness are separate obligations.
-\item Every unordered pair of distinct entries has a message satisfying \eqref{eq:witness}.
-\end{enumerate}
-The two scans provide the second property with different systematic bases and enumeration orders. The pair checker reads exactly $\binom{|F_K|}{2}$ witnesses in the declared pair order. Its weight histogram, over all mothers, is
-\[
-\begin{array}{c|rrrrrrr}
-\text{rejection weight}&2&4&6&8&10&12&14\\\hline
-\text{count}&186172&922339&4503729&16924956&61595955&171053508&363867130.
-\end{array}
-\]
-These counts sum to 619,053,789. A message value outside $0,\ldots,127$, a missing or trailing record, a wrong matrix binding, or weight at least 16 is a verification failure.
+\subsection{Portable reproduction materials}
+The reproduction package is public at \url{\repobase}. It supplies the literal catalogue matrices; 172 systematic input files and coordinate permutations; all 429,024 accepted representatives; both original C++ scanners; the original pair-graph checker and witness-replay checker; and both pinned Lean source projects. The native source files are copied without modification. A dependency-free Python check validates matrices, input bindings, the polynomial \eqref{eq:polynomial}, and recorded cardinalities. A separate \texttt{pynauty} checker verifies coordinate inequivalence.
 
-\subsection{What is supplied with this draft}
-The accompanying data directory supplies the literal mother matrices, complete per-case coverage metadata, historical pair-replay summary, and lower generators. A dependency-free script recomputes all lower spectra, mother parameters, the forcing-polynomial identity at every integer weight, and coverage counts. A separate catalogue check uses graph canonicalization for pairwise inequivalence. The local evidence map identifies the existing full scan outputs and the approximately 1.68 GB of pair-witness streams; these large streams are not embedded in the compact manuscript-source archive. Historical absolute paths in metadata are resolved against the current project root, with original records preserved.
+The entry point \repolink{scripts/reproduce\_case.py} builds the two scanners, re-enumerates both complete $2^{32}$ domains for a selected catalogue code, compares their outputs with each other and with the archived list, and recomputes every pair distance. It accepts only complete runs and checks for a pair graph without edges. By default it prints the plan; execution requires \texttt{--run}. Repeating it for indices 0 through 171 reproduces Proposition~\ref{prop:computed} from the supplied finite inputs. It requires Python~3.10 or later and a C++17 compiler.
 
-During manuscript preparation, we rebuilt both Lean projects and reran their audits, re-enumerated every lower-bound matrix, rechecked all mother parameters and pairwise inequivalence, compared both saved accepted sets with their coordinate bindings, and replayed all 619,053,789 pair witnesses. All these checks passed. The validation log distinguishes these new checks from the original full-domain scans. Rebuilding the Lean projects or rechecking matrix spectra does not re-execute the $172\cdot2^{32}$ coset domains. Replaying all saved pair witnesses likewise does not certify that a saved list is exhaustive. Reproduction commands make these scopes explicit.
+The approximately 1.68 GB of historical pair-witness streams are not part of the package. They are not needed to regenerate the pair graphs with the supplied checker. Replaying those streams is a distinct and cheaper verification path; it cannot establish completeness of the supplied accepted lists.
+
+\subsection{Verification record}
+On 2026-11-03, both original Lean projects were rebuilt and their audits passed. All lower-bound matrices and catalogue parameters were rechecked, the 172 colored graphs were distinguished, both saved accepted sets were compared with their coordinate bindings, and all 619,053,789 pair witnesses were replayed successfully. A further check of the portable entry point fully regenerated cases 0 and 171 with both scanners and recomputed their pair graphs. The resulting list sizes were 668 and 3,785, and both pair graphs were empty. These two end-to-end runs validate the packaging; the remaining complete-domain scans retain their original run records.
 
 \section{Formal Interfaces and Imported Facts}
 \label{app:formal}
-The first project exposes the following theorem. Names are reproduced verbatim; line breaks below are typographical.
+The formal developments use Lean~4.34.1 \citep{lean2021} and pinned mathlib \citep{mathlib2020}. The first formalizes parity extension, puncturing, shortening, the Griesmer argument, the MacWilliams calculation, the full-support reduction, quotient normalization, classification coverage, and the corollaries. In the first project, all 172 catalogue matrices and the lower-bound generators for the $(43,10)$, $(44,10)$, and $(44,11)$ entries are connected to the abstract definitions and checked by kernel evaluation. The $[42,16,12]$ lower-bound witness is checked by exhaustive Python enumeration; the separate Lean project for length 42 formalizes the upper-bound reduction.
+
+The audited theorem dependencies contain the usual Lean axioms \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}, with no \texttt{sorryAx}. Explicit hypotheses do not appear in this axiom list. Consequently, a clean axiom audit verifies the deductions but does not discharge E1--E3, catalogue inequivalence, or the exhaustive computations. A finer interface expands the scan and certificate assumptions. The exact interfaces follow.
+
+\subsection{Theorem interfaces}
+The first project exposes the following theorem. Declaration names are exact. Types below abbreviate namespace qualification and use ASCII notation for readability; the compilable sources are in \repolink{formal/ecc43}.
 \begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true]
 ECC.mainClaim_of_external_results
   (hE1 : PublishedNonexistence41)
@@ -104,9 +26,9 @@ ECC.mainClaim_of_external_results
   (hComputed : forall i : Fin 172, PairIncompatible (catalogueCode i))
   : MainClaim
 \end{lstlisting}
-Here \texttt{MainClaim} means nonexistence of an actual dimension-ten subspace of $\F^{43}$ with every nonzero word of weight at least 17. E1 excludes exact $[41,8,18]$; E2 bounds the number of full-support exact $[40,7,18]$ classes. The theorem proves the connection from these hypotheses to arbitrary target codes, including the full-support reduction and actual matrix catalogue. No unproved ``catalogue reduction'' parameter remains in this final interface.
+Here \texttt{MainClaim} means nonexistence of an actual dimension-ten subspace of $\F^{43}$ with every nonzero word of weight at least 17. E1 excludes exact $[41,8,18]$; E2 bounds the number of full-support exact $[40,7,18]$ classes. The theorem proves the connection from these hypotheses to arbitrary target codes, including the full-support reduction and the actual matrix catalogue. In the Lean interface, \texttt{PairIncompatible} quantifies over even vectors $a,b$ with $\dist_K(a),\dist_K(b)\ge16$. Proposition~\ref{prop:computed} covers distinct cosets; for equal cosets, $a+b\in K$ gives $\dist_K(a+b)=0$, which discharges the remaining case. No unproved ``catalogue reduction'' hypothesis remains in this final interface.
 
-The corollary interface is \texttt{ECC.four\_table\_consequences\_of\_external\_results}. Its conclusion combines the three exact entries for $(43,10),(44,10),(44,11)$ with existence of $[45,11,\ge16]$ and nonexistence of $[45,11,\ge18]$. Kernel checks of packed matrices use \texttt{decide +kernel}. The exhaustive coset scans and graph canonicalization are external to these kernel computations.
+The corollary interface is \texttt{ECC.four\_table\_consequences\_of\_external\_results}. Its conclusion combines the three exact entries for $(43,10)$, $(44,10)$, and $(44,11)$ with existence of $\codege{45}{11}{16}$ and nonexistence of $\codege{45}{11}{18}$. Kernel checks of packed matrices use \texttt{decide +kernel}. The exhaustive coset scans and graph canonicalization are external to these kernel computations.
 
 The second project exposes
 \begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true]
@@ -115,9 +37,9 @@ ECC42.reduction_42_16_to_41_14
 ECC42.nonexistence_of_proposition2
   : Proposition2 -> not (CodeExists 42 16 13)
 \end{lstlisting}
-where \texttt{Proposition2} is the published exclusion of exact $[41,14,14]$. The imported proposition is an explicit argument, not an axiom declaration. Both developments use Lean 4.34.1; their pinned manifests are included with the corresponding local projects. Audit commands inspect both final theorem types and transitive axioms, since an axiom list alone cannot reveal outstanding theorem parameters.
+where \texttt{Proposition2} is the published exclusion of exact $[41,14,14]$. The imported proposition is an explicit argument, not an axiom declaration. Both developments use Lean 4.34.1; their pinned manifests are included as \repolink{formal/ecc43} and \repolink{formal/ecc42}. Audit commands inspect both final theorem types and transitive axioms, since an axiom list alone cannot reveal outstanding theorem hypotheses.
 
-\section{Source Provenance and AI Attribution}
-The published inputs are \citet{bouyukliev2000}, \citet{bouyukliev2001}, and Proposition~2 (printed page 179) of \citet{bouyuklieva2020}. The archived source assessment for E1 additionally locates Theorem~6.3 in Bouyukliev's doctoral thesis, and for E2 locates Table~6.2. These thesis numbering references are not journal theorem numbers. The 2025 hull paper provides a separate count cross-check. Historical classification internals are not presented as rerun computations.
+\section{Sources of the Classification Results}\label{app:sources}
+The published inputs are \citet{bouyukliev2000}, \citet{bouyukliev2001}, and Proposition~2 (printed page 179) of \citet{bouyuklieva2020}. The author's dissertation \citep{bouyukliev2008thesis} states E1 as Theorem~6.3 on printed page~147 (PDF page~149) and lists the 172 classes and allowed weights in Table~6.2 on printed page~158 (PDF page~160). These thesis numbering references are not journal theorem numbers. The 2025 hull paper \citep{bouyuklieva2025} provides a separate count cross-check. The classification computations underlying these results were not rerun.
 
-The provenance records for the AI interventions retain original responses, subsequent actions, and reconciliation notes. The early Gemini profiling suggestion is connected to the native-filter experiment; the Grok completeness request is connected to the second full scan and set comparison. Later reviews are recorded as reviews of already assembled evidence. Model agreement is not included among the hypotheses of either mathematical theorem. The local record permits these specific attributions, but does not support a percentage allocation of the proof to humans or models, or a controlled comparison among systems.
+The historical intervals in Table~\ref{tab:history} were read directly from Appendix~I of \citet{verhoeff1985} (table block 1,0) and from Table~I, column~1, printed page~665 of \citet{brouwer1993}. The online intervals and derivation chains were read from the pages of \citet{grasslTables} for the five parameter pairs on 3~November~2026.

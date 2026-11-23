@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "scope": "all formal theorem/lemma/proposition/corollary/proof environments unchanged modulo whitespace; moved main theorem retained",
+  "matched_blocks": 14
+}

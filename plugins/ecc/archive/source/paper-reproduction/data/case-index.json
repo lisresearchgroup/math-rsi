@@ -1,0 +1,1034 @@
+[
+  {
+    "index": 0,
+    "name": "codetables",
+    "F": 668,
+    "pairs": 222778
+  },
+  {
+    "index": 1,
+    "name": "qc42_signature001",
+    "F": 833,
+    "pairs": 346528
+  },
+  {
+    "index": 2,
+    "name": "qc42_equivalence_class002",
+    "F": 795,
+    "pairs": 315615
+  },
+  {
+    "index": 3,
+    "name": "qc42_signature002",
+    "F": 844,
+    "pairs": 355746
+  },
+  {
+    "index": 4,
+    "name": "qc42_newclass004",
+    "F": 819,
+    "pairs": 334971
+  },
+  {
+    "index": 5,
+    "name": "qc42_newclass005",
+    "F": 1334,
+    "pairs": 889111
+  },
+  {
+    "index": 6,
+    "name": "qc42_newclass006",
+    "F": 1355,
+    "pairs": 917335
+  },
+  {
+    "index": 7,
+    "name": "qc42_newclass007",
+    "F": 867,
+    "pairs": 375411
+  },
+  {
+    "index": 8,
+    "name": "catalog75_008",
+    "F": 2578,
+    "pairs": 3321753
+  },
+  {
+    "index": 9,
+    "name": "catalog75_009",
+    "F": 3930,
+    "pairs": 7720485
+  },
+  {
+    "index": 10,
+    "name": "catalog75_010",
+    "F": 2537,
+    "pairs": 3216916
+  },
+  {
+    "index": 11,
+    "name": "catalog75_011",
+    "F": 2489,
+    "pairs": 3096316
+  },
+  {
+    "index": 12,
+    "name": "catalog75_012",
+    "F": 1950,
+    "pairs": 1900275
+  },
+  {
+    "index": 13,
+    "name": "catalog75_013",
+    "F": 1897,
+    "pairs": 1798356
+  },
+  {
+    "index": 14,
+    "name": "catalog75_014",
+    "F": 4037,
+    "pairs": 8146666
+  },
+  {
+    "index": 15,
+    "name": "catalog75_015",
+    "F": 3813,
+    "pairs": 7267578
+  },
+  {
+    "index": 16,
+    "name": "catalog75_016",
+    "F": 4015,
+    "pairs": 8058105
+  },
+  {
+    "index": 17,
+    "name": "catalog75_017",
+    "F": 4093,
+    "pairs": 8374278
+  },
+  {
+    "index": 18,
+    "name": "catalog75_018",
+    "F": 2575,
+    "pairs": 3314025
+  },
+  {
+    "index": 19,
+    "name": "catalog75_019",
+    "F": 4022,
+    "pairs": 8086231
+  },
+  {
+    "index": 20,
+    "name": "catalog75_020",
+    "F": 4223,
+    "pairs": 8914753
+  },
+  {
+    "index": 21,
+    "name": "catalog75_021",
+    "F": 998,
+    "pairs": 497503
+  },
+  {
+    "index": 22,
+    "name": "catalog75_022",
+    "F": 2036,
+    "pairs": 2071630
+  },
+  {
+    "index": 23,
+    "name": "catalog75_023",
+    "F": 3943,
+    "pairs": 7771653
+  },
+  {
+    "index": 24,
+    "name": "catalog75_024",
+    "F": 2455,
+    "pairs": 3012285
+  },
+  {
+    "index": 25,
+    "name": "catalog75_025",
+    "F": 4084,
+    "pairs": 8337486
+  },
+  {
+    "index": 26,
+    "name": "catalog75_026",
+    "F": 4031,
+    "pairs": 8122465
+  },
+  {
+    "index": 27,
+    "name": "catalog75_027",
+    "F": 2505,
+    "pairs": 3136260
+  },
+  {
+    "index": 28,
+    "name": "catalog75_028",
+    "F": 3944,
+    "pairs": 7775596
+  },
+  {
+    "index": 29,
+    "name": "catalog75_029",
+    "F": 1371,
+    "pairs": 939135
+  },
+  {
+    "index": 30,
+    "name": "catalog75_030",
+    "F": 4032,
+    "pairs": 8126496
+  },
+  {
+    "index": 31,
+    "name": "catalog75_031",
+    "F": 2554,
+    "pairs": 3260181
+  },
+  {
+    "index": 32,
+    "name": "catalog75_032",
+    "F": 2505,
+    "pairs": 3136260
+  },
+  {
+    "index": 33,
+    "name": "catalog75_033",
+    "F": 2264,
+    "pairs": 2561716
+  },
+  {
+    "index": 34,
+    "name": "catalog75_034",
+    "F": 1908,
+    "pairs": 1819278
+  },
+  {
+    "index": 35,
+    "name": "catalog75_035",
+    "F": 2519,
+    "pairs": 3171421
+  },
+  {
+    "index": 36,
+    "name": "catalog75_036",
+    "F": 3888,
+    "pairs": 7556328
+  },
+  {
+    "index": 37,
+    "name": "catalog75_037",
+    "F": 2551,
+    "pairs": 3252525
+  },
+  {
+    "index": 38,
+    "name": "catalog75_038",
+    "F": 2502,
+    "pairs": 3128751
+  },
+  {
+    "index": 39,
+    "name": "catalog75_039",
+    "F": 971,
+    "pairs": 470935
+  },
+  {
+    "index": 40,
+    "name": "catalog75_040",
+    "F": 4062,
+    "pairs": 8247891
+  },
+  {
+    "index": 41,
+    "name": "catalog75_041",
+    "F": 2497,
+    "pairs": 3116256
+  },
+  {
+    "index": 42,
+    "name": "catalog75_042",
+    "F": 1658,
+    "pairs": 1373653
+  },
+  {
+    "index": 43,
+    "name": "catalog75_043",
+    "F": 1747,
+    "pairs": 1525131
+  },
+  {
+    "index": 44,
+    "name": "catalog75_044",
+    "F": 2537,
+    "pairs": 3216916
+  },
+  {
+    "index": 45,
+    "name": "catalog75_045",
+    "F": 2592,
+    "pairs": 3357936
+  },
+  {
+    "index": 46,
+    "name": "catalog75_046",
+    "F": 2652,
+    "pairs": 3515226
+  },
+  {
+    "index": 47,
+    "name": "catalog75_047",
+    "F": 2498,
+    "pairs": 3118753
+  },
+  {
+    "index": 48,
+    "name": "catalog75_048",
+    "F": 2507,
+    "pairs": 3141271
+  },
+  {
+    "index": 49,
+    "name": "catalog75_049",
+    "F": 1353,
+    "pairs": 914628
+  },
+  {
+    "index": 50,
+    "name": "catalog75_050",
+    "F": 1741,
+    "pairs": 1514670
+  },
+  {
+    "index": 51,
+    "name": "catalog75_051",
+    "F": 1816,
+    "pairs": 1648020
+  },
+  {
+    "index": 52,
+    "name": "catalog75_052",
+    "F": 2584,
+    "pairs": 3337236
+  },
+  {
+    "index": 53,
+    "name": "catalog75_053",
+    "F": 1396,
+    "pairs": 973710
+  },
+  {
+    "index": 54,
+    "name": "catalog75_054",
+    "F": 2552,
+    "pairs": 3255076
+  },
+  {
+    "index": 55,
+    "name": "catalog75_055",
+    "F": 1327,
+    "pairs": 879801
+  },
+  {
+    "index": 56,
+    "name": "catalog75_056",
+    "F": 1695,
+    "pairs": 1435665
+  },
+  {
+    "index": 57,
+    "name": "catalog75_057",
+    "F": 1633,
+    "pairs": 1332528
+  },
+  {
+    "index": 58,
+    "name": "catalog75_058",
+    "F": 1686,
+    "pairs": 1420455
+  },
+  {
+    "index": 59,
+    "name": "catalog75_059",
+    "F": 1542,
+    "pairs": 1188111
+  },
+  {
+    "index": 60,
+    "name": "catalog75_060",
+    "F": 1706,
+    "pairs": 1454365
+  },
+  {
+    "index": 61,
+    "name": "catalog75_061",
+    "F": 2280,
+    "pairs": 2598060
+  },
+  {
+    "index": 62,
+    "name": "catalog75_062",
+    "F": 1082,
+    "pairs": 584821
+  },
+  {
+    "index": 63,
+    "name": "catalog75_063",
+    "F": 1794,
+    "pairs": 1608321
+  },
+  {
+    "index": 64,
+    "name": "catalog75_064",
+    "F": 2471,
+    "pairs": 3051685
+  },
+  {
+    "index": 65,
+    "name": "catalog75_065",
+    "F": 2462,
+    "pairs": 3029491
+  },
+  {
+    "index": 66,
+    "name": "catalog75_066",
+    "F": 2337,
+    "pairs": 2729616
+  },
+  {
+    "index": 67,
+    "name": "catalog75_067",
+    "F": 2481,
+    "pairs": 3076440
+  },
+  {
+    "index": 68,
+    "name": "catalog75_068",
+    "F": 2444,
+    "pairs": 2985346
+  },
+  {
+    "index": 69,
+    "name": "catalog75_069",
+    "F": 4022,
+    "pairs": 8086231
+  },
+  {
+    "index": 70,
+    "name": "catalog75_070",
+    "F": 4054,
+    "pairs": 8215431
+  },
+  {
+    "index": 71,
+    "name": "catalog75_071",
+    "F": 2765,
+    "pairs": 3821230
+  },
+  {
+    "index": 72,
+    "name": "catalog75_072",
+    "F": 4036,
+    "pairs": 8142630
+  },
+  {
+    "index": 73,
+    "name": "catalog75_073",
+    "F": 3022,
+    "pairs": 4564731
+  },
+  {
+    "index": 74,
+    "name": "catalog75_074",
+    "F": 1957,
+    "pairs": 1913946
+  },
+  {
+    "index": 75,
+    "name": "catalog163_075",
+    "F": 3260,
+    "pairs": 5312170
+  },
+  {
+    "index": 76,
+    "name": "catalog163_076",
+    "F": 2510,
+    "pairs": 3148795
+  },
+  {
+    "index": 77,
+    "name": "catalog163_077",
+    "F": 2458,
+    "pairs": 3019653
+  },
+  {
+    "index": 78,
+    "name": "catalog163_078",
+    "F": 2211,
+    "pairs": 2443155
+  },
+  {
+    "index": 79,
+    "name": "catalog163_079",
+    "F": 1674,
+    "pairs": 1400301
+  },
+  {
+    "index": 80,
+    "name": "catalog163_080",
+    "F": 2538,
+    "pairs": 3219453
+  },
+  {
+    "index": 81,
+    "name": "catalog163_081",
+    "F": 2061,
+    "pairs": 2122830
+  },
+  {
+    "index": 82,
+    "name": "catalog163_082",
+    "F": 2498,
+    "pairs": 3118753
+  },
+  {
+    "index": 83,
+    "name": "catalog163_083",
+    "F": 2170,
+    "pairs": 2353365
+  },
+  {
+    "index": 84,
+    "name": "catalog163_084",
+    "F": 2573,
+    "pairs": 3308878
+  },
+  {
+    "index": 85,
+    "name": "catalog163_085",
+    "F": 2444,
+    "pairs": 2985346
+  },
+  {
+    "index": 86,
+    "name": "catalog163_086",
+    "F": 3929,
+    "pairs": 7716556
+  },
+  {
+    "index": 87,
+    "name": "catalog163_087",
+    "F": 2167,
+    "pairs": 2346861
+  },
+  {
+    "index": 88,
+    "name": "catalog163_088",
+    "F": 1271,
+    "pairs": 807085
+  },
+  {
+    "index": 89,
+    "name": "catalog163_089",
+    "F": 2454,
+    "pairs": 3009831
+  },
+  {
+    "index": 90,
+    "name": "catalog163_090",
+    "F": 2564,
+    "pairs": 3285766
+  },
+  {
+    "index": 91,
+    "name": "catalog163_091",
+    "F": 2484,
+    "pairs": 3083886
+  },
+  {
+    "index": 92,
+    "name": "catalog163_092",
+    "F": 3958,
+    "pairs": 7830903
+  },
+  {
+    "index": 93,
+    "name": "catalog163_093",
+    "F": 3987,
+    "pairs": 7946091
+  },
+  {
+    "index": 94,
+    "name": "catalog163_094",
+    "F": 4047,
+    "pairs": 8187081
+  },
+  {
+    "index": 95,
+    "name": "catalog163_095",
+    "F": 1380,
+    "pairs": 951510
+  },
+  {
+    "index": 96,
+    "name": "catalog163_096",
+    "F": 4002,
+    "pairs": 8006001
+  },
+  {
+    "index": 97,
+    "name": "catalog163_097",
+    "F": 3090,
+    "pairs": 4772505
+  },
+  {
+    "index": 98,
+    "name": "catalog163_098",
+    "F": 4053,
+    "pairs": 8211378
+  },
+  {
+    "index": 99,
+    "name": "catalog163_099",
+    "F": 4070,
+    "pairs": 8280415
+  },
+  {
+    "index": 100,
+    "name": "catalog163_100",
+    "F": 2586,
+    "pairs": 3342405
+  },
+  {
+    "index": 101,
+    "name": "catalog163_101",
+    "F": 3978,
+    "pairs": 7910253
+  },
+  {
+    "index": 102,
+    "name": "catalog163_102",
+    "F": 1327,
+    "pairs": 879801
+  },
+  {
+    "index": 103,
+    "name": "catalog163_103",
+    "F": 2535,
+    "pairs": 3211845
+  },
+  {
+    "index": 104,
+    "name": "catalog163_104",
+    "F": 2614,
+    "pairs": 3415191
+  },
+  {
+    "index": 105,
+    "name": "catalog163_105",
+    "F": 2493,
+    "pairs": 3106278
+  },
+  {
+    "index": 106,
+    "name": "catalog163_106",
+    "F": 2434,
+    "pairs": 2960961
+  },
+  {
+    "index": 107,
+    "name": "catalog163_107",
+    "F": 3959,
+    "pairs": 7834861
+  },
+  {
+    "index": 108,
+    "name": "catalog163_108",
+    "F": 4021,
+    "pairs": 8082210
+  },
+  {
+    "index": 109,
+    "name": "catalog163_109",
+    "F": 1673,
+    "pairs": 1398628
+  },
+  {
+    "index": 110,
+    "name": "catalog163_110",
+    "F": 4207,
+    "pairs": 8847321
+  },
+  {
+    "index": 111,
+    "name": "catalog163_111",
+    "F": 3927,
+    "pairs": 7708701
+  },
+  {
+    "index": 112,
+    "name": "catalog163_112",
+    "F": 3957,
+    "pairs": 7826946
+  },
+  {
+    "index": 113,
+    "name": "catalog163_113",
+    "F": 4078,
+    "pairs": 8313003
+  },
+  {
+    "index": 114,
+    "name": "catalog163_114",
+    "F": 2023,
+    "pairs": 2045253
+  },
+  {
+    "index": 115,
+    "name": "catalog163_115",
+    "F": 913,
+    "pairs": 416328
+  },
+  {
+    "index": 116,
+    "name": "catalog163_116",
+    "F": 1617,
+    "pairs": 1306536
+  },
+  {
+    "index": 117,
+    "name": "catalog163_117",
+    "F": 1999,
+    "pairs": 1997001
+  },
+  {
+    "index": 118,
+    "name": "catalog163_118",
+    "F": 3010,
+    "pairs": 4528545
+  },
+  {
+    "index": 119,
+    "name": "catalog163_119",
+    "F": 1684,
+    "pairs": 1417086
+  },
+  {
+    "index": 120,
+    "name": "catalog163_120",
+    "F": 973,
+    "pairs": 472878
+  },
+  {
+    "index": 121,
+    "name": "catalog163_121",
+    "F": 2531,
+    "pairs": 3201715
+  },
+  {
+    "index": 122,
+    "name": "catalog163_122",
+    "F": 1325,
+    "pairs": 877150
+  },
+  {
+    "index": 123,
+    "name": "catalog163_123",
+    "F": 2371,
+    "pairs": 2809635
+  },
+  {
+    "index": 124,
+    "name": "catalog163_124",
+    "F": 3968,
+    "pairs": 7870528
+  },
+  {
+    "index": 125,
+    "name": "catalog163_125",
+    "F": 2654,
+    "pairs": 3520531
+  },
+  {
+    "index": 126,
+    "name": "catalog163_126",
+    "F": 1605,
+    "pairs": 1287210
+  },
+  {
+    "index": 127,
+    "name": "catalog163_127",
+    "F": 1590,
+    "pairs": 1263255
+  },
+  {
+    "index": 128,
+    "name": "catalog163_128",
+    "F": 1990,
+    "pairs": 1979055
+  },
+  {
+    "index": 129,
+    "name": "catalog163_129",
+    "F": 4033,
+    "pairs": 8130528
+  },
+  {
+    "index": 130,
+    "name": "catalog163_130",
+    "F": 2517,
+    "pairs": 3166386
+  },
+  {
+    "index": 131,
+    "name": "catalog163_131",
+    "F": 1666,
+    "pairs": 1386945
+  },
+  {
+    "index": 132,
+    "name": "catalog163_132",
+    "F": 1216,
+    "pairs": 738720
+  },
+  {
+    "index": 133,
+    "name": "catalog163_133",
+    "F": 1524,
+    "pairs": 1160526
+  },
+  {
+    "index": 134,
+    "name": "catalog163_134",
+    "F": 3990,
+    "pairs": 7958055
+  },
+  {
+    "index": 135,
+    "name": "catalog163_135",
+    "F": 2557,
+    "pairs": 3267846
+  },
+  {
+    "index": 136,
+    "name": "catalog163_136",
+    "F": 3937,
+    "pairs": 7748016
+  },
+  {
+    "index": 137,
+    "name": "catalog163_137",
+    "F": 2003,
+    "pairs": 2005003
+  },
+  {
+    "index": 138,
+    "name": "catalog163_138",
+    "F": 2546,
+    "pairs": 3239785
+  },
+  {
+    "index": 139,
+    "name": "catalog163_139",
+    "F": 4089,
+    "pairs": 8357916
+  },
+  {
+    "index": 140,
+    "name": "catalog163_140",
+    "F": 4361,
+    "pairs": 9506980
+  },
+  {
+    "index": 141,
+    "name": "catalog163_141",
+    "F": 2522,
+    "pairs": 3178981
+  },
+  {
+    "index": 142,
+    "name": "catalog163_142",
+    "F": 1956,
+    "pairs": 1911990
+  },
+  {
+    "index": 143,
+    "name": "catalog163_143",
+    "F": 1708,
+    "pairs": 1457778
+  },
+  {
+    "index": 144,
+    "name": "catalog163_144",
+    "F": 1330,
+    "pairs": 883785
+  },
+  {
+    "index": 145,
+    "name": "catalog163_145",
+    "F": 1640,
+    "pairs": 1343980
+  },
+  {
+    "index": 146,
+    "name": "catalog163_146",
+    "F": 2931,
+    "pairs": 4293915
+  },
+  {
+    "index": 147,
+    "name": "catalog163_147",
+    "F": 3008,
+    "pairs": 4522528
+  },
+  {
+    "index": 148,
+    "name": "catalog163_148",
+    "F": 2525,
+    "pairs": 3186550
+  },
+  {
+    "index": 149,
+    "name": "catalog163_149",
+    "F": 1762,
+    "pairs": 1551441
+  },
+  {
+    "index": 150,
+    "name": "catalog163_150",
+    "F": 3768,
+    "pairs": 7097028
+  },
+  {
+    "index": 151,
+    "name": "catalog163_151",
+    "F": 2676,
+    "pairs": 3579150
+  },
+  {
+    "index": 152,
+    "name": "catalog163_152",
+    "F": 1281,
+    "pairs": 819840
+  },
+  {
+    "index": 153,
+    "name": "catalog163_153",
+    "F": 2756,
+    "pairs": 3796390
+  },
+  {
+    "index": 154,
+    "name": "catalog163_154",
+    "F": 1702,
+    "pairs": 1447551
+  },
+  {
+    "index": 155,
+    "name": "catalog163_155",
+    "F": 1718,
+    "pairs": 1474903
+  },
+  {
+    "index": 156,
+    "name": "catalog163_156",
+    "F": 2332,
+    "pairs": 2717946
+  },
+  {
+    "index": 157,
+    "name": "catalog163_157",
+    "F": 2189,
+    "pairs": 2394766
+  },
+  {
+    "index": 158,
+    "name": "catalog163_158",
+    "F": 1943,
+    "pairs": 1886653
+  },
+  {
+    "index": 159,
+    "name": "catalog163_159",
+    "F": 2566,
+    "pairs": 3290895
+  },
+  {
+    "index": 160,
+    "name": "catalog163_160",
+    "F": 1673,
+    "pairs": 1398628
+  },
+  {
+    "index": 161,
+    "name": "catalog163_161",
+    "F": 2936,
+    "pairs": 4308580
+  },
+  {
+    "index": 162,
+    "name": "catalog163_162",
+    "F": 2399,
+    "pairs": 2876401
+  },
+  {
+    "index": 163,
+    "name": "catalog_after163_163",
+    "F": 979,
+    "pairs": 478731
+  },
+  {
+    "index": 164,
+    "name": "catalog_after163_164",
+    "F": 983,
+    "pairs": 482653
+  },
+  {
+    "index": 165,
+    "name": "catalog_after163_165",
+    "F": 2570,
+    "pairs": 3301165
+  },
+  {
+    "index": 166,
+    "name": "catalog_after163_166",
+    "F": 2700,
+    "pairs": 3643650
+  },
+  {
+    "index": 167,
+    "name": "catalog_after163_167",
+    "F": 1981,
+    "pairs": 1961190
+  },
+  {
+    "index": 168,
+    "name": "catalog_after163_168",
+    "F": 3588,
+    "pairs": 6435078
+  },
+  {
+    "index": 169,
+    "name": "catalog_after163_169",
+    "F": 546,
+    "pairs": 148785
+  },
+  {
+    "index": 170,
+    "name": "new171_gauss0",
+    "F": 2514,
+    "pairs": 3158841
+  },
+  {
+    "index": 171,
+    "name": "new172_hull14",
+    "F": 3785,
+    "pairs": 7161220
+  }
+]

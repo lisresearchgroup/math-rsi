@@ -1,0 +1,12 @@
+import ECC.Coset
+
+#check ECC.no_standardExtension_of_pairIncompatible
+#check ECC.pairIncompatible_of_projection_certificates
+#check ECC.savedPairWitnesses_of_indexed
+#check ECC.complete_of_rejection_witnesses
+#check ECC.no_standardExtension_of_projection_certificates
+#print axioms ECC.no_standardExtension_of_pairIncompatible
+#print axioms ECC.pairIncompatible_of_projection_certificates
+#print axioms ECC.savedPairWitnesses_of_indexed
+#print axioms ECC.complete_of_rejection_witnesses
+#print axioms ECC.no_standardExtension_of_projection_certificates

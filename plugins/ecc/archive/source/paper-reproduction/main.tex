@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\usepackage[preprint]{icml2026}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage[capitalize,noabbrev]{cleveref}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\F}{\mathbb F_2}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\dist}{\delta}
+\newcommand{\dopt}{d_2}
+\newcommand{\E}{\mathcal E}
+% Keep a code's distance-bound entry compact and prevent line breaks inside parameters.
+\newcommand{\codege}[3]{\mbox{\ensuremath{[#1,#2,{\ge}\,#3]}}}
+% Retain standard relation spacing, without justification-dependent stretching.
+\AtBeginDocument{\thickmuskip=5mu\relax}
+\newcommand{\repobase}{https://github.com/lisresearchgroup/math-rsi/tree/main/plugins/ecc/archive/source/paper-reproduction}
+\newcommand{\repolink}[1]{\href{\repobase/#1}{\texttt{#1}}}
+\icmltitlerunning{Nonexistence Results for Binary Linear Codes}
+\icmlkeywords{binary linear codes, minimum distance, nonexistence, classification, exhaustive enumeration}
+\renewcommand{\today}{November 18, 2026}
+% The official style sets an ICML proceedings subject; this is a public preprint.
+\hypersetup{pdfsubject={Preprint}}
+
+
+% The title block carries author names only; emit the preprint notice alone.
+\makeatletter
+\renewcommand{\printAffiliationsAndNotice}[1]{%
+  \global\icml@noticeprintedtrue
+  {\let\thefootnote\relax\footnotetext{\hspace*{-\footnotesep}\Notice@String}}%
+}
+\makeatother
+
+\begin{document}
+\twocolumn[
+\icmltitle{Nonexistence Results for\ Five Binary Linear Code Parameters}
+\begin{icmlauthorlist}
+\icmlauthor{Zuhao Zhang}{}\quad
+\icmlauthor{Ruofeng Yang}{}\quad
+\icmlauthor{Haitong Ma}{}\quad
+\icmlauthor{Rasul Tutunov}{}\\
+\icmlauthor{Dimitris}{}\quad
+\icmlauthor{Zhinuo Zhou}{}\quad
+\icmlauthor{Haitham Bou Ammar}{}\\
+\icmlauthor{Qiaosheng Zhang}{}\quad
+\icmlauthor{Jun Wang}{}\quad
+\icmlauthor{Shuai Li}{}
+\end{icmlauthorlist}
+\vskip 0.3in
+]
+\printAffiliationsAndNotice{}
+\begin{abstract}
+We prove that a binary linear code of length 43, dimension 10, and minimum distance at least 17 does not exist. The MacWilliams identities force a codeword of weight four in the dual code, and shortening on its support reduces the problem to extensions of the 172 classified full-support $[40,7,18]$ codes. For each such code, a complete enumeration of its $2^{32}$ even cosets shows that any two distinct cosets at distance at least 16 have a sum at distance below 16, so the required extension does not exist. Two independent enumerations and an independent replay of all 619,053,789 pair rejections verify this finite step. Puncturing and shortening then exclude $\codege{44}{10}{18}$, $\codege{44}{11}{17}$, and $\codege{45}{11}{18}$ codes, and a reduction to the published nonexistence of $[41,14,14]$ codes excludes $\codege{42}{16}{13}$. Together with explicit constructions, these results determine four values of $d_2(n,k)$ for which only bounds have been recorded since at least 1985, and give $16\le d_2(45,11)\le17$.
+\end{abstract}
+\input{sections/01-introduction}
+\input{sections/02-related-work}
+\input{sections/03-preliminaries}
+\input{sections/04-reduction}
+\input{sections/05-computation}
+\input{sections/06-consequences}
+\input{sections/07-conclusion}
+\label{main:end}
+\clearpage
+\bibliography{references}
+\bibliographystyle{icml2026}
+\clearpage
+\appendix
+\onecolumn
+\input{sections/08-appendix}
+\input{sections/09-data}
+\section*{Acknowledgment of AI assistance}
+AI systems assisted with literature retrieval, proof exploration, implementation, verification design, and exposition. The provenance record in \repolink{provenance/ai-interventions.md} lists documented interventions and corrections. The proofs use the stated mathematical arguments, published classification results, and finite computations; model responses do not serve as proof certificates.
+\end{document}

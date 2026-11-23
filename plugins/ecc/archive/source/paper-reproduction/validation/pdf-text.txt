@@ -1,0 +1,2013 @@
+Nonexistence Results for Five Binary Linear Code Parameters
+Zuhao Zhang 1
+Ruofeng Yang 1
+Haitong Ma 1
+Rasul Tutunov 1
+Dimitris 1
+Zhinuo Zhou 1
+Haitham Bou Ammar 1
+Qiaosheng Zhang 1
+Jun Wang 1
+Shuai Li 2
+Abstract
+We prove that a binary linear code of length 43,
+dimension 10, and minimum distance at least 17
+does not exist. The MacWilliams identities force
+a dual word of weight four, and shortening on
+its support reduces the problem to extensions of
+the 172 classiﬁed full-support [40, 7, 18] codes.
+For each such code, a complete enumeration of
+its 232 even cosets shows that any two distinct
+cosets at distance at least 16 have a sum at dis-
+tance below 16, so the required extension does
+not exist. Two independent enumerations and an
+independent replay of all 619,053,789 pair rejec-
+tions verify this ﬁnite step. Puncturing and short-
+ening then exclude [44, 10, ≥18], [44, 11, ≥17],
+and [45, 11, ≥18] codes, and a reduction to the
+published nonexistence of [41, 14, 14] codes ex-
+cludes [42, 16, ≥13]. Together with explicit con-
+structions, these results determine four optimal
+minimum distances that tables of bounds have
+listed as intervals since at least 1985, and give
+16 ≤d2(45, 11) ≤17.
+1. Introduction
+For 1 ≤k ≤n, let d2(n, k) denote the largest minimum
+distance of a k-dimensional subspace of Fn
+2. Determining
+this function is one of the basic ﬁnite problems of coding
+theory. Its values for small parameters have been collected
+in tables for more than ﬁve decades: Helgert & Stinaff
+(1973) tabulated bounds for lengths below 128, and the
+tables were updated by Verhoeff (1987) and Brouwer &
+Verhoeff (1993). The online tables of Grassl (2007) con-
+tinue this effort. Outside the dimensions for which com-
+plete classiﬁcations are available, many entries are still in-
+tervals rather than exact values. Each improvement of an
+upper bound requires a nonexistence proof for a speciﬁc
+triple (n, k, d).
+1SII MathRSI Team 2The University of Hong Kong. Corre-
+spondence to: Shuai Li <shuaili@hku.hk>.
+Preprint. November 18, 2026.
+Table 1. Bounds on d2(n, k). The 1985 and 1993 columns are
+taken from Verhoeff (1985, Appendix I) and Brouwer & Verhoeff
+(1993, Table I); the online column is the record of Grassl (2007)
+retrieved on 3 November 2026. The (42, 16) entry follows from
+a published theorem; see Theorem 6.3.
+(n, k)
+1985
+1993
+Online
+This paper
+(43, 10)
+16–17
+16–17
+16–17
+16
+(44, 10)
+16–18
+17–18
+17–18
+17
+(44, 11)
+16–17
+16–17
+16–17
+16
+(45, 11)
+16–18
+16–18
+16–18
+16–17
+(42, 16)
+12–14
+12–13
+12–13
+12
+This paper settles four such entries and narrows a ﬁfth. All
+ﬁve parameter pairs already appear with unresolved inter-
+vals in Verhoeff’s 1985 report (Verhoeff, 1985), which pre-
+ceded the journal table of Verhoeff (1987). Table 1 com-
+pares the published intervals with our results.
+Between
+1985 and 1993 only two of these intervals were narrowed,
+and the 1993 intervals coincide with those in the online ta-
+bles retrieved on 3 November 2026.
+We use [n, k, d] for a binary linear code with minimum dis-
+tance exactly d, and [n, k, ≥d] when only a lower bound
+is speciﬁed. Zero and repeated generator columns are al-
+lowed. Our main result is the following.
+Theorem 1.1. There is no binary linear [43, 10, ≥17]
+code.
+Puncturing and shortening give three immediate conse-
+quences: binary linear [44, 10, ≥18], [44, 11, ≥17], and
+[45, 11, ≥18] codes do not exist.
+We also deduce the
+nonexistence of [42, 16, ≥13] codes from Proposition 2 of
+Bouyuklieva & Bouyukliev (2020). Together with the ex-
+plicit generators in Appendix D, these exclusions yield
+d2(43, 10) = 16,
+d2(44, 10) = 17,
+d2(44, 11) = 16,
+d2(42, 16) = 12,
+and 16 ≤d2(45, 11) ≤17.
+Contributions.
+• A structural reduction.
+A degree-four polynomial
+in the MacWilliams identities forces a dual word of
+1
+
+
+Nonexistence Results for Binary Linear Codes
+weight four in every hypothetical even [44, 10, ≥18]
+code.
+Shortening on its support produces a full-
+support [40, 7, 18] subcode, which places the problem
+inside the classiﬁcation of Bouyukliev & Jaffe (2001).
+• A coset-compatibility obstruction. An extension of a
+classiﬁed subcode to a hypothetical code is equivalent
+to a triangle in a graph on admissible even cosets. For
+each of the 172 classiﬁed codes, the even quotient has
+232 elements, and the graph turns out to have no edges
+at all.
+• Separated veriﬁcation obligations. Completeness of
+the admissible sets and rejection of every pair are ver-
+iﬁed separately: two independent complete enumera-
+tions agree on 429,024 admissible cosets, and an inde-
+pendent checker replays 619,053,789 pair witnesses.
+The deductive part is formalized in Lean 4, with the
+published classiﬁcation results and the ﬁnite computa-
+tion as explicit hypotheses.
+• Consequences. The main theorem yields three further
+exclusions. A short reduction to the published nonex-
+istence of [41, 14, 14] codes closes the (42, 16) entry;
+we claim no priority for this deduction.
+Outline of the proof.
+Parity extension takes a hypothet-
+ical [43, 10, ≥17] code to an even [44, 10, ≥18] code C.
+The exclusion of [41, 8, 18] codes (Bouyukliev et al., 2000)
+forces any three generator columns of C to be independent.
+A MacWilliams-identity argument then forces a weight-
+four word in C⊥. Shortening on its support gives an even,
+full-support [40, 7, 18] code K. Thus K belongs to one of
+the 172 classiﬁed equivalence classes.
+To extend K to C, one needs three distinct even cosets
+ai+K, each at distance at least 16 from K, whose pairwise
+sums also have distance at least 16. The even quotient has
+dimension 32. We enumerate it completely for every clas-
+siﬁed code and ﬁnd a stronger obstruction: no two distinct
+admissible cosets have an admissible sum. The extension
+is therefore impossible before the condition on the sum of
+all three cosets is even needed. The length-42 result instead
+follows from parity extension, two shortenings, and exact-
+distance normalization, using the published [41, 14, 14] ex-
+clusion.
+Organization.
+Section 2 reviews related work. Section 3
+collects elementary tools and the published classiﬁcation
+inputs. Section 4 proves the structural reduction, and Sec-
+tion 5 describes the ﬁnite computation and its veriﬁcation.
+Section 6 derives the remaining results, and Section 7 con-
+cludes. The appendices give reproduction details, formal
+interfaces, source locations, and explicit generators.
+2. Related Work
+Tables of bounds.
+Systematic tables of bounds on
+d2(n, k) go back to Helgert & Stinaff (1973). Verhoeff
+(1985) reconstructed and updated that table in a technical
+report, and journal updates followed in Verhoeff (1987)
+and Brouwer & Verhoeff (1993). The online tables main-
+tained by Grassl (2007) record the current lower and upper
+bounds together with construction and derivation chains.
+For the ﬁrst four parameter pairs in Table 1, the recorded
+upper-bound chains end at the nonexistence of [25, 8, 10]
+codes (Ytrehus & Helleseth, 1990). They propagate that
+result through parity extension, shortening, and residual-
+code bounds. Our results replace these chains by sharper
+bounds.
+The Griesmer bound and small dimensions.
+For ﬁxed
+k and d, the Griesmer bound (Griesmer, 1960) gives a
+lower bound g2(k, d) on the length of a binary linear
+[n, k, d] code. Baumert & McEliece (1973) showed that
+for each ﬁxed dimension the bound is attained for all suf-
+ﬁciently large d, so determining the minimum length for
+ﬁxed k is a ﬁnite problem.
+The minimum lengths for
+k ≤7 were determined by Baumert & McEliece (1973)
+and van Tilborg (1981), and the case k = 8 was completed
+by Bouyukliev et al. (2000). As a result, d2(n, k) is known
+for all k ≤8 (Kurz, 2021). In dimension nine, Kurz (2021)
+showed that the [46, 9, 20] code is unique and excluded
+[47, 10, 20] and [85, 9, 40] codes. Our main theorem con-
+cerns dimension ten; its reduction rests on the classiﬁcation
+for dimensions seven and eight.
+Classiﬁcation of linear codes.
+Exhaustive classiﬁcation
+up to equivalence is the main tool for nonexistence re-
+sults at moderate lengths. Kaski & Östergård (2006) give
+a general treatment of classiﬁcation algorithms for codes
+and designs.
+Jaffe (2000) classiﬁed the optimal binary
+linear codes of length at most 30.
+Bouyukliev & Jaffe
+(2001) classiﬁed optimal binary linear codes of dimension
+at most seven; their classiﬁcation supplies the 172 full-
+support [40, 7, 18] classes used here. Further classiﬁcation
+and nonexistence results for codes with prescribed mini-
+mum distance are given by Feulner (2014). Bouyukliev &
+Jacobsson (2011) classiﬁed all codes of minimum distance
+8 and codimension at most 14, and all codes of minimum
+distance 10 and codimension at most 18, and excluded
+[33, 18, 8] and [33, 14, 10] codes. Bouyukliev et al. (2021)
+developed classiﬁcation algorithms based on canonical aug-
+mentation and lattice-point enumeration. Bouyuklieva &
+Bouyukliev (2020) classify codes by extending their resid-
+uals; their Proposition 2 states that no [41, 14, 14] code ex-
+ists, which is the input for our (42, 16) result. Bouyuk-
+lieva & Dzhumalieva-Stoeva (2025) study the hulls of opti-
+mal codes, and their counts provide an independent consis-
+2
+
+
+Nonexistence Results for Binary Linear Codes
+tency check on our catalogue. In our computation, coordi-
+nate equivalence is tested through graph isomorphism with
+nauty (McKay & Piperno, 2014).
+Weight-distribution methods.
+The MacWilliams identi-
+ties (MacWilliams, 1963) relate the weight distributions
+of a code and its dual.
+Linear-programming arguments
+based on them are a standard source of upper bounds
+(MacWilliams & Sloane, 1977). Schrijver (2005) strength-
+ened such bounds for unrestricted binary codes using
+semideﬁnite programming.
+We use the identities differ-
+ently: a single nonnegative polynomial forces the existence
+of a dual word of weight four, which converts a nonex-
+istence question into an extension problem over a classi-
+ﬁed subcode. Residual-code arguments combined with the
+MacWilliams identities also appear in Kurz (2021).
+Computer-assisted nonexistence proofs.
+Large ﬁnite
+searches have settled several nonexistence questions in
+combinatorics; a prominent example is the nonexistence of
+a projective plane of order 10 (Lam et al., 1989). Such
+proofs are only as reliable as their enumeration. We there-
+fore separate the completeness of each enumeration from
+the validity of each rejection, cross-check completeness
+with two independent implementations, and replay every
+rejection with an independent checker. The deductive steps,
+as distinct from these computations, are formally checked.
+3. Preliminaries and Classiﬁcation Results
+3.1. Notation and elementary operations
+Write wt(x) for Hamming weight.
+For a positive-
+dimensional code C, let d(C) be its minimum nonzero
+weight. Coordinate equivalence means equality after a co-
+ordinate permutation. A code has full support if no coordi-
+nate is identically zero, and is even if all its words have
+even weight.
+We use the standard operations on codes
+(MacWilliams & Sloane, 1977); since several arguments
+depend on their exact effect on parameters, we record the
+precise statements.
+Puncturing deletes coordinates. For a set S of t coordi-
+nates, the kernel of puncturing consists of the codewords
+supported in S. If t < d(C), this kernel is zero, so punctur-
+ing is injective and preserves dimension. Every remaining
+word loses at most t ones, so the punctured code has dis-
+tance at least d(C) −t.
+Shortening on a coordinate set S ﬁrst restricts to words zero
+on S and then deletes S. Let πS : C →FS
+2 be the coordi-
+nate projection, of rank r. The shortened code is the image
+of ker πS after deleting S, and the deletion is injective on
+this kernel. By rank-nullity, shortening reduces dimension
+by exactly r and changes no weight; in particular, it does
+not reduce minimum distance. For one coordinate, r ≤1,
+which includes the case of a coordinate that is identically
+zero. When an exact smaller dimension is needed, we pass
+to a subspace of that dimension.
+Parity extension sends x to (x, ∑
+i xi). It is injective be-
+cause the ﬁrst n coordinates recover x. It preserves the
+weight of even words and adds one to the weight of odd
+words. Hence the extended code is even, and its minimum
+distance is at least the least even integer that is at least the
+original lower bound.
+3.2. The Griesmer bound
+The Griesmer bound (Griesmer, 1960) states that a binary
+linear [n, k, ≥d] code satisﬁes
+n ≥g2(k, d) :=
+k−1
+∑
+j=0
+⌈
+d/2j⌉
+.
+(1)
+For completeness, we recall the inductive argument. Let
+c ∈C have minimum weight D, and puncture the D posi-
+tions in its support. The kernel is ⟨c⟩: any other nonzero
+word supported there has weight at least D and thus equals
+c. The residual code therefore has dimension k −1. For
+a nonzero residual word, take its two preimages x and
+x + c. If their common weight outside the support is b
+and the weight of x inside the support is a, then a + b ≥D
+and D −a + b ≥D. Adding the two inequalities gives
+b ≥⌈D/2⌉. By induction,
+n −D ≥
+k−2
+∑
+j=0
+⌈⌈D/2⌉
+2j
+⌉
+=
+k−1
+∑
+j=1
+⌈D
+2j
+⌉
+,
+with base case n ≥D for k = 1. Monotonicity in D gives
+(1) for a distance lower bound. We use two values:
+g2(8, 19) = 42,
+g2(7, 20) = 42.
+3.3. Weight enumerators and the MacWilliams
+identities
+For a code C ⊆Fn
+2 of dimension k, let Aw and Bj count
+the words of weight w in C and of weight j in C⊥, re-
+spectively. Deﬁne the binary Krawtchouk polynomials of
+length n by
+Kj(w) =
+j
+∑
+t=0
+(−1)t
+(w
+t
+)(n −w
+j −t
+)
+.
+The MacWilliams identities (MacWilliams, 1963) state that
+n
+∑
+w=0
+AwKj(w) = 2kBj
+(0 ≤j ≤n).
+(2)
+3
+
+
+Nonexistence Results for Binary Linear Codes
+They follow from character orthogonality: for y ∈Fn
+2, the
+sum ∑
+x∈C(−1)x·y equals 2k if y ∈C⊥and vanishes oth-
+erwise, since in the latter case some x0 ∈C has x0 · y = 1
+and the map x 7→x+x0 pairs terms of opposite sign. Sum-
+ming over all y of weight j and interchanging the two ﬁnite
+sums yields (2).
+3.4. Classiﬁcation inputs
+We use three published results, labeled for reference.
+E1.
+The eight-dimensional classiﬁcation of Bouyukliev
+et al. (2000) excludes exact [41, 8, 18] codes. The same
+statement appears as Theorem 6.3 (p. 147) of Bouyuk-
+liev (2008). Since g2(8, 19) = 42 > 41, E1 also excludes
+[41, 8, ≥18].
+E2. Bouyukliev & Jaffe (2001) classify optimal binary lin-
+ear codes of dimension at most seven. The input used here
+is an upper bound of 172 coordinate-equivalence classes
+of full-support [40, 7, 18] codes; the count and the allowed
+weights are listed explicitly in Table 6.2 (p. 158) of Bouyuk-
+liev (2008). Our concrete catalogue contains 172 pairwise
+inequivalent representatives, so E2 implies that the cata-
+logue is complete. As a consistency check, the hull K∩K⊥
+has dimension 1, 3, or 5 with multiplicities 33, 62, and
+77, matching Bouyuklieva & Dzhumalieva-Stoeva (2025).
+Completeness uses only E2 and inequivalence.
+E3.
+Bouyuklieva & Bouyukliev (2020), Proposition 2,
+prove that a binary linear [41, 14, 14] code does not exist.
+Section 6 reduces [42, 16, ≥13] to E3.
+The classiﬁcation computations underlying E1–E3 are pub-
+lished inputs and were not rerun. Appendix C gives page-
+level locations.
+3.5. Lower-bound constructions
+Appendix D gives full-rank generators and complete
+nonzero
+weight
+spectra
+for
+[43, 10, 16],
+[44, 10, 17],
+[44, 11, 16], and [42, 16, 12] codes.
+The (44, 10) and
+(44, 11) matrices are reconstructed from the quasicyclic
+records of Grassl (2007); puncturing and zero padding sup-
+ply the related lower bounds.
+4. Reduction to Classiﬁed Subcodes
+We prove Theorem 1.1 using E1, E2, and Proposition 5.1;
+the latter is established by the ﬁnite computation of Sec-
+tion 5. The reduction has three steps. We ﬁrst show that
+every hypothetical code has a dual word of weight four.
+Shortening on its support then produces a classiﬁed sub-
+code. Finally, the hypothetical code is recovered from this
+subcode by an extension whose feasibility depends only on
+three cosets.
+4.1. A forced dual word of weight four
+Suppose that C0 is a [43, 10, ≥17] code. Its parity exten-
+sion C is an even [44, 10, ≥18] code: an odd weight at
+least 17 increases by one, and an even weight at least 17 is
+already at least 18. Conversely, puncturing any coordinate
+of an even [44, 10, ≥18] code gives a [43, 10, ≥17] code;
+this does not require the punctured coordinate to be a parity
+coordinate. Thus it sufﬁces to exclude C.
+Lemma 4.1. Every three columns of a generator matrix for
+C are linearly independent.
+Proof. If three columns had rank at most two, shortening
+on them would give a length-41 code of dimension at least
+eight and distance at least 18. Taking an eight-dimensional
+subcode contradicts E1, since the Griesmer bound excludes
+distance at least 19.
+Lemma 4.1 says that C⊥has minimum distance at least
+four, so B1 = B2 = B3 = 0 in the notation of (2) with n =
+44 and k = 10. Consider the polynomial
+P(w) = (w −18)(w −20)(w −24)(w −26)
+= 3
+2K4(w) + 22K2(w) + 403
+2 K0(w).
+(3)
+The expansion can be checked directly: with z = 44 −2w,
+K0(w) = 1,
+K2(w) = z2 −44
+2
+,
+K4(w) = z4 −256z2 + 5544
+24
+.
+The polynomial P is negative only on (18, 20) ∪(24, 26),
+and neither interval contains an even integer.
+Every
+nonzero weight of C is even and at least 18, so P(w) ≥0
+on all of them. Since P(0) = 224640, A0 = B0 = 1, and
+B2 = 0, the identities (2) give
+224640 ≤
+∑
+w
+AwP(w) = 1536B4 + 206336.
+Therefore B4 ≥143/12, hence B4 ≥12. In particular, C⊥
+contains a word of weight four. Only one nonnegative poly-
+nomial is needed; no linear program has to be solved.
+4.2. Shortening gives a full-support subcode
+Lemma 4.2. Shortening C on the support of a weight-four
+dual word produces an even full-support [40, 7, 18] code
+K.
+Proof. Permute the four support coordinates to the end.
+Their generator columns v1, v2, v3, v4 ∈F10
+2
+satisfy v1 +
+v2 + v3 + v4 = 0. Any three are independent, so the pro-
+jection rank is three. Shortening therefore has dimension
+4
+
+
+Nonexistence Results for Binary Linear Codes
+10 −3 = 7, length 40, and distance at least 18. All its
+words remain even. If its distance exceeded 18, it would be
+at least 20, contradicting g2(7, 20) = 42 > 40.
+Let U = ⟨v1, v2, v3⟩. A remaining coordinate would van-
+ish on every shortened word precisely if its generator col-
+umn belonged to U. The seven nonzero vectors of U are the
+four support columns and their three distinct pair sums. An
+outside column equal to a support column would give a de-
+pendent pair; an outside column equal to a pair sum would
+give a dependent triple. The zero vector is also excluded by
+Lemma 4.1. Thus no outside coordinate vanishes, and K
+has full support.
+The characterization of vanishing coordinates in the proof
+uses the nondegenerate dot product on the message space
+F10
+2 . The messages of the shortened code form U ⊥, and
+a column v vanishes on all of them if and only if v ∈
+(U ⊥)⊥= U. Because dim U = 3 and v4 = v1 + v2 + v3,
+the nonzero vectors of U are exactly v1, v2, v3, v4, v1 + v2,
+v1 + v3, and v2 + v3.
+By E2 and the veriﬁed inequivalence of the 172 catalogue
+representatives, K is coordinate-equivalent to a catalogue
+member. A permutation of its 40 coordinates, extended by
+the identity on the last four coordinates, preserves every
+distance condition below. We may therefore assume that
+K is a catalogue member.
+4.3. Every extension requires compatible cosets
+The projection of C onto the ﬁnal four coordinates has ker-
+nel K (after deleting those coordinates) and image orthog-
+onal to (1, 1, 1, 1). By the rank computation above, the im-
+age is the full three-dimensional even-weight subspace of
+F4
+2. Choose lifts of 1001, 0101, and 0011, and prepend a
+basis of the kernel. Row operations, which do not change
+the code, give
+GC =
+
+
+
+
+GK
+0000
+a1
+1001
+a2
+0101
+a3
+0011
+
+
+
+.
+(4)
+The ai ∈F40
+2 have even weight because C is even. For a
+vector a, set δK(a) = minc∈K wt(a + c). For s ∈F3
+2 and
+c ∈K, every word of C has the form
+(
+c + ∑
+i siai, s1(1001) + s2(0101) + s3(0011)
+)
+.
+For s = 0 the weight is at least 18 unless the word is
+zero. For wt(s) ∈{1, 2} the tail has weight two, and for
+s = (1, 1, 1) it has weight four. Consequently the distance
+condition for (4) is exactly
+δK(ai) ≥16
+(1 ≤i ≤3),
+δK(ai + aj) ≥16
+(i < j),
+(5)
+δK(a1 + a2 + a3) ≥14.
+Replacing ai by another vector of ai+K amounts to adding
+kernel rows, so all conditions depend only on the cosets
+ai + K.
+Let E40 be the even-weight subspace of F40
+2 . Since K ⊂
+E40, the quotient E40/K has dimension 39 −7 = 32. De-
+ﬁne
+FK = {a + K ∈E40/K : δK(a) ≥16}.
+Parity is constant on each coset because K is even. Join dis-
+tinct cosets a+K, b+K ∈FK when δK(a+b) ≥16. Con-
+ditions (5) require a triangle in this graph; the three cosets
+must be distinct because equal cosets have sum-distance
+zero.
+The computation of Section 5 shows that all 172
+graphs have no edges. This stronger obstruction rules out
+(4) before the triple-sum condition is needed, and proves
+Theorem 1.1.
+5. Complete Enumeration and Rejection
+Certiﬁcates
+The computational statement used in Theorem 1.1 is ﬁnite
+and explicit.
+Proposition 5.1 (Computed incompatibility). For each of
+the 172 catalogue codes K, and all distinct cosets a+K, b+
+K ∈E40/K with δK(a), δK(b) ≥16, one has δK(a+b) <
+16.
+The domain is the even quotient E40/K; odd cosets lie out-
+side this computation and are not needed. A complete ver-
+iﬁcation for a catalogue code K must establish three sepa-
+rate properties:
+1. the supplied matrix deﬁnes an even, full-support
+[40, 7, 18] code and matches the coordinates used by
+the scan;
+2. the list FK equals the entire set of even cosets at dis-
+tance at least 16 from K; membership and complete-
+ness are separate obligations;
+3. every unordered pair of distinct entries of FK is re-
+jected.
+Sections 5.1–5.3 address these in turn.
+5.1. The catalogue and canonical representatives
+For each catalogue code, seven 40-bit integers specify the
+generator rows. Enumerating all 128 messages checks the
+5
+
+
+Nonexistence Results for Binary Linear Codes
+rank, evenness, minimum distance 18, and full support.
+The 172 matrices have 21,844 nonzero messages in total.
+Coordinate equivalence is tested with a colored incidence
+graph with 40 coordinate vertices and 128 codeword ver-
+tices, whose edges record the entries equal to 1; the two
+vertex types have distinct colors. Isomorphisms of these
+graphs correspond exactly to coordinate equivalences of the
+codes. Canonical labeling with nauty (McKay & Piperno,
+2014) distinguishes all 172 graphs, which gives the inequiv-
+alence required in Section 3.
+To enumerate cosets, put a generator matrix of K into
+systematic form with pivot positions p1, . . . , p7 and rows
+r1, . . . , r7. The linear map
+NK(x) = x +
+7
+∑
+i=1
+xpiri
+(6)
+selects a unique representative of each coset.
+Indeed,
+(ri)pj = δij, so NK(x) vanishes at every pivot and
+NK(x + ri) = NK(x). Conversely, NK(x) = 0 implies
+x = ∑
+i xpiri ∈K. Thus NK has kernel K and induces
+a bijection between F40
+2 /K and the zero-pivot subspace.
+Since the rows of K are even, NK preserves parity. On the
+zero-pivot subspace, evenness is the single nonzero equa-
+tion that the 33 free bits sum to zero. The scan domain
+therefore has exactly 232 elements; it is neither sampled
+nor restricted by symmetry. Because NK(x) + x ∈K and
+NK is linear, coset distances and pair-sum distances are un-
+changed by this normalization.
+5.2. Two implementations cover the entire domain
+Write the systematic generator as [I7 | P] in pivot/free co-
+ordinate order. A normalized representative has the form
+(0, z), so for every message u ∈F7
+2,
+wt
+(
+(0, z) + u[I7 | P]
+)
+= wt(u) + wt(z + uP).
+(7)
+Thus δK((0, z)) ≥16 is equivalent to the 128 inequalities
+wt(z +uP) ≥16−wt(u). The pivot contribution wt(u) is
+retained even though the scanner stores only the free bits.
+The ﬁrst scanner splits the 33 free bits into 27 high bits h
+and six low bits ℓ, and writes uP = (hu, ℓu) in the same
+order. For ﬁxed h and u, the admissible low values are
+precisely those satisfying
+wt(ℓ+ ℓu) ≥16 −wt(u) −wt(h + hu).
+A 64-bit mask represents the 64 possible low values. A
+threshold at most zero retains every bit, a threshold greater
+than six removes every bit, and for thresholds 1, . . . , 6 a
+precomputed mask records the exact six-bit Hamming in-
+equality. Intersecting the masks for all 128 messages with
+the parity mask therefore retains exactly the admissible
+Table 2. Recorded complete computation. A coset visit is one
+element of the explicitly deﬁned even quotient. Pair replay checks
+saved witnesses and does not repeat the coset scans.
+Quantity
+Count
+Full-support catalogue codes
+172
+Cosets per code, per scanner
+232
+Cosets across codes, per scanner
+738,734,374,912
+Accepted cosets, ∑
+K |FK|
+429,024
+Unordered pairs, ∑
+K
+(|FK|
+2
+)
+619,053,789
+Compatible pairs
+0
+Replayed pair witnesses
+619,053,789
+Invalid or nonrejecting witnesses
+0
+even representatives; an early exit when the intersection
+becomes empty cannot remove an admissible representa-
+tive. Parity leaves 32 low values for each high assignment,
+so 227 · 32 = 232 even representatives are considered. The
+high assignments are visited in the order
+hi = (0x11bbcdcb i + 0x0e7b9d15) mod 227,
+for 0 ≤i < 227. The multiplier is odd, so this afﬁne map is
+a permutation and every high assignment is visited exactly
+once.
+The second scanner chooses systematic pivots in the oppo-
+site order, builds a different basis for the 32-dimensional
+even quotient, and enumerates it in Gray-code order i ⊕
+(i ≫1). It computes weights of actual 40-bit words against
+all 128 actual codewords, and rejects a candidate only after
+a recomputed distance below 16. Its output is converted
+to the normalization of the ﬁrst scanner and compared as a
+complete set, not only by cardinality. All 172 sets agree.
+This establishes property 2 with two independent imple-
+mentations that use different bases and enumeration orders.
+5.3. Independent replay of every rejected pair
+Order each complete list FK. For every i < j, the certiﬁ-
+cate stores a message u ∈{0, . . . , 127} such that
+wt(ai + aj + uGK) < 16.
+(8)
+An independent checker reconstructs uGK from the literal
+generator rows, veriﬁes the inequality, checks that the num-
+ber and order of pairs are correct, and requires exact end-
+of-ﬁle. It also checks every saved member of FK against
+all 128 codewords, a total of 54,915,072 distance evalua-
+tions. The replay processes 149 binary and 23 text streams
+and validates all 619,053,789 witnesses. A message value
+outside {0, . . . , 127}, a missing or trailing record, a wrong
+matrix binding, or a weight of at least 16 counts as a veriﬁ-
+cation failure. Table 3 gives the distribution of the weights
+wt(ai + aj + uGK) attained by the stored witnesses.
+The replay detects a false rejection or a malformed stream,
+but it cannot detect an admissible coset that is missing from
+6
+
+
+Nonexistence Results for Binary Linear Codes
+Table 3.
+Weights attained by the 619,053,789 stored pair wit-
+nesses, over all catalogue codes.
+Weight
+Count
+Weight
+Count
+2
+186,172
+10
+61,595,955
+4
+922,339
+12
+171,053,508
+6
+4,503,729
+14
+363,867,130
+8
+16,924,956
+both its input list and the pair stream. Completeness is sup-
+plied separately by the two full scans of Section 5.2. To-
+gether these checks establish Proposition 5.1. The com-
+piler, the runtime, the two enumeration implementations,
+and the graph canonicalizer remain part of the computa-
+tional trust boundary. The deductive part of the argument is
+formalized in Lean 4, with E1, E2, catalogue inequivalence,
+and Proposition 5.1 as explicit hypotheses (Appendix B).
+6. Further Nonexistence Results and Optimal
+Distances
+Corollary 6.1. Binary linear [44, 10, ≥18], [44, 11, ≥17],
+and [45, 11, ≥18] codes do not exist.
+Proof. Puncturing any coordinate of a [44, 10, ≥18] code
+gives a [43, 10, ≥17] code, contradicting Theorem 1.1.
+Shortening a [44, 11, ≥17] code on any coordinate gives
+a length-43 code of dimension at least ten and distance at
+least 17; a ten-dimensional subcode gives the same contra-
+diction. Finally, puncturing a [45, 11, ≥18] code gives the
+excluded [44, 11, ≥17] parameters.
+E3 is stated for codes of exact minimum distance 14,
+whereas shortening only controls a lower bound. The fol-
+lowing lemma bridges this gap.
+Lemma 6.2 (Distance normalization). For k ≥1 and
+d ≥1, existence of a binary linear [n, k, ≥d] code implies
+existence of a binary linear [n, k, d] code.
+Proof. Let the original minimum distance be D ≥d, and
+choose a word of weight D. Puncture D−d positions in its
+support. Since D −d < D, puncturing is injective. Every
+nonzero word retains weight at least D −(D −d) = d, and
+the chosen word attains d. Append D −d zero coordinates
+to restore length n without changing dimension or distance.
+The hypothesis d ≥1 is essential: puncturing all D posi-
+tions of a minimum-weight word would put that word in
+the kernel. Zero padding is permitted because our domain
+is the full class of binary linear codes.
+Theorem 6.3. There is no binary linear [42, 16, ≥13]
+code.
+Proof. Parity extension of a hypothetical code gives
+[43, 16, ≥14].
+Shortening one coordinate loses at most
+one dimension. Choose a 15-dimensional subcode, shorten
+another coordinate, and choose a 14-dimensional subcode.
+The result has parameters [41, 14, ≥14]. Lemma 6.2 gives
+exact [41, 14, 14], contradicting E3, namely Proposition 2
+of Bouyuklieva & Bouyukliev (2020).
+The construction in this proof permits zero columns, which
+is consistent with both our original domain and the binary
+linear code domain of E3. The proof does not assume that
+a minimum-weight word survives arbitrary shortening; nor-
+malization is applied only after the shortening steps. We
+regard Theorem 6.3 as a consequence of E3 and claim no
+priority for it.
+Corollary 6.4. The optimal distances satisfy
+d2(43, 10) = 16,
+d2(44, 10) = 17,
+d2(44, 11) = 16,
+d2(42, 16) = 12,
+and 16 ≤d2(45, 11) ≤17.
+Proof. Theorems 1.1 and 6.3 and Corollary 6.1 give the up-
+per bounds. Appendix D speciﬁes full-rank generators of
+[43, 10, 16], [44, 10, 17], [44, 11, 16], and [42, 16, 12] codes,
+together with their fully enumerated weight spectra. Ap-
+pending a zero coordinate to the [44, 11, 16] code gives a
+[45, 11, 16] code.
+The remaining possibility at parameters (45, 11) is a code
+of minimum distance 17; the arguments above leave its ex-
+istence undecided.
+7. Concluding Remarks
+We have shown that no binary linear [43, 10, ≥17] code
+exists, and derived exact values of d2(n, k) at (43, 10),
+(44, 10), (44, 11), and (42, 16). The MacWilliams identi-
+ties force a dual word of weight four, which places a full-
+support [40, 7, 18] subcode inside every hypothetical code;
+a complete enumeration then shows that no two distinct ad-
+missible even cosets of any of the 172 classiﬁed subcodes
+are compatible. This obstruction is stronger than needed:
+the triple-sum condition in (5) is never used. The published
+classiﬁcations, catalogue inequivalence, and the enumera-
+tion remain explicit inputs, both in the Lean development
+and in the computation.
+The case (45, 11) remains open: Corollary 6.1 excludes dis-
+tance 18, but our arguments say nothing about a [45, 11, 17]
+code. Parity extension of such a code would give an even
+[46, 11, ≥18] code; we have not studied whether a reduc-
+tion of the type used here applies to it.
+7
+
+
+Nonexistence Results for Binary Linear Codes
+References
+Baumert, L. and McEliece, R.
+A note on the Griesmer
+bound. IEEE Transactions on Information Theory, 19
+(1):134–135, 1973. doi: 10.1109/TIT.1973.1054939.
+Bouyukliev, I.
+Algorithmic Approaches to the Study of
+Linear Codes. Dissertation for doctor of mathematical
+sciences,
+Institute
+of
+Mathematics
+and
+Informat-
+ics, Bulgarian Academy of Sciences, 2008.
+URL
+https://www.moi.math.bas.bg/~iliya/
+pdf_site/DIS_MAIN_iliya.pdf. In Bulgarian;
+title translated. Theorem 6.3, p. 147; Table 6.2, p. 158.
+Year from title page.
+Bouyukliev, I. and Jacobsson, E. Results on binary linear
+codes with minimum distance 8 and 10. IEEE Trans-
+actions on Information Theory, 57(9):6089–6093, 2011.
+doi: 10.1109/TIT.2011.2162264.
+Bouyukliev, I. and Jaffe, D. B.
+Optimal binary linear
+codes of dimension at most seven. Discrete Mathematics,
+226(1-3):51–70, 2001.
+doi: 10.1016/s0012-365x(00)
+00125-4.
+Bouyukliev, I., Jaffe, D. B., and Vavrek, V. The smallest
+length of eight-dimensional binary linear codes with pre-
+scribed minimum distance. IEEE Transactions on Infor-
+mation Theory, 46(4):1539–1544, 2000. doi: 10.1109/
+18.850690.
+Bouyukliev, I., Bouyuklieva, S., and Kurz, S.
+Com-
+puter classiﬁcation of linear codes. IEEE Transactions
+on Information Theory, 67(12):7807–7814, 2021. doi:
+10.1109/TIT.2021.3114280.
+Bouyuklieva, S. and Bouyukliev, I. Classiﬁcation of linear
+codes by extending their residuals. In Mathematical Soft-
+ware – ICMS 2020, pp. 173–180. Springer, 2020. doi:
+10.1007/978-3-030-52200-1_17.
+Bouyuklieva, S. and Dzhumalieva-Stoeva, M. Optimal Lin-
+ear Codes and Their Hulls. Mathematics, 13(15):2491,
+2025. doi: 10.3390/math13152491.
+Brouwer, A. E. and Verhoeff, T.
+An updated table
+of minimum-distance bounds for binary linear codes.
+IEEE Transactions on Information Theory, 39(2):662–
+677, 1993. doi: 10.1109/18.212301.
+de Moura, L. and Ullrich, S. The Lean 4 Theorem Prover
+and Programming Language.
+In Automated Deduc-
+tion – CADE 28, pp. 625–635, 2021.
+doi: 10.1007/
+978-3-030-79876-5_37.
+Feulner, T. Classiﬁcation and nonexistence results for lin-
+ear codes with prescribed minimum distances. Designs,
+Codes and Cryptography, 70(1–2):127–138, 2014. doi:
+10.1007/s10623-012-9700-8.
+Grassl, M.
+Bounds on the minimum distance of linear
+codes and quantum codes.
+Online code tables, 2007.
+URL https://www.codetables.de/. Construc-
+tion records for binary parameters (44,10) and (44,11),
+as used for the lower bounds of Appendix D.
+Griesmer, J. H. A Bound for Error-Correcting Codes. IBM
+Journal of Research and Development, 4(5):532–542,
+1960. doi: 10.1147/rd.45.0532.
+Helgert, H. and Stinaff, R. Minimum-distance bounds for
+binary linear codes. IEEE Transactions on Information
+Theory, 19(3):344–356, 1973. doi: 10.1109/TIT.1973.
+1055009.
+Jaffe, D. B. Optimal binary linear codes of length ≤30.
+Discrete Mathematics, 223(1–3):135–155, 2000. doi: 10.
+1016/S0012-365X(99)00135-1.
+Kaski, P. and Östergård, P. R. J.
+Classiﬁcation Algo-
+rithms for Codes and Designs.
+Algorithms and Com-
+putation in Mathematics. Springer, 2006. doi: 10.1007/
+3-540-28991-7.
+Kurz, S. The [46, 9, 20]2 code is unique. Advances in Math-
+ematics of Communications, 15(3):415–422, 2021. doi:
+10.3934/amc.2020074.
+Lam, C. W. H., Thiel, L., and Swiercz, S.
+The non-
+existence of ﬁnite projective planes of order 10. Cana-
+dian Journal of Mathematics, 41(6):1117–1123, 1989.
+doi: 10.4153/CJM-1989-049-4.
+MacWilliams, F. J.
+A theorem on the distribution of
+weights in a systematic code. Bell System Technical Jour-
+nal, 42(1):79–94, 1963. doi: 10.1002/j.1538-7305.1963.
+tb04003.x.
+MacWilliams, F. J. and Sloane, N. J. A.
+The The-
+ory of Error-Correcting Codes, volume 16 of North-
+Holland Mathematical Library. North-Holland, Amster-
+dam, 1977.
+McKay, B. D. and Piperno, A.
+Practical graph isomor-
+phism, II. Journal of Symbolic Computation, 60:94–112,
+2014. doi: 10.1016/j.jsc.2013.09.003.
+Schrijver, A. New code upper bounds from the Terwilliger
+algebra and semideﬁnite programming. IEEE Transac-
+tions on Information Theory, 51(8):2859–2866, 2005.
+doi: 10.1109/TIT.2005.851748.
+The mathlib Community. The Lean mathematical library.
+In Proceedings of the 9th ACM SIGPLAN International
+Conference on Certiﬁed Programs and Proofs, pp. 367–
+381, 2020. doi: 10.1145/3372885.3373824.
+8
+
+
+Nonexistence Results for Binary Linear Codes
+van Tilborg, H. C. A.
+The smallest length of binary 7-
+dimensional linear codes with prescribed minimum dis-
+tance. Discrete Mathematics, 33(2):197–207, 1981. doi:
+10.1016/0012-365X(81)90166-7.
+Verhoeff, T.
+Updating a table of bounds on the min-
+imum distance of binary linear codes.
+EUT Re-
+port 85-WSK-01, Technische Hogeschool Eindhoven,
+1985. URL https://pure.tue.nl/ws/files/
+2264214/253220.pdf.
+Verhoeff, T. An updated table of minimum-distance bounds
+for binary linear codes. IEEE Transactions on Informa-
+tion Theory, 33(5):665–680, 1987.
+doi: 10.1109/TIT.
+1987.1057356.
+Ytrehus, Ø. and Helleseth, T. There is no binary [25, 8, 10]
+code. IEEE Transactions on Information Theory, 36(3):
+695–696, 1990.
+9
+
+
+Nonexistence Results for Binary Linear Codes
+A. Reproduction
+A.1. Portable reproduction materials
+The reproduction package is public at https://github.com/lisresearchgroup/math-rsi/tree/main/
+plugins/ecc/archive/source/paper-reproduction. It supplies the literal catalogue matrices; 172 system-
+atic input ﬁles and coordinate permutations; all 429,024 accepted representatives; both original C++ scanners; the original
+pair-graph checker and witness-replay checker; and both pinned Lean source projects. The native source ﬁles are copied
+without modiﬁcation. A dependency-free Python check validates matrices, input bindings, the polynomial (3), and recorded
+cardinalities. A separate pynauty checker veriﬁes coordinate inequivalence.
+The entry point scripts/reproduce_case.py builds the two scanners, re-enumerates both complete 232 domains
+for a selected catalogue code, compares their outputs with each other and with the archived list, and recomputes every
+pair distance. It accepts only complete runs and checks for a pair graph without edges. By default it prints the plan;
+execution requires -run. Repeating it for indices 0 through 171 reproduces Proposition 5.1 from the supplied ﬁnite inputs.
+It requires Python 3.10 or later and a C++17 compiler.
+The approximately 1.68 GB of historical pair-witness streams are not part of the package. They are not needed to regenerate
+the pair graphs with the supplied checker. Replaying those streams is a distinct and cheaper veriﬁcation path; it cannot
+establish completeness of the supplied accepted lists.
+A.2. Veriﬁcation record
+On 2026-11-03, both original Lean projects were rebuilt and their audits passed. All lower-bound matrices and catalogue
+parameters were rechecked, the 172 colored graphs were distinguished, both saved accepted sets were compared with
+their coordinate bindings, and all 619,053,789 pair witnesses were replayed successfully. A further check of the portable
+entry point fully regenerated cases 0 and 171 with both scanners and recomputed their pair graphs. The resulting list sizes
+were 668 and 3,785, and both pair graphs were empty. These two end-to-end runs validate the packaging; the remaining
+complete-domain scans retain their original run records.
+B. Formal Interfaces and Imported Facts
+The formal developments use Lean 4.34.1 (de Moura & Ullrich, 2021) and pinned mathlib (The mathlib Community,
+2020). The ﬁrst formalizes parity extension, puncturing, shortening, the Griesmer argument, the MacWilliams calculation,
+the full-support reduction, quotient normalization, classiﬁcation coverage, and the corollaries. In the ﬁrst project, all 172
+catalogue matrices and the lower-bound generators for the (43, 10), (44, 10), and (44, 11) entries are connected to the
+abstract deﬁnitions and checked by kernel evaluation. The [42, 16, 12] lower-bound witness is checked by exhaustive
+Python enumeration; the separate Lean project for length 42 formalizes the upper-bound reduction.
+The audited theorem dependencies contain the usual Lean axioms propext, Classical.choice, and Quot.sound,
+with no sorryAx. Explicit hypotheses do not appear in this axiom list. Consequently, a clean axiom audit veriﬁes the
+deductions but does not discharge E1–E3, catalogue inequivalence, or the exhaustive computations. A ﬁner interface
+expands the scan and certiﬁcate assumptions. The exact interfaces follow.
+B.1. Theorem interfaces
+The ﬁrst project exposes the following theorem. Declaration names are exact. Types below abbreviate namespace qualiﬁ-
+cation and use ASCII notation for readability; the compilable sources are in formal/ecc43.
+ECC.mainClaim_of_external_results
+(hE1 : PublishedNonexistence41)
+(hE2 : PublishedClassBound)
+(hDistinct : CatalogueInequivalent)
+(hComputed : forall i : Fin 172, PairIncompatible (catalogueCode i))
+: MainClaim
+Here MainClaim means nonexistence of an actual dimension-ten subspace of F43
+2 with every nonzero word of weight
+at least 17. E1 excludes exact [41, 8, 18]; E2 bounds the number of full-support exact [40, 7, 18] classes. The theorem
+proves the connection from these hypotheses to arbitrary target codes, including the full-support reduction and the actual
+10
+
+
+Nonexistence Results for Binary Linear Codes
+matrix catalogue. In the Lean interface, PairIncompatible quantiﬁes over even vectors a, b with δK(a), δK(b) ≥16.
+Proposition 5.1 covers distinct cosets; for equal cosets, a + b ∈K gives δK(a + b) = 0, which discharges the remaining
+case. No unproved “catalogue reduction” hypothesis remains in this ﬁnal interface.
+The corollary interface is ECC.four_table_consequences_of_external_results. Its conclusion combines
+the three exact entries for (43, 10), (44, 10), and (44, 11) with existence of [45, 11, ≥16] and nonexistence of [45, 11, ≥18].
+Kernel checks of packed matrices use decide +kernel. The exhaustive coset scans and graph canonicalization are
+external to these kernel computations.
+The second project exposes
+ECC42.reduction_42_16_to_41_14
+: CodeExists 42 16 13 -> ExactCodeExists 41 14 14
+ECC42.nonexistence_of_proposition2
+: Proposition2 -> not (CodeExists 42 16 13)
+where Proposition2 is the published exclusion of exact [41, 14, 14]. The imported proposition is an explicit argument,
+not an axiom declaration. Both developments use Lean 4.34.1; their pinned manifests are included as formal/ecc43
+and formal/ecc42. Audit commands inspect both ﬁnal theorem types and transitive axioms, since an axiom list alone
+cannot reveal outstanding theorem hypotheses.
+C. Sources of the Classiﬁcation Results
+The published inputs are Bouyukliev et al. (2000), Bouyukliev & Jaffe (2001), and Proposition 2 (printed page 179) of
+Bouyuklieva & Bouyukliev (2020). The author’s dissertation (Bouyukliev, 2008) states E1 as Theorem 6.3 on printed
+page 147 (PDF page 149) and lists the 172 classes and allowed weights in Table 6.2 on printed page 158 (PDF page 160).
+These thesis numbering references are not journal theorem numbers. The 2025 hull paper (Bouyuklieva & Dzhumalieva-
+Stoeva, 2025) provides a separate count cross-check. The classiﬁcation computations underlying these results were not
+rerun.
+The historical intervals in Table 1 were read directly from Appendix I of Verhoeff (1985) (table block 1,0) and from Table I,
+column 1, printed page 665 of Brouwer & Verhoeff (1993). The online intervals and derivation chains were read from the
+pages of Grassl (2007) for the ﬁve parameter pairs on 3 November 2026.
+D. Explicit Lower-Bound Generators
+In every list below, integer bit j is coordinate j, starting from zero; message bit i selects generator row i, and addition is
+XOR. The row order is the displayed order. Leading zero coordinates are retained up to the declared length. Enumeration
+of all 2k −1 nonzero messages establishes the listed exact distance; distinct message images establish rank k.
+D.1. The [43, 10, 16] witness
+137539745726, 5740911900901, 3801465813127, 7302904556701,
+3853442440940, 2103915382859, 5144838248083, 7496890689917,
+7842576845701, 8787570300677
+The nonzero spectrum (w : Aw) is 16 : 12, 17 : 101, 18 : 144, 19 : 70, 20 : 61, 21 : 147, 22 : 146, 23 : 36, 24 : 43, 25 :
+123, 26 : 92, 27 : 22, 28 : 11, 29 : 13, 30 : 2.
+D.2. The [44, 10, 17] witness
+2860005872641, 5720011745283, 11440023490566, 3732392958991,
+673493634067, 1809555608628, 204550108262, 408026474701,
+57712634350, 114351526877
+The nonzero spectrum (w : Aw) is 17 : 72, 18 : 113, 19 : 82, 20 : 101, 21 : 114, 22 : 111, 23 : 84, 24 : 71, 25 : 108, 26 :
+87, 27 : 26, 28 : 19, 29 : 26, 30 : 9.
+11
+
+
+Nonexistence Results for Binary Linear Codes
+D.3. The [44, 11, 16] witness
+5178737328131, 10357474656262, 1218204696603, 2435335684150,
+944061251695, 515129213098, 225190019387, 134966837980,
+47094858883, 898731865, 514986475
+The nonzero spectrum (w : Aw) is 16 : 371, 20 : 880, 24 : 706, 28 : 88, 32 : 2.
+The [45, 11, 16] generator uses exactly the [44, 11, 16] integers above, interpreted as 45-bit rows. Coordinate 44 is zero. Its
+nonzero weight spectrum is unchanged.
+D.4. The [42, 16, 12] witness
+106065092, 139139103, 285387535, 556556412,
+1113112824, 2195975476, 4307321038, 8653155535,
+17229284152, 34395582853, 68730626717, 137504614505,
+274932175173, 549758586446, 1099560464847, 2199058158699
+The nonzero spectrum (w : Aw) is 12 : 675, 16 : 9898, 20 : 30659, 24 : 21056, 28 : 3161, 32 : 85, 36 : 1.
+12
+
+
+Nonexistence Results for Binary Linear Codes
+E. The 172 Catalogue Codes and Their Complete Coset Counts
+Each row gives the frozen zero-based catalogue index, the seven 40-bit generator rows in hexadecimal (leading zeros
+omitted), the hull dimension h, and |FK|. Each pair graph has zero edges; its checked pair count is
+(|FK|
+2
+)
+. Integer bit
+conventions are as above. The two scans each cover 232 cosets for every row. Hexadecimal notation speciﬁes the full
+matrices rather than just invariants or equivalence-class names.
+Table 4. Literal catalogue generators and computed admissible-coset counts.
+Index
+Seven generator rows (hexadecimal)
+h
+|FK|
+0
+b73e546820 ee7ca8d040 ddf951a0c1 bbf2a74182 f6e74a8b04 edce951e08
+db9f2a3430
+5
+668
+1
+373e54d060 ee7ca9a0c1 5df9514182 bbf2a68300 f6e74b1604 6dce943c08
+db9f2a6830
+3
+833
+2
+b67ca8d060 6cf951a0c1 dff2a34182 bbe54e8300 75ce951604 ef9d2a3c08
+5b3e546830
+3
+795
+3
+b77ca8d040 6e7951a0c1 5df2a34182 3be54e8304 76ce951608 6d9d2a3c10
+5bbe546820
+5
+844
+4
+d3e58d3840 afcf1270c1 d59e2c41c2 ab3c58a384 dc7cb1c708 b2f9630e10
+edf2c69c20
+5
+819
+5
+55f2c6b081 abe7892182 d6cf160384 ad9e2c4708 5a3e58ce10 357cb19c20
+eaf9637840
+3
+1334
+6
+55f2c6b081 abe7892182 56cf164384 ad9e2c4708 da3e588e10 b57cb1dc20
+6af9633840
+3
+1355
+7
+dbe51a3081 a7cf246182 dd9e58c384 ab3cb18708 d47c634e10 baf9c69c20
+e5f28d3840
+5
+867
+8
+000003ffff 0007fe99aa 0f85382aec 107d92e316 26669b33d8 455723c3e0
+84cfc3fc00
+1
+2578
+9
+000003ffff 0007fc7b32 0f853a9a54 107d92b346 26669b2398 455723c3e0
+84cfc3fc00
+5
+3930
+10
+000003ffff 0007fe95d2 0f853ba94e 107d930ee8 26669bd08c 455723e0f0
+84cfc3ff00
+5
+2537
+11
+000003ffff 0007fd35e8 0f853ab942 107d930eac 26669bd0ce 455723e0f0
+84cfc3ff00
+5
+2489
+12
+000003ffff 0007fceb52 0f853ab186 107d921ed8 26669b231c 455723c3e0
+84cfc3fc00
+3
+1950
+13
+000003ffff 0007fc7752 0f853b7986 107d922ed8 26669bb31c 455723c3e0
+84cfc3fc00
+3
+1897
+14
+000003ffff 0007fec59a 0f853997e2 107d9319b4 26669a1ec8 455723e0f0
+84cfc3ff00
+5
+4037
+15
+000003ffff 0007ff256c 0f85395dd8 107d9296e8 26669b188e 455723e0f0
+84cfc3ff00
+1
+3813
+16
+000003ffff 0007ff0d36 0f853a7f84 107d9329d8 26669bb21e 455723c3e0
+84cfc3fc00
+5
+4015
+17
+000003ffff 0007fd1d72 0f8538ada8 107d932a3c 26669a33d0 455723c3e0
+84cfc3fc00
+5
+4093
+18
+000003ffff 0007fea6b2 0f853a6b0a 107d90b78c 26669b3bd0 455723c3e0
+84cfc3fc00
+5
+2575
+19
+000003ffff 0007fe6734 0f853b4a1a 107d90b78c 26669b3bd0 455723c3e0
+84cfc3fc00
+5
+4022
+20
+000003ffff 0007ff0d3c 0f85399632 107d926b54 26669bb398 455723c3e0
+84cfc3fc00
+5
+4223
+21
+000003ffff 0007fd8d96 0f853a8acc 107d931ce8 26669bd00e 455723e0f0
+84cfc3ff00
+3
+998
+22
+000003ffff 0007ff852e 0f85399992 107d922dd8 26669b321c 455723c3e0
+84cfc3fc00
+1
+2036
+23
+000003ffff 0007ff8956 0f8539ceca 107d9293e8 26669b1c8c 455723e0f0
+84cfc3ff00
+5
+3943
+24
+000003ffff 0007fdc696 0f853acdcc 107d9316e8 26669b980e 455723e0f0
+84cfc3ff00
+5
+2455
+25
+000003ffff 0007fea52e 0f8538ccca 107d93169a 26669b98ec 455723e0f0
+84cfc3ff00
+5
+4084
+26
+000003ffff 0007fea34e 0f853acd88 107d93169a 26669b98ec 455723e0f0
+84cfc3ff00
+5
+4031
+13
+
+
+Nonexistence Results for Binary Linear Codes
+Index
+Seven generator rows (hexadecimal), continued
+h
+|FK|
+27
+000003ffff 0007fdc9a6 0f853aea0a 107d9313b8 26669b9ccc 455723e0f0
+84cfc3ff00
+1
+2505
+28
+000003ffff 0007fd55e2 0f853b212e 107d9256ac 26669b98c8 455723e0f0
+84cfc3ff00
+5
+3944
+29
+000003ffff 0007fe8b74 0f853a31be 107d90daca 26669b1cec 455723e0f0
+84cfc3ff00
+3
+1371
+30
+000003ffff 0007ff0dcc 0f853a66da 107d91ab92 26669a331c 455723c3e0
+84cfc3fc00
+5
+4032
+31
+000003ffff 0007fdb0ae 0f853ae116 107d93265c 2666983b98 455723c3e0
+84cfc3fc00
+5
+2554
+32
+000003ffff 0007ff9136 0f8539455a 107d929a9c 26669b1ce0 455723e0f0
+84cfc3ff00
+5
+2505
+33
+000003ffff 0007fe953a 0f853a3bb4 107d90dcc6 26669b1ee8 455723e0f0
+84cfc3ff00
+1
+2264
+34
+000003ffff 0007fd53d4 0f853a7542 107d93869c 26669b18e8 455723e0f0
+84cfc3ff00
+1
+1908
+35
+000003ffff 0007fcaeb4 0f853ac49a 107d932b2c 26669a33d0 455723c3e0
+84cfc3fc00
+5
+2519
+36
+000003ffff 0007fd8f4a 0f85395532 107d929a5c 26669b2398 455723c3e0
+84cfc3fc00
+5
+3888
+37
+000003ffff 0007fe8f32 0f8538e58a 107d932a3c 26669a33d0 455723c3e0
+84cfc3fc00
+5
+2551
+38
+000003ffff 0007fe8b6a 0f853839b2 107d92d2cc 26669b1cf8 455723e0f0
+84cfc3ff00
+5
+2502
+39
+000003ffff 0007fd2dca 0f85385578 107d93989c 26669a1ee0 455723e0f0
+84cfc3ff00
+3
+971
+40
+000003ffff 0007fe8b66 0f853a31ac 107d90dae8 26669b1cce 455723e0f0
+84cfc3ff00
+5
+4062
+41
+000003ffff 0007fda556 0f853ab18a 107d93a23c 26669b3bd0 455723c3e0
+84cfc3fc00
+5
+2497
+42
+000003ffff 0007fcb972 0f853adaa6 107d9293cc 26669b1cf8 455723e0f0
+84cfc3ff00
+3
+1658
+43
+000003ffff 0007fd6b86 0f827065ba 107ad1b1d2 2664da391c 455763c1e0
+84cf83fe00
+3
+1747
+44
+000003ffff 0007ff846e 0f827313c6 107ad23d4a 2664dbd98c 455763e1f0
+84cf83fe00
+5
+2537
+45
+000003ffff 0007ff8a6c 0f827315c6 107ad2394e 2664dbd188 455763e1f0
+84cf83fe00
+5
+2592
+46
+000003ffff 0007fdb946 0f8270e2b6 107ad12d3c 2664da31d8 455763c1e0
+84cf83fe00
+5
+2652
+47
+000003ffff 0007fd7986 0f827252bc 107ad3132e 2664db9dc8 455763e1f0
+84cf83fe00
+5
+2498
+48
+000003ffff 0007fd718e 0f8272f498 107ad3271c 2664dbb9d0 455763c1e0
+84cf83fe00
+5
+2507
+49
+000003ffff 0007ffa45a 0f8272f894 107ad33338 2664da3dc0 455763c1e0
+84cf83fe00
+3
+1353
+50
+000003ffff 0007fe9a74 0f8272d4ac 107ad3592a 2664db81cc 455763e1f0
+84cf83fe00
+3
+1741
+51
+000003ffff 0007fd5d32 0f8273ac54 107ad2e986 2664db3198 455763c1e0
+84cf83fe00
+3
+1816
+52
+000003ffff 0007fc9db2 0f82732d54 107ad3a986 2664da31d8 455763c1e0
+84cf83fe00
+5
+2584
+53
+000003ffff 0007fd1db2 0f82736d14 107ad27986 2664dbb1d8 455763c1e0
+84cf83fe00
+1
+1396
+54
+000003ffff 0007ffa23c 0f8272b954 107ad2f186 2664db3d98 455763c1e0
+84cf83fe00
+5
+2552
+55
+000003ffff 0007fe26f4 0f82708d7a 107ad2b54c 2664db3990 455763c1e0
+84cf83fe00
+3
+1327
+56
+000003ffff 0007fcb3ca 0f8273b492 107ad324f8 2664da391c 455763c1e0
+84cf83fe00
+3
+1695
+57
+000003ffff 0007fd9734 0f827299aa 107ad30dcc 2664dbd00e 455763e1f0
+84cf83fe00
+3
+1633
+14
+
+
+Nonexistence Results for Binary Linear Codes
+Index
+Seven generator rows (hexadecimal), continued
+h
+|FK|
+58
+000003ffff 0007ff839c 0f85aad5a6 107c9ad9c4 2666b31ee8 455723e0f0
+84cfc3ff00
+3
+1686
+59
+000003ffff 0007fcda36 0f85a9aada 107c99336c 2666b23b90 455723c3e0
+84cfc3fc00
+3
+1542
+60
+000003ffff 0007fed236 0f85a9b2da 107c9b236c 2666b23b90 455723c3e0
+84cfc3fc00
+3
+1706
+61
+000003ffff 0007fd5a96 0f85aa2aac 107c9bd03a 2666b39ccc 455723e0f0
+84cfc3ff00
+1
+2280
+62
+000003ffff 0007fcf326 0f85aaa954 107c9a8a9e 2666b33318 455723c3e0
+84cfc3fc00
+1
+1082
+63
+000003ffff 0007fd5b8a 0f85abab1c 107c9b321e 2666b23fd0 455723c3e0
+84cfc3fc00
+1
+1794
+64
+000003ffff 0007fd5a96 0f81ab8b2c 107c9ad0da 2666b31cec 455723e0f0
+84cfc3ff00
+5
+2471
+65
+000003ffff 0007ff2c5a 0f81ab55a2 107c9998dc 2666b21ee0 455723e0f0
+84cfc3ff00
+5
+2462
+66
+000003ffff 0007fe2db2 0f81aa55ca 107c9b9994 2666b31ee8 455723e0f0
+84cfc3ff00
+3
+2337
+67
+000003ffff 0007ff852e 0f81a9b4ca 107c9ad98c 2666b31ee8 455723e0f0
+84cfc3ff00
+3
+2481
+68
+000003ffff 0007ff1556 0f81a97392 107c9ba61c 2666b23bd8 455723c3e0
+84cfc3fc00
+3
+2444
+69
+000003ffff 0007ff256c 0f81a954ba 107c9b99c4 2666b21ef8 455723e0f0
+84cfc3ff00
+5
+4022
+70
+000003ffff 0007ff1678 0f81aa639a 107c9bb30c 2666b03bd0 455723c3e0
+84cfc3fc00
+5
+4054
+71
+000003ffff 0007ff153c 0f81a97296 107c9ba748 2666b23b90 455723c3e0
+84cfc3fc00
+3
+2765
+72
+000003ffff 0007ff499c 0f81a92ad6 107c9bb328 2666b23fd0 455723c3e0
+84cfc3fc00
+5
+4036
+73
+000003ffff 0007fd8db4 0f81aab9c2 107c9bd18c 2666b31ee8 455723e0f0
+84cfc3ff00
+3
+3022
+74
+000003ffff 0007ff0bb4 0f81a9bac2 107c9bd28c 2666b21ce8 455723e0f0
+84cfc3ff00
+3
+1957
+75
+000003ffff 0007ff1674 0f863a67b2 107e38b558 2666d3399c 455763c1e0
+84cf83fe00
+1
+3260
+76
+000003ffff 0007fdacc6 0f86283eb4 107e92c9cc 2664e30ee8 455733f0f0
+84cfc3ff00
+1
+2510
+77
+000003ffff 0007feaa4e 0f862926ba 107e92d31c 2664e31bd0 455733e3e0
+84cfc3fc00
+5
+2458
+78
+000003ffff 0007fd966c 0f86293b46 107e925ab4 2664e3a338 455733c3c0
+84cfc3fc00
+1
+2211
+79
+000003ffff 0007ff84ae 0f862aca9a 107e931ad2 2664e3931c 455733e3e0
+84cfc3fc00
+1
+1674
+80
+000003ffff 0007fdc58e 0f862b4ec2 107e9256d2 2664e398e4 455733e0f8
+84cfc3ff00
+5
+2538
+81
+000003ffff 0007ff8a4e 0f8628b8d6 107e92d296 2664e31ce4 455733e0f8
+84cfc3ff00
+3
+2061
+82
+000003ffff 0007fe9a3a 0f8629b686 107e925b54 2664e36398 45573383e0
+84cfc3fc00
+5
+2498
+83
+000003ffff 0007fd36ac 0f862b2a9a 107e9272d2 2664e3c31c 45573383e0
+84cfc3fc00
+3
+2170
+84
+000003ffff 0007fe5aaa 0f862874f4 107e92ab4a 2664e3338c 455733c3f0
+84cfc3fc00
+1
+2573
+85
+000003ffff 0007fe466e 0f874ab53a 107ecb258a 26655239cc 455663c1f0
+84cf83fe00
+5
+2444
+86
+000003ffff 0007feb156 0f8748d478 107ecb198c 2665521fd0 455663e1e0
+84cf83fe00
+5
+3929
+87
+000003ffff 0007feb586 0f8748d8b2 107ecb1354 2665531d98 455663e1e0
+84cf83fe00
+3
+2167
+88
+000003ffff 0007fe665a 0f874b289c 107ecbb11e 2665503de8 455663c1f0
+84cf83fe00
+3
+1271
+15
+
+
+Nonexistence Results for Binary Linear Codes
+Index
+Seven generator rows (hexadecimal), continued
+h
+|FK|
+89
+000003ffff 0007feb236 0f874b14aa 107ec9d93c 2665521fd0 455663e1e0
+84cf83fe00
+5
+2454
+90
+000003ffff 0007ff645a 0f87492b92 107ec9b11c 2665523de0 455663c1f0
+84cf83fe00
+5
+2564
+91
+000003ffff 0007fc567c 0f874aa75a 107ec935a8 26655239cc 455663c1f0
+84cf83fe00
+5
+2484
+92
+000003ffff 0007ff146e 0f87492d38 107eca79ca 266553b18c 455663c1f0
+84cf83fe00
+5
+3958
+93
+000003ffff 0007ff1674 0f87498cb2 107eca5958 266553919c 455663e1e0
+84cf83fe00
+5
+3987
+94
+000003ffff 0007fe167a 0f87492cd8 107ecab96c 266553318e 455663c1f0
+84cf83fe00
+5
+4047
+95
+000003ffff 0007fe5666 0f8748d94a 107eca938c 2665531dd0 455663e1e0
+84cf83fe00
+3
+1380
+96
+000003ffff 0007fe0eea 0f874aad5c 107ec8e86c 266553318e 455663c1f0
+84cf83fe00
+5
+4002
+97
+000003ffff 0007fe36e4 0f86716a6e 107d925cb8 26661b90ce 455723e0f0
+84cfc3ff00
+3
+3090
+98
+000003ffff 0007fe87d4 0f8671ca4c 107d93139a 26661a1cec 455723e0f0
+84cfc3ff00
+5
+4053
+99
+000003ffff 0007fcbca6 0f8672c98a 107d9391ac 26661b1ec8 455723e0f0
+84cfc3ff00
+5
+4070
+100
+000003ffff 0007ff6136 0f8671ab5a 107d912e78 26661a339c 455723c3e0
+84cfc3fc00
+1
+2586
+101
+000003ffff 0007fd7272 0f8672e69a 107d93a0dc 26661b3b18 455723c3e0
+84cfc3fc00
+5
+3978
+102
+000003ffff 0007fd8bb2 0f86728dc8 107d930e6c 26661bd08e 455723e0f0
+84cfc3ff00
+1
+1327
+103
+000003ffff 0007fcaeb4 0f867156d6 107d919a9a 26661a1cec 455723e0f0
+84cfc3ff00
+5
+2535
+104
+000003ffff 0007ff4596 0f8671ceaa 107d92963c 26661b18ce 455723e0f0
+84cfc3ff00
+1
+2614
+105
+000003ffff 0007ff32a6 0f867159ba 107d919ad8 26661a1cec 455723e0f0
+84cfc3ff00
+5
+2493
+106
+000003ffff 0007fda5b2 0f8672a9ce 107d930ed4 26661bb318 455723c3e0
+84cfc3fc00
+1
+2434
+107
+000003ffff 0007fe3374 0f85b3546e 107e5398a6 26669a1ec8 455723e0f0
+84cfc3ff00
+5
+3959
+108
+000003ffff 0007fe66a6 0f85b0ab2a 107e512f8c 26669a33d0 455723c3e0
+84cfc3fc00
+5
+4021
+109
+000003ffff 0007ff4556 0f85b1598a 107e53a23c 26669a33d0 455723c3e0
+84cfc3fc00
+3
+1673
+110
+000003ffff 0007fd8db4 0f85b216b8 107e53a30e 26669b3bd0 455723c3e0
+84cfc3fc00
+5
+4207
+111
+000003ffff 0007fd3a56 0f85b14d64 107e53918e 26669a1ec8 455723e0f0
+84cfc3ff00
+5
+3927
+112
+000003ffff 0007ff312e 0f85b159c8 107e519c9a 26669a1eec 455723e0f0
+84cfc3ff00
+5
+3957
+113
+000003ffff 0007fd66d2 0f81aaa35c 107c5af21c 2666b33b98 455723c3e0
+84cfc3fc00
+5
+4078
+114
+000003ffff 0007fdb2c6 0f81aaa758 107c5b361c 2666b23b90 455723c3e0
+84cfc3fc00
+3
+2023
+115
+000003ffff 0007fea746 0f81ab0ed8 107c5baa94 2666b33318 455723c3e0
+84cfc3fc00
+3
+913
+116
+000003ffff 0007fd9a56 0f81abaa98 107c5b331c 2666b23fd0 455723c3e0
+84cfc3fc00
+3
+1617
+117
+000003ffff 0007ff9256 0f81aaa2ba 107c593b2c 2666b23fd0 455723c3e0
+84cfc3fc00
+1
+1999
+118
+000003ffff 0007ff924e 0f81aaa2ba 107c593734 2666b23bd8 455723c3e0
+84cfc3fc00
+1
+3010
+119
+000003ffff 0007fdd156 0f81aaa56c 107c5b568a 2666b3988c 455723e0f0
+84cfc3ff00
+3
+1684
+16
+
+
+Nonexistence Results for Binary Linear Codes
+Index
+Seven generator rows (hexadecimal), continued
+h
+|FK|
+120
+000003ffff 0007fda63c 0f81a97386 107c5bab50 2666b23398 455723c3e0
+84cfc3fc00
+3
+973
+121
+000003ffff 0007fde30e 0f81ab946a 107c5ae654 2666b33b98 455723c3e0
+84cfc3fc00
+5
+2531
+122
+000003ffff 0007fdd896 0f81ab895c 107c5af28a 2666b31cec 455723e0f0
+84cfc3ff00
+3
+1325
+123
+000003ffff 0007fe4d78 0f81ab869c 107c5af42a 2666b318cc 455723e0f0
+84cfc3ff00
+3
+2371
+124
+000003ffff 0007fe4d5c 0f81aa86ae 107c5b7438 2666b398ce 455723e0f0
+84cfc3ff00
+5
+3968
+125
+000003ffff 0007fd94f8 0f8548e762 107ea2b2ac 2665333b30 45563bc3c0
+84cfc3fc00
+5
+2654
+126
+000003ffff 0007ff859c 0f854ad8cc 107ea2e88e 2665330ee8 45563bf0f0
+84cfc3ff00
+3
+1605
+127
+000003ffff 0007fdc66c 0f854ae4b2 107ea3643a 26653388bc 45563bf0c0
+84cfc3ff00
+3
+1590
+128
+000003ffff 0007ff15a6 0f8549555a 107ea2a6ac 2665333b30 45563bc3c0
+84cfc3fc00
+3
+1990
+129
+000003ffff 0007fda696 0f854b4cb8 107ea26cac 26653388ce 45563bf0f0
+84cfc3ff00
+5
+4033
+130
+000003ffff 0007fcd9d2 0f866a7164 107ba39296 2664f31ce6 455733e0f8
+84cfc3ff00
+5
+2517
+131
+000003ffff 0007fe3b52 0f866b4196 107ba3499a 2664f3921c 455733e3e0
+84cfc3fc00
+3
+1666
+132
+000003ffff 0007fceb2c 0f866ac156 107ba2ca56 2664f37398 45573383e0
+84cfc3fc00
+3
+1216
+133
+000003ffff 0007fd6a36 0f866a469a 107ba256d2 2664f39b1c 455733e3e0
+84cfc3fc00
+3
+1524
+134
+000003ffff 0007fe4ec6 0f8668c87a 107ba17392 2664f2631c 45573383e0
+84cfc3fc00
+5
+3990
+135
+000003ffff 0007fe26da 0f82f2cb48 107b4a956c 2664d3198e 455763e1f0
+84cf83fe00
+5
+2557
+136
+000003ffff 0007feaa6a 0f81f2d2a4 107e8a9cb4 2664b31ec8 455723e0f0
+84cfc3ff00
+5
+3937
+137
+000003ffff 0007fdb2a6 0f84d2a794 107e9b3754 26652a3b98 455633c3e0
+84cfc3fc00
+1
+2003
+138
+000003ffff 0007fdc65a 0f84d2d2ac 107e9b40ae 26652b9b30 455633e3c0
+84cfc3fc00
+5
+2546
+139
+000003ffff 0007fcd6aa 0f868966cc 107eab9886 2664b21cf8 455723e0f0
+84cfc3ff00
+5
+4089
+140
+000003ffff 0007fe6aac 0f8688f354 107ea89b98 2664b3231e 455723c3e0
+84cfc3fc00
+5
+4361
+141
+000003ffff 0007ff893a 0f8688eb4c 107ea93278 2664b23f90 455723c3e0
+84cfc3fc00
+1
+2522
+142
+000003ffff 0007fe6b46 0f868ab29a 107ce8a71c 2660f33b90 455723c3e0
+84cfc3fc00
+3
+1956
+143
+000003ffff 0007fe98f4 0f838aa93a 107abb324c 2664b23f90 455723c3e0
+84cfc3fc00
+3
+1708
+144
+000003ffff 0007fd6ca6 0f858955d8 107d9999f4 2666921ee8 455723e0f0
+84cfc3ff00
+3
+1330
+145
+000003ffff 0007fdc33c 0f858a96b8 107d9b64ae 26669398cc 455723e0f0
+84cfc3ff00
+3
+1640
+146
+000003ffff 0007fdb15a 0f858a8bd8 107d9bd29c 2666931ce8 455723e0f0
+84cfc3ff00
+1
+2931
+147
+000003ffff 0007ff315a 0f85894bd8 107d9a929c 2666931ce8 455723e0f0
+84cfc3ff00
+1
+3008
+148
+000003ffff 0007fd595c 0f8652748e 107cb298d6 26663b1ee8 455723e0f0
+84cfc3ff00
+5
+2525
+149
+000003ffff 0007fd366a 0f86523ab4 107cb272d8 26663ba31e 455723c3e0
+84cfc3fc00
+3
+1762
+150
+000003ffff 0007fd8ed4 0f83d2a964 10795b2c66 266563b186 455673c1f8
+84cf83fe00
+5
+3768
+17
+
+
+Nonexistence Results for Binary Linear Codes
+Index
+Seven generator rows (hexadecimal), continued
+h
+|FK|
+151
+000003ffff 0007fe5d52 0f83e252a6 107d32a55c 26664b3998 455673c1e0
+84cf83fe00
+1
+2676
+152
+000003ffff 0007fd9c72 0f83e238b4 107d332cd8 26664bc11e 455673f1e0
+84cf83fe00
+3
+1281
+153
+000003ffff 0007ff0736 0f834b4a78 107d325d58 26645b919c 455663e1e0
+84cf83fe00
+3
+2756
+154
+000003ffff 0007fe8cbc 0f834a5578 107d33984e 26645b1f90 455663e1e0
+84cf83fe00
+3
+1702
+155
+000003ffff 0007fd956c 0f864966e2 107c729b34 2664ab23b8 455733c3c0
+84cfc3fc00
+1
+1718
+156
+000003ffff 0007ff263c 0f86496ae8 107c714b56 2664aa7398 45573383e0
+84cfc3fc00
+3
+2332
+157
+000003ffff 0007ff898e 0f8648dab8 107c7292d6 2664ab1ce4 455733e0f8
+84cfc3ff00
+3
+2189
+158
+000003ffff 0007ff2672 0f864aab58 107c72b25c 2664ab3ba0 455733c3c0
+84cfc3fc00
+1
+1943
+159
+000003ffff 0007fe3a3a 0f8708f362 107db0d34a 2661e3638c 45563383f0
+84cfc3fc00
+5
+2566
+160
+000003ffff 0007ff8a56 0f851929ba 107c72d2cc 26669b1ce0 455723e0f0
+84cfc3ff00
+3
+1673
+161
+000003ffff 0007ff2a56 0f869956da 107ce2996c 26654b1db0 455673e1c0
+84cf83fe00
+1
+2936
+162
+000003ffff 0007ff8656 0f8699379a 107ce2d91c 26654b1de0 455673e1f0
+84cf83fe00
+1
+2399
+163
+000003ffff 0007fe387c 0fe388ce96 1719c2d32a 2692f363cc 446ce383f0
+85df03fc00
+3
+979
+164
+000003ffff 0007fec74a 0fe30aace6 171ba32554 2691d3c998 446de3f1e0
+85de03fe00
+3
+983
+165
+03e47b9cd1 306f897d92 567864bf14 1b53bf2a18 ecc2fcb860 0d9a86f990
+ead5d68f90
+5
+2570
+166
+000003ffff 0007fd529e 0ff329a73a 178d33322c 266d5a3bd0 474663c3e0
+84df83fc00
+1
+2700
+167
+000003ffff 0007fe4e5a 0ff32aa866 178d33328c 266d5a3cf0 474663c0f8
+84df83ff00
+1
+1981
+168
+000003ffff 0007fc5ea6 0ff32b2b5a 178d31b30c 266d5a3f90 474663c3e0
+84df83fc00
+1
+3588
+169
+000003ffff 0007fcd752 0ff211c26a 178c62974c 266ea31bf0 455f3be380
+84b7c3fc00
+3
+546
+170
+00003fffff 07ff866914 0bf04bae5a 138e730c6c 226d63cfb0 415b7c0fc0
+80dcfff000
+3
+2514
+171
+ff00ff0f0f ffff000ff0 fffffff000 c5653ac566 69c9acc6aa 8e8eccaaa3
+f0f0f0cccc
+3
+3785
+Acknowledgment of AI assistance
+AI systems assisted with literature retrieval, proof exploration, implementation, veriﬁcation design, and exposition. The
+provenance record in provenance/ai-interventions.md lists documented interventions and corrections. The
+proofs use the stated mathematical arguments, published classiﬁcation results, and ﬁnite computations; model responses
+do not serve as proof certiﬁcates.
+18

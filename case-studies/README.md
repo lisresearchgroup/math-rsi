@@ -20,7 +20,7 @@ The uniform $k\ge12$ theorem and $m(5)\ge33,34$ have end-to-end Lean proofs; $m(
 
 Lean reductions state their explicit literature, classification and computation premises, while reusable checkers cover concrete generator matrices and parent-code pair rejections. The plugin also includes a branch-organization walkthrough on the open $[72,36,\ge16]$ problem.
 
-[Plugin and methods](../plugins/ecc/README.md) · [Actual checks and import boundaries](../plugins/ecc/evidence/IMPLEMENTATION.md) · [Node organization example](../plugins/ecc/skills/mathrsi-ecc/examples/node-research.md)
+[Manuscript](../plugins/ecc/archive/source/paper/README.md) · [Plugin and methods](../plugins/ecc/README.md) · [Actual checks and import boundaries](../plugins/ecc/evidence/IMPLEMENTATION.md) · [Node organization example](../plugins/ecc/skills/mathrsi-ecc/examples/node-research.md)
 
 ## Degree–Diameter
 

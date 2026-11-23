@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "total_pages": 18,
+  "main_body_ends_page": 7,
+  "main_body_limit": 8,
+  "bibliography_entries": 27,
+  "undefined_references": 0,
+  "undefined_citations": 0,
+  "overfull_boxes": 0,
+  "missing_glyphs": 0,
+  "font_substitutions": 0,
+  "fonts": [
+    {
+      "name": "IHAIZV+NimbusRomNo9L-Medi",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "BZIVMZ+NimbusRomNo9L-Regu",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "IXFAWU+CMR10",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "TQTHRL+CMMI10",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "YEUUOC+CMR7",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "AKHCZK+CMSY10",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "VDVGTR+MSBM10",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "CAFSZL+CMMI7",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "DDIEWW+NimbusRomNo9L-ReguItal",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "FKPJSN+CMMI9",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "PVTTLK+CMR6",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "JAGKKY+CMR9",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "NOMARO+CMSY7",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "KPXLOM+CMEX10",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "UTACNV+CMMI5",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "FZDNHS+CMEX9",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "DZGKAF+CMMI6",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "GJMHKB+CMSY9",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "NITCSQ+CMSY6",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "UBBQTN+CMTT10",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    },
+    {
+      "name": "LPOGEQ+NimbusMonL-Regu",
+      "format": "cff",
+      "type": "Type1",
+      "embedded": true
+    }
+  ],
+  "pdf_bytes": 141510,
+  "remaining_warnings": "Underfull boxes only"
+}

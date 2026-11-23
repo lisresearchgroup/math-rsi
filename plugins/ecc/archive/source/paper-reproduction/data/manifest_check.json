@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "actual172_matrices_all_rank7_even_d18": true,
+  "fresh_coordinate_dot_full128_bindings_verified": 344,
+  "all172_manifest_cases_biject_actual_frozen172": true,
+  "complete_original_and_independent_full_F_cases": 172,
+  "partial_cases": 0,
+  "saved_case_evidence_paths_exist": 1892,
+  "total_F_count": 429024,
+  "total_unordered_pair_count": 619053789,
+  "all_native_pair_graphs_complete_and_zero_edges": true,
+  "basis_and_saved_F_normalization_recheck_record": "COMPUTATIONAL_COVERAGE.json / build_manifest.py",
+  "pair_witness_streams_not_rerun_here": true,
+  "global_proof_gate": "PENDING_FRESH_REVIEW",
+  "assembly_CPU_seconds": 6.397833,
+  "readback_check_CPU_seconds": 0.38244700000000004
+}

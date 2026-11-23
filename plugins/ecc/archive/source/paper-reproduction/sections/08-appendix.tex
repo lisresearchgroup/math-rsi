@@ -1,0 +1,45 @@
+\section{Reproduction}
+\label{app:reproduction}
+\subsection{Portable reproduction materials}
+The reproduction package is public at \url{\repobase}. It supplies the literal catalogue matrices; 172 systematic input files and coordinate permutations; all 429,024 accepted representatives; both original C++ scanners; the original pair-graph checker and witness-replay checker; and both pinned Lean source projects. The native source files are copied without modification. A dependency-free Python check validates matrices, input bindings, the polynomial \eqref{eq:polynomial}, and recorded cardinalities. A separate \texttt{pynauty} checker verifies coordinate inequivalence.
+
+The entry point \repolink{scripts/reproduce\_case.py} builds the two scanners, re-enumerates both complete $2^{32}$ domains for a selected catalogue code, compares their outputs with each other and with the archived list, and recomputes every pair distance. It accepts only complete runs and checks for a pair graph without edges. By default it prints the plan; execution requires \texttt{--run}. Repeating it for indices 0 through 171 reproduces Proposition~\ref{prop:computed} from the supplied finite inputs. It requires Python~3.10 or later and a C++17 compiler.
+
+The approximately 1.68 GB of historical pair-witness streams are not part of the package. They are not needed to regenerate the pair graphs with the supplied checker. Replaying those streams is a distinct and cheaper verification path; it cannot establish completeness of the supplied accepted lists.
+
+\subsection{Verification record}
+On 2026-11-03, both original Lean projects were rebuilt and their audits passed. All lower-bound matrices and catalogue parameters were rechecked, the 172 colored graphs were distinguished, both saved accepted sets were compared with their coordinate bindings, and all 619,053,789 pair witnesses were replayed successfully. A further check of the portable entry point fully regenerated cases 0 and 171 with both scanners and recomputed their pair graphs. The resulting list sizes were 668 and 3,785, and both pair graphs were empty. These two end-to-end runs validate the packaging; the remaining complete-domain scans retain their original run records.
+
+\section{Formal Interfaces and Imported Facts}
+\label{app:formal}
+The formal developments use Lean~4.34.1 \citep{lean2021} and pinned mathlib \citep{mathlib2020}. The first formalizes parity extension, puncturing, shortening, the Griesmer argument, the MacWilliams calculation, the full-support reduction, quotient normalization, classification coverage, and the corollaries. In the first project, all 172 catalogue matrices and the lower-bound generators for the $(43,10)$, $(44,10)$, and $(44,11)$ entries are connected to the abstract definitions and checked by kernel evaluation. The $[42,16,12]$ lower-bound witness is checked by exhaustive Python enumeration; the separate Lean project for length 42 formalizes the upper-bound reduction.
+
+The audited theorem dependencies contain the usual Lean axioms \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}, with no \texttt{sorryAx}. Explicit hypotheses do not appear in this axiom list. Consequently, a clean axiom audit verifies the deductions but does not discharge E1--E3, catalogue inequivalence, or the exhaustive computations. A finer interface expands the scan and certificate assumptions. The exact interfaces follow.
+
+\subsection{Theorem interfaces}
+The first project exposes the following theorem. Declaration names are exact. Types below abbreviate namespace qualification and use ASCII notation for readability; the compilable sources are in \repolink{formal/ecc43}.
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true]
+ECC.mainClaim_of_external_results
+  (hE1 : PublishedNonexistence41)
+  (hE2 : PublishedClassBound)
+  (hDistinct : CatalogueInequivalent)
+  (hComputed : forall i : Fin 172, PairIncompatible (catalogueCode i))
+  : MainClaim
+\end{lstlisting}
+Here \texttt{MainClaim} means nonexistence of an actual dimension-ten subspace of $\F^{43}$ with every nonzero word of weight at least 17. E1 excludes exact $[41,8,18]$; E2 bounds the number of full-support exact $[40,7,18]$ classes. The theorem proves the connection from these hypotheses to arbitrary target codes, including the full-support reduction and the actual matrix catalogue. In the Lean interface, \texttt{PairIncompatible} quantifies over even vectors $a,b$ with $\dist_K(a),\dist_K(b)\ge16$. Proposition~\ref{prop:computed} covers distinct cosets; for equal cosets, $a+b\in K$ gives $\dist_K(a+b)=0$, which discharges the remaining case. No unproved ``catalogue reduction'' hypothesis remains in this final interface.
+
+The corollary interface is \texttt{ECC.four\_table\_consequences\_of\_external\_results}. Its conclusion combines the three exact entries for $(43,10)$, $(44,10)$, and $(44,11)$ with existence of $\codege{45}{11}{16}$ and nonexistence of $\codege{45}{11}{18}$. Kernel checks of packed matrices use \texttt{decide +kernel}. The exhaustive coset scans and graph canonicalization are external to these kernel computations.
+
+The second project exposes
+\begin{lstlisting}[basicstyle=\ttfamily\small,breaklines=true]
+ECC42.reduction_42_16_to_41_14
+  : CodeExists 42 16 13 -> ExactCodeExists 41 14 14
+ECC42.nonexistence_of_proposition2
+  : Proposition2 -> not (CodeExists 42 16 13)
+\end{lstlisting}
+where \texttt{Proposition2} is the published exclusion of exact $[41,14,14]$. The imported proposition is an explicit argument, not an axiom declaration. Both developments use Lean 4.34.1; their pinned manifests are included as \repolink{formal/ecc43} and \repolink{formal/ecc42}. Audit commands inspect both final theorem types and transitive axioms, since an axiom list alone cannot reveal outstanding theorem hypotheses.
+
+\section{Sources of the Classification Results}\label{app:sources}
+The published inputs are \citet{bouyukliev2000}, \citet{bouyukliev2001}, and Proposition~2 (printed page 179) of \citet{bouyuklieva2020}. The author's dissertation \citep{bouyukliev2008thesis} states E1 as Theorem~6.3 on printed page~147 (PDF page~149) and lists the 172 classes and allowed weights in Table~6.2 on printed page~158 (PDF page~160). These thesis numbering references are not journal theorem numbers. The 2025 hull paper \citep{bouyuklieva2025} provides a separate count cross-check. The classification computations underlying these results were not rerun.
+
+The historical intervals in Table~\ref{tab:history} were read directly from Appendix~I of \citet{verhoeff1985} (table block 1,0) and from Table~I, column~1, printed page~665 of \citet{brouwer1993}. The online intervals and derivation chains were read from the pages of \citet{grasslTables} for the five parameter pairs on 3~November~2026.

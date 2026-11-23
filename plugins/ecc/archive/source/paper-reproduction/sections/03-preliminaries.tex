@@ -1,0 +1,49 @@
+\section{Preliminaries and Classification Results}\label{sec:preliminaries}
+\subsection{Notation and elementary operations}
+Write $\wt(x)$ for Hamming weight. For a positive-dimensional code $C$, let $d(C)$ be its minimum nonzero weight. Coordinate equivalence means equality after a coordinate permutation. A code has \emph{full support} if no coordinate is identically zero, and is \emph{even} if all its words have even weight. We use the standard operations on codes \citep{macwilliams1977}; since several arguments depend on their exact effect on parameters, we record the precise statements.
+
+\emph{Puncturing} deletes coordinates. For a set $S$ of $t$ coordinates, the kernel of puncturing consists of the codewords supported in $S$. If $t<d(C)$, this kernel is zero, so puncturing is injective and preserves dimension. Every remaining word loses at most $t$ ones, so the punctured code has distance at least $d(C)-t$.
+
+\emph{Shortening} on a coordinate set $S$ first restricts to words zero on $S$ and then deletes $S$. Let $\pi_S:C\to\F^S$ be the coordinate projection, of rank $r$. The shortened code is the image of $\ker\pi_S$ after deleting $S$, and the deletion is injective on this kernel. By rank-nullity, shortening reduces dimension by exactly $r$ and changes no weight; in particular, it does not reduce minimum distance. For one coordinate, $r\le1$, which includes the case of a coordinate that is identically zero. When an exact smaller dimension is needed, we pass to a subspace of that dimension.
+
+\emph{Parity extension} sends $x$ to $(x,\sum_i x_i)$. It is injective because the first $n$ coordinates recover $x$. It preserves the weight of even words and adds one to the weight of odd words. Hence the extended code is even, and its minimum distance is at least the least even integer that is at least the original lower bound.
+
+\subsection{The Griesmer bound}
+The Griesmer bound \citep{griesmer1960} states that a binary linear $\codege{n}{k}{d}$ code satisfies
+\begin{equation}\label{eq:griesmer}
+ n\ge g_2(k,d):=\sum_{j=0}^{k-1}\left\lceil d/2^j\right\rceil.
+\end{equation}
+For completeness, we recall the inductive argument. Let $c\in C$ have minimum weight $D$, and puncture the $D$ positions in its support. The kernel is $\langle c\rangle$: any other nonzero word supported there has weight at least $D$ and thus equals $c$. The residual code therefore has dimension $k-1$. For a nonzero residual word, take its two preimages $x$ and $x+c$. If their common weight outside the support is $b$ and the weight of $x$ inside the support is $a$, then $a+b\ge D$ and $D-a+b\ge D$. Adding the two inequalities gives $b\ge\lceil D/2\rceil$. By induction,
+\[
+ n-D\ge\sum_{j=0}^{k-2}\left\lceil\frac{\lceil D/2\rceil}{2^j}\right\rceil
+       =\sum_{j=1}^{k-1}\left\lceil\frac D{2^j}\right\rceil,
+\]
+with base case $n\ge D$ for $k=1$. Monotonicity in $D$ gives \eqref{eq:griesmer} for a distance lower bound. We use two values:
+\[
+ g_2(8,19)=42,\qquad g_2(7,20)=42.
+\]
+
+\subsection{Weight enumerators and the MacWilliams identities}
+For a code $C\subseteq\F^n$ of dimension $k$, let $A_w$ and $B_j$ count the words of weight $w$ in $C$ and of weight $j$ in $C^\perp$, respectively. Define the binary Krawtchouk polynomials of length $n$ by
+\[
+ K_j(w)=\sum_{t=0}^j(-1)^t\binom wt\binom{n-w}{j-t}.
+\]
+The MacWilliams identities \citep{macwilliams1963} state that
+\begin{equation}\label{eq:macwilliams}
+ \sum_{w=0}^{n}A_wK_j(w)=2^{k}B_j\qquad(0\le j\le n).
+\end{equation}
+They follow from character orthogonality: for $y\in\F^n$, the sum $\sum_{x\in C}(-1)^{x\cdot y}$ equals $2^k$ if $y\in C^\perp$ and vanishes otherwise, since in the latter case some $x_0\in C$ has $x_0\cdot y=1$ and the map $x\mapsto x+x_0$ pairs terms of opposite sign. Summing over all $y$ of weight $j$ and interchanging the two finite sums yields \eqref{eq:macwilliams}.
+
+\subsection{Classification inputs}
+We use three published results, labeled for reference.
+
+\textbf{E1.} The eight-dimensional classification of \citet{bouyukliev2000} excludes exact $[41,8,18]$ codes. The same statement appears as Theorem~6.3 (p.~147) of \citet{bouyukliev2008thesis}. Since $g_2(8,19)=42>41$, E1 also excludes $\codege{41}{8}{18}$.
+
+\textbf{E2.} \citet{bouyukliev2001} classify optimal binary linear codes of dimension at most seven. The input used here is an upper bound of 172 coordinate-equivalence classes of full-support $[40,7,18]$ codes; the count and the allowed weights are listed explicitly in Table~6.2 (p.~158) of \citet{bouyukliev2008thesis}. Our concrete catalogue contains 172 pairwise inequivalent representatives, so E2 implies that the catalogue is complete. As a consistency check, the hull $K\cap K^\perp$ has dimension $1$, $3$, or $5$ with multiplicities $33$, $62$, and $77$, matching \citet{bouyuklieva2025}. Completeness uses only E2 and inequivalence.
+
+\textbf{E3.} \citet{bouyuklieva2020}, Proposition~2, prove that a binary linear $[41,14,14]$ code does not exist. Section~\ref{sec:consequences} reduces $\codege{42}{16}{13}$ to E3.
+
+The classification computations underlying E1--E3 are published inputs and were not rerun. Appendix~\ref{app:sources} gives page-level locations.
+
+\subsection{Lower-bound constructions}
+Appendix~\ref{app:lower} gives full-rank generators and complete nonzero weight spectra for $[43,10,16]$, $[44,10,17]$, $[44,11,16]$, and $[42,16,12]$ codes. The $(44,10)$ and $(44,11)$ matrices are reconstructed from the quasicyclic records of \citet{grasslTables}; puncturing and zero padding supply the related lower bounds.

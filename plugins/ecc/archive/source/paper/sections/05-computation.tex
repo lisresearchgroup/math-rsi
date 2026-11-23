@@ -1,0 +1,87 @@
+\section{Complete Enumeration and Rejection Certificates}
+\label{sec:computation}
+The computational statement used in Theorem~\ref{thm:main} is finite and explicit.
+\begin{proposition}[Computed incompatibility]\label{prop:computed}
+For each of the 172 catalogue codes $K$, and all distinct cosets $a+K,b+K\in E_{40}/K$ with $\dist_K(a),\dist_K(b)\ge16$, one has $\dist_K(a+b)<16$.
+\end{proposition}
+The domain is the even quotient $E_{40}/K$; odd cosets lie outside this computation and are not needed. A complete verification for a catalogue code $K$ must establish three separate properties:
+\begin{enumerate}
+\item the supplied matrix defines an even, full-support $[40,7,18]$ code and matches the coordinates used by the scan;
+\item the list $F_K$ equals the entire set of even cosets at distance at least 16 from $K$; membership and completeness are separate obligations;
+\item every unordered pair of distinct entries of $F_K$ is rejected.
+\end{enumerate}
+Sections~\ref{sec:catalogue}--\ref{sec:replay} address these in turn.
+
+\subsection{The catalogue and canonical representatives}\label{sec:catalogue}
+For each catalogue code, seven 40-bit integers specify the generator rows. Enumerating all 128 messages checks the rank, evenness, minimum distance 18, and full support. The 172 matrices have 21,844 nonzero messages in total. Coordinate equivalence is tested with a colored incidence graph with 40 coordinate vertices and 128 codeword vertices, whose edges record the entries equal to $1$; the two vertex types have distinct colors. Isomorphisms of these graphs correspond exactly to coordinate equivalences of the codes. Canonical labeling with nauty \citep{mckay2014} distinguishes all 172 graphs, which gives the inequivalence required in Section~\ref{sec:preliminaries}.
+
+To enumerate cosets, put a generator matrix of $K$ into systematic form with pivot positions $p_1,\ldots,p_7$ and rows $r_1,\ldots,r_7$. The linear map
+\begin{equation}\label{eq:normalizer}
+ N_K(x)=x+\sum_{i=1}^7 x_{p_i}r_i
+\end{equation}
+selects a unique representative of each coset. Indeed, $(r_i)_{p_j}=\delta_{ij}$, so $N_K(x)$ vanishes at every pivot and $N_K(x+r_i)=N_K(x)$. Conversely, $N_K(x)=0$ implies $x=\sum_i x_{p_i}r_i\in K$. Thus $N_K$ has kernel $K$ and induces a bijection between $\F^{40}/K$ and the zero-pivot subspace. Since the rows of $K$ are even, $N_K$ preserves parity. On the zero-pivot subspace, evenness is the single nonzero equation that the 33 free bits sum to zero. The scan domain therefore has exactly $2^{32}$ elements; it is neither sampled nor restricted by symmetry. Because $N_K(x)+x\in K$ and $N_K$ is linear, coset distances and pair-sum distances are unchanged by this normalization.
+
+\subsection{Two implementations cover the entire domain}\label{sec:scans}
+Write the systematic generator as $[I_7\mid P]$ in pivot/free coordinate order. A normalized representative has the form $(0,z)$, so for every message $u\in\F^7$,
+\begin{equation}\label{eq:packed-distance}
+ \wt\bigl((0,z)+u[I_7\mid P]\bigr)
+ =\wt(u)+\wt(z+uP).
+\end{equation}
+Thus $\dist_K((0,z))\ge16$ is equivalent to the 128 inequalities $\wt(z+uP)\ge16-\wt(u)$. The pivot contribution $\wt(u)$ is retained even though the scanner stores only the free bits.
+
+The first scanner splits the 33 free bits into 27 high bits $h$ and six low bits $\ell$, and writes $uP=(h_u,\ell_u)$ in the same order. For fixed $h$ and $u$, the admissible low values are precisely those satisfying
+\[
+ \wt(\ell+\ell_u)\ge16-\wt(u)-\wt(h+h_u).
+\]
+A 64-bit mask represents the 64 possible low values. A threshold at most zero retains every bit, a threshold greater than six removes every bit, and for thresholds $1,\ldots,6$ a precomputed mask records the exact six-bit Hamming inequality. Intersecting the masks for all 128 messages with the parity mask therefore retains exactly the admissible even representatives; an early exit when the intersection becomes empty cannot remove an admissible representative. Parity leaves 32 low values for each high assignment, so $2^{27}\cdot32=2^{32}$ even representatives are considered. The high assignments are visited in the order
+\[
+ h_i=(\mathtt{0x11bbcdcb}\,i+\mathtt{0x0e7b9d15})\bmod2^{27},
+\]
+for $0\le i<2^{27}$. The multiplier is odd, so this affine map is a permutation and every high assignment is visited exactly once.
+
+The second scanner chooses systematic pivots in the opposite order, builds a different basis for the 32-dimensional even quotient, and enumerates it in Gray-code order $i\oplus(i\gg1)$. It computes weights of actual 40-bit words against all 128 actual codewords, and rejects a candidate only after a recomputed distance below 16. Its output is converted to the normalization of the first scanner and compared as a complete set, not only by cardinality. All 172 sets agree. This establishes property~2 with two independent implementations that use different bases and enumeration orders.
+
+\begin{table}[t]
+\caption{Recorded complete computation. A coset visit is one element of the explicitly defined even quotient. Pair replay checks saved witnesses and does not repeat the coset scans.}
+\label{tab:compute}
+\centering\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Count\\
+\midrule
+Full-support catalogue codes & 172\\
+Cosets per code, per scanner & $2^{32}$\\
+Cosets across codes, per scanner & 738,734,374,912\\
+Accepted cosets, $\sum_K|F_K|$ & 429,024\\
+Unordered pairs, $\sum_K\binom{|F_K|}{2}$ & 619,053,789\\
+Compatible pairs & 0\\
+Replayed pair witnesses & 619,053,789\\
+Invalid or nonrejecting witnesses & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Independent replay of every rejected pair}\label{sec:replay}
+Order each complete list $F_K$. For every $i<j$, the certificate stores a message $u\in\{0,\ldots,127\}$ such that
+\begin{equation}\label{eq:witness}
+ \wt(a_i+a_j+uG_K)<16.
+\end{equation}
+An independent checker reconstructs $uG_K$ from the literal generator rows, verifies the inequality, checks that the number and order of pairs are correct, and requires exact end-of-file. It also checks every saved member of $F_K$ against all 128 codewords, a total of 54,915,072 distance evaluations. The replay processes 149 binary and 23 text streams and validates all 619,053,789 witnesses. A message value outside $\{0,\ldots,127\}$, a missing or trailing record, a wrong matrix binding, or a weight of at least 16 counts as a verification failure. Table~\ref{tab:witness} gives the distribution of the weights $\wt(a_i+a_j+uG_K)$ attained by the stored witnesses.
+
+\begin{table}[t]
+\caption{Weights attained by the 619,053,789 stored pair witnesses, over all catalogue codes.}
+\label{tab:witness}
+\centering\small
+\begin{tabular}{@{}rr@{\qquad}rr@{}}
+\toprule
+Weight & Count & Weight & Count\\
+\midrule
+2 & 186,172 & 10 & 61,595,955\\
+4 & 922,339 & 12 & 171,053,508\\
+6 & 4,503,729 & 14 & 363,867,130\\
+8 & 16,924,956 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The replay detects a false rejection or a malformed stream, but it cannot detect an admissible coset that is missing from both its input list and the pair stream. Completeness is supplied separately by the two full scans of Section~\ref{sec:scans}. Together these checks establish Proposition~\ref{prop:computed}. The compiler, the runtime, the two enumeration implementations, and the graph canonicalizer remain part of the computational trust boundary. The deductive part of the argument is formalized in Lean~4, with E1, E2, catalogue inequivalence, and Proposition~\ref{prop:computed} as explicit hypotheses (Appendix~\ref{app:formal}).

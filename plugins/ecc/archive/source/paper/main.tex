@@ -5,10 +5,8 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 \newcommand{\theHalgorithm}{\arabic{algorithm}}
-\usepackage{icml2026}
+\usepackage[preprint]{icml2026}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning}
 \usepackage{longtable}
 \usepackage{listings}
 \usepackage[capitalize,noabbrev]{cleveref}
@@ -25,37 +23,57 @@
 \newcommand{\dist}{\delta}
 \newcommand{\dopt}{d_2}
 \newcommand{\E}{\mathcal E}
-\icmltitlerunning{AI-Assisted Code Nonexistence Proofs}
-\icmlkeywords{AI-assisted mathematics, coding theory, computational proof, formal verification}
+% Keep a code's distance-bound entry compact and prevent line breaks inside parameters.
+\newcommand{\codege}[3]{\mbox{\ensuremath{[#1,#2,{\ge}\,#3]}}}
+% Retain standard relation spacing, without justification-dependent stretching.
+\AtBeginDocument{\thickmuskip=5mu\relax}
+\newcommand{\repobase}{https://github.com/lisresearchgroup/math-rsi/tree/main/plugins/ecc/archive/source/paper-reproduction}
+\newcommand{\repolink}[1]{\href{\repobase/#1}{\texttt{#1}}}
+\icmltitlerunning{Nonexistence Results for Binary Linear Codes}
+\icmlkeywords{binary linear codes, minimum distance, nonexistence, classification, exhaustive enumeration}
+\renewcommand{\today}{November 18, 2026}
+% The official style sets an ICML proceedings subject; this is a public preprint.
+\hypersetup{pdfsubject={Preprint}}
+
+
+% The title block carries author names only; emit the preprint notice alone.
+\makeatletter
+\renewcommand{\printAffiliationsAndNotice}[1]{%
+  \global\icml@noticeprintedtrue
+  {\let\thefootnote\relax\footnotetext{\hspace*{-\footnotesep}\Notice@String}}%
+}
+\makeatother
+
 \begin{document}
 \twocolumn[
-\icmltitle{AI-Assisted Nonexistence Proofs for\ Five Binary Linear Code Parameters}
+\icmltitle{Nonexistence Results for\ Five Binary Linear Code Parameters}
 \begin{icmlauthorlist}
-\icmlauthor{Anonymous Authors}{anon}
+\icmlauthor{Zuhao Zhang}{}\quad
+\icmlauthor{Ruofeng Yang}{}\quad
+\icmlauthor{Haitong Ma}{}\quad
+\icmlauthor{Rasul Tutunov}{}\\
+\icmlauthor{Dimitris}{}\quad
+\icmlauthor{Zhinuo Zhou}{}\quad
+\icmlauthor{Haitham Bou Ammar}{}\\
+\icmlauthor{Qiaosheng Zhang}{}\quad
+\icmlauthor{Jun Wang}{}\quad
+\icmlauthor{Shuai Li}{}
 \end{icmlauthorlist}
-\icmlaffiliation{anon}{Anonymous Institution}
-\icmlcorrespondingauthor{Anonymous Author}{anonymous@example.invalid}
 \vskip 0.3in
 ]
 \printAffiliationsAndNotice{}
 \begin{abstract}
-We present an AI-assisted mathematical investigation excluding binary linear codes with parameters $[43,10,\ge17]$, $[44,10,\ge18]$, $[44,11,\ge17]$, $[45,11,\ge18]$, and $[42,16,\ge13]$.
-The main proof reduces the first target to extending one of 172 classified $[40,7,18]$ codes and rules out every extension through complete coset enumeration and pairwise incompatibility certificates.
-Two independently implemented scans examine $2^{32}$ cosets per mother code and agree on all 429,024 accepted cosets; a separate checker replays 619,053,789 pair rejections.
-Three targets follow by puncturing and shortening, while the fifth follows from a published $[41,14,14]$ nonexistence theorem.
-Explicit constructions yield four exact optimal distances and the interval $16\le\dopt(45,11)\le17$.
-We describe the recorded contributions of AI to exploration and verification design, and formalize the mathematical reductions in Lean with explicit interfaces for published and computational inputs.
+We prove that a binary linear code of length 43, dimension 10, and minimum distance at least 17 does not exist. The MacWilliams identities force a codeword of weight four in the dual code, and shortening on its support reduces the problem to extensions of the 172 classified full-support $[40,7,18]$ codes. For each such code, a complete enumeration of its $2^{32}$ even cosets shows that any two distinct cosets at distance at least 16 have a sum at distance below 16, so the required extension does not exist. Two independent enumerations and an independent replay of all 619,053,789 pair rejections verify this finite step. Puncturing and shortening then exclude $\codege{44}{10}{18}$, $\codege{44}{11}{17}$, and $\codege{45}{11}{18}$ codes, and a reduction to the published nonexistence of $[41,14,14]$ codes excludes $\codege{42}{16}{13}$. Together with explicit constructions, these results determine four values of $d_2(n,k)$ for which only bounds have been recorded since at least 1985, and give $16\le d_2(45,11)\le17$.
 \end{abstract}
 \input{sections/01-introduction}
-\input{sections/02-background}
-\input{sections/03-reduction}
-\input{sections/04-computation}
-\input{sections/05-consequences}
-\input{sections/06-ai-formal}
-\input{sections/07-discussion}
+\input{sections/02-related-work}
+\input{sections/03-preliminaries}
+\input{sections/04-reduction}
+\input{sections/05-computation}
+\input{sections/06-consequences}
+\input{sections/07-conclusion}
 \label{main:end}
-\section*{Impact Statement}
-This work studies mathematical proof and error-correcting codes. Its methodological contribution is an auditable separation of AI-generated suggestions from the evidence used to accept a mathematical claim. The results concern finite binary linear codes; the paper does not evaluate deployment decisions or human subjects. Explicit attribution and reproducible verification reduce the risk of presenting model agreement or incomplete search as proof.
+\clearpage
 \bibliography{references}
 \bibliographystyle{icml2026}
 \clearpage
@@ -63,4 +81,6 @@ This work studies mathematical proof and error-correcting codes. Its methodologi
 \onecolumn
 \input{sections/08-appendix}
 \input{sections/09-data}
+\section*{Acknowledgment of AI assistance}
+AI systems assisted with literature retrieval, proof exploration, implementation, verification design, and exposition. The provenance record in \repolink{provenance/ai-interventions.md} lists documented interventions and corrections. The proofs use the stated mathematical arguments, published classification results, and finite computations; model responses do not serve as proof certificates.
 \end{document}

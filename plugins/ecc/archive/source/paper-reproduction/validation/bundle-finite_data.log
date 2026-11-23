@@ -1,0 +1,110 @@
+{
+  "scope": "lower spectra, mother parameters, polynomial, recorded coverage; no full coset scans or pair streams rerun",
+  "lower": [
+    {
+      "n": 43,
+      "k": 10,
+      "distance": 16,
+      "nonzero_messages": 1023,
+      "spectrum": {
+        "16": 12,
+        "17": 101,
+        "18": 144,
+        "19": 70,
+        "20": 61,
+        "21": 147,
+        "22": 146,
+        "23": 36,
+        "24": 43,
+        "25": 123,
+        "26": 92,
+        "27": 22,
+        "28": 11,
+        "29": 13,
+        "30": 2
+      }
+    },
+    {
+      "n": 44,
+      "k": 10,
+      "distance": 17,
+      "nonzero_messages": 1023,
+      "spectrum": {
+        "17": 72,
+        "18": 113,
+        "19": 82,
+        "20": 101,
+        "21": 114,
+        "22": 111,
+        "23": 84,
+        "24": 71,
+        "25": 108,
+        "26": 87,
+        "27": 26,
+        "28": 19,
+        "29": 26,
+        "30": 9
+      }
+    },
+    {
+      "n": 44,
+      "k": 11,
+      "distance": 16,
+      "nonzero_messages": 2047,
+      "spectrum": {
+        "16": 371,
+        "20": 880,
+        "24": 706,
+        "28": 88,
+        "32": 2
+      }
+    },
+    {
+      "n": 45,
+      "k": 11,
+      "distance": 16,
+      "nonzero_messages": 2047,
+      "spectrum": {
+        "16": 371,
+        "20": 880,
+        "24": 706,
+        "28": 88,
+        "32": 2
+      }
+    },
+    {
+      "n": 42,
+      "k": 16,
+      "distance": 12,
+      "nonzero_messages": 65535,
+      "spectrum": {
+        "12": 675,
+        "16": 9898,
+        "20": 30659,
+        "24": 21056,
+        "28": 3161,
+        "32": 85,
+        "36": 1
+      }
+    }
+  ],
+  "mothers": {
+    "count": 172,
+    "nonzero_messages_checked": 21844,
+    "rank_even_distance_full_support": "PASS",
+    "inequivalence": "requires separate canonicalization check"
+  },
+  "recorded_coverage": {
+    "cosets_per_implementation": 738734374912,
+    "accepted_cosets": 429024,
+    "pairs": 619053789
+  },
+  "portable_inputs": {
+    "cases": 172,
+    "saved_cosets": 429024,
+    "matrices_coordinates_parity_counts": "PASS",
+    "saved_coset_distance_checks": "see prior complete native replay; this script does not repeat pair rejection"
+  },
+  "status": "PASS"
+}
+

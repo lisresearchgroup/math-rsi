@@ -1,0 +1,2 @@
+{"case": 0, "name": "codetables", "mode": "DRY_RUN", "cosets_per_scanner": 4294967296, "expected_F": 668, "expected_pairs": 222778, "output": "/private/tmp/ecc-math-v3-unpack-e8cn6ucs/unused-case-output", "native_sources": ["even_scan.cpp", "literal_gray_replay.cpp", "rank3_even_graph.cpp"]}
+

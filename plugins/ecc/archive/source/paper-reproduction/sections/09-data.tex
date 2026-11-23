@@ -1,0 +1,225 @@
+\section{Explicit Lower-Bound Generators}
+\label{app:lower}
+In every list below, integer bit $j$ is coordinate $j$, starting from zero; message bit $i$ selects generator row $i$, and addition is XOR. The row order is the displayed order. Leading zero coordinates are retained up to the declared length. Enumeration of all $2^k-1$ nonzero messages establishes the listed exact distance; distinct message images establish rank $k$.
+
+\subsection{The $[43,10,16]$ witness}
+\begin{quote}\ttfamily\small
+137539745726, 5740911900901, 3801465813127, 7302904556701,\\
+3853442440940, 2103915382859, 5144838248083, 7496890689917,\\
+7842576845701, 8787570300677
+\end{quote}
+The nonzero spectrum $(w:A_w)$ is $16:12$, $17:101$, $18:144$, $19:70$, $20:61$, $21:147$, $22:146$, $23:36$, $24:43$, $25:123$, $26:92$, $27:22$, $28:11$, $29:13$, $30:2$.
+
+\subsection{The $[44,10,17]$ witness}
+\begin{quote}\ttfamily\small
+2860005872641, 5720011745283, 11440023490566, 3732392958991,\\
+673493634067, 1809555608628, 204550108262, 408026474701,\\
+57712634350, 114351526877
+\end{quote}
+The nonzero spectrum $(w:A_w)$ is $17:72$, $18:113$, $19:82$, $20:101$, $21:114$, $22:111$, $23:84$, $24:71$, $25:108$, $26:87$, $27:26$, $28:19$, $29:26$, $30:9$.
+
+\subsection{The $[44,11,16]$ witness}
+\begin{quote}\ttfamily\small
+5178737328131, 10357474656262, 1218204696603, 2435335684150,\\
+944061251695, 515129213098, 225190019387, 134966837980,\\
+47094858883, 898731865, 514986475
+\end{quote}
+The nonzero spectrum $(w:A_w)$ is $16:371$, $20:880$, $24:706$, $28:88$, $32:2$.
+
+The $[45,11,16]$ generator uses exactly the $[44,11,16]$ integers above, interpreted as 45-bit rows. Coordinate 44 is zero. Its nonzero weight spectrum is unchanged.
+
+\subsection{The $[42,16,12]$ witness}
+\begin{quote}\ttfamily\small
+106065092, 139139103, 285387535, 556556412,\\
+1113112824, 2195975476, 4307321038, 8653155535,\\
+17229284152, 34395582853, 68730626717, 137504614505,\\
+274932175173, 549758586446, 1099560464847, 2199058158699
+\end{quote}
+The nonzero spectrum $(w:A_w)$ is $12:675$, $16:9898$, $20:30659$, $24:21056$, $28:3161$, $32:85$, $36:1$.
+
+\clearpage
+\section{The 172 Catalogue Codes and Their Complete Coset Counts}
+\label{app:catalogue}
+Each row gives the frozen zero-based catalogue index, the seven 40-bit generator rows in hexadecimal (leading zeros omitted), the hull dimension $h$, and $|F_K|$. Each pair graph has zero edges; its checked pair count is $\binom{|F_K|}{2}$. Integer bit conventions are as above. The two scans each cover $2^{32}$ cosets for every row. Hexadecimal notation specifies the full matrices rather than just invariants or equivalence-class names.
+\begingroup\small
+\begin{longtable}{@{}r p{12cm} r r@{}}
+\caption{Literal catalogue generators and computed admissible-coset counts.}\\
+\toprule
+Index & Seven generator rows (hexadecimal) & $h$ & $|F_K|$\\
+\midrule\endfirsthead
+\toprule Index & Seven generator rows (hexadecimal), continued & $h$ & $|F_K|$\\\midrule\endhead
+\bottomrule\endfoot
+0 & \texttt{b73e546820} \texttt{ee7ca8d040} \texttt{ddf951a0c1} \texttt{bbf2a74182} \texttt{f6e74a8b04} \texttt{edce951e08} \texttt{db9f2a3430} & 5 & 668 \\
+1 & \texttt{373e54d060} \texttt{ee7ca9a0c1} \texttt{5df9514182} \texttt{bbf2a68300} \texttt{f6e74b1604} \texttt{6dce943c08} \texttt{db9f2a6830} & 3 & 833 \\
+2 & \texttt{b67ca8d060} \texttt{6cf951a0c1} \texttt{dff2a34182} \texttt{bbe54e8300} \texttt{75ce951604} \texttt{ef9d2a3c08} \texttt{5b3e546830} & 3 & 795 \\
+3 & \texttt{b77ca8d040} \texttt{6e7951a0c1} \texttt{5df2a34182} \texttt{3be54e8304} \texttt{76ce951608} \texttt{6d9d2a3c10} \texttt{5bbe546820} & 5 & 844 \\
+4 & \texttt{d3e58d3840} \texttt{afcf1270c1} \texttt{d59e2c41c2} \texttt{ab3c58a384} \texttt{dc7cb1c708} \texttt{b2f9630e10} \texttt{edf2c69c20} & 5 & 819 \\
+5 & \texttt{55f2c6b081} \texttt{abe7892182} \texttt{d6cf160384} \texttt{ad9e2c4708} \texttt{5a3e58ce10} \texttt{357cb19c20} \texttt{eaf9637840} & 3 & 1334 \\
+6 & \texttt{55f2c6b081} \texttt{abe7892182} \texttt{56cf164384} \texttt{ad9e2c4708} \texttt{da3e588e10} \texttt{b57cb1dc20} \texttt{6af9633840} & 3 & 1355 \\
+7 & \texttt{dbe51a3081} \texttt{a7cf246182} \texttt{dd9e58c384} \texttt{ab3cb18708} \texttt{d47c634e10} \texttt{baf9c69c20} \texttt{e5f28d3840} & 5 & 867 \\
+8 & \texttt{000003ffff} \texttt{0007fe99aa} \texttt{0f85382aec} \texttt{107d92e316} \texttt{26669b33d8} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 2578 \\
+9 & \texttt{000003ffff} \texttt{0007fc7b32} \texttt{0f853a9a54} \texttt{107d92b346} \texttt{26669b2398} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 3930 \\
+10 & \texttt{000003ffff} \texttt{0007fe95d2} \texttt{0f853ba94e} \texttt{107d930ee8} \texttt{26669bd08c} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2537 \\
+11 & \texttt{000003ffff} \texttt{0007fd35e8} \texttt{0f853ab942} \texttt{107d930eac} \texttt{26669bd0ce} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2489 \\
+12 & \texttt{000003ffff} \texttt{0007fceb52} \texttt{0f853ab186} \texttt{107d921ed8} \texttt{26669b231c} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1950 \\
+13 & \texttt{000003ffff} \texttt{0007fc7752} \texttt{0f853b7986} \texttt{107d922ed8} \texttt{26669bb31c} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1897 \\
+14 & \texttt{000003ffff} \texttt{0007fec59a} \texttt{0f853997e2} \texttt{107d9319b4} \texttt{26669a1ec8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4037 \\
+15 & \texttt{000003ffff} \texttt{0007ff256c} \texttt{0f85395dd8} \texttt{107d9296e8} \texttt{26669b188e} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 3813 \\
+16 & \texttt{000003ffff} \texttt{0007ff0d36} \texttt{0f853a7f84} \texttt{107d9329d8} \texttt{26669bb21e} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4015 \\
+17 & \texttt{000003ffff} \texttt{0007fd1d72} \texttt{0f8538ada8} \texttt{107d932a3c} \texttt{26669a33d0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4093 \\
+18 & \texttt{000003ffff} \texttt{0007fea6b2} \texttt{0f853a6b0a} \texttt{107d90b78c} \texttt{26669b3bd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 2575 \\
+19 & \texttt{000003ffff} \texttt{0007fe6734} \texttt{0f853b4a1a} \texttt{107d90b78c} \texttt{26669b3bd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4022 \\
+20 & \texttt{000003ffff} \texttt{0007ff0d3c} \texttt{0f85399632} \texttt{107d926b54} \texttt{26669bb398} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4223 \\
+21 & \texttt{000003ffff} \texttt{0007fd8d96} \texttt{0f853a8acc} \texttt{107d931ce8} \texttt{26669bd00e} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 998 \\
+22 & \texttt{000003ffff} \texttt{0007ff852e} \texttt{0f85399992} \texttt{107d922dd8} \texttt{26669b321c} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 2036 \\
+23 & \texttt{000003ffff} \texttt{0007ff8956} \texttt{0f8539ceca} \texttt{107d9293e8} \texttt{26669b1c8c} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3943 \\
+24 & \texttt{000003ffff} \texttt{0007fdc696} \texttt{0f853acdcc} \texttt{107d9316e8} \texttt{26669b980e} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2455 \\
+25 & \texttt{000003ffff} \texttt{0007fea52e} \texttt{0f8538ccca} \texttt{107d93169a} \texttt{26669b98ec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4084 \\
+26 & \texttt{000003ffff} \texttt{0007fea34e} \texttt{0f853acd88} \texttt{107d93169a} \texttt{26669b98ec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4031 \\
+27 & \texttt{000003ffff} \texttt{0007fdc9a6} \texttt{0f853aea0a} \texttt{107d9313b8} \texttt{26669b9ccc} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 2505 \\
+28 & \texttt{000003ffff} \texttt{0007fd55e2} \texttt{0f853b212e} \texttt{107d9256ac} \texttt{26669b98c8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3944 \\
+29 & \texttt{000003ffff} \texttt{0007fe8b74} \texttt{0f853a31be} \texttt{107d90daca} \texttt{26669b1cec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1371 \\
+30 & \texttt{000003ffff} \texttt{0007ff0dcc} \texttt{0f853a66da} \texttt{107d91ab92} \texttt{26669a331c} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4032 \\
+31 & \texttt{000003ffff} \texttt{0007fdb0ae} \texttt{0f853ae116} \texttt{107d93265c} \texttt{2666983b98} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 2554 \\
+32 & \texttt{000003ffff} \texttt{0007ff9136} \texttt{0f8539455a} \texttt{107d929a9c} \texttt{26669b1ce0} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2505 \\
+33 & \texttt{000003ffff} \texttt{0007fe953a} \texttt{0f853a3bb4} \texttt{107d90dcc6} \texttt{26669b1ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 2264 \\
+34 & \texttt{000003ffff} \texttt{0007fd53d4} \texttt{0f853a7542} \texttt{107d93869c} \texttt{26669b18e8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 1908 \\
+35 & \texttt{000003ffff} \texttt{0007fcaeb4} \texttt{0f853ac49a} \texttt{107d932b2c} \texttt{26669a33d0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 2519 \\
+36 & \texttt{000003ffff} \texttt{0007fd8f4a} \texttt{0f85395532} \texttt{107d929a5c} \texttt{26669b2398} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 3888 \\
+37 & \texttt{000003ffff} \texttt{0007fe8f32} \texttt{0f8538e58a} \texttt{107d932a3c} \texttt{26669a33d0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 2551 \\
+38 & \texttt{000003ffff} \texttt{0007fe8b6a} \texttt{0f853839b2} \texttt{107d92d2cc} \texttt{26669b1cf8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2502 \\
+39 & \texttt{000003ffff} \texttt{0007fd2dca} \texttt{0f85385578} \texttt{107d93989c} \texttt{26669a1ee0} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 971 \\
+40 & \texttt{000003ffff} \texttt{0007fe8b66} \texttt{0f853a31ac} \texttt{107d90dae8} \texttt{26669b1cce} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4062 \\
+41 & \texttt{000003ffff} \texttt{0007fda556} \texttt{0f853ab18a} \texttt{107d93a23c} \texttt{26669b3bd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 2497 \\
+42 & \texttt{000003ffff} \texttt{0007fcb972} \texttt{0f853adaa6} \texttt{107d9293cc} \texttt{26669b1cf8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1658 \\
+43 & \texttt{000003ffff} \texttt{0007fd6b86} \texttt{0f827065ba} \texttt{107ad1b1d2} \texttt{2664da391c} \texttt{455763c1e0} \texttt{84cf83fe00} & 3 & 1747 \\
+44 & \texttt{000003ffff} \texttt{0007ff846e} \texttt{0f827313c6} \texttt{107ad23d4a} \texttt{2664dbd98c} \texttt{455763e1f0} \texttt{84cf83fe00} & 5 & 2537 \\
+45 & \texttt{000003ffff} \texttt{0007ff8a6c} \texttt{0f827315c6} \texttt{107ad2394e} \texttt{2664dbd188} \texttt{455763e1f0} \texttt{84cf83fe00} & 5 & 2592 \\
+46 & \texttt{000003ffff} \texttt{0007fdb946} \texttt{0f8270e2b6} \texttt{107ad12d3c} \texttt{2664da31d8} \texttt{455763c1e0} \texttt{84cf83fe00} & 5 & 2652 \\
+47 & \texttt{000003ffff} \texttt{0007fd7986} \texttt{0f827252bc} \texttt{107ad3132e} \texttt{2664db9dc8} \texttt{455763e1f0} \texttt{84cf83fe00} & 5 & 2498 \\
+48 & \texttt{000003ffff} \texttt{0007fd718e} \texttt{0f8272f498} \texttt{107ad3271c} \texttt{2664dbb9d0} \texttt{455763c1e0} \texttt{84cf83fe00} & 5 & 2507 \\
+49 & \texttt{000003ffff} \texttt{0007ffa45a} \texttt{0f8272f894} \texttt{107ad33338} \texttt{2664da3dc0} \texttt{455763c1e0} \texttt{84cf83fe00} & 3 & 1353 \\
+50 & \texttt{000003ffff} \texttt{0007fe9a74} \texttt{0f8272d4ac} \texttt{107ad3592a} \texttt{2664db81cc} \texttt{455763e1f0} \texttt{84cf83fe00} & 3 & 1741 \\
+51 & \texttt{000003ffff} \texttt{0007fd5d32} \texttt{0f8273ac54} \texttt{107ad2e986} \texttt{2664db3198} \texttt{455763c1e0} \texttt{84cf83fe00} & 3 & 1816 \\
+52 & \texttt{000003ffff} \texttt{0007fc9db2} \texttt{0f82732d54} \texttt{107ad3a986} \texttt{2664da31d8} \texttt{455763c1e0} \texttt{84cf83fe00} & 5 & 2584 \\
+53 & \texttt{000003ffff} \texttt{0007fd1db2} \texttt{0f82736d14} \texttt{107ad27986} \texttt{2664dbb1d8} \texttt{455763c1e0} \texttt{84cf83fe00} & 1 & 1396 \\
+54 & \texttt{000003ffff} \texttt{0007ffa23c} \texttt{0f8272b954} \texttt{107ad2f186} \texttt{2664db3d98} \texttt{455763c1e0} \texttt{84cf83fe00} & 5 & 2552 \\
+55 & \texttt{000003ffff} \texttt{0007fe26f4} \texttt{0f82708d7a} \texttt{107ad2b54c} \texttt{2664db3990} \texttt{455763c1e0} \texttt{84cf83fe00} & 3 & 1327 \\
+56 & \texttt{000003ffff} \texttt{0007fcb3ca} \texttt{0f8273b492} \texttt{107ad324f8} \texttt{2664da391c} \texttt{455763c1e0} \texttt{84cf83fe00} & 3 & 1695 \\
+57 & \texttt{000003ffff} \texttt{0007fd9734} \texttt{0f827299aa} \texttt{107ad30dcc} \texttt{2664dbd00e} \texttt{455763e1f0} \texttt{84cf83fe00} & 3 & 1633 \\
+58 & \texttt{000003ffff} \texttt{0007ff839c} \texttt{0f85aad5a6} \texttt{107c9ad9c4} \texttt{2666b31ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1686 \\
+59 & \texttt{000003ffff} \texttt{0007fcda36} \texttt{0f85a9aada} \texttt{107c99336c} \texttt{2666b23b90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1542 \\
+60 & \texttt{000003ffff} \texttt{0007fed236} \texttt{0f85a9b2da} \texttt{107c9b236c} \texttt{2666b23b90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1706 \\
+61 & \texttt{000003ffff} \texttt{0007fd5a96} \texttt{0f85aa2aac} \texttt{107c9bd03a} \texttt{2666b39ccc} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 2280 \\
+62 & \texttt{000003ffff} \texttt{0007fcf326} \texttt{0f85aaa954} \texttt{107c9a8a9e} \texttt{2666b33318} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 1082 \\
+63 & \texttt{000003ffff} \texttt{0007fd5b8a} \texttt{0f85abab1c} \texttt{107c9b321e} \texttt{2666b23fd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 1794 \\
+64 & \texttt{000003ffff} \texttt{0007fd5a96} \texttt{0f81ab8b2c} \texttt{107c9ad0da} \texttt{2666b31cec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2471 \\
+65 & \texttt{000003ffff} \texttt{0007ff2c5a} \texttt{0f81ab55a2} \texttt{107c9998dc} \texttt{2666b21ee0} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2462 \\
+66 & \texttt{000003ffff} \texttt{0007fe2db2} \texttt{0f81aa55ca} \texttt{107c9b9994} \texttt{2666b31ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 2337 \\
+67 & \texttt{000003ffff} \texttt{0007ff852e} \texttt{0f81a9b4ca} \texttt{107c9ad98c} \texttt{2666b31ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 2481 \\
+68 & \texttt{000003ffff} \texttt{0007ff1556} \texttt{0f81a97392} \texttt{107c9ba61c} \texttt{2666b23bd8} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 2444 \\
+69 & \texttt{000003ffff} \texttt{0007ff256c} \texttt{0f81a954ba} \texttt{107c9b99c4} \texttt{2666b21ef8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4022 \\
+70 & \texttt{000003ffff} \texttt{0007ff1678} \texttt{0f81aa639a} \texttt{107c9bb30c} \texttt{2666b03bd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4054 \\
+71 & \texttt{000003ffff} \texttt{0007ff153c} \texttt{0f81a97296} \texttt{107c9ba748} \texttt{2666b23b90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 2765 \\
+72 & \texttt{000003ffff} \texttt{0007ff499c} \texttt{0f81a92ad6} \texttt{107c9bb328} \texttt{2666b23fd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4036 \\
+73 & \texttt{000003ffff} \texttt{0007fd8db4} \texttt{0f81aab9c2} \texttt{107c9bd18c} \texttt{2666b31ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 3022 \\
+74 & \texttt{000003ffff} \texttt{0007ff0bb4} \texttt{0f81a9bac2} \texttt{107c9bd28c} \texttt{2666b21ce8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1957 \\
+75 & \texttt{000003ffff} \texttt{0007ff1674} \texttt{0f863a67b2} \texttt{107e38b558} \texttt{2666d3399c} \texttt{455763c1e0} \texttt{84cf83fe00} & 1 & 3260 \\
+76 & \texttt{000003ffff} \texttt{0007fdacc6} \texttt{0f86283eb4} \texttt{107e92c9cc} \texttt{2664e30ee8} \texttt{455733f0f0} \texttt{84cfc3ff00} & 1 & 2510 \\
+77 & \texttt{000003ffff} \texttt{0007feaa4e} \texttt{0f862926ba} \texttt{107e92d31c} \texttt{2664e31bd0} \texttt{455733e3e0} \texttt{84cfc3fc00} & 5 & 2458 \\
+78 & \texttt{000003ffff} \texttt{0007fd966c} \texttt{0f86293b46} \texttt{107e925ab4} \texttt{2664e3a338} \texttt{455733c3c0} \texttt{84cfc3fc00} & 1 & 2211 \\
+79 & \texttt{000003ffff} \texttt{0007ff84ae} \texttt{0f862aca9a} \texttt{107e931ad2} \texttt{2664e3931c} \texttt{455733e3e0} \texttt{84cfc3fc00} & 1 & 1674 \\
+80 & \texttt{000003ffff} \texttt{0007fdc58e} \texttt{0f862b4ec2} \texttt{107e9256d2} \texttt{2664e398e4} \texttt{455733e0f8} \texttt{84cfc3ff00} & 5 & 2538 \\
+81 & \texttt{000003ffff} \texttt{0007ff8a4e} \texttt{0f8628b8d6} \texttt{107e92d296} \texttt{2664e31ce4} \texttt{455733e0f8} \texttt{84cfc3ff00} & 3 & 2061 \\
+82 & \texttt{000003ffff} \texttt{0007fe9a3a} \texttt{0f8629b686} \texttt{107e925b54} \texttt{2664e36398} \texttt{45573383e0} \texttt{84cfc3fc00} & 5 & 2498 \\
+83 & \texttt{000003ffff} \texttt{0007fd36ac} \texttt{0f862b2a9a} \texttt{107e9272d2} \texttt{2664e3c31c} \texttt{45573383e0} \texttt{84cfc3fc00} & 3 & 2170 \\
+84 & \texttt{000003ffff} \texttt{0007fe5aaa} \texttt{0f862874f4} \texttt{107e92ab4a} \texttt{2664e3338c} \texttt{455733c3f0} \texttt{84cfc3fc00} & 1 & 2573 \\
+85 & \texttt{000003ffff} \texttt{0007fe466e} \texttt{0f874ab53a} \texttt{107ecb258a} \texttt{26655239cc} \texttt{455663c1f0} \texttt{84cf83fe00} & 5 & 2444 \\
+86 & \texttt{000003ffff} \texttt{0007feb156} \texttt{0f8748d478} \texttt{107ecb198c} \texttt{2665521fd0} \texttt{455663e1e0} \texttt{84cf83fe00} & 5 & 3929 \\
+87 & \texttt{000003ffff} \texttt{0007feb586} \texttt{0f8748d8b2} \texttt{107ecb1354} \texttt{2665531d98} \texttt{455663e1e0} \texttt{84cf83fe00} & 3 & 2167 \\
+88 & \texttt{000003ffff} \texttt{0007fe665a} \texttt{0f874b289c} \texttt{107ecbb11e} \texttt{2665503de8} \texttt{455663c1f0} \texttt{84cf83fe00} & 3 & 1271 \\
+89 & \texttt{000003ffff} \texttt{0007feb236} \texttt{0f874b14aa} \texttt{107ec9d93c} \texttt{2665521fd0} \texttt{455663e1e0} \texttt{84cf83fe00} & 5 & 2454 \\
+90 & \texttt{000003ffff} \texttt{0007ff645a} \texttt{0f87492b92} \texttt{107ec9b11c} \texttt{2665523de0} \texttt{455663c1f0} \texttt{84cf83fe00} & 5 & 2564 \\
+91 & \texttt{000003ffff} \texttt{0007fc567c} \texttt{0f874aa75a} \texttt{107ec935a8} \texttt{26655239cc} \texttt{455663c1f0} \texttt{84cf83fe00} & 5 & 2484 \\
+92 & \texttt{000003ffff} \texttt{0007ff146e} \texttt{0f87492d38} \texttt{107eca79ca} \texttt{266553b18c} \texttt{455663c1f0} \texttt{84cf83fe00} & 5 & 3958 \\
+93 & \texttt{000003ffff} \texttt{0007ff1674} \texttt{0f87498cb2} \texttt{107eca5958} \texttt{266553919c} \texttt{455663e1e0} \texttt{84cf83fe00} & 5 & 3987 \\
+94 & \texttt{000003ffff} \texttt{0007fe167a} \texttt{0f87492cd8} \texttt{107ecab96c} \texttt{266553318e} \texttt{455663c1f0} \texttt{84cf83fe00} & 5 & 4047 \\
+95 & \texttt{000003ffff} \texttt{0007fe5666} \texttt{0f8748d94a} \texttt{107eca938c} \texttt{2665531dd0} \texttt{455663e1e0} \texttt{84cf83fe00} & 3 & 1380 \\
+96 & \texttt{000003ffff} \texttt{0007fe0eea} \texttt{0f874aad5c} \texttt{107ec8e86c} \texttt{266553318e} \texttt{455663c1f0} \texttt{84cf83fe00} & 5 & 4002 \\
+97 & \texttt{000003ffff} \texttt{0007fe36e4} \texttt{0f86716a6e} \texttt{107d925cb8} \texttt{26661b90ce} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 3090 \\
+98 & \texttt{000003ffff} \texttt{0007fe87d4} \texttt{0f8671ca4c} \texttt{107d93139a} \texttt{26661a1cec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4053 \\
+99 & \texttt{000003ffff} \texttt{0007fcbca6} \texttt{0f8672c98a} \texttt{107d9391ac} \texttt{26661b1ec8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4070 \\
+100 & \texttt{000003ffff} \texttt{0007ff6136} \texttt{0f8671ab5a} \texttt{107d912e78} \texttt{26661a339c} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 2586 \\
+101 & \texttt{000003ffff} \texttt{0007fd7272} \texttt{0f8672e69a} \texttt{107d93a0dc} \texttt{26661b3b18} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 3978 \\
+102 & \texttt{000003ffff} \texttt{0007fd8bb2} \texttt{0f86728dc8} \texttt{107d930e6c} \texttt{26661bd08e} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 1327 \\
+103 & \texttt{000003ffff} \texttt{0007fcaeb4} \texttt{0f867156d6} \texttt{107d919a9a} \texttt{26661a1cec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2535 \\
+104 & \texttt{000003ffff} \texttt{0007ff4596} \texttt{0f8671ceaa} \texttt{107d92963c} \texttt{26661b18ce} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 2614 \\
+105 & \texttt{000003ffff} \texttt{0007ff32a6} \texttt{0f867159ba} \texttt{107d919ad8} \texttt{26661a1cec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2493 \\
+106 & \texttt{000003ffff} \texttt{0007fda5b2} \texttt{0f8672a9ce} \texttt{107d930ed4} \texttt{26661bb318} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 2434 \\
+107 & \texttt{000003ffff} \texttt{0007fe3374} \texttt{0f85b3546e} \texttt{107e5398a6} \texttt{26669a1ec8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3959 \\
+108 & \texttt{000003ffff} \texttt{0007fe66a6} \texttt{0f85b0ab2a} \texttt{107e512f8c} \texttt{26669a33d0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4021 \\
+109 & \texttt{000003ffff} \texttt{0007ff4556} \texttt{0f85b1598a} \texttt{107e53a23c} \texttt{26669a33d0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1673 \\
+110 & \texttt{000003ffff} \texttt{0007fd8db4} \texttt{0f85b216b8} \texttt{107e53a30e} \texttt{26669b3bd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4207 \\
+111 & \texttt{000003ffff} \texttt{0007fd3a56} \texttt{0f85b14d64} \texttt{107e53918e} \texttt{26669a1ec8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3927 \\
+112 & \texttt{000003ffff} \texttt{0007ff312e} \texttt{0f85b159c8} \texttt{107e519c9a} \texttt{26669a1eec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3957 \\
+113 & \texttt{000003ffff} \texttt{0007fd66d2} \texttt{0f81aaa35c} \texttt{107c5af21c} \texttt{2666b33b98} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4078 \\
+114 & \texttt{000003ffff} \texttt{0007fdb2c6} \texttt{0f81aaa758} \texttt{107c5b361c} \texttt{2666b23b90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 2023 \\
+115 & \texttt{000003ffff} \texttt{0007fea746} \texttt{0f81ab0ed8} \texttt{107c5baa94} \texttt{2666b33318} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 913 \\
+116 & \texttt{000003ffff} \texttt{0007fd9a56} \texttt{0f81abaa98} \texttt{107c5b331c} \texttt{2666b23fd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1617 \\
+117 & \texttt{000003ffff} \texttt{0007ff9256} \texttt{0f81aaa2ba} \texttt{107c593b2c} \texttt{2666b23fd0} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 1999 \\
+118 & \texttt{000003ffff} \texttt{0007ff924e} \texttt{0f81aaa2ba} \texttt{107c593734} \texttt{2666b23bd8} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 3010 \\
+119 & \texttt{000003ffff} \texttt{0007fdd156} \texttt{0f81aaa56c} \texttt{107c5b568a} \texttt{2666b3988c} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1684 \\
+120 & \texttt{000003ffff} \texttt{0007fda63c} \texttt{0f81a97386} \texttt{107c5bab50} \texttt{2666b23398} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 973 \\
+121 & \texttt{000003ffff} \texttt{0007fde30e} \texttt{0f81ab946a} \texttt{107c5ae654} \texttt{2666b33b98} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 2531 \\
+122 & \texttt{000003ffff} \texttt{0007fdd896} \texttt{0f81ab895c} \texttt{107c5af28a} \texttt{2666b31cec} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1325 \\
+123 & \texttt{000003ffff} \texttt{0007fe4d78} \texttt{0f81ab869c} \texttt{107c5af42a} \texttt{2666b318cc} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 2371 \\
+124 & \texttt{000003ffff} \texttt{0007fe4d5c} \texttt{0f81aa86ae} \texttt{107c5b7438} \texttt{2666b398ce} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3968 \\
+125 & \texttt{000003ffff} \texttt{0007fd94f8} \texttt{0f8548e762} \texttt{107ea2b2ac} \texttt{2665333b30} \texttt{45563bc3c0} \texttt{84cfc3fc00} & 5 & 2654 \\
+126 & \texttt{000003ffff} \texttt{0007ff859c} \texttt{0f854ad8cc} \texttt{107ea2e88e} \texttt{2665330ee8} \texttt{45563bf0f0} \texttt{84cfc3ff00} & 3 & 1605 \\
+127 & \texttt{000003ffff} \texttt{0007fdc66c} \texttt{0f854ae4b2} \texttt{107ea3643a} \texttt{26653388bc} \texttt{45563bf0c0} \texttt{84cfc3ff00} & 3 & 1590 \\
+128 & \texttt{000003ffff} \texttt{0007ff15a6} \texttt{0f8549555a} \texttt{107ea2a6ac} \texttt{2665333b30} \texttt{45563bc3c0} \texttt{84cfc3fc00} & 3 & 1990 \\
+129 & \texttt{000003ffff} \texttt{0007fda696} \texttt{0f854b4cb8} \texttt{107ea26cac} \texttt{26653388ce} \texttt{45563bf0f0} \texttt{84cfc3ff00} & 5 & 4033 \\
+130 & \texttt{000003ffff} \texttt{0007fcd9d2} \texttt{0f866a7164} \texttt{107ba39296} \texttt{2664f31ce6} \texttt{455733e0f8} \texttt{84cfc3ff00} & 5 & 2517 \\
+131 & \texttt{000003ffff} \texttt{0007fe3b52} \texttt{0f866b4196} \texttt{107ba3499a} \texttt{2664f3921c} \texttt{455733e3e0} \texttt{84cfc3fc00} & 3 & 1666 \\
+132 & \texttt{000003ffff} \texttt{0007fceb2c} \texttt{0f866ac156} \texttt{107ba2ca56} \texttt{2664f37398} \texttt{45573383e0} \texttt{84cfc3fc00} & 3 & 1216 \\
+133 & \texttt{000003ffff} \texttt{0007fd6a36} \texttt{0f866a469a} \texttt{107ba256d2} \texttt{2664f39b1c} \texttt{455733e3e0} \texttt{84cfc3fc00} & 3 & 1524 \\
+134 & \texttt{000003ffff} \texttt{0007fe4ec6} \texttt{0f8668c87a} \texttt{107ba17392} \texttt{2664f2631c} \texttt{45573383e0} \texttt{84cfc3fc00} & 5 & 3990 \\
+135 & \texttt{000003ffff} \texttt{0007fe26da} \texttt{0f82f2cb48} \texttt{107b4a956c} \texttt{2664d3198e} \texttt{455763e1f0} \texttt{84cf83fe00} & 5 & 2557 \\
+136 & \texttt{000003ffff} \texttt{0007feaa6a} \texttt{0f81f2d2a4} \texttt{107e8a9cb4} \texttt{2664b31ec8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 3937 \\
+137 & \texttt{000003ffff} \texttt{0007fdb2a6} \texttt{0f84d2a794} \texttt{107e9b3754} \texttt{26652a3b98} \texttt{455633c3e0} \texttt{84cfc3fc00} & 1 & 2003 \\
+138 & \texttt{000003ffff} \texttt{0007fdc65a} \texttt{0f84d2d2ac} \texttt{107e9b40ae} \texttt{26652b9b30} \texttt{455633e3c0} \texttt{84cfc3fc00} & 5 & 2546 \\
+139 & \texttt{000003ffff} \texttt{0007fcd6aa} \texttt{0f868966cc} \texttt{107eab9886} \texttt{2664b21cf8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 4089 \\
+140 & \texttt{000003ffff} \texttt{0007fe6aac} \texttt{0f8688f354} \texttt{107ea89b98} \texttt{2664b3231e} \texttt{455723c3e0} \texttt{84cfc3fc00} & 5 & 4361 \\
+141 & \texttt{000003ffff} \texttt{0007ff893a} \texttt{0f8688eb4c} \texttt{107ea93278} \texttt{2664b23f90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 1 & 2522 \\
+142 & \texttt{000003ffff} \texttt{0007fe6b46} \texttt{0f868ab29a} \texttt{107ce8a71c} \texttt{2660f33b90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1956 \\
+143 & \texttt{000003ffff} \texttt{0007fe98f4} \texttt{0f838aa93a} \texttt{107abb324c} \texttt{2664b23f90} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1708 \\
+144 & \texttt{000003ffff} \texttt{0007fd6ca6} \texttt{0f858955d8} \texttt{107d9999f4} \texttt{2666921ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1330 \\
+145 & \texttt{000003ffff} \texttt{0007fdc33c} \texttt{0f858a96b8} \texttt{107d9b64ae} \texttt{26669398cc} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1640 \\
+146 & \texttt{000003ffff} \texttt{0007fdb15a} \texttt{0f858a8bd8} \texttt{107d9bd29c} \texttt{2666931ce8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 2931 \\
+147 & \texttt{000003ffff} \texttt{0007ff315a} \texttt{0f85894bd8} \texttt{107d9a929c} \texttt{2666931ce8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 1 & 3008 \\
+148 & \texttt{000003ffff} \texttt{0007fd595c} \texttt{0f8652748e} \texttt{107cb298d6} \texttt{26663b1ee8} \texttt{455723e0f0} \texttt{84cfc3ff00} & 5 & 2525 \\
+149 & \texttt{000003ffff} \texttt{0007fd366a} \texttt{0f86523ab4} \texttt{107cb272d8} \texttt{26663ba31e} \texttt{455723c3e0} \texttt{84cfc3fc00} & 3 & 1762 \\
+150 & \texttt{000003ffff} \texttt{0007fd8ed4} \texttt{0f83d2a964} \texttt{10795b2c66} \texttt{266563b186} \texttt{455673c1f8} \texttt{84cf83fe00} & 5 & 3768 \\
+151 & \texttt{000003ffff} \texttt{0007fe5d52} \texttt{0f83e252a6} \texttt{107d32a55c} \texttt{26664b3998} \texttt{455673c1e0} \texttt{84cf83fe00} & 1 & 2676 \\
+152 & \texttt{000003ffff} \texttt{0007fd9c72} \texttt{0f83e238b4} \texttt{107d332cd8} \texttt{26664bc11e} \texttt{455673f1e0} \texttt{84cf83fe00} & 3 & 1281 \\
+153 & \texttt{000003ffff} \texttt{0007ff0736} \texttt{0f834b4a78} \texttt{107d325d58} \texttt{26645b919c} \texttt{455663e1e0} \texttt{84cf83fe00} & 3 & 2756 \\
+154 & \texttt{000003ffff} \texttt{0007fe8cbc} \texttt{0f834a5578} \texttt{107d33984e} \texttt{26645b1f90} \texttt{455663e1e0} \texttt{84cf83fe00} & 3 & 1702 \\
+155 & \texttt{000003ffff} \texttt{0007fd956c} \texttt{0f864966e2} \texttt{107c729b34} \texttt{2664ab23b8} \texttt{455733c3c0} \texttt{84cfc3fc00} & 1 & 1718 \\
+156 & \texttt{000003ffff} \texttt{0007ff263c} \texttt{0f86496ae8} \texttt{107c714b56} \texttt{2664aa7398} \texttt{45573383e0} \texttt{84cfc3fc00} & 3 & 2332 \\
+157 & \texttt{000003ffff} \texttt{0007ff898e} \texttt{0f8648dab8} \texttt{107c7292d6} \texttt{2664ab1ce4} \texttt{455733e0f8} \texttt{84cfc3ff00} & 3 & 2189 \\
+158 & \texttt{000003ffff} \texttt{0007ff2672} \texttt{0f864aab58} \texttt{107c72b25c} \texttt{2664ab3ba0} \texttt{455733c3c0} \texttt{84cfc3fc00} & 1 & 1943 \\
+159 & \texttt{000003ffff} \texttt{0007fe3a3a} \texttt{0f8708f362} \texttt{107db0d34a} \texttt{2661e3638c} \texttt{45563383f0} \texttt{84cfc3fc00} & 5 & 2566 \\
+160 & \texttt{000003ffff} \texttt{0007ff8a56} \texttt{0f851929ba} \texttt{107c72d2cc} \texttt{26669b1ce0} \texttt{455723e0f0} \texttt{84cfc3ff00} & 3 & 1673 \\
+161 & \texttt{000003ffff} \texttt{0007ff2a56} \texttt{0f869956da} \texttt{107ce2996c} \texttt{26654b1db0} \texttt{455673e1c0} \texttt{84cf83fe00} & 1 & 2936 \\
+162 & \texttt{000003ffff} \texttt{0007ff8656} \texttt{0f8699379a} \texttt{107ce2d91c} \texttt{26654b1de0} \texttt{455673e1f0} \texttt{84cf83fe00} & 1 & 2399 \\
+163 & \texttt{000003ffff} \texttt{0007fe387c} \texttt{0fe388ce96} \texttt{1719c2d32a} \texttt{2692f363cc} \texttt{446ce383f0} \texttt{85df03fc00} & 3 & 979 \\
+164 & \texttt{000003ffff} \texttt{0007fec74a} \texttt{0fe30aace6} \texttt{171ba32554} \texttt{2691d3c998} \texttt{446de3f1e0} \texttt{85de03fe00} & 3 & 983 \\
+165 & \texttt{03e47b9cd1} \texttt{306f897d92} \texttt{567864bf14} \texttt{1b53bf2a18} \texttt{ecc2fcb860} \texttt{0d9a86f990} \texttt{ead5d68f90} & 5 & 2570 \\
+166 & \texttt{000003ffff} \texttt{0007fd529e} \texttt{0ff329a73a} \texttt{178d33322c} \texttt{266d5a3bd0} \texttt{474663c3e0} \texttt{84df83fc00} & 1 & 2700 \\
+167 & \texttt{000003ffff} \texttt{0007fe4e5a} \texttt{0ff32aa866} \texttt{178d33328c} \texttt{266d5a3cf0} \texttt{474663c0f8} \texttt{84df83ff00} & 1 & 1981 \\
+168 & \texttt{000003ffff} \texttt{0007fc5ea6} \texttt{0ff32b2b5a} \texttt{178d31b30c} \texttt{266d5a3f90} \texttt{474663c3e0} \texttt{84df83fc00} & 1 & 3588 \\
+169 & \texttt{000003ffff} \texttt{0007fcd752} \texttt{0ff211c26a} \texttt{178c62974c} \texttt{266ea31bf0} \texttt{455f3be380} \texttt{84b7c3fc00} & 3 & 546 \\
+170 & \texttt{00003fffff} \texttt{07ff866914} \texttt{0bf04bae5a} \texttt{138e730c6c} \texttt{226d63cfb0} \texttt{415b7c0fc0} \texttt{80dcfff000} & 3 & 2514 \\
+171 & \texttt{ff00ff0f0f} \texttt{ffff000ff0} \texttt{fffffff000} \texttt{c5653ac566} \texttt{69c9acc6aa} \texttt{8e8eccaaa3} \texttt{f0f0f0cccc} & 3 & 3785 \\
+\end{longtable}
+\endgroup

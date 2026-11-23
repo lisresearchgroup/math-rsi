@@ -1,0 +1,39 @@
+\section{Further Nonexistence Results and Optimal Distances}
+\label{sec:consequences}
+\begin{corollary}\label{cor:three}
+Binary linear $\codege{44}{10}{18}$, $\codege{44}{11}{17}$, and $\codege{45}{11}{18}$ codes do not exist.
+\end{corollary}
+\begin{proof}
+Puncturing any coordinate of a $\codege{44}{10}{18}$ code gives a $\codege{43}{10}{17}$ code, contradicting Theorem~\ref{thm:main}. Shortening a $\codege{44}{11}{17}$ code on any coordinate gives a length-43 code of dimension at least ten and distance at least 17; a ten-dimensional subcode gives the same contradiction. Finally, puncturing a $\codege{45}{11}{18}$ code gives the excluded $\codege{44}{11}{17}$ parameters.
+\end{proof}
+
+E3 is stated for codes of exact minimum distance 14, whereas shortening only controls a lower bound. The following lemma bridges this gap.
+\begin{lemma}[Distance normalization]\label{lem:normalize}
+For ${k\ge1}$ and ${d\ge1}$, existence of a binary linear $\codege{n}{k}{d}$ code implies existence of a binary linear $[n,k,d]$ code.
+\end{lemma}
+\begin{proof}
+Let the original minimum distance be $D\ge d$, and choose a word of weight $D$. Puncture $D-d$ positions in its support. Since $D-d<D$, puncturing is injective. Every nonzero word retains weight at least $D-(D-d)=d$, and the chosen word attains $d$. Append $D-d$ zero coordinates to restore length $n$ without changing dimension or distance.
+\end{proof}
+The hypothesis $d\ge1$ is essential: puncturing all $D$ positions of a minimum-weight word would put that word in the kernel. Zero padding is permitted because our domain is the full class of binary linear codes.
+
+\begin{theorem}\label{thm:42}
+There is no binary linear $\codege{42}{16}{13}$ code.
+\end{theorem}
+\begin{proof}
+Parity extension of a hypothetical code gives $\codege{43}{16}{14}$. Shortening one coordinate loses at most one dimension. Choose a 15-dimensional subcode, shorten another coordinate, and choose a 14-dimensional subcode. The result has parameters $\codege{41}{14}{14}$. Lemma~\ref{lem:normalize} gives exact $[41,14,14]$, contradicting E3, namely Proposition~2 of \citet{bouyuklieva2020}.
+\end{proof}
+The construction in this proof permits zero columns, which is consistent with both our original domain and the binary linear code domain of E3. The proof does not assume that a minimum-weight word survives arbitrary shortening; normalization is applied only after the shortening steps. We regard Theorem~\ref{thm:42} as a consequence of E3 and claim no priority for it.
+
+\begin{corollary}\label{cor:optima}
+The optimal distances satisfy
+\begin{align*}
+ \dopt(43,10)&=16,&\dopt(44,10)&=17,\\
+ \dopt(44,11)&=16,&\dopt(42,16)&=12,
+\end{align*}
+and $16\le\dopt(45,11)\le17$.
+\end{corollary}
+\begin{proof}
+Theorems~\ref{thm:main} and~\ref{thm:42} and Corollary~\ref{cor:three} give the upper bounds. Appendix~\ref{app:lower} specifies full-rank generators of $[43,10,16]$, $[44,10,17]$, $[44,11,16]$, and $[42,16,12]$ codes, together with their fully enumerated weight spectra. Appending a zero coordinate to the $[44,11,16]$ code gives a $[45,11,16]$ code.
+\end{proof}
+
+The remaining possibility at parameters $(45,11)$ is a code of minimum distance 17; the arguments above leave its existence undecided.
