@@ -1,0 +1,843 @@
+[
+ {
+  "cell": [
+   40,
+   14
+  ],
+  "codetables": [
+   12,
+   13
+  ],
+  "new_ub": 12,
+  "closed": true,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4"
+  ],
+  "steps": 2,
+  "uses_Y1": false,
+  "table_entries": 2
+ },
+ {
+  "cell": [
+   41,
+   15
+  ],
+  "codetables": [
+   12,
+   13
+  ],
+  "new_ub": 12,
+  "closed": true,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5"
+  ],
+  "steps": 3,
+  "uses_Y1": false,
+  "table_entries": 3
+ },
+ {
+  "cell": [
+   42,
+   15
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S6"
+  ],
+  "steps": 4,
+  "uses_Y1": false,
+  "table_entries": 4
+ },
+ {
+  "cell": [
+   43,
+   16
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S8"
+  ],
+  "steps": 5,
+  "uses_Y1": false,
+  "table_entries": 5
+ },
+ {
+  "cell": [
+   46,
+   10
+  ],
+  "codetables": [
+   18,
+   19
+  ],
+  "new_ub": 18,
+  "closed": true,
+  "theorem": [
+   "T2"
+  ],
+  "chain": [
+   "S2",
+   "S10"
+  ],
+  "steps": 2,
+  "uses_Y1": false,
+  "table_entries": 2
+ },
+ {
+  "cell": [
+   52,
+   25
+  ],
+  "codetables": [
+   12,
+   13
+  ],
+  "new_ub": 12,
+  "closed": true,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11"
+  ],
+  "steps": 6,
+  "uses_Y1": true,
+  "table_entries": 15
+ },
+ {
+  "cell": [
+   53,
+   25
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S12"
+  ],
+  "steps": 7,
+  "uses_Y1": true,
+  "table_entries": 16
+ },
+ {
+  "cell": [
+   53,
+   26
+  ],
+  "codetables": [
+   11,
+   13
+  ],
+  "new_ub": 12,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13"
+  ],
+  "steps": 7,
+  "uses_Y1": true,
+  "table_entries": 16
+ },
+ {
+  "cell": [
+   54,
+   26
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S14"
+  ],
+  "steps": 8,
+  "uses_Y1": true,
+  "table_entries": 17
+ },
+ {
+  "cell": [
+   54,
+   27
+  ],
+  "codetables": [
+   11,
+   13
+  ],
+  "new_ub": 12,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S15"
+  ],
+  "steps": 8,
+  "uses_Y1": true,
+  "table_entries": 17
+ },
+ {
+  "cell": [
+   55,
+   27
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S15",
+   "S16"
+  ],
+  "steps": 9,
+  "uses_Y1": true,
+  "table_entries": 18
+ },
+ {
+  "cell": [
+   55,
+   28
+  ],
+  "codetables": [
+   11,
+   13
+  ],
+  "new_ub": 12,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S15",
+   "S17"
+  ],
+  "steps": 9,
+  "uses_Y1": true,
+  "table_entries": 18
+ },
+ {
+  "cell": [
+   56,
+   28
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S15",
+   "S17",
+   "S18"
+  ],
+  "steps": 10,
+  "uses_Y1": true,
+  "table_entries": 19
+ },
+ {
+  "cell": [
+   56,
+   29
+  ],
+  "codetables": [
+   11,
+   13
+  ],
+  "new_ub": 12,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S15",
+   "S17",
+   "S19"
+  ],
+  "steps": 10,
+  "uses_Y1": true,
+  "table_entries": 19
+ },
+ {
+  "cell": [
+   57,
+   29
+  ],
+  "codetables": [
+   12,
+   14
+  ],
+  "new_ub": 13,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S5",
+   "S7",
+   "S9",
+   "S11",
+   "S13",
+   "S15",
+   "S17",
+   "S19",
+   "S20"
+  ],
+  "steps": 11,
+  "uses_Y1": true,
+  "table_entries": 20
+ },
+ {
+  "cell": [
+   65,
+   15
+  ],
+  "codetables": [
+   24,
+   25
+  ],
+  "new_ub": 24,
+  "closed": true,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21"
+  ],
+  "steps": 3,
+  "uses_Y1": false,
+  "table_entries": 3
+ },
+ {
+  "cell": [
+   66,
+   15
+  ],
+  "codetables": [
+   24,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S22"
+  ],
+  "steps": 4,
+  "uses_Y1": false,
+  "table_entries": 4
+ },
+ {
+  "cell": [
+   66,
+   16
+  ],
+  "codetables": [
+   24,
+   25
+  ],
+  "new_ub": 24,
+  "closed": true,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23"
+  ],
+  "steps": 4,
+  "uses_Y1": false,
+  "table_entries": 4
+ },
+ {
+  "cell": [
+   67,
+   16
+  ],
+  "codetables": [
+   24,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S24"
+  ],
+  "steps": 5,
+  "uses_Y1": false,
+  "table_entries": 5
+ },
+ {
+  "cell": [
+   67,
+   17
+  ],
+  "codetables": [
+   24,
+   25
+  ],
+  "new_ub": 24,
+  "closed": true,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25"
+  ],
+  "steps": 5,
+  "uses_Y1": false,
+  "table_entries": 5
+ },
+ {
+  "cell": [
+   68,
+   17
+  ],
+  "codetables": [
+   24,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S26"
+  ],
+  "steps": 6,
+  "uses_Y1": false,
+  "table_entries": 6
+ },
+ {
+  "cell": [
+   75,
+   24
+  ],
+  "codetables": [
+   20,
+   25
+  ],
+  "new_ub": 24,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27"
+  ],
+  "steps": 6,
+  "uses_Y1": true,
+  "table_entries": 14
+ },
+ {
+  "cell": [
+   76,
+   24
+  ],
+  "codetables": [
+   21,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S28"
+  ],
+  "steps": 7,
+  "uses_Y1": true,
+  "table_entries": 15
+ },
+ {
+  "cell": [
+   76,
+   25
+  ],
+  "codetables": [
+   20,
+   25
+  ],
+  "new_ub": 24,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S29"
+  ],
+  "steps": 7,
+  "uses_Y1": true,
+  "table_entries": 15
+ },
+ {
+  "cell": [
+   77,
+   25
+  ],
+  "codetables": [
+   21,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S29",
+   "S30"
+  ],
+  "steps": 8,
+  "uses_Y1": true,
+  "table_entries": 16
+ },
+ {
+  "cell": [
+   77,
+   26
+  ],
+  "codetables": [
+   20,
+   25
+  ],
+  "new_ub": 24,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S29",
+   "S31"
+  ],
+  "steps": 8,
+  "uses_Y1": true,
+  "table_entries": 16
+ },
+ {
+  "cell": [
+   78,
+   26
+  ],
+  "codetables": [
+   20,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S29",
+   "S31",
+   "S32"
+  ],
+  "steps": 9,
+  "uses_Y1": true,
+  "table_entries": 17
+ },
+ {
+  "cell": [
+   78,
+   27
+  ],
+  "codetables": [
+   20,
+   25
+  ],
+  "new_ub": 24,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S29",
+   "S31",
+   "S33"
+  ],
+  "steps": 9,
+  "uses_Y1": true,
+  "table_entries": 17
+ },
+ {
+  "cell": [
+   79,
+   27
+  ],
+  "codetables": [
+   20,
+   26
+  ],
+  "new_ub": 25,
+  "closed": false,
+  "theorem": [
+   "T1"
+  ],
+  "chain": [
+   "S1",
+   "S4",
+   "S21",
+   "S23",
+   "S25",
+   "S27",
+   "S29",
+   "S31",
+   "S33",
+   "S34"
+  ],
+  "steps": 10,
+  "uses_Y1": true,
+  "table_entries": 18
+ },
+ {
+  "cell": [
+   84,
+   9
+  ],
+  "codetables": [
+   38,
+   39
+  ],
+  "new_ub": 38,
+  "closed": true,
+  "theorem": [
+   "T3"
+  ],
+  "chain": [
+   "S3",
+   "S35"
+  ],
+  "steps": 2,
+  "uses_Y1": false,
+  "table_entries": 2
+ },
+ {
+  "cell": [
+   161,
+   10
+  ],
+  "codetables": [
+   76,
+   77
+  ],
+  "new_ub": 76,
+  "closed": true,
+  "theorem": [
+   "T3"
+  ],
+  "chain": [
+   "S3",
+   "S35",
+   "S36"
+  ],
+  "steps": 3,
+  "uses_Y1": false,
+  "table_entries": 3
+ },
+ {
+  "cell": [
+   162,
+   10
+  ],
+  "codetables": [
+   76,
+   78
+  ],
+  "new_ub": 77,
+  "closed": false,
+  "theorem": [
+   "T3"
+  ],
+  "chain": [
+   "S3",
+   "S35",
+   "S36",
+   "S37"
+  ],
+  "steps": 4,
+  "uses_Y1": false,
+  "table_entries": 4
+ }
+]

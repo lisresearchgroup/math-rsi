@@ -1,0 +1,256 @@
+\documentclass[11pt]{ctexart}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{proposition}{命题}
+\newtheorem{corollary}{推论}
+\theoremstyle{definition}
+\newtheorem{definition}{定义}
+\newtheorem{import}{进口}
+\newtheorem{compclaim}{计算命题}
+\newcommand{\F}{\mathbb{F}_2}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\depth}{\operatorname{depth}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{不存在二元线性 $[41,12,\ge 15]$ 码}
+\author{case 41-12（MathRSI v6，2026-11-22）}
+\date{}
+\begin{document}
+\maketitle
+
+\noindent\textbf{性质说明。}本文是计算机辅助证明，结论 sound modulo 两条文献进口（进口~\ref{imp:I1}、\ref{imp:I2}）与三条有限计算命题（计算命题~\ref{cc:catalog}、\ref{cc:ineq}、\ref{cc:search}）。解析部分（引理~\ref{lem:shorten}--\ref{lem:bridge}）不依赖计算。每条计算命题的证据、实现与复算范围列在第~\ref{sec:evidence}~节与 \texttt{VERIFICATION.md}。
+
+\section{记号、原题与结论}
+
+码均指 $\F$ 上的线性码。$[n,k,\ge d]$ 码是 $\F^n$ 的 $k$ 维子空间，其全部非零码字重量 $\ge d$；$[n,k,d]$ 码另要求最小重量恰为 $d$。$\wt$ 是汉明重量。码 $C$ 的对偶 $C^\perp=\{y:\ \langle y,c\rangle=0\ \forall c\in C\}$。两个码\emph{等价}指存在坐标置换把一个码映成另一个。偶码指全部码字重量为偶数的码。对码 $K\le\F^N$ 与 $x\in\F^N$，
+\[
+\depth_K(x)=\min_{c\in K}\wt(x+c)
+\]
+是陪集 $x+K$ 的最小重量；它只依赖陪集。Griesmer 界：$[n,k,\ge d]$ 码存在则 $n\ge g(k,d):=\sum_{i=0}^{k-1}\lceil d/2^i\rceil$；$g(k,d)$ 对 $d$ 单调不减。
+
+原题（\texttt{FORMAL\_SPEC.md}）：$E(15)$ 指存在秩 $12$ 的 $12\times 41$ 二元矩阵，其全部 $4095$ 个非零行组合重量 $\ge 15$，即存在 $[41,12,\ge15]$ 码。对象是任意二元线性码，不附加任何结构条件。
+
+\begin{theorem}[主定理]\label{thm:main}
+在进口~\ref{imp:I1}、\ref{imp:I2} 与计算命题~\ref{cc:catalog}、\ref{cc:ineq}、\ref{cc:search} 之下，$E(15)$ 不成立：不存在二元线性 $[41,12,\ge 15]$ 码。
+\end{theorem}
+
+\begin{corollary}\label{cor:bounds}
+在同样前提下：(a) $d_2(41,12)\le 14$；(b) 不存在 $[42,12,\ge16]$ 码，故 $d_2(42,12)\le 15$。结合计算命题~\ref{cc:seed} 的两个显式矩阵得 $d_2(41,12)=14$ 与 $d_2(42,12)=15$。
+\end{corollary}
+
+\section{进口}
+
+\begin{import}[I1]\label{imp:I1}
+不存在二元线性 $[39,10,16]$ 码。来源：I.~Bouyukliev, S.~Bouyuklieva, T.~A.~Gulliver, P.~R.~J.~\"Osterg\aa rd, \emph{Classification of optimal binary self-orthogonal codes}, J.\ Combin.\ Math.\ Combin.\ Comput.\ 59 (2006), 33--87，印刷第 85 页 Lemma~4：``No linear $[39,10,16]$ code exists.''全文约定码均为二元（第 34 页）；该引理不限于自正交码。
+\end{import}
+
+\begin{import}[I2]\label{imp:I2}
+对 $(n,k)\in\{(36,7),(37,8),(38,9)\}$，没有零坐标的\emph{最优}二元线性 $[n,k]$ 码（即最小重量等于 $d_2(n,k)$ 的 $[n,k]$ 码；该文表中这三行的 $d$ 均为 $16$），在坐标置换等价下分别恰有 $8170$、$17276$、$47$ 个等价类。来源：S.~Bouyuklieva, M.~Dzhumalieva-Stoeva, \emph{Optimal Linear Codes and Their Hulls}, Mathematics 13(15):2491 (2025)，附录表 A5、A6、A7 的 ``All Codes'' 列（$n=36,k=7,d=16$；$n=37,k=8,d=16$；$n=38,k=9,d=16$）。对象域见该文第 2 节（只考虑无零坐标、即对偶距离 $\ge 2$ 的码；二元时等价即坐标置换）；重复列未被排除。
+\end{import}
+
+\section{解析归约}
+
+\begin{lemma}[缩短]\label{lem:shorten}
+设 $C$ 是 $[n,k,\ge d]$ 码，生成矩阵 $G$ 的列为 $g_1,\dots,g_n\in\F^k$，$S\subseteq\{1,\dots,n\}$，$r=\rank\{g_j:j\in S\}$。令 $C_S$ 为 $\{c\in C:\ c|_S=0\}$ 删去 $S$ 中坐标所得的码。则 $C_S$ 长 $n-|S|$、维数 $k-r$，其非零码字重量 $\ge d$；若 $C$ 是偶码则 $C_S$ 是偶码。特别地，$k\ge 2$ 时存在 $[n,k,\ge d]$ 码蕴含存在 $[n-1,k-1,\ge d]$ 码。
+\end{lemma}
+\begin{proof}
+$c=uG$ 在 $S$ 上为零当且仅当 $u$ 与每个 $g_j$（$j\in S$）正交，这样的 $u$ 构成 $k-r$ 维空间，且 $u\mapsto uG$ 单射。删去的坐标上码字恒为零，重量与奇偶性不变。最后一句：取 $S=\{j\}$，$r\in\{0,1\}$；$r=1$ 时 $C_S$ 即所求，$r=0$ 时取 $C_S$ 的一个 $k-1$ 维子码。
+\end{proof}
+
+\begin{lemma}[偶码化]\label{lem:even}
+$E(15)$ 成立当且仅当存在偶 $[42,12,\ge16]$ 码。
+\end{lemma}
+\begin{proof}
+($\Rightarrow$) 对 $[41,12,\ge15]$ 码的每个码字添加总校验位：线性、单射，重量为奇数者加 $1$、偶数者不变，故所得为偶 $[42,12,\ge16]$ 码。($\Leftarrow$) 删去偶 $[42,12,\ge16]$ 码的一个坐标：重量至多减 $1$，故 $\ge15$；该线性映射的核由支撑在被删坐标内的码字组成，其重量 $\le1<16$，故核为零，维数仍为 $12$。
+\end{proof}
+
+\begin{lemma}\label{lem:no39}
+在进口~\ref{imp:I1} 下，不存在 $[39,10,\ge16]$ 码，从而不存在 $[40,11,\ge16]$ 码与 $[41,12,\ge16]$ 码。
+\end{lemma}
+\begin{proof}
+$g(10,17)=17+9+5+3+2+1+1+1+1+1=41>39$，由单调性，$[39,10,\ge17]$ 码不存在；最小重量恰为 $16$ 的情形由进口~\ref{imp:I1} 排除。后两者由引理~\ref{lem:shorten} 的最后一句逐次降到 $[39,10,\ge16]$。
+\end{proof}
+
+\begin{lemma}[对偶最小重量]\label{lem:dual}
+在进口~\ref{imp:I1} 下，设 $C$ 是偶 $[42,12,\ge16]$ 码，$w$ 是 $C^\perp$ 的最小重量（$\dim C^\perp=30>0$，故 $w$ 有定义且 $w\ge1$）。则 $w\in\{4,5,6\}$。
+\end{lemma}
+\begin{proof}
+$y\in\F^{42}$ 属于 $C^\perp$ 当且仅当 $\sum_{j\in\supp y}g_j=0$。由 $w$ 的最小性，任意少于 $w$ 个列线性无关（否则其某个非空子集之和为零，给出重量更小的非零对偶字）。取重量 $w$ 的 $y\in C^\perp$，$S=\supp y$。
+
+$w=1$：$g_j=0$，$r=0$，引理~\ref{lem:shorten} 给出 $[41,12,\ge16]$ 码。$w=2$：两列相等且非零（无重量 $1$ 的对偶字），$r=1$，给出 $[40,11,\ge16]$ 码。$w=3$：三列之和为零且任两列无关，$r=2$，给出 $[39,10,\ge16]$ 码。三者均与引理~\ref{lem:no39} 矛盾。
+
+$w\ge7$：$C^\perp$ 是最小距离 $\ge7$ 的 $30$ 维码，以其码字为心、半径 $3$ 的汉明球两两不交，球填充要求 $2^{30}\,(1+42+\binom{42}{2}+\binom{42}{3})\le 2^{42}$，即 $1+42+861+11480=12384\le 4096$，不成立。
+
+故 $w\in\{4,5,6\}$。
+\end{proof}
+
+\begin{lemma}[母码的域]\label{lem:mother}
+在进口~\ref{imp:I1} 下，设 $C$ 是偶 $[42,12,\ge16]$ 码，$w\in\{4,5,6\}$ 是 $C^\perp$ 的最小重量，$y\in C^\perp$ 重量为 $w$，$S=\supp y$，$K=C_S$，$N=42-w$。则：
+\begin{enumerate}
+\item[(a)] $\rank\{g_j:j\in S\}=w-1$，$K$ 的维数为 $\kappa=13-w$；$(N,\kappa)\in\{(38,9),(37,8),(36,7)\}$。
+\item[(b)] $K$ 是偶码，最小重量恰为 $16$。
+\item[(c)] $K$ 没有零坐标。
+\item[(d)] 若 $w=6$，则 $K$ 没有重复列（不存在两个不同坐标 $j\ne j'$ 使 $K$ 的每个码字在这两处取值相同）。
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) $S$ 中 $w$ 个列之和为零，故秩 $\le w-1$；任意 $w-1$ 个列线性无关，故秩 $=w-1$。由引理~\ref{lem:shorten}，$\dim K=12-(w-1)$。
+
+(b) 由引理~\ref{lem:shorten}，$K$ 是偶码且非零码字重量 $\ge16$；$\kappa\ge7$，故 $K\ne0$。$g(9,17)=17+9+5+3+2+1+1+1+1=40>38$，$g(8,17)=39>37$，$g(7,17)=38>36$，故 $[N,\kappa,\ge17]$ 码不存在，$K$ 的最小重量恰为 $16$。
+
+(c) 设 $j\notin S$ 是 $K$ 的零坐标，即每个在 $S$ 上为零的 $c\in C$ 都有 $c_j=0$。线性泛函 $c\mapsto c_j$ 在限制映射 $\pi_S:C\to\F^S$ 的核上为零，故经 $\pi_S$ 分解：存在 $\lambda\in\F^S$ 使 $c_j=\sum_{i\in S}\lambda_ic_i$ 对一切 $c\in C$ 成立。令 $T=\supp\lambda\subseteq S$，则 $z=e_j+\sum_{i\in T}e_i\in C^\perp$，$z+y=e_j+\sum_{i\in S\setminus T}e_i\in C^\perp$。两者都含 $e_j$ 故非零，重量分别为 $1+|T|$ 与 $1+w-|T|$，其中较小者 $\le 1+\lfloor w/2\rfloor$。对 $w=4,5,6$ 该值为 $3,3,4$，均 $<w$，与 $w$ 的最小性矛盾。
+
+(d) 设 $w=6$，$j\ne j'$ 均不在 $S$ 中，且每个在 $S$ 上为零的 $c\in C$ 都有 $c_j=c_{j'}$。线性泛函 $c\mapsto c_j+c_{j'}$ 在 $\ker\pi_S$ 上为零，同 (c) 得 $T\subseteq S$ 使 $z=e_j+e_{j'}+\sum_{i\in T}e_i\in C^\perp$，且 $z+y=e_j+e_{j'}+\sum_{i\in S\setminus T}e_i\in C^\perp$。两者都含 $e_j$ 故非零，重量分别为 $2+|T|$ 与 $2+6-|T|$，较小者 $\le 2+3=5<6$，与 $w=6$ 的最小性矛盾。
+\end{proof}
+
+\noindent\textbf{注。}(d) 的论证对 $w=5$ 同样成立（$2+\lfloor5/2\rfloor=4<5$），对 $w=4$ 不成立（$2+2=4$）。本文只在 $w=6$ 分支使用 (d)；$w=4,5$ 两个分支在全部偶母码上计算，允许重复列。
+
+\begin{lemma}[标准形与联合条件]\label{lem:standard}
+(i) 设 $C,w,S,K,N$ 如引理~\ref{lem:mother}，并把 $S$ 排在最后 $w$ 个坐标。则存在偶重向量 $a_1,\dots,a_{w-1}\in\F^N$，使 $C$ 由
+\[
+\begin{pmatrix} K & 0\\ a_i & e_i+e_w\end{pmatrix}\qquad(i=1,\dots,w-1)
+\]
+生成，其中第一块表示 $K$ 的码字后接 $w$ 个零，$e_1,\dots,e_w$ 是 $\F^w$ 的标准基。
+
+(ii) 设 $K\le\F^N$ 是非零码字重量 $\ge16$ 的任意码，$w\ge2$，$a_1,\dots,a_{w-1}\in\F^N$ 任意。则上式生成的码的全部非零码字重量 $\ge16$，当且仅当对每个非空 $T\subseteq\{1,\dots,w-1\}$，
+\[
+\depth_K\Bigl(\sum_{i\in T}a_i\Bigr)\ \ge\ 16-t(|T|),\qquad t(j):=j+(j\bmod 2),
+\]
+即 $|T|\in\{1,2\}$ 时 $\ge14$，$|T|\in\{3,4\}$ 时 $\ge12$，$|T|=5$ 时 $\ge10$。
+\end{lemma}
+\begin{proof}
+(i) $y=\mathbf 1_S\in C^\perp$ 说明每个码字在 $S$ 上重量为偶，故 $\pi_S(C)\subseteq E_w:=\{t\in\F^w:\wt(t)\text{ 偶}\}$，$\dim E_w=w-1$。$\ker\pi_S$ 的维数为 $\kappa=13-w$（引理~\ref{lem:mother}(a)），故 $\dim\pi_S(C)=12-\kappa=w-1$，$\pi_S(C)=E_w$。$\{e_i+e_w\}_{i<w}$ 是 $E_w$ 的基，取 $c_i\in C$ 使 $\pi_S(c_i)=e_i+e_w$，记 $c_i=(a_i\,|\,e_i+e_w)$。$C$ 是偶码而尾部重量为 $2$，故 $a_i$ 偶重。$\ker\pi_S=(K|0)$ 与 $c_1,\dots,c_{w-1}$ 共 $12$ 个线性无关向量张成 $C$。
+
+(ii) $e_i+e_w$（$i<w$）线性无关，故生成的码中每个码字唯一写成 $(k|0)+\sum_{i\in T}c_i$，$k\in K$，$T\subseteq\{1,\dots,w-1\}$。其尾部为 $\sum_{i\in T}e_i+|T|e_w$，重量为 $|T|$（$|T|$ 偶）或 $|T|+1$（$|T|$ 奇），即 $t(|T|)$；头部为 $k+\sum_{i\in T}a_i$。$T=\emptyset$ 时码字属于 $(K|0)$，非零者重量 $\ge16$。$T\ne\emptyset$ 时码字非零，对 $k\in K$ 取最小得重量的最小值 $\depth_K(\sum_{i\in T}a_i)+t(|T|)$。两个方向都由此得出。
+\end{proof}
+
+\begin{lemma}[运输到代表]\label{lem:transport}
+在进口~\ref{imp:I1} 下，设给定码的集合 $\mathcal K_4,\mathcal K_5,\mathcal K_6$，使得：对 $w\in\{4,5\}$，每个没有零坐标的偶 $[42-w,13-w,16]$ 码都等价于 $\mathcal K_w$ 中某个码；每个没有零坐标、没有重复列的偶 $[36,7,16]$ 码都等价于 $\mathcal K_6$ 中某个码。若 $E(15)$ 成立，则存在 $w\in\{4,5,6\}$、$K'\in\mathcal K_w$ 与偶重向量 $a'_1,\dots,a'_{w-1}\in\F^{42-w}$，使对每个非空 $T\subseteq\{1,\dots,w-1\}$ 有 $\depth_{K'}(\sum_{i\in T}a'_i)\ge16-t(|T|)$。
+\end{lemma}
+\begin{proof}
+由引理~\ref{lem:even} 取偶 $[42,12,\ge16]$ 码 $C$；由引理~\ref{lem:dual} 其对偶最小重量 $w\in\{4,5,6\}$；对坐标作置换（得等价的码，仍是偶 $[42,12,\ge16]$ 码，对偶最小重量不变）使某个重量 $w$ 的对偶字支撑 $S$ 位于最后 $w$ 个坐标。由引理~\ref{lem:mother}，$K=C_S$ 是没有零坐标的偶 $[42-w,13-w,16]$ 码，且 $w=6$ 时没有重复列；故按假设存在前 $N=42-w$ 个坐标的置换 $\sigma$ 使 $\sigma(K)=K'\in\mathcal K_w$。由引理~\ref{lem:standard}(i) 得偶重 $a_i$，由 (ii) 的“仅当”方向（其假设“$K$ 的非零码字重量 $\ge16$”由引理~\ref{lem:mother}(b) 供给）得全部深度条件。令 $a'_i=\sigma(a_i)$。$\sigma$ 保持重量，且 $\sigma(\sum_Ta_i+K)=\sum_Ta'_i+K'$，故 $\depth_{K'}(\sum_Ta'_i)=\depth_K(\sum_Ta_i)$，$a'_i$ 仍偶重。
+\end{proof}
+
+\section{规范伴随式与“解”}
+
+本节把引理~\ref{lem:transport} 的结论翻译成计算所判定的有限谓词（与 \texttt{work/O6\_SPEC.md} 第 2、3 节逐条相同）。
+
+\begin{definition}[规范标号]\label{def:label}
+设 $K\le\F^N$ 是 $\kappa$ 维偶码，$\rho=N-\kappa$。取 $K$ 的最左主元简化行阶梯形基 $r_0,\dots,r_{\kappa-1}$，主元列 $p_0<\dots<p_{\kappa-1}$（$r_i$ 在 $p_i$ 处为 $1$，在其余主元列为 $0$；它由 $K$ 唯一确定）。自由坐标为其余坐标，按升序记作 $q_0<\dots<q_{\rho-1}$。令 $\mathrm{Nrm}(x)=x+\sum_i x_{p_i}r_i$，$s(x)=\sum_{t=0}^{\rho-1}\mathrm{Nrm}(x)_{q_t}2^t\in\{0,\dots,2^\rho-1\}$；把 $\{0,\dots,2^\rho-1\}$ 按二进制位与 $\F^\rho$ 等同，$\oplus$ 为按位异或。对 $s$，$x_s$ 是只在自由坐标上非零、且 $(x_s)_{q_t}$ 等于 $s$ 的第 $t$ 位的向量；$\depth(s):=\depth_K(x_s)$。
+\end{definition}
+
+\begin{lemma}\label{lem:label}
+在定义~\ref{def:label} 中：(1) $\mathrm{Nrm}$ 线性，$\mathrm{Nrm}(x)\in x+K$，$\mathrm{Nrm}(x)$ 在主元坐标上为零，且 $x+K=x'+K$ 当且仅当 $\mathrm{Nrm}(x)=\mathrm{Nrm}(x')$；(2) $s$ 线性，$s(x\oplus x')=s(x)\oplus s(x')$，$x_{s(x)}=\mathrm{Nrm}(x)$，$\depth(s(x))=\depth_K(x)$；(3) $x$ 偶重当且仅当 $s(x)$ 的二进制 $1$ 的个数为偶。
+\end{lemma}
+\begin{proof}
+(1) 线性显然；$\mathrm{Nrm}(x)-x\in K$；在 $p_j$ 处 $\mathrm{Nrm}(x)_{p_j}=x_{p_j}+\sum_ix_{p_i}(r_i)_{p_j}=x_{p_j}+x_{p_j}=0$。$K$ 中在全部主元坐标为零的向量只有 $0$（按 RREF 基展开，系数即主元坐标），故每个陪集恰有一个主元坐标全零的代表，$\mathrm{Nrm}(x)$ 即此代表。(2) 由 (1) 与定义。(3) $K$ 偶，故陪集内重量奇偶一致；$\wt(\mathrm{Nrm}(x))$ 等于 $s(x)$ 的 $1$ 的个数。
+\end{proof}
+
+\begin{definition}[$F$ 与解]\label{def:solution}
+设 $K$ 如定义~\ref{def:label}，$w\in\{4,5,6\}$，$m=w-1$，$D=16$，$\tau(1)=\tau(2)=14$，$\tau(3)=\tau(4)=12$，$\tau(5)=10$。$F=\{s:\ s\text{ 的 }1\text{ 的个数为偶},\ \depth(s)\ge14\}$。$m$ 个整数 $1\le s_1<\dots<s_m<2^\rho$ 组成的集合称为 $(K,w)$ 的\emph{解}，如果对每个非空 $T\subseteq\{1,\dots,m\}$：$\bigoplus_{i\in T}s_i$ 的 $1$ 的个数为偶，且 $\depth(\bigoplus_{i\in T}s_i)\ge\tau(|T|)$。
+\end{definition}
+
+\begin{lemma}[桥]\label{lem:bridge}
+设 $K'$ 是偶码，$w\in\{4,5,6\}$，偶重向量 $a'_1,\dots,a'_{w-1}$ 满足引理~\ref{lem:transport} 结论中的全部深度条件。则 $\{s(a'_1),\dots,s(a'_{w-1})\}$ 按升序排列后是 $(K',w)$ 的一个解。特别地 $(K',w)$ 的解集非空。
+\end{lemma}
+\begin{proof}
+记 $s_i=s(a'_i)$。由引理~\ref{lem:label}(2)，$\bigoplus_Ts_i=s(\sum_Ta'_i)$，$\depth(\bigoplus_Ts_i)=\depth_{K'}(\sum_Ta'_i)\ge16-t(|T|)=\tau(|T|)$（$t(1)=t(2)=2$，$t(3)=t(4)=4$，$t(5)=6$）。$\sum_Ta'_i$ 偶重，由 (3) 其伴随式的 $1$ 的个数为偶。$|T|=1$ 的条件给出 $\depth(s_i)\ge14>0$，故 $s_i\ne0$；$|T|=2$ 的条件给出 $\depth(s_i\oplus s_j)\ge14>0$，故 $s_i\ne s_j$。因此 $s_1,\dots,s_{w-1}$ 是 $[1,2^\rho)$ 中 $w-1$ 个互异整数；条件对下标置换对称，按升序重排后仍满足全部条件。
+\end{proof}
+
+\section{目录与有限计算}\label{sec:comp}
+
+三份显式目录（文本文件，每个码给出生成矩阵）：
+\begin{center}
+\begin{tabular}{llrl}
+\toprule
+$w$ & 文件 & 码数 & SHA-256（前 16 位）\\
+\midrule
+4 & \texttt{work/20261122-catalog/zenodo/extracted/38\_9\_16.2} & 47 & \texttt{a0b9f898feba30b6}\\
+5 & \texttt{work/20261122-catalog/qext/run\_37\_8\_16/37\_8\_16.2} & 17276 & \texttt{cade8880b7e33969}\\
+6 & \texttt{work/20261122-catalog/qext/run\_36\_7\_16/36\_7\_16.2} & 8170 & \texttt{882bfc8e9d53c060}\\
+\bottomrule
+\end{tabular}
+\end{center}
+记 $\mathcal L_w$ 为第 $w$ 行文件中的全部码。$\mathcal K_4$、$\mathcal K_5$ 分别为 $\mathcal L_4$、$\mathcal L_5$ 中的全部偶码；$\mathcal K_6^{+}$ 为 $\mathcal L_6$ 中的全部偶码，$\mathcal K_6\subseteq\mathcal K_6^{+}$ 为其中没有重复列者（下标表 \texttt{work/20261123-assembly/36\_7\_16.even\_norepeat\_idx.txt}）。
+
+\begin{compclaim}[目录逐码合格]\label{cc:catalog}
+$\mathcal L_4,\mathcal L_5,\mathcal L_6$ 分别含 $47$、$17276$、$8170$ 个码；每个码的生成矩阵秩为 $\kappa$（$9,8,7$），长为 $N$（$38,37,36$），最小重量恰为 $16$，没有零坐标。其中 $|\mathcal K_4|=47$，$|\mathcal K_5|=17254$，$|\mathcal K_6^{+}|=8096$，$|\mathcal K_6|=3408$。
+\end{compclaim}
+
+\begin{compclaim}[两两不等价]\label{cc:ineq}
+每个 $\mathcal L_w$ 中的码两两不等价（坐标置换意义下）。
+\end{compclaim}
+
+\begin{compclaim}[解集为空]\label{cc:search}
+对每个 $w\in\{4,5,6\}$ 与每个 $K'\in\mathcal K_w$，$(K',w)$ 的解集（定义~\ref{def:solution}）为空。
+
+\noindent（不用于主定理的补充事实：对 $\mathcal K_6^{+}\setminus\mathcal K_6$ 中的 $4688$ 个有重复列的偶码，实现 o6 同样报告解集为空；见第~\ref{sec:evidence}~节。）
+\end{compclaim}
+
+\begin{compclaim}[下界矩阵]\label{cc:seed}
+(i) \texttt{work/20261122-seed-e14/generator\_12x41.txt} 中的 $12\times41$ 二元矩阵秩为 $12$，全部 $4095$ 个非零行组合的最小重量为 $14$。(ii) \texttt{work/20261123-lb42/generator\_12x42.txt} 中的 $12\times42$ 二元矩阵秩为 $12$，全部 $4095$ 个非零行组合的最小重量为 $15$。
+\end{compclaim}
+
+\begin{proposition}[目录覆盖]\label{prop:cover}
+在进口~\ref{imp:I2} 与计算命题~\ref{cc:catalog}、\ref{cc:ineq} 下：对 $w\in\{4,5\}$，每个没有零坐标的偶 $[42-w,13-w,16]$ 码都等价于 $\mathcal K_w$ 中某个码；每个没有零坐标、没有重复列的偶 $[36,7,16]$ 码都等价于 $\mathcal K_6$ 中某个码。
+\end{proposition}
+\begin{proof}
+固定 $w$，$(N,\kappa)=(42-w,13-w)$。先说明进口~\ref{imp:I2} 所计的“最优 $[N,\kappa]$ 码”恰是全部 $[N,\kappa,16]$ 码：由 Griesmer 界（引理~\ref{lem:mother}(b) 证明中的算式 $g(9,17)=40>38$、$g(8,17)=39>37$、$g(7,17)=38>36$，不依赖进口~\ref{imp:I1}）不存在 $[N,\kappa,\ge17]$ 码，而计算命题~\ref{cc:catalog} 给出实际的 $[N,\kappa,16]$ 码，故 $d_2(N,\kappa)=16$。由计算命题~\ref{cc:catalog}，$\mathcal L_w$ 的每个码都是没有零坐标的 $[N,\kappa,16]$ 码；由计算命题~\ref{cc:ineq}，它们落在 $|\mathcal L_w|$ 个不同的等价类中。由进口~\ref{imp:I2}，没有零坐标的 $[N,\kappa,16]$ 码的等价类总数恰为 $|\mathcal L_w|$（$47$、$17276$、$8170$），故 $\mathcal L_w$ 是全部等价类的完全代表系：每个没有零坐标的 $[N,\kappa,16]$ 码等价于 $\mathcal L_w$ 中某个码 $L$。坐标置换保持码字重量，也只是重排生成矩阵的列，故“偶码”与“没有重复列”都是等价不变量：若原码为偶码则 $L$ 为偶码，若原码另外没有重复列则 $L$ 也没有重复列。于是 $w\in\{4,5\}$ 时 $L\in\mathcal K_w$，$w=6$ 且原码无重复列时 $L\in\mathcal K_6$。
+\end{proof}
+
+\section{主定理的证明}
+
+\begin{proof}[定理~\ref{thm:main} 的证明]
+假设 $E(15)$ 成立。由命题~\ref{prop:cover}，$\mathcal K_4,\mathcal K_5,\mathcal K_6$ 满足引理~\ref{lem:transport} 的假设，故存在 $w\in\{4,5,6\}$、$K'\in\mathcal K_w$ 与偶重 $a'_1,\dots,a'_{w-1}$ 满足全部深度条件。由引理~\ref{lem:bridge}，$(K',w)$ 的解集非空，与计算命题~\ref{cc:search} 矛盾。
+\end{proof}
+
+\begin{proof}[推论~\ref{cor:bounds} 的证明]
+(a) 即定理~\ref{thm:main}。(b) 若存在 $[42,12,\ge16]$ 码，删去一个坐标：重量至多减 $1$，核中码字重量 $\le1<16$，故得 $[41,12,\ge15]$ 码，与定理~\ref{thm:main} 矛盾。最后一句：计算命题~\ref{cc:seed}(i) 给出 $[41,12,14]$ 码，故 $d_2(41,12)\ge14$；(ii) 给出 $[42,12,15]$ 码，故 $d_2(42,12)\ge15$。
+\end{proof}
+
+\noindent\textbf{注。}两个下界矩阵只用于把上界配成精确值；主定理（$\neg E(15)$）不依赖它们。
+
+\section{计算命题的证据}\label{sec:evidence}
+
+\paragraph{目录来源。}$\mathcal L_4$ 是进口~\ref{imp:I2} 作者公布的数据集（Zenodo 10.5281/zenodo.15771416，第 1 版，压缩包 MD5 \texttt{40d6f6e4f2d1e63f6dbc8bd22492338c}）中的文件。该数据集不含 $[36,7,16]$ 与 $[37,8,16]$ 的矩阵；$\mathcal L_5,\mathcal L_6$ 由该文所用的公开程序 GENERATION v1.1（QextNewEdition，对偶距离 $\ge2$）重新生成。目录怎样得到不影响证明：命题~\ref{prop:cover} 只用到计算命题~\ref{cc:catalog}、\ref{cc:ineq}（对实际矩阵的直接核对）与进口~\ref{imp:I2} 的类数。作为旁证，两份重生成目录按 hull 维数的分布 $\{1{:}13,3{:}53,5{:}549,6{:}71,7{:}7484\}$ 与 $\{4{:}5,6{:}77,7{:}22,8{:}17172\}$ 同表 A5、A6 相应行一致。
+
+\paragraph{计算命题~\ref{cc:catalog}、\ref{cc:ineq}。}两套互不共享代码的实现逐码全量核对：A（\texttt{work/20261122-catalog/check/}）与 B（\texttt{work/20261122-catalog/check2/}，由另一模型家族只凭任务规格编写）。两者都对每个码做 GF(2) 消元、全枚举 $2^\kappa-1$ 个非零码字、逐列检查。不等价性：先用坐标置换与换基下不变的颜色细化不变量分桶（不变量不同即不等价），同桶的码对一律用穷尽的精确搜索判定（A：个体化--细化回溯，颜色为精确签名的秩、个体化标记取“当前最大颜色加一”，不使用哈希；B：在 $GL(\kappa,2)$ 上逐维扩展线性映射、比较列多重集的穷尽搜索）。B 报告：$\mathcal L_6$ 有 $8111$ 个桶、$121$ 个同桶对，$\mathcal L_5$ 有 $17273$ 个桶、$4$ 个同桶对，$\mathcal L_4$ 有 $47$ 个桶；全部同桶对判为不等价，无未判定对。A（第 2 版，修正了第 1 版个体化标记未保证新鲜的缺口；全部判定与第 1 版相同）在 $\mathcal L_6$ 上判定 $122$ 对、$\mathcal L_5$ 上 $4$ 对，同样全部不等价；A 的精确搜索另在 $330$ 对小码上与遍历全部坐标置换的暴力结果一致。两套实现给出的偶码下标表逐字节相同。
+A 与 B 各自逐列判定重复列，所得“偶且无重复列”的 $[36,7,16]$ 码下标表相同（$3408$ 个；\texttt{work/20261123-assembly/w6\_subset\_compare.json} 的 \texttt{A\_B\_norepeat\_lists\_identical}）。
+
+\paragraph{计算命题~\ref{cc:search}。}两套算法不同、互不共享代码的实现对 $\mathcal K_4\cup\mathcal K_5\cup\mathcal K_6$ 的全部 $47+17254+3408=20709$ 个母码各自完整计算，并逐码比较：
+\begin{itemize}
+\item o6（\texttt{work/20261122-o6/extsearch.c}）：在伴随式空间 $\F^{29}$ 上用位图做精确分层 $L_0=\{0\}$，$L_t=L_{t-1}\cup\bigcup_j(L_{t-1}\oplus h_j)$（$h_j$ 为规范标号下校验矩阵的列），由此得到 $\depth\ge14,\ge12,\ge10$ 的偶伴随式集合；再按 $s_1<s_2<\dots$ 递归枚举，加入新元素时检查含它的全部子集条件，除升序外不做任何剪枝或对称约化。
+\item o7（\texttt{work/20261122-o7/ext2.cpp}）：对全部 $2^\kappa$ 个码字 $c$ 置 $f[c_Q]=\min(f[c_Q],\wt(c_P))$（$P$、$Q$ 为主元与自由坐标），再逐个自由坐标做 Hamming 距离的 min-plus 变换，直接得到全部 $2^{29}$ 个伴随式的 $\depth$；随后建立前向邻接表并按升序穷尽枚举。不使用分层。
+\end{itemize}
+对每个母码，两套实现各自输出主元列、$K'$ 的最小重量、$|F|$、$F$ 的升序十进制列表的 SHA-256、偶伴随式的深度直方图、相容对数 \texttt{edges}、满足全部条件的 $3,4,5$ 元集个数 $c_3,c_4,c_5$ 与完整解表。比较程序（\texttt{work/20261122-compare/compare\_runs.py}）另行解析目录、重算行奇偶与主元列，并逐字段比较。结果：
+\begin{center}
+\begin{tabular}{rrrrrrrr}
+\toprule
+$w$ & 偶母码数 & $\sum|F|$ & $\sum$\texttt{edges} & $\sum c_3$ & $\sum c_4$ & $\sum c_5$ & 解的总数\\
+\midrule
+4 & 47 & 13565 & 15 & 0 & -- & -- & 0\\
+5 & 17254 & 119757064 & 581749323 & 52176 & 0 & -- & 0\\
+6（$\mathcal K_6$）& 3408 & 201323457 & 85014245310 & 64702964752 & 33931020 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+在这 $20709$ 个母码上，两套实现在每个母码的每个比较字段上完全一致（\texttt{work/20261122-compare/compare\_38\_9\_w4.json}、\texttt{compare\_37\_w5.json}；$w=6$ 见 \texttt{work/20261123-assembly/w6\_subset\_compare.json} 与 \texttt{work/20261122-compare/compare\_36\_w6.partial.json}）。$c_4$ 最大的母码是 $\mathcal K_6$ 中下标 $2004$ 者：$c_4=30965760$，$c_5=0$，两套实现一致。
+
+补充（不用于主定理）：对 $\mathcal K_6^{+}$ 的全部 $8096$ 个偶码，o6 完成了全部计算，$\sum|F|=571995759$，$\sum\texttt{edges}=228813432066$，$\sum c_3=201748136816$，$\sum c_4=35943260$，$\sum c_5=0$；o7 完成了其中 $8095$ 个并与 o6 逐字段一致，剩下的 $1$ 个（下标 $2067$，有一个重复 $4$ 次的列，o6 报告其 $c_4=0$）在撰写时 o7 仍在运行。由引理~\ref{lem:mother}(d)，这 $4688$ 个有重复列的码不会作为 $w=6$ 分支的母码出现。
+
+上线前，两套实现各自在小母码上与“展开真实扩张矩阵并全枚举码字”的暴力结果逐项比对（o6：61 例；o7：33 例）；另在以扩展 Golay 码 $[24,12,8]$ 的子码构造的 $24$ 个带已知解的实例（$D=8$，$w=4,5,6$，其中 $8$ 个 $w=6$ 实例 $c_5>0$）以及 $182$ 组随机小母码运行上，两套实现、一份基于真实矩阵的独立判定程序和一份按定义枚举的程序四方结果一致（\texttt{work/20261122-planted/REPORT.md}）。
+
+\paragraph{$5$ 元和条件的单独核对（$w=6$）。}定义~\ref{def:solution} 中只有 $|T|=5$ 的条件用到阈值 $\tau(5)=10$。为使结论不依赖两套实现对这一阈值的处理，另做两件事。
+
+(1) 用 o6 的一个变体（\texttt{work/20261122-planted/relaxed5/extsearch\_r5.c}，与原程序只差把 $5$ 元集合换成“全部偶伴随式”这一处；小域上 $99$ 例与按定义枚举一致）在 $\mathcal K_6$ 的全部 $3408$ 个母码上统计“满足 $|T|\le4$ 的全部条件”的 $5$ 元集个数 $c_5^{\mathrm{rel}}$（其 $|F|$、$F$ 的哈希、\texttt{edges}、$c_3$、$c_4$ 与 o6 原运行逐码相同）。结果：$3406$ 个母码 $c_5^{\mathrm{rel}}=0$，即不看 $5$ 元和条件也没有 $5$ 元集；只有下标 $1980$ 与 $2004$ 两个母码 $c_5^{\mathrm{rel}}>0$，分别为 $6912$ 与 $1741824$（\texttt{work/20261123-assembly/r5\_K6\_summary.json}）。
+
+(2) 对这 $6912+1741824=1748736$ 个 $5$ 元集逐个给出见证（\texttt{work/20261123-witness5/}，独立脚本，不复用搜索代码）：直接由生成矩阵重算全部 $31$ 个子集和的陪集深度，$|T|\le4$ 的条件确实全部成立，而 $5$ 个头之和的陪集深度都恰为 $6<10$；并写出实际 $12\times42$ 扩张矩阵中一个重量 $12$（$=6+6$）的非零码字。见证文件可用 \texttt{replay\_witness.py} 只凭生成矩阵与见证行重放，两个文件 $1748736$ 行全部通过。（抽查的 $6$ 个扩张码的完整重量谱都是 $\{12{:}1,16{:}756,20{:}1728,24{:}1440,28{:}165,32{:}3,36{:}2\}$：恰有一个重量 $12$ 的码字，其余均 $\ge16$。）
+
+因此 $\mathcal K_6$ 上“解集为空”分解为：$3406$ 个母码上没有满足 $|T|\le4$ 条件的 $5$ 元集；另外两个母码上全部候选都有显式的低重码字。另有 $\kappa\ge1$ 的单元实例（$D=8$ 完整运行、$D=10$ 部分运行）显示两套程序确实会拒绝“只违反 $5$ 元和条件”的集合（\texttt{work/20261122-planted/relaxed5/REPORT\_R5.md}）。
+
+\paragraph{计算命题~\ref{cc:seed}。}(i) 按 \texttt{FORMAL\_SPEC.md} 给出的生成多项式重建的 $[41,12,14]$ 码：项目检查器 \texttt{verify\_code} 与一份直接读取矩阵文本的独立实现均报告秩 $12$、最小重量 $14$、相同的重量谱（\texttt{work/20261122-seed-e14/}）。(ii) $[42,12,15]$ 码的矩阵取自 Magma 在线计算器的 \texttt{BKLC(GF(2),42,12)}（来源只是矩阵的出处，不作为证据）：\texttt{verify\_code} 与独立实现均报告秩 $12$、最小重量 $15$、相同的重量谱 $\{15{:}219,16{:}360,19{:}772,20{:}912,23{:}882,24{:}676,27{:}164,28{:}96,31{:}11,32{:}3\}$（\texttt{work/20261123-lb42/}）。
+
+\paragraph{没有做的事。}进口~\ref{imp:I1}、\ref{imp:I2} 的原始计算没有在本地重放。目录的完备性来自进口~\ref{imp:I2} 的类数，不来自重生成程序本身。计算命题没有形式化（无 Lean）。
+\end{document}

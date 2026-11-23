@@ -1,0 +1,48 @@
+{
+  "rank": 16,
+  "nonzero_messages": 65535,
+  "distinct_nonzero_words": 65535,
+  "minimum_distance": 12,
+  "nonzero_weight_spectrum": {
+    "12": 675,
+    "16": 9898,
+    "20": 30659,
+    "24": 21056,
+    "28": 3161,
+    "32": 85,
+    "36": 1
+  },
+  "witness_message": 1,
+  "witness_word": 106065092,
+  "witness_support_1_based": [
+    3,
+    7,
+    8,
+    11,
+    12,
+    14,
+    15,
+    18,
+    21,
+    23,
+    26,
+    27
+  ],
+  "mechanism_checks": [
+    {
+      "script": "work/20261020-source-corrections/verify_reduction_corrections.py",
+      "exit_code": 0,
+      "output": "distance_and_shortening.log",
+      "checks": 5
+    },
+    {
+      "script": "work/20261020-prop2-proof/verify_reduction.py",
+      "exit_code": 0,
+      "output": "mechanisms.json",
+      "mechanism_cases": 7,
+      "negative_controls": 2
+    }
+  ],
+  "scope": "Explicit lower-bound certificate and finite mechanism checks only. General upper-bound validity follows from algebra and the cited Proposition 2, not these tests.",
+  "external_209_class_search_rerun": false
+}

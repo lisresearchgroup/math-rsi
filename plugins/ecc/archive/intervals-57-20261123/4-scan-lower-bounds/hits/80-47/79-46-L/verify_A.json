@@ -1,0 +1,4 @@
+{"n":80,"k":47,"rows":47,"D":12,"d_ge_D":true,
+ "method":"H' columns: (i) all subsets of <=a columns have distinct sums, (ii) no (a+1)-subset sum equals a <=a-subset sum; complete, a=(D-2)/2",
+ "work":{"rho_prime":33,"a":5,"phase1_subsets":25706996,"phase2_subsets":300500200,"bitmap_bytes":1073741824,"threads":4,"phase1_sec":0.305,"phase2_sec":1.267,"elapsed_sec":1.572,"early_abort":false,"witness_phase":0},
+ "witness":null}

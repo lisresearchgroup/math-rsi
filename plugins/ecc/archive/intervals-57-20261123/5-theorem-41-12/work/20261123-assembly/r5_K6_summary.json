@@ -1,0 +1,23 @@
+{
+ "count": 3408,
+ "missing": [],
+ "mismatch_vs_o6_on_F_edges_c3_c4": [],
+ "sum_c5_relaxed": 1748736,
+ "codes_with_c5_relaxed_positive": [
+  [
+   1980,
+   6912,
+   468480,
+   6912
+  ],
+  [
+   2004,
+   1741824,
+   30965760,
+   100000
+  ]
+ ],
+ "truncated": [
+  2004
+ ]
+}

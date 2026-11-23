@@ -1,0 +1,1 @@
+{"n":74,"k":43,"rows":43,"D":12,"d_ge_D":true,"method":"按综合做两半坐标的完整重量有界 meet-in-the-middle 枚举，每个综合保留最小重量并穷举另一半","work":{"orientations":2,"low_subsets_generated":1020832,"high_subsets_checked":2758929198},"witness":null}

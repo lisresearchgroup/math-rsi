@@ -1,0 +1,216 @@
+{
+ "catalog": "/shared/ecc-41-12/catalogs/37_8_16.2",
+ "catalog_sha256": "cade8880b7e339699b928af41ca6d29656f6e857327a266dc0e93bc11ca4b6bc",
+ "w": 5,
+ "D": 16,
+ "dirA": "/shared/ecc-41-12/out/o6_37_w5",
+ "dirB": "/shared/ecc-41-12/out/o7_37_w5",
+ "counts": {
+  "codes": 17276,
+  "even": 17254,
+  "odd": 22,
+  "complete_in_A": 17254,
+  "complete_in_B": 17254,
+  "compared": 17254,
+  "identical": 17254
+ },
+ "catalog_parse_errors": [],
+ "mismatching": [],
+ "catalog_check_failures": [],
+ "missing_files": {
+  "A": [],
+  "B": []
+ },
+ "unexpected_files": {
+  "A": [],
+  "B": []
+ },
+ "unreadable_json": [],
+ "odd_idx": [
+  2504,
+  2505,
+  2506,
+  2507,
+  2584,
+  2978,
+  7314,
+  10586,
+  14299,
+  14760,
+  16857,
+  16858,
+  16859,
+  16860,
+  16861,
+  16862,
+  16863,
+  16864,
+  16865,
+  16866,
+  16867,
+  17276
+ ],
+ "totals": {
+  "A": {
+   "codes_loaded": 17254,
+   "sum_F_size": 119757064,
+   "max_F_size": {
+    "value": 12580,
+    "idx": 158
+   },
+   "sum_edges": 581749323,
+   "max_edges": {
+    "value": 68202,
+    "idx": 2957
+   },
+   "sum_c3": 52176,
+   "max_c3": {
+    "value": 208,
+    "idx": 10177
+   },
+   "sum_c4": 0,
+   "max_c4": {
+    "value": 0,
+    "idx": 1
+   },
+   "sum_c5": 0,
+   "max_c5": null,
+   "sum_solutions": 0,
+   "max_solutions": {
+    "value": 0,
+    "idx": 1
+   },
+   "idx_with_solutions": [],
+   "last_but_one_level_field": "c3",
+   "top10_last_but_one_level": [
+    {
+     "idx": 10177,
+     "value": 208
+    },
+    {
+     "idx": 355,
+     "value": 80
+    },
+    {
+     "idx": 354,
+     "value": 48
+    },
+    {
+     "idx": 3573,
+     "value": 48
+    },
+    {
+     "idx": 11420,
+     "value": 48
+    },
+    {
+     "idx": 13008,
+     "value": 48
+    },
+    {
+     "idx": 174,
+     "value": 44
+    },
+    {
+     "idx": 14533,
+     "value": 44
+    },
+    {
+     "idx": 2622,
+     "value": 36
+    },
+    {
+     "idx": 14521,
+     "value": 36
+    }
+   ],
+   "sum_seconds": 54628.751000000026,
+   "impl_names": [
+    "extsearch.c"
+   ]
+  },
+  "B": {
+   "codes_loaded": 17254,
+   "sum_F_size": 119757064,
+   "max_F_size": {
+    "value": 12580,
+    "idx": 158
+   },
+   "sum_edges": 581749323,
+   "max_edges": {
+    "value": 68202,
+    "idx": 2957
+   },
+   "sum_c3": 52176,
+   "max_c3": {
+    "value": 208,
+    "idx": 10177
+   },
+   "sum_c4": 0,
+   "max_c4": {
+    "value": 0,
+    "idx": 1
+   },
+   "sum_c5": 0,
+   "max_c5": null,
+   "sum_solutions": 0,
+   "max_solutions": {
+    "value": 0,
+    "idx": 1
+   },
+   "idx_with_solutions": [],
+   "last_but_one_level_field": "c3",
+   "top10_last_but_one_level": [
+    {
+     "idx": 10177,
+     "value": 208
+    },
+    {
+     "idx": 355,
+     "value": 80
+    },
+    {
+     "idx": 354,
+     "value": 48
+    },
+    {
+     "idx": 3573,
+     "value": 48
+    },
+    {
+     "idx": 11420,
+     "value": 48
+    },
+    {
+     "idx": 13008,
+     "value": 48
+    },
+    {
+     "idx": 174,
+     "value": 44
+    },
+    {
+     "idx": 14533,
+     "value": 44
+    },
+    {
+     "idx": 2622,
+     "value": 36
+    },
+    {
+     "idx": 14521,
+     "value": 36
+    }
+   ],
+   "sum_seconds": 89587.0997934101,
+   "impl_names": [
+    "sol-direct"
+   ]
+  }
+ },
+ "sum_seconds": {
+  "A": 54628.751000000026,
+  "B": 89587.0997934101
+ },
+ "all_even_codes_compared_identical": true
+}

@@ -1,0 +1,14 @@
+{
+ "codes": 60,
+ "pairs_total": 1770,
+ "pairs_same_shape": 330,
+ "agree": 330,
+ "equivalent_pairs": 82,
+ "inequivalent_pairs": 248,
+ "disagreements": [],
+ "n9_10_positive_controls": 12,
+ "n9_10_positive_found": 12,
+ "assert_fresh_checks": 280,
+ "zero_cols_in_codes": 30,
+ "repeated_cols_in_codes": 60
+}

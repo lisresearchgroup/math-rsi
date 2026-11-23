@@ -1,0 +1,56 @@
+{
+ "id": "74-36",
+ "base": [
+  74,
+  36
+ ],
+ "d0": 16,
+ "rho": 38,
+ "targets": [
+  {
+   "type": "L",
+   "cell": [
+    75,
+    37
+   ],
+   "new_d": 15,
+   "depth": 14,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 511,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "all_targets": [
+  {
+   "type": "A",
+   "cell": [
+    74,
+    37
+   ],
+   "new_d": 15,
+   "depth": 15,
+   "closes": false,
+   "hit": false,
+   "uncovered_count": 0,
+   "incomplete": false,
+   "one_short": true
+  },
+  {
+   "type": "L",
+   "cell": [
+    75,
+    37
+   ],
+   "new_d": 15,
+   "depth": 14,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 511,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "raw_sha256": "2260414511f19564e6187a3ddfaed02e512bbc9d23a95e5b5e39502ca7c0b25f"
+}

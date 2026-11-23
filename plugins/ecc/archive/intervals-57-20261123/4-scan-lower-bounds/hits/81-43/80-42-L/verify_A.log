@@ -1,0 +1,11 @@
+# 2026-11-22T19:47:39Z host=job-B-master-0: verify_a G.txt 13 verify_A.json.run 8
+[    0.01s] N=81 rows=43 rank=43 rho'=38 D=13 a=6 phases=(i) threads=8
+[    0.01s] bitmap 32.000 GiB
+[    0.03s] phase(i) size 1 done, total subsets 81
+[    0.09s] phase(i) size 2 done, total subsets 3321
+[    0.24s] phase(i) size 3 done, total subsets 88641
+[    0.31s] phase(i) size 4 done, total subsets 1752381
+[    1.12s] phase(i) size 5 done, total subsets 27373977
+[    4.06s] phase(i) size 6 done, total subsets 351914193
+[    4.08s] d >= 13: true
+# exit code 0, wall 6 s

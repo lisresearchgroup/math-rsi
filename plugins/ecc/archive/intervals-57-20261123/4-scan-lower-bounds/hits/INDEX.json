@@ -1,0 +1,604 @@
+{
+ "generated_utc": "2026-11-23T04:09:26Z",
+ "cells": [
+  {
+   "cell": [
+    72,
+    43
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T15:53:44Z",
+   "sources": [
+    {
+     "id": "71-42",
+     "type": "L",
+     "new_d": 11,
+     "depth": 10,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/72-43/71-42-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "72-42",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/72-43/72-42-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    73,
+    43
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T15:56:06Z",
+   "sources": [
+    {
+     "id": "72-42",
+     "type": "L",
+     "new_d": 11,
+     "depth": 10,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/73-43/72-42-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "73-42",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/73-43/73-42-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    74,
+    43
+   ],
+   "live_lb": 11,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T16:01:22Z",
+   "sources": [
+    {
+     "id": "73-42",
+     "type": "L",
+     "new_d": 12,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/74-43/73-42-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "74-42",
+     "type": "A",
+     "new_d": 12,
+     "depth": 12,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/74-43/74-42-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 12,
+   "new_lb_verified": 12,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    74,
+    44
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T16:05:47Z",
+   "sources": [
+    {
+     "id": "74-43",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/74-44/74-43-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    75,
+    37
+   ],
+   "live_lb": 14,
+   "live_ub": 18,
+   "fetched_utc": "2026-11-22T19:15:06Z",
+   "sources": [
+    {
+     "id": "74-36",
+     "type": "L",
+     "new_d": 15,
+     "depth": 14,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 15 > live lower bound 14",
+     "dir": "hits/75-37/74-36-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 14,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 15,
+   "new_lb_verified": 15,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    75,
+    44
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T16:06:18Z",
+   "sources": [
+    {
+     "id": "74-43",
+     "type": "L",
+     "new_d": 11,
+     "depth": 10,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/75-44/74-43-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "75-43",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/75-44/75-43-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    76,
+    44
+   ],
+   "live_lb": 11,
+   "live_ub": 15,
+   "fetched_utc": "2026-11-22T16:07:19Z",
+   "sources": [
+    {
+     "id": "75-43",
+     "type": "L",
+     "new_d": 12,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/76-44/75-43-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "76-43",
+     "type": "A",
+     "new_d": 12,
+     "depth": 12,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/76-44/76-43-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 12,
+   "new_lb_verified": 12,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    76,
+    45
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T16:10:58Z",
+   "sources": [
+    {
+     "id": "76-44",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/76-45/76-44-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    77,
+    45
+   ],
+   "live_lb": 11,
+   "live_ub": 15,
+   "fetched_utc": "2026-11-22T16:11:32Z",
+   "sources": [
+    {
+     "id": "77-44",
+     "type": "A",
+     "new_d": 12,
+     "depth": 12,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/77-45/77-44-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 12,
+   "new_lb_verified": 12,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    78,
+    46
+   ],
+   "live_lb": 11,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T16:12:05Z",
+   "sources": [
+    {
+     "id": "78-45",
+     "type": "A",
+     "new_d": 12,
+     "depth": 12,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/78-46/78-45-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 12,
+   "new_lb_verified": 12,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    79,
+    47
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T16:12:25Z",
+   "sources": [
+    {
+     "id": "78-46",
+     "type": "L",
+     "new_d": 11,
+     "depth": 10,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/79-47/78-46-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "79-46",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/79-47/79-46-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    80,
+    47
+   ],
+   "live_lb": 11,
+   "live_ub": 15,
+   "fetched_utc": "2026-11-22T16:13:18Z",
+   "sources": [
+    {
+     "id": "79-46",
+     "type": "L",
+     "new_d": 12,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/80-47/79-46-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 12,
+   "new_lb_verified": 12,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    81,
+    43
+   ],
+   "live_lb": 12,
+   "live_ub": 18,
+   "fetched_utc": "2026-11-22T19:45:50Z",
+   "sources": [
+    {
+     "id": "80-42",
+     "type": "L",
+     "new_d": 13,
+     "depth": 12,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 13 > live lower bound 12",
+     "dir": "hits/81-43/80-42-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 12,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 13,
+   "new_lb_verified": 13,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    136,
+    100
+   ],
+   "live_lb": 10,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T17:15:52Z",
+   "sources": [
+    {
+     "id": "135-99",
+     "type": "L",
+     "new_d": 11,
+     "depth": 10,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/136-100/135-99-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    },
+    {
+     "id": "136-99",
+     "type": "A",
+     "new_d": 11,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 11 > live lower bound 10",
+     "dir": "hits/136-100/136-99-A",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 10,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 11,
+   "new_lb_verified": 11,
+   "closes_live": false,
+   "closes_snapshot": false
+  },
+  {
+   "cell": [
+    137,
+    100
+   ],
+   "live_lb": 11,
+   "live_ub": 14,
+   "fetched_utc": "2026-11-22T17:47:13Z",
+   "sources": [
+    {
+     "id": "136-99",
+     "type": "L",
+     "new_d": 12,
+     "depth": 11,
+     "closes_snapshot": false,
+     "status": "verified",
+     "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+     "dir": "hits/137-100/136-99-L",
+     "checks": {
+      "rank": true,
+      "verify_A": true,
+      "verify_B": true,
+      "codetables_live_lb": 11,
+      "improves_live": true
+     }
+    }
+   ],
+   "new_lb_claimed": 12,
+   "new_lb_verified": 12,
+   "closes_live": false,
+   "closes_snapshot": false
+  }
+ ]
+}

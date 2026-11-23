@@ -1,0 +1,288 @@
+{
+ "1980": {
+  "idx": 1980,
+  "gen_equals_catalog_rows_in_order": true,
+  "gen_equals_catalog_as_sets": true,
+  "k": 7,
+  "n": 36,
+  "pivots": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   6,
+   10
+  ],
+  "pivots_equal_json": true,
+  "free_equal_json": true,
+  "K_even": true,
+  "K_min_weight": 16,
+  "K_weight_distribution": {
+   "16": 63,
+   "20": 63,
+   "36": 1
+  },
+  "num_sets": 6912,
+  "json_c5": 6912,
+  "json_solutions": 6912,
+  "strictly_ascending_within_tuple": true,
+  "max_syndrome_lt_2^29": true,
+  "lexicographically_strictly_increasing": true,
+  "all_tuples_distinct": true,
+  "a_violating_sets(sizes1-4 thresholds)": 0,
+  "a_violating_sets_by_size": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0
+  },
+  "sets_with_any_odd_subset_xor_weight": 0,
+  "d5_hist": {
+   "6": 6912
+  },
+  "max_d5": 6,
+  "sets_with_d5_ge_10": 0,
+  "sets_with_d5_lt_10": 6912,
+  "depth_hist_by_subset_size_aggregated": {
+   "1": {
+    "14": 34560
+   },
+   "2": {
+    "14": 69120
+   },
+   "3": {
+    "12": 69120
+   },
+   "4": {
+    "12": 34560
+   },
+   "5": {
+    "6": 6912
+   }
+  },
+  "pair_depths_histogram_aggregated": {
+   "14": 69120
+  },
+  "sets_by_number_of_pairs_with_depth16(of 10)": {
+   "0": 6912
+  },
+  "explicit_codeword_weight_equals_d5_plus_6_for_all": true,
+  "explicit_codeword_weight_lt_16_for_all": true,
+  "explicit_codeword_nonzero_for_all": true,
+  "witness_weight_hist": {
+   "12": 6912
+  },
+  "c5_matches": true,
+  "spot_full_weight_distributions": {
+   "0": {
+    "set": [
+     8515261,
+     123105117,
+     174856931,
+     206034086,
+     365074217
+    ],
+    "min_weight_all_4095": 12,
+    "weight_distribution": {
+     "12": 1,
+     "16": 756,
+     "20": 1728,
+     "24": 1440,
+     "28": 165,
+     "32": 3,
+     "36": 2
+    },
+    "d5_plus_6": 12
+   },
+   "3456": {
+    "set": [
+     92152467,
+     186956152,
+     194404083,
+     207849306,
+     401644098
+    ],
+    "min_weight_all_4095": 12,
+    "weight_distribution": {
+     "12": 1,
+     "16": 756,
+     "20": 1728,
+     "24": 1440,
+     "28": 165,
+     "32": 3,
+     "36": 2
+    },
+    "d5_plus_6": 12
+   },
+   "6911": {
+    "set": [
+     394740850,
+     407378303,
+     459221925,
+     497746461,
+     514178737
+    ],
+    "min_weight_all_4095": 12,
+    "weight_distribution": {
+     "12": 1,
+     "16": 756,
+     "20": 1728,
+     "24": 1440,
+     "28": 165,
+     "32": 3,
+     "36": 2
+    },
+    "d5_plus_6": 12
+   }
+  },
+  "witness_file": "/home/user/math/aris4math_v2/cases/41-12/work/20261123-witness5/witness_1980.txt.gz",
+  "witness_lines": 6912,
+  "witness_sha256": "b1bb9cce86f07b04940362ed75dd216b2ae473d40135a679221f06302806c858",
+  "seconds": 0.22
+ },
+ "2004": {
+  "idx": 2004,
+  "gen_equals_catalog_rows_in_order": true,
+  "gen_equals_catalog_as_sets": true,
+  "k": 7,
+  "n": 36,
+  "pivots": [
+   0,
+   1,
+   2,
+   3,
+   5,
+   6,
+   10
+  ],
+  "pivots_equal_json": true,
+  "free_equal_json": true,
+  "K_even": true,
+  "K_min_weight": 16,
+  "K_weight_distribution": {
+   "16": 63,
+   "20": 63,
+   "36": 1
+  },
+  "num_sets": 1741824,
+  "json_c5": 1741824,
+  "json_solutions": 1741824,
+  "strictly_ascending_within_tuple": true,
+  "max_syndrome_lt_2^29": true,
+  "lexicographically_strictly_increasing": true,
+  "all_tuples_distinct": true,
+  "a_violating_sets(sizes1-4 thresholds)": 0,
+  "a_violating_sets_by_size": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0
+  },
+  "sets_with_any_odd_subset_xor_weight": 0,
+  "d5_hist": {
+   "6": 1741824
+  },
+  "max_d5": 6,
+  "sets_with_d5_ge_10": 0,
+  "sets_with_d5_lt_10": 1741824,
+  "depth_hist_by_subset_size_aggregated": {
+   "1": {
+    "14": 8709120
+   },
+   "2": {
+    "14": 17418240
+   },
+   "3": {
+    "12": 17418240
+   },
+   "4": {
+    "12": 8709120
+   },
+   "5": {
+    "6": 1741824
+   }
+  },
+  "pair_depths_histogram_aggregated": {
+   "14": 17418240
+  },
+  "sets_by_number_of_pairs_with_depth16(of 10)": {
+   "0": 1741824
+  },
+  "explicit_codeword_weight_equals_d5_plus_6_for_all": true,
+  "explicit_codeword_weight_lt_16_for_all": true,
+  "explicit_codeword_nonzero_for_all": true,
+  "witness_weight_hist": {
+   "12": 1741824
+  },
+  "c5_matches": true,
+  "spot_full_weight_distributions": {
+   "0": {
+    "set": [
+     1034367,
+     26702633,
+     46513475,
+     316688878,
+     430728624
+    ],
+    "min_weight_all_4095": 12,
+    "weight_distribution": {
+     "12": 1,
+     "16": 756,
+     "20": 1728,
+     "24": 1440,
+     "28": 165,
+     "32": 3,
+     "36": 2
+    },
+    "d5_plus_6": 12
+   },
+   "870912": {
+    "set": [
+     84145817,
+     242732327,
+     297445403,
+     345970008,
+     370248317
+    ],
+    "min_weight_all_4095": 12,
+    "weight_distribution": {
+     "12": 1,
+     "16": 756,
+     "20": 1728,
+     "24": 1440,
+     "28": 165,
+     "32": 3,
+     "36": 2
+    },
+    "d5_plus_6": 12
+   },
+   "1741823": {
+    "set": [
+     402533944,
+     424457812,
+     454444873,
+     498687826,
+     522030759
+    ],
+    "min_weight_all_4095": 12,
+    "weight_distribution": {
+     "12": 1,
+     "16": 756,
+     "20": 1728,
+     "24": 1440,
+     "28": 165,
+     "32": 3,
+     "36": 2
+    },
+    "d5_plus_6": 12
+   }
+  },
+  "witness_file": "/home/user/math/aris4math_v2/cases/41-12/work/20261123-witness5/witness_2004.txt.gz",
+  "witness_lines": 1741824,
+  "witness_sha256": "478ccc8a36cb954b50d3a15d929367cc83c43ead309bd8c5e010a2f72d30429a",
+  "seconds": 26.2
+ }
+}

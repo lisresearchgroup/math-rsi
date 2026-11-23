@@ -1,0 +1,7 @@
+/home/user/math/aris4math_v2/cases/41-12/work/20261122-catalog/check2/test_exact.cpp: In function ‘int main()’:
+/home/user/math/aris4math_v2/cases/41-12/work/20261122-catalog/check2/test_exact.cpp:19:3: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   19 |   if(codes.size()!=155)throw runtime_error("small domain size is not 155");sizes.push_back(codes.size());
+      |   ^~
+/home/user/math/aris4math_v2/cases/41-12/work/20261122-catalog/check2/test_exact.cpp:19:76: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   19 |   if(codes.size()!=155)throw runtime_error("small domain size is not 155");sizes.push_back(codes.size());
+      |                                                                            ^~~~~

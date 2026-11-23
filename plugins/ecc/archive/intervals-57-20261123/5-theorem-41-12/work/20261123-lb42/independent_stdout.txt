@@ -1,0 +1,46 @@
+{
+ "n": 42,
+ "k_declared": 12,
+ "rank": 12,
+ "nonzero_messages": 4095,
+ "distinct_nonzero_codewords": 4095,
+ "zero_codeword_absent": true,
+ "min_weight": 15,
+ "even_code": false,
+ "spectrum": {
+  "15": 219,
+  "16": 360,
+  "19": 772,
+  "20": 912,
+  "23": 882,
+  "24": 676,
+  "27": 164,
+  "28": 96,
+  "31": 11,
+  "32": 3
+ },
+ "spectrum_total": 4095,
+ "min_weight_message_rows_1based": [
+  1
+ ],
+ "min_weight_message_bits_lsb_first": "100000000000",
+ "min_weight_codeword": "100000000000001001100110010001110101101001",
+ "min_weight_codeword_support_1based": [
+  1,
+  15,
+  18,
+  19,
+  22,
+  23,
+  26,
+  30,
+  31,
+  32,
+  34,
+  36,
+  37,
+  39,
+  42
+ ],
+ "target_constructed_d15": true
+}

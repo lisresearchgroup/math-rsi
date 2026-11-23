@@ -1,0 +1,11 @@
+# /home/user/math/aris4math_v2/cases/_scan-onestep/tools/verify_a/verify_a /home/user/math/aris4math_v2/cases/_scan-onestep/hits/137-100/136-99-L/G.txt 12 /home/user/math/aris4math_v2/cases/_scan-onestep/hits/137-100/136-99-L/verify_A.json.run 4  (started 2026-11-22T17:15:52Z)
+[    0.00s] N=137 rows=100 rank=100 rho'=37 D=12 a=5 phases=(i)+(ii) threads=4
+[    0.00s] bitmap 16.000 GiB
+[    0.04s] phase(i) size 1 done, total subsets 137
+[    0.40s] phase(i) size 2 done, total subsets 9453
+[    0.55s] phase(i) size 3 done, total subsets 428673
+[    1.05s] phase(i) size 4 done, total subsets 14472543
+[    6.26s] phase(i) size 5 done, total subsets 388039485
+[   45.72s] phase(ii) done, 8218472724 subsets
+[   45.72s] d >= 12: true
+# exit code 0, wall 46.01 s

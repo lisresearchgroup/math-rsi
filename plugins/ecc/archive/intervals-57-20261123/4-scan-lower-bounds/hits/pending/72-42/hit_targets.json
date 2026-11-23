@@ -1,0 +1,70 @@
+{
+ "id": "72-42",
+ "base": [
+  72,
+  42
+ ],
+ "d0": 12,
+ "rho": 30,
+ "targets": [
+  {
+   "type": "A",
+   "cell": [
+    72,
+    43
+   ],
+   "new_d": 11,
+   "depth": 11,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 36,
+   "incomplete": false,
+   "one_short": false
+  },
+  {
+   "type": "L",
+   "cell": [
+    73,
+    43
+   ],
+   "new_d": 11,
+   "depth": 10,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 80638,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "all_targets": [
+  {
+   "type": "A",
+   "cell": [
+    72,
+    43
+   ],
+   "new_d": 11,
+   "depth": 11,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 36,
+   "incomplete": false,
+   "one_short": false
+  },
+  {
+   "type": "L",
+   "cell": [
+    73,
+    43
+   ],
+   "new_d": 11,
+   "depth": 10,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 80638,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "raw_sha256": "48144a9dbaf21029e6745eccd1ab5c9642fee05cdfeef733932cf54979abcca1"
+}

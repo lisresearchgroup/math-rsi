@@ -1,0 +1,241 @@
+{
+ "n": 42,
+ "k": 12,
+ "declared_k": 12,
+ "rank": 12,
+ "field": 2,
+ "status": "verified",
+ "proof_level": "exact",
+ "message": "exact minimum distance 15 verifies target 15",
+ "target_distance": 15,
+ "distance": 15,
+ "exact_distance": 15,
+ "proved_lower_bound": 15,
+ "exact_dimension_limit": 22,
+ "probe_max_rows": 3,
+ "matrix_sha256": "f1f0ce5948db3f6460f7c709a0b1aae160c9b1f8bc7ced743ca7694024d1b7fe",
+ "spec_sha256": null,
+ "witness": {
+  "message": 1,
+  "codeword": 2589368664065,
+  "weight": 15,
+  "support": [
+   0,
+   14,
+   17,
+   18,
+   21,
+   22,
+   25,
+   29,
+   30,
+   31,
+   33,
+   35,
+   36,
+   38,
+   41
+  ],
+  "message_support": [
+   0
+  ],
+  "examined": 4095,
+  "source": "exact"
+ },
+ "probe_witness": {
+  "message": 1,
+  "codeword": 2589368664065,
+  "weight": 15,
+  "support": [
+   0,
+   14,
+   17,
+   18,
+   21,
+   22,
+   25,
+   29,
+   30,
+   31,
+   33,
+   35,
+   36,
+   38,
+   41
+  ],
+  "message_support": [
+   0
+  ],
+  "examined": 298,
+  "source": "probe"
+ },
+ "probe": {
+  "message": 1,
+  "codeword": 2589368664065,
+  "weight": 15,
+  "support": [
+   0,
+   14,
+   17,
+   18,
+   21,
+   22,
+   25,
+   29,
+   30,
+   31,
+   33,
+   35,
+   36,
+   38,
+   41
+  ],
+  "message_support": [
+   0
+  ],
+  "examined": 298,
+  "source": "probe"
+ },
+ "exact_witness": {
+  "message": 1,
+  "codeword": 2589368664065,
+  "weight": 15,
+  "support": [
+   0,
+   14,
+   17,
+   18,
+   21,
+   22,
+   25,
+   29,
+   30,
+   31,
+   33,
+   35,
+   36,
+   38,
+   41
+  ],
+  "message_support": [
+   0
+  ],
+  "examined": 4095,
+  "source": "exact"
+ },
+ "stages": [
+  {
+   "name": "rank",
+   "status": "passed",
+   "message": "generator rank 12 matches declared dimension 12",
+   "witness": null
+  },
+  {
+   "name": "probe",
+   "status": "passed",
+   "message": "probe found no word below target 15",
+   "witness": {
+    "message": 1,
+    "codeword": 2589368664065,
+    "weight": 15,
+    "support": [
+     0,
+     14,
+     17,
+     18,
+     21,
+     22,
+     25,
+     29,
+     30,
+     31,
+     33,
+     35,
+     36,
+     38,
+     41
+    ],
+    "message_support": [
+     0
+    ],
+    "examined": 298,
+    "source": "probe"
+   }
+  },
+  {
+   "name": "exact",
+   "status": "passed",
+   "message": "exact distance 15 meets target 15",
+   "witness": {
+    "message": 1,
+    "codeword": 2589368664065,
+    "weight": 15,
+    "support": [
+     0,
+     14,
+     17,
+     18,
+     21,
+     22,
+     25,
+     29,
+     30,
+     31,
+     33,
+     35,
+     36,
+     38,
+     41
+    ],
+    "message_support": [
+     0
+    ],
+    "examined": 4095,
+    "source": "exact"
+   }
+  }
+ ],
+ "weight_distribution_explicit": [
+  [
+   15,
+   219
+  ],
+  [
+   16,
+   360
+  ],
+  [
+   19,
+   772
+  ],
+  [
+   20,
+   912
+  ],
+  [
+   23,
+   882
+  ],
+  [
+   24,
+   676
+  ],
+  [
+   27,
+   164
+  ],
+  [
+   28,
+   96
+  ],
+  [
+   31,
+   11
+  ],
+  [
+   32,
+   3
+  ]
+ ],
+ "weight_distribution_total": 4095
+}

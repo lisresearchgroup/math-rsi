@@ -1,0 +1,81 @@
+{
+  "lemma": "PARITY-2SHORT (generalised): binary [n,k,d>=13] with k>=16  =>  binary [n-1,k-2] with minimum distance EXACTLY 14",
+  "verdict": "HOLDS",
+  "verdict_scope": {
+    "this_case": "n=42, k=16: the lemma holds and the nonexistence argument goes through",
+    "general_statement": "the unrestricted statement (any k) is FALSE; k>=16 is a SUFFICIENT condition used by the proof (not a necessary one: e.g. the k=5 extended-simplex instance succeeds with rZ=4); the genuine counterexample to the unrestricted statement is the k=1 family (repetition code [13,1,13])"
+  },
+  "checks": {
+    "exhaustive_matrices_enumerated": 124208,
+    "exhaustive_full_rank_matrices": 114424,
+    "exhaustive_distinct_codes": 10981,
+    "exhaustive_distinct_codes_with_d_ge_3": 6785,
+    "exhaustive_s1_lowering_applied": 6785,
+    "exhaustive_codes_entering_sufficient_regime": 0,
+    "exhaustive_violations": 0,
+    "random_trials": 40000,
+    "random_samples_kept": 18161,
+    "random_codes_entering_sufficient_regime": 6946,
+    "random_violations": 0,
+    "mutants_detected": 4,
+    "mutants_total": 4
+  },
+  "spurious_failures_resolved": [
+    {
+      "instance": "BCH + repeated column",
+      "cause": "script duplicated a GENERATOR ROW instead of a column; the zero codeword then appeared twice in codewords()[1:], corrupting the script's min-distance bookkeeping",
+      "is_counterexample": false,
+      "fix": "duplicate_last_column(): r | (((r>>(n-1))&1) << n), length n+1, same code space",
+      "after_fix": "PASS"
+    },
+    {
+      "instance": "extended simplex + repeated column",
+      "cause": "same construction defect",
+      "is_counterexample": false,
+      "after_fix": "PASS"
+    }
+  ],
+  "counterexample_to_unrestricted_statement": {
+    "code": "[13,1,13] repetition code",
+    "why": "after parity extension the weight-14 codeword has ones in all 13 original coordinates, so Z is empty and no independent pair exists",
+    "note": "outside the k>=16 regime; the theorem used for this case is unaffected"
+  },
+  "structural_assumptions_needed": "none: instances with a zero column and with a repeated column both PASS, so the reduction covers pathological matrices as well",
+  "limits": "mechanism-level verification only (criteria + exhaustive small codes + mutants); it is not an enumeration of all 16x42 matrices, and it does not audit the external import Prop. 2",
+  "reporter": "main Flash (the delegated red-team agent was cut off at the round timeout before producing a report)",
+  "evidence_paths": [
+    "work/20261020-prop2-redteam/redteam_checks.py",
+    "work/20261020-prop2-redteam/logs/redteam_checks.log",
+    "work/20261020-prop2-redteam/REDTEAM_REPORT.md",
+    "work/20261020-prop2-proof/verify_reduction.py",
+    "work/20261020-prop2-proof/logs/verify_reduction_direct.log"
+  ],
+  "labels_corrected_2026-10-20": [
+    "BCH instance relabelled [127,16,15] (its true min distance) with the d=13 branch identified as the S1 output",
+    "'expected_boundary_failure' annotation removed (k>=16 is sufficient, not necessary)",
+    "top-level 'instances' array in redteam_checks.json now carries the per-instance records (was empty)"
+  ],
+  "cross_family_review": {
+    "reviewer": "Grok (grok-4.7, high), read-only",
+    "verdict": "NEEDS_REVISION (1 medium + 2 low)",
+    "fixes_applied": true,
+    "record": "reviews/20261020-grok-crossfamily/{GROK_REVIEW.md,verdict.json}"
+  },
+  "coverage_note": "The tiny exhaustive sweep covers the MECHANISM only (all objects have k<=3, so the sufficient condition k>=tau+3 is never met: 0 objects entered that branch). The sufficient-condition regime is covered by the k=16 BCH instances and by the randomized search (6946 samples entered the branch, 0 violations). The earlier claim '124208 codes verified the full chain' was an incorrect metric (matrices enumerated, not distinct codes) and is withdrawn.",
+  "mutant_detection_note": "The artificial failure flag (setting a criterion to False whenever a mutant flag was on) has been removed; every criterion is now computed from actual column rank, witness survival and output parameters. All 4 mutants are still detected (S3.pair_is_independent, S3.e_dim_exactly_k_minus_2, S3.g_witness_survives).",
+  "instances_note": "Added 'BCH + repeated NONZERO column' (duplicates column 0). The pre-existing 'repeated column' instance duplicates the ZERO last column of the BCH generator - this is now stated explicitly in the label and the note.",
+  "outer_review_round2": {
+    "verdict": "NEEDS_REVISION (7 issues)",
+    "fixes_applied": [
+      "exhaustive/random counters made exact and scoped; S1 now really lowers the distance",
+      "artificial mutant failure flag removed",
+      "BCH repeated-column labelling corrected + nonzero-column instance added",
+      "implementation C coordinate renumbering fixed with width/bijection assertions (exit 0, 4/4 PASS)"
+    ],
+    "still_open": [
+      "Prop.2's code-table leaf (41,27)<=6 traces to Ja 1996 (unverified original)",
+      "proof-checker audit pending (merged into the round-end check)",
+      "second cross-family pass / Gemini not yet run"
+    ]
+  }
+}

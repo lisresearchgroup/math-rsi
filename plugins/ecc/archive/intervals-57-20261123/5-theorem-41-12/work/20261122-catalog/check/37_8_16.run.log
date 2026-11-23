@@ -1,0 +1,58 @@
+{
+ "expected": {
+  "n": 37,
+  "k": 8,
+  "d": 16
+ },
+ "count": 17276,
+ "count_even": 17254,
+ "count_projective": 16871,
+ "count_even_and_projective": 16852,
+ "hull_hist_all": {
+  "4": 5,
+  "6": 77,
+  "7": 22,
+  "8": 17172
+ },
+ "hull_hist_even": {
+  "4": 5,
+  "6": 77,
+  "8": 17172
+ },
+ "hull_mismatches": [],
+ "distinct_invariants": 17273,
+ "collision_groups": [
+  [
+   16859,
+   16860,
+   16861
+  ],
+  [
+   16864,
+   16865
+  ]
+ ],
+ "unresolved_pairs": 0,
+ "equivalent_pairs_found": [],
+ "duplicate_idx": [],
+ "selftest_count": 20,
+ "selftest_all_preserved": true,
+ "selftest_exact_search_all_found": true,
+ "checks_failed": [],
+ "group_order_hist": {
+  "None": 17276
+ },
+ "min_dist_hist": {
+  "16": 17276
+ },
+ "seconds_analysis": 2.5,
+ "seconds_total": 2.6,
+ "all_checks_pass": true,
+ "all_codes_pairwise_inequivalent_proved": true,
+ "zero_column_failures": [],
+ "count_non_even": 22,
+ "non_even_distinct_weight_distributions": 8,
+ "count_hull_claimed_absent": 17276,
+ "count_group_order_absent": 17276
+}
+wrote work/20261122-catalog/check/37_8_16.2.check.json

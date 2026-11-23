@@ -1,0 +1,166 @@
+{
+ "catalog": "../zenodo/extracted/36_8_16.2",
+ "totals": {
+  "expected": {
+   "n": 36,
+   "k": 8,
+   "d": 16
+  },
+  "count": 2,
+  "count_even": 2,
+  "count_projective": 2,
+  "count_even_and_projective": 2,
+  "hull_hist_all": {
+   "8": 2
+  },
+  "hull_hist_even": {
+   "8": 2
+  },
+  "hull_mismatches": [],
+  "distinct_invariants": 1,
+  "collision_groups": [
+   [
+    1,
+    2
+   ]
+  ],
+  "exact_resolution": [
+   {
+    "idx_group": [
+     1,
+     2
+    ],
+    "classes": [
+     [
+      1
+     ],
+     [
+      2
+     ]
+    ],
+    "pair_results": [
+     {
+      "a": 1,
+      "b": 2,
+      "result": "inequivalent_exhaustive",
+      "nodes": 37
+     }
+    ],
+    "unresolved_pairs": []
+   }
+  ],
+  "unresolved_pairs": 0,
+  "equivalent_pairs_found": [],
+  "duplicate_idx": [],
+  "selftest_count": 2,
+  "selftest_all_preserved": true,
+  "selftest_exact_search_all_found": true,
+  "collision_member_positive_control": [
+   {
+    "idx": 1,
+    "found": true
+   },
+   {
+    "idx": 2,
+    "found": true
+   }
+  ],
+  "checks_failed": [],
+  "group_order_hist": {
+   "192": 1,
+   "1152": 1
+  },
+  "min_dist_hist": {
+   "16": 2
+  },
+  "seconds_analysis": 0.0,
+  "seconds_total": 0.0,
+  "all_checks_pass": true,
+  "all_codes_pairwise_inequivalent_proved": true,
+  "selftest": [
+   {
+    "idx": 1,
+    "invariant_preserved": true,
+    "exact_search_finds_perm": true
+   },
+   {
+    "idx": 2,
+    "invariant_preserved": true,
+    "exact_search_finds_perm": true
+   }
+  ],
+  "zero_column_failures": [],
+  "count_non_even": 0,
+  "non_even_distinct_weight_distributions": 0,
+  "count_hull_claimed_absent": 0,
+  "count_group_order_absent": 0
+ },
+ "codes": [
+  {
+   "idx": 1,
+   "header": {
+    "k": 8,
+    "n": 36,
+    "q": 2
+   },
+   "num_rows": 8,
+   "row_lengths": [
+    36
+   ],
+   "rank": 8,
+   "weight_dist": {
+    "16": 153,
+    "20": 72,
+    "24": 30
+   },
+   "min_dist": 16,
+   "all_even": true,
+   "zero_columns": 0,
+   "column_multiplicities": {
+    "1": 36
+   },
+   "projective": true,
+   "rank_GGt": 0,
+   "hull_dim": 8,
+   "hull_claimed": 8,
+   "hull_match": true,
+   "group_order": 192,
+   "invariant": "71e06bd52df741d5877590f7b6258e79d585719f41f8bec8c170578ab5416c92",
+   "refine_rounds": 1,
+   "checks_pass": true
+  },
+  {
+   "idx": 2,
+   "header": {
+    "k": 8,
+    "n": 36,
+    "q": 2
+   },
+   "num_rows": 8,
+   "row_lengths": [
+    36
+   ],
+   "rank": 8,
+   "weight_dist": {
+    "16": 153,
+    "20": 72,
+    "24": 30
+   },
+   "min_dist": 16,
+   "all_even": true,
+   "zero_columns": 0,
+   "column_multiplicities": {
+    "1": 36
+   },
+   "projective": true,
+   "rank_GGt": 0,
+   "hull_dim": 8,
+   "hull_claimed": 8,
+   "hull_match": true,
+   "group_order": 1152,
+   "invariant": "71e06bd52df741d5877590f7b6258e79d585719f41f8bec8c170578ab5416c92",
+   "refine_rounds": 1,
+   "checks_pass": true
+  }
+ ]
+}

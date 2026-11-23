@@ -1,0 +1,4 @@
+{"n":75,"k":44,"rows":44,"D":11,"d_ge_D":true,
+ "method":"H' columns: all subsets of <=a columns have pairwise distinct sums (a=(D-1)/2); complete",
+ "work":{"rho_prime":31,"a":5,"phase1_subsets":18545215,"phase2_subsets":0,"bitmap_bytes":268435456,"threads":4,"phase1_sec":0.159,"phase2_sec":0.000,"elapsed_sec":0.160,"early_abort":false,"witness_phase":0},
+ "witness":null}

@@ -1,0 +1,14 @@
+{
+ "status": "completed",
+ "rounds": 2,
+ "threadId": "01a20490-db61-7a01-b1b5-2ea082c2526a",
+ "fatal_fixed": 0,
+ "critical_fixed": 0,
+ "critical_open_procedural": 1,
+ "major_fixed": 4,
+ "minor_fixed": 0,
+ "counterexamples_found": 0,
+ "counterexample_candidates": 1,
+ "acceptance_gate": "PASS (proof-checker gate); FORMAL_SPEC acceptance incomplete: Gemini review unavailable",
+ "timestamp": "2026-11-22T22:48:36Z"
+}
