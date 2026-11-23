@@ -10,6 +10,7 @@ const Q7_E16_TIME = 10950;
 const HE_V6_TIME = 11180;
 const Q7_FULL_TIME = 12600;
 const HE_V7_TIME = 12900;
+const ECC_V8_TIME = 14600;
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -33,10 +34,10 @@ const CASES = [
     status: 'Uniform k ≥ 12 theorem in Lean · small k scoped per parameter',
     read: REPO + 'case-studies/property-b/index.html', plugin: GH + '/tree/main/plugins/propertyb',
     quant: () => `<div class="qrow">${[35,67,131,267,543,1112,2275,4664].map((v,i)=>`<span><b>${v}</b><i>k = ${i+5}</i></span>`).join('')}</div><p class="qnote">Lower bounds on m(k), plus a uniform gain for every k ≥ 12.</p>` },
-  { id: 'ecc', short: 'ECC', title: 'From three exact code distances to four',
-    status: 'Exact distances · 45/11 remains open',
-    read: REPO + 'plugins/ecc/archive/source/paper/main.pdf', plugin: GH + '/tree/main/plugins/ecc',
-    quant: () => `<p class="q-closed">${t >= 3400 ? '4' : '3'} exact optimal distances</p><div class="qrow">${[['43,10','16'],['44,10','17'],['44,11','16'],...(t >= 3400 ? [['42,16','12']] : [])].map(([p,v])=>`<span><b>${v}</b><i>d₂(${p})</i></span>`).join('')}<span class="open"><b>16–17</b><i>d₂(45,11) · open</i></span></div><p class="qnote">For each code length n and dimension k, d₂(n,k) is the largest achievable minimum distance. “Exact” means a construction meets the upper bound. ${t >= 3400 ? 'The fourth value, d₂(42,16)=12, applies a published 2020 theorem.' : 'The original exclusion fixes the three values shown.'}</p>` },
+  { id: 'ecc', short: 'ECC', title: () => t >= ECC_V8_TIME ? 'Constructions and exclusions tighten 57 intervals' : 'From three exact code distances to four',
+    status: () => t >= ECC_V8_TIME ? 'v8 · 2 working upper bounds pending source-owner acceptance' : 'Exact distances · 45/11 remains open',
+    read: () => t >= ECC_V8_TIME ? 'ecc-intervals.html' : REPO + 'plugins/ecc/archive/source/paper/main.pdf', plugin: GH + '/tree/main/plugins/ecc',
+    quant: () => t >= ECC_V8_TIME ? `<div class="qrow"><span><b>18</b><i>new lower bounds</i></span><span><b>34</b><i>new upper bounds · 2 working</i></span><span><b>57</b><i>total intervals</i></span></div><p class="qnote">5 previous + 52 added = 57 intervals. 13 confirmed exact values + 2 pending exact closures. Lower bounds come from constructions and their derived codes; upper bounds come from exclusions and literature-derived corollaries. The 2 working upper bounds await source-owner acceptance.</p>` : `<p class="q-closed">${t >= 3400 ? '4' : '3'} exact optimal distances</p><div class="qrow">${[['43,10','16'],['44,10','17'],['44,11','16'],...(t >= 3400 ? [['42,16','12']] : [])].map(([p,v])=>`<span><b>${v}</b><i>d₂(${p})</i></span>`).join('')}<span class="open"><b>16–17</b><i>d₂(45,11) · open</i></span></div><p class="qnote">For each code length n and dimension k, d₂(n,k) is the largest achievable minimum distance. “Exact” means a construction meets the upper bound. ${t >= 3400 ? 'The fourth value, d₂(42,16)=12, applies a published 2020 theorem.' : 'The original exclusion fixes the three values shown.'}</p>` },
   { id: 'dd', short: 'Degree–Diameter', title: 'Our best constructions by setting',
     status: () => t >= DD_TIME ? 'Four showcased settings · D5 end-to-end Lean open' : t >= 6750 ? 'New (10,4) result produced with MathRSI v2 + DD' : 'Three dated table comparisons from earlier research',
     read: () => t >= DD_TIME ? 'dd-latest.html' : 'dd-10-4.html', plugin: GH + '/tree/main/plugins/degree-diameter',
@@ -69,6 +70,7 @@ const MS = [
   { c:'ecc', v:2, span:1, k:'evidence', e:'grow', t:2900, tag:'Proof connected', text:'Original matrices, parent data and reductions connected to Lean, with explicit external premises.' },
   { c:'ecc', v:2, span:1, k:'evidence', e:'grow', t:3150, tag:'Evidence replayed', text:'Portable proof and certificate package with fresh-copy build, audit and replay.' },
   { c:'ecc', v:2, span:1, k:'result', basis:'application', e:'grow', t:3400, tag:'Exact parameter · 4', text:'d₂(42,16)=12: a published 2020 theorem excludes distance 13, and an actual distance-12 matrix meets the bound.' },
+  { c:'ecc', v:8, k:'result', e:'grow', t:ECC_V8_TIME, tag:'52 added intervals · v8', text:'18 new lower-bound intervals and 34 new upper-bound intervals (2 working). Together with the previous 5: 57 intervals; 13 confirmed exact values plus 2 pending exact closures. Source-owner acceptance for the 2 working upper bounds remains pending.' },
   { c:'dd', v:2, k:'result', e:'drop', t:3700, tag:'Construction · (11,5)', text:'37,628 → 37,631 vertices, constructive lower bound compared with the Comellas entry checked 2026-11-05.' },
   { c:'dd', v:2, k:'result', e:'drop', t:3780, tag:'Construction · (12,5)', text:'42,342 → 42,402 vertices under the same degree and diameter constraints; dated Comellas table comparison.' },
   { c:'dd', v:2, k:'result', e:'drop', t:3860, tag:'Construction · (16,4)', text:'16,384 → 16,416 vertices under the same degree and diameter constraints; dated Comellas table comparison.' },
@@ -108,6 +110,7 @@ const CALLOUTS = [
   { c:'ecc', v:0, t:700, kind:'intro', value:'3 exact code distances' },
   { c:'pb', v:1, t:1820, kind:'delta', value:'Pointwise → uniform', detail:'all k ≥ 12' },
   { c:'ecc', v:2, t:3400, kind:'delta', value:'3 → 4', detail:'exact code distances' },
+  { c:'ecc', v:8, t:ECC_V8_TIME, row:0, kind:'delta', value:'18 lower · 34 upper', value2:'57 intervals · 2 pending', detail:'13 exact + 2 pending · v8' },
   { c:'dd', v:2, t:3860, kind:'intro', value:'Larger graphs · 3 records' },
   { c:'e86', v:3, t:5050, kind:'intro', value:'C₄-free density ≤ 0.59155154' },
   { c:'q6', v:3, t:5200, kind:'intro', value:'Every Q₆ matching lies in', detail:'a Hamilton cycle' },
@@ -228,7 +231,7 @@ const VERS = [
 },
   {
     "tag": "v7",
-    "state": "Current",
+    "state": "Release",
     "name": "Same-input deficits & terminal completion",
     "base": [
       [
@@ -265,7 +268,13 @@ const VERS = [
     "pluginNote": "Q7 maximal completion; Happy Ending same-input sector budgets.",
     "sum": "Full Q7 R7 was already received in v6 main maintenance; v7 distills its terminal-completion method. Happy Ending retains ES(7) ≤ 77 and adds working ES(8) ≤ 294 (Schroeder comparator 319), ES(9) ≤ 1100 (previous working 1148), and ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."
   },
-  { tag:'v8+', state:'Future', name:'Next research, next evolution',
+  { tag:'v8', state:'Current', name:'Constructions, exclusions & exact closures',
+    base:[['Carry the constructive witness', 'ecc', 'Carry a verified witness through transformations and keep the strongest result for each setting.'], ['Test rarely triggered rejection branches', 'ecc', 'Independently exercise rejection branches that routine successful runs rarely reach.'], ['Propagate exclusions with exact premises', 'ecc', 'Derive upper bounds from published exclusions while preserving each theorem’s precise assumptions.']],
+    fullBase:['Carry constructive witnesses through transformations; deduplicate each setting by its strongest verified bound.', 'Independently test rarely triggered rejection branches, rather than relying on successful runs alone.', 'Propagate published upper exclusions with exact premises; separate established results from source-pending claims.'],
+    plug:[['deep','ECC','ecc'],['note','Other 5 domains retained']],
+    pluginNote:'v8 · constructive witnesses, rejection branches and exclusion propagation.',
+    sum:'ECC adds 52 table intervals to the previous 5: 18 lower-bound improvements and 34 upper-bound improvements, including 2 working upper bounds awaiting source-owner acceptance. Total: 57 intervals, with 13 confirmed exact values and 2 pending exact closures. The 32 literature-derived upper bounds and the 2 new working exclusions retain separate evidence and status. The v8 release preserves that source-pending status.' },
+  { tag:'v9+', state:'Future', name:'Next research, next evolution',
     base:[["Learn from the next problem", "", "Use new research successes and failures to identify the next concrete workflow improvement."]],
     fullBase:['Open continuation — next research cycle feeds the next workflow evolution'],
     plug:[['note','New research → new tools']],
@@ -286,10 +295,10 @@ const HEADROOM = Math.max(0, ...Array.from({ length: LAST + 1 }, (_, v) =>
 const H = 326 + HEADROOM, GUT = 80, COL = 232, W = GUT + COL * VERS.length;
 const SPINE = 296 + HEADROOM, BASE = 284 + HEADROOM;
 const cx = i => GUT + COL * i + COL / 2;
-const R = [300, 1700, 3600, 5000, 6600, 8000, 10200, 12400], STOP = [1100, 2400, 4400, 6000, 7400, 9600, 12200, 14000], T = STOP[LAST];
-const MOVE = [null, [1100, 600], [2400, 600], [4400, 600], [6000, 600], [7400, 600], [9600, 600], [12200, 200]];
-const KEYS = [[0,0],[1100,0],[1700,1],[2400,1],[3600,2],[4400,2],[5000,3],[6000,3],[6600,4],[7400,4],[8000,5],[9600,5],[10200,6],[12200,6],[12400,7],[T,7]];
-const SEGS = [[1100,1700],[2400,3600],[4400,5000],[6000,6600],[7400,8000],[9600,10200],[12200,12400]];
+const R = [300, 1700, 3600, 5000, 6600, 8000, 10200, 12400, 14200], STOP = [1100, 2400, 4400, 6000, 7400, 9600, 12200, 14000, 15800], T = STOP[LAST];
+const MOVE = [null, [1100, 600], [2400, 600], [4400, 600], [6000, 600], [7400, 600], [9600, 600], [12200, 200], [14000, 200]];
+const KEYS = [[0,0],[1100,0],[1700,1],[2400,1],[3600,2],[4400,2],[5000,3],[6000,3],[6600,4],[7400,4],[8000,5],[9600,5],[10200,6],[12200,6],[12400,7],[14000,7],[14200,8],[T,8]];
+const SEGS = [[1100,1700],[2400,3600],[4400,5000],[6000,6600],[7400,8000],[9600,10200],[12200,12400],[14000,14200]];
 
 // Only a domain's first outcome opens a horizontal slot. Later outcomes grow upward.
 const domainDebuts = CASES.map(c => MS.filter(m => m.c === c.id && isOutcome(m)).sort((a, b) => a.t - b.t)[0]);
@@ -413,6 +422,8 @@ function fromTag(ids) {
   return `<span class="from" data-cases="${ids}">from ${ids.split(' ').map(id => `<i style="--c:var(--${id})"></i>${CN[id]}`).join(' · ')}</span>`;
 }
 function buildLanes() {
+  lanes.style.gridTemplateColumns = `${GUT / W * 100}% repeat(${VERS.length},minmax(0,1fr))`;
+  stage.style.minWidth = `${W}px`;
   let h = '<div class="lane-lab lane-axis">Harness<br>version</div>';
   VERS.forEach((V, i) => {
     h += `<div class="cell row-v${i === FUTURE ? ' fut' : i === LAST ? ' current' : ''}" data-v="${i}"><button class="vbtn" type="button" data-goto="${i}" aria-label="Show MathRSI harness ${V.tag}: ${V.name}"><span class="vtag">${V.tag}</span><span class="vstate s-${V.state.toLowerCase()}">${V.state}</span><span class="vname">${V.name}</span></button></div>`;
@@ -571,6 +582,7 @@ function paintTraceHint(id) {
   if (overview) { overview.classList.toggle('on', !focus); overview.setAttribute('aria-pressed', String(!focus)); }
   if (!hint) return;
   if (!id) hint.textContent = 'Choose a case to follow its results across versions.';
+  else if (id === 'ecc' && t >= ECC_V8_TIME) hint.textContent = 'ECC · 5 previous + 52 added = 57 intervals; 18 new lower, 34 new upper (2 working). 13 confirmed exact + 2 pending. v8.';
   else if (id === 'he') hint.textContent = t >= HE_V7_TIME ? 'Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7.' : t >= HE_V6_TIME ? 'Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in v7.' : 'Happy Ending · ES(7) upper bound 78 → 77; the 25-point witness is separate.';
   else if (id === 'q6') hint.textContent = 'Ruskey–Savage · Q₆ → Q₇ ≥57 (v5) → ≥56 (fixed v6) → every matching (v6 main author working proof). Run: v3 local adaptation.';
   else if (id === 'e86') hint.textContent = 'Erdős 86 · v3 asymptotic Q₄ bound → v6 Q₇ 304 (≤ source), Q₈ 682–683 & Q∞ ≤ 0.5912405943. Run: v3 + coevolution.';
@@ -598,7 +610,7 @@ function ddPath() {
   </ol>`;
 }
 function eccMaintenance() {
-  return `<section class="p-plugin-update"><p class="p-eye">ECC · main maintenance</p><h4>Place each step in the research tree</h4><p>Identify the branch before searching, reuse existing exclusions, and share computations across branches. Close a parent problem only after checking full coverage.</p><a href="${GH}/blob/main/plugins/ecc/skills/mathrsi-ecc/references/node-research.md">Read the node protocol ↗</a></section>`;
+  return `<section class="p-plugin-update"><p class="p-eye">ECC · historical main maintenance</p><h4>Place each step in the research tree</h4><p>Identify the branch before searching, reuse existing exclusions, and share computations across branches. Close a parent problem only after checking full coverage.</p><a href="${GH}/blob/main/plugins/ecc/skills/mathrsi-ecc/references/node-research.md">Read the node protocol ↗</a></section>`;
 }
 function renderPanel(sel) {
   const list = focus ? MS.map((m, i) => [m, i]).filter(([m]) => m.c === focus) : [];
@@ -607,7 +619,7 @@ function renderPanel(sel) {
   if (key === panelKey) return; panelKey = key;
   if (!focus) {
     const V = VERS[sel];
-    panel.innerHTML = `<div><p class="p-eye">MathRSI harness · ${V.tag} · ${V.state}</p><h3>${V.name}</h3><p class="p-sum">${V.sum}</p>${sel === 4 ? eccMaintenance() : sel === 5 ? '<p class="p-links"><a href="q7.html">Q7 result & methods ↗</a> · <a href="dd-latest.html">DD latest results ↗</a></p>' : V.tag === 'v6' ? '<p class="p-links"><a href="erdos-86-latest.html">Erdős 86 results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a> · <a href="happy-ending-latest.html">Happy Ending results & methods ↗</a></p>' : V.tag === 'v7' ? '<p class="p-links"><a href="happy-ending-latest.html">Happy Ending results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a></p>' : ''}</div>
+    panel.innerHTML = `<div><p class="p-eye">MathRSI harness · ${V.tag} · ${V.state}</p><h3>${V.name}</h3><p class="p-sum">${V.sum}</p>${sel === 4 ? eccMaintenance() : sel === 5 ? '<p class="p-links"><a href="q7.html">Q7 result & methods ↗</a> · <a href="dd-latest.html">DD latest results ↗</a></p>' : V.tag === 'v6' ? '<p class="p-links"><a href="erdos-86-latest.html">Erdős 86 results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a> · <a href="happy-ending-latest.html">Happy Ending results & methods ↗</a></p>' : V.tag === 'v8' ? '<p class="p-links"><a href="ecc-intervals.html">ECC intervals & methods ↗</a></p>' : V.tag === 'v7' ? '<p class="p-links"><a href="happy-ending-latest.html">Happy Ending results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a></p>' : ''}</div>
       <div><p class="p-eye">Shared base &amp; workflow details in ${V.tag}</p>
       <ul class="p-vlist">${V.fullBase.map(item => `<li>${item}</li>`).join('')}</ul>
       <p class="p-foot">Choose a change label or colored result block to inspect its conclusions and proof evidence.</p></div>`;
@@ -616,12 +628,12 @@ function renderPanel(sel) {
   const c = CASES[CI[focus]];
   const items = list.slice().sort((a, b) => a[0].v - b[0].v || a[0].t - b[0].t);
   panel.innerHTML = `<div style="--c:var(--${c.id})"><p class="p-eye"><span class="dot"></span>${CN[c.id]}</p><h3>${typeof c.title === 'function' ? c.title() : c.title}</h3>${c.quant()}
-      <p class="p-status">${typeof c.status === 'function' ? c.status() : c.status}</p>${c.id === 'dd' ? ddPath() : ''}${c.id === 'ecc' ? eccMaintenance() : ''}
-      <p class="p-links"><a href="${typeof c.read === 'function' ? c.read() : c.read}">${((c.id === "q6" && t >= Q7_TIME) || (c.id === "dd" && t >= DD_TIME) || (c.id === "e86" && t >= E86_V6_TIME)) ? "Result & methods ↗" : "Read the proof ↗"}<span class="source-language" data-no-i18n>${((c.id === "q6" && t >= Q7_TIME) || (c.id === "dd" && t >= DD_TIME) || (c.id === "e86" && t >= E86_V6_TIME)) ? "EN + 中文" : ["pb", "ecc", "dd"].includes(c.id) ? "EN" : "中文"}</span></a><a href="${c.plugin}">Plugin source ↗</a><button class="p-close" type="button" data-close>Close ✕</button></p></div>
+      <p class="p-status">${typeof c.status === 'function' ? c.status() : c.status}</p>${c.id === 'dd' ? ddPath() : ''}${c.id === 'ecc' && t < ECC_V8_TIME ? eccMaintenance() : ''}
+      <p class="p-links"><a href="${typeof c.read === 'function' ? c.read() : c.read}">${((c.id === "ecc" && t >= ECC_V8_TIME) || (c.id === "q6" && t >= Q7_TIME) || (c.id === "dd" && t >= DD_TIME) || (c.id === "e86" && t >= E86_V6_TIME)) ? "Result & methods ↗" : "Read the proof ↗"}<span class="source-language" data-no-i18n>${((c.id === "ecc" && t >= ECC_V8_TIME) || (c.id === "q6" && t >= Q7_TIME) || (c.id === "dd" && t >= DD_TIME) || (c.id === "e86" && t >= E86_V6_TIME)) ? "EN + 中文" : ["pb", "ecc", "dd"].includes(c.id) ? "EN" : "中文"}</span></a><a href="${c.plugin}">Plugin source ↗</a><button class="p-close" type="button" data-close>Close ✕</button></p></div>
     <div style="--c:var(--${c.id})"><p class="p-eye">Mathematical results</p><ol class="p-ms">${items.filter(([m]) => isOutcome(m)).map(([m, i]) => {
       const on = t >= m.t;
       return `<li class="${on ? '' : 'later'}${hl === i ? ' hl' : ''}"><span class="p-v">${vlabel(m)}</span><span class="p-k k-${m.k}">${m.tag}</span><span class="p-t">${m.text}${on ? '' : `<em>appears at ${vlabel(m)}</em>`}</span></li>`;
-    }).join('')}</ol><details class="p-assurance"><summary>Proof, verification &amp; open questions</summary><ol class="p-ms">${items.filter(([m]) => !isOutcome(m)).map(([m]) => `<li class="${t >= m.t ? '' : 'later'}"><span class="p-v">${vlabel(m)}</span><span class="p-k k-${m.k}">${m.tag}</span><span class="p-t">${m.text}</span></li>`).join('')}</ol></details>${c.id === 'ecc' ? '<p class="p-foot">Three exact distances were settled at v0, and d₂(42,16)=12 follows from a 2020 theorem; the reusable checkers cover the 172 parent exclusions, and 16 ≤ d₂(45,11) ≤ 17 remains open.</p>' : ''}</div>`;
+    }).join('')}</ol><details class="p-assurance"><summary>Proof, verification &amp; open questions</summary><ol class="p-ms">${items.filter(([m]) => !isOutcome(m)).map(([m]) => `<li class="${t >= m.t ? '' : 'later'}"><span class="p-v">${vlabel(m)}</span><span class="p-k k-${m.k}">${m.tag}</span><span class="p-t">${m.text}</span></li>`).join('')}</ol></details>${c.id === 'ecc' ? '<p class="p-foot">Historical five-interval snapshot: three exact distances were settled at v0, and d₂(42,16)=12 follows from a 2020 theorem; the reusable checkers cover the 172 parent exclusions, and 16 ≤ d₂(45,11) ≤ 17 remains open.</p>' : ''}</div>`;
 }
 
 /* ---------------------------------------------------------- card visuals */

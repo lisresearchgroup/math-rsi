@@ -20,8 +20,9 @@ Two tracks evolve together: shared **Base behavior** and broader/deeper **domain
 | v6 · main maintenance · 2026-11-17 | Relaxation-ceiling exhaustion stopping and generative sparse integer dual verification (`(q, p, inc, exc, weight)` + `{0,1}` overload penalty). Fixed `v6` tag unchanged. | Happy Ending / $N(m,r,s)$ across $m = 7, 8, 9$ & general $m$: replayed $N(8,6,6)\le 61$ (`milestone9`), $N(9,8,8)\le 688$ & $D_9\le 458$ native-trace duals ($\to$ working $\mathrm{ES}(9)\le 1148$), signotope $N(8,8,8)\le 318$ transfer, and $m=7$ analytic $39/49$ + lock-block $\le 4$. Run: Trellis + ARIS + v3. [Follow-up](../docs/V6_CHANGES.md#happy-ending-nmrs-follow-up--2026-11-17) · [Implementation](evolution/v6-nmrs-20261117/EVOLUTION.md) |
 | v6 · main maintenance · 2026-11-20 | After a dense theorem, check which inclusion-maximal extensions can still fall outside its scope. | Full seven-dimensional matching-extension working proof, with a portable replay of its final finite exclusion. [Proof, use and verification](evolution/q7-closure-20261120/EVOLUTION.md) |
 | v7 | Count all compatible choices on one input and compare maximal extensions with the proved dense range. | Full Q₇ author working proof and Happy Ending bounds for convex 8-, 9- and 10-gons. [Integration](evolution/v7-q7-happy-ending/EVOLUTION.md) · [Release notes](../docs/V7_CHANGES.md) |
+| v8 | Export the strongest witness for each setting, exercise rare rejection paths and retain the premises of each exclusion. | 18 constructive lower bounds, 32 new upper-bound deductions and two entries awaiting source acceptance. [Release notes](../docs/V8_CHANGES.md) · [Verification](../plugins/ecc/evidence/v8-20261123/REVIEW.md) |
 
-Fixed v1–v6 tags preserve complete snapshots; current `main` tracks `v6` and any subsequent maintenance. The [evolution workflow](../docs/EVOLUTION_WORKFLOW.md) explains how to make a scoped maintenance request.
+Each release tag fixes the corresponding snapshot. Development continues on `main`. The [evolution workflow](../docs/EVOLUTION_WORKFLOW.md) explains how to make a scoped maintenance request.
 
 ## Validation and implementation
 

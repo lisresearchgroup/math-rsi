@@ -54,7 +54,7 @@ Property B 和 ECC 的 [历史转折](../development/workflow-redesign/REAL_PROJ
 
 每轮维护记录说明实际改动、采用/暂缓决定、使用结果及未测范围。没有实际提交就记录工作树状态；没有新版重做研究就不声称新版解题率或 RSI 增益。新任务可选择已采用版本；在途研究由其协调者确认切换点，保留原规格、证明状态与已用预算，仅重核受影响结果。暂停研究不会随版本更新恢复。
 
-当前推荐发布版为v4；固定v1/v2/v3快照保留，新任务记录实际采用的revision。v3在原有五个解题workflow与独立meta-evolve上增量修改：工作集/全域/已接受最佳的消费，带标记对象的同步运输，巨型域的有限全称机制与失败合法资产复用，以及混合Lean显式参数审计。ECC原位升级，新增超立方体极值、超立方体匹配延拓和Happy Ending领域能力；具体动作、命令、材料与保证范围见[V3_CHANGES](V3_CHANGES.md)，讨论、修订和采用以[v3维护记录](../development/evolution/v3-20261104/EVOLUTION.md)为准。
+新任务从[最新正式版](https://github.com/lisresearchgroup/math-rsi/releases/latest)开始，并记录实际采用的版本。v3在原有五个解题workflow与独立meta-evolve上增量修改：工作集/全域/已接受最佳的消费，带标记对象的同步运输，巨型域的有限全称机制与失败合法资产复用，以及混合Lean显式参数审计。ECC原位升级，新增超立方体极值、超立方体匹配延拓和Happy Ending领域能力；具体动作、命令、材料与保证范围见[V3_CHANGES](V3_CHANGES.md)，讨论、修订和采用以[v3维护记录](../development/evolution/v3-20261104/EVOLUTION.md)为准。
 
 历史v2在v1已有五workflow上加入DD，并实现仅形式目标直接Lean、新基线消费到真实队列、对象改变后的正负证据重判，以及共同覆盖与局部充分门的区分；其具体文件和当次使用继续见[V2_CHANGES](V2_CHANGES.md)、[v2维护记录](../development/evolution/dd-v2-20261102/EVOLUTION.md)和[原验收记录](../development/VALIDATION.md)。v0指提炼MathRSI前的原始研究阶段，v1建立初版工作流，二者的历史与v2/v3的实际修改分开保存，不将归档数学结果记为新版重做。
 
