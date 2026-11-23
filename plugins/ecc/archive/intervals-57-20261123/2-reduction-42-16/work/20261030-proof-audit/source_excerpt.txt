@@ -1,0 +1,178 @@
+=== PDF page 2, printed page 174 ===
+174 S. Bouyuklieva and I. Bouyukliev
+Restrictions on the dual distance, minimum distance, etc. can be applied. The
+program will be available on the webpage
+http://www.moi.math.bas.bg/moiuser/∼data/Software/QextNewEdition
+2 Preliminaries
+Let q be a prime power and Fq the ﬁnite ﬁeld with q elements, F∗q = Fq \{ 0}.
+A linear code of length n, dimension k, and minimum distance d over Fq is
+called an [n, k, d]q code. Two linear codes of the same length and dimension are
+equivalent if one can be obtained from the other by a sequence of the following
+transformations: (1) a permutation of the coordinate positions of all codewords;
+(2) a multiplication of a coordinate of all codewords with a nonzero element
+from Fq; (3) a ﬁeld automorphism. A sequence of the transformations given
+above that maps a code C to itself is called an automorphism of C. The set of
+all automorphisms of C forms a group, called the automophism group of the
+code and denoted by Aut(C). The action of Aut(C) on the code partitions the
+set of its codewords into orbits.
+The deﬁned equivalence relation in the set of all linear [ n, k, d]q codes par-
+titions this set into equivalence classes. We choose a canonical representative
+of each equivalence class. If C is a linear [ n, k, d]q code, we call the canonical
+representative of its equivalence class the canonical form of C and denote it by
+ρ(C). If two codes C1 and C2 are equivalent they have the same canonical form,
+or ρ(C1)= ρ(C2).
+Let C be an [n, k, d]q code and let c be a codeword of weight w. Then the
+residual code of C with respect to c, denoted Res(C;c), is the code of length
+n − w punctured on the set of coordinates on which c is nonzero. If only the
+weight w of c is of importance, we will denote it by Res(C;w). The next result
+gives a lower bound for the minimum distance of residual codes.
+Theorem 1. [8] Let C be an [n, k, d] code over Fq and let c be a codeword
+of weight w<q d / (q − 1).T h e n Res(C;c) is an [n − w,k − 1,d′] code, where
+d′ ≥ d − w + ⌈w/q⌉.
+We need also the following theorem
+Theorem 2. Let C be an [n, k, d] code over Fq and x, y∈ C be codewords of the
+same weight w<q d /(q−1) such that y = φ(x) for an automorphism φ ∈ Aut(C).
+Then the residual codes Res(C;x) and Res(C;y) are equivalent.
+Proof. Let φ = diag(γ1,...,γ n)π, where γi ∈ F∗q, π ∈ Sn. Then for any v =
+(v1,v 2,...,v n) ∈ C we have
+φ(v)=( γ1v1,...,γ nvn)π =( γ1π−1 v1π−1 ,...,γ nπ−1 vnπ−1 ) ∈ C.
+Without loss of generality we can take x = (00 ··· 01 1··· 1/bracehtipupleft /bracehtipdownright/bracehtipdownleft /bracehtipupright
+w
+). Then the sup-
+port of y = φ(x) will be {(n − w +1 )π−1,...,n π −1}.I f v is a codeword in C
+
+=== PDF page 3, printed page 175 ===
+Classiﬁcation of Linear Codes by Extending Their Residuals 175
+then (v1,...,v n−w) ∈ Res(C;x) and ( γ1π−1 v1π−1 ,...,γ (n−w)π−1 v(n−w)π−1 ) ∈
+Res(C;y). Hence the restriction of φ on the ﬁrst n − w coordinates maps
+Res(C;x)t o Res(C;y).
+To see the connection to the dual code, we use a theorem that gives the
+relation between a punctured of a code C and a shortened of its dual code
+C⊥. A code C can be punctured on a coordinate set T of size t. We denote the
+resulting code byCT . Consider the setC(T) of codewords whosei-th coordinate
+is 0 ifi ∈ T. C(T)i sas u b c o d eo fC. Shortening C(T)o n T gives a code of length
+n − t called shortened code of C on T and denoted by CT . If we take T to be
+the support of the codeword c ∈ C of weight w, then CT is the residual code of
+Res(C;c) with respect to c.
+Theorem 3 ( [9, Theorem 1.5.7]). Let C be an [n, k, d] code and T be a set
+of t coordinates. Then:
+(i) (C⊥)T =( CT )⊥ and (C⊥)T =( CT )⊥;
+(ii) if t<d , then CT and (C⊥)T have dimensions k and n−t−k, respectively;
+(iii) if t = d and T is the set of coordinates where a minimum weight codeword
+is nonzero, then CT and (C⊥)T have dimensions k − 1 and n − d − k +1 ,
+respectively.
+As a corollary we obtain
+Corollary 1. Let C be an [n, k, d] code over Fq with dual distance d⊥ and let c be
+a codeword of weight w<q d /(q−1).I f T is the support of c then Res(C;c)= CT
+is a linear [n−w,k −1,d′] code and Res(C;c)⊥ =( C⊥)T is a linear [n−w,n −
+w − k +1 ,≥ d⊥] code.
+Since Res(C;c)⊥ is a shortened code of C⊥, its minimum distance is at least
+d⊥. Therefore we consider all [n−w,k −1,d′ ≥ d−w +⌈w/q⌉]q codes with dual
+distance ≥ d⊥ as residual codes and then extend them to the linear [ n, k, d]q
+codes with dual distance ≥ d⊥.
+We developed a second algorithm which extends all possible [n−w,k −w+1,≥
+d] shortened codes to the [ n, k, d] codes provided that their dual codes contain
+codewords of weight w, w<q d ⊥/(q − 1). The theoretical base of this algorithm
+is the following corollary.
+Corollary 2. If C is a linear [n, k, d]q code whose dual code C⊥ contains a
+codeword of weight w, w<q d ⊥/(q − 1), then C has a shortened code with
+parameters [n − w,k − w +1 ,≥ d]q and dual distance d′ ≥ d⊥ − w + ⌈w/q⌉.
+Proof. Let x ∈ C⊥ be a vector of weightw. According to Theorem2, its residual
+code Res(C⊥;x) has parameters [n−w,n −k−1,d′] where d′ ≥ d⊥ −w+⌈w/q⌉.
+Then Res(C⊥;x)⊥ is a shortened code ofC with parameters [n−w,k −w+1,≥ d]
+(see Theorem 3 and Corollary 1).
+Corollary 3. Let C be a linear [n, k, d]q code with dual distance d⊥.I fn ol i n e a r
+[n − i, k− i +1 ,≥ d]q codes exist for 1 ≤ i ≤ w − 1 then d⊥ ≥ w.
+
+=== PDF page 6, printed page 178 ===
+178 S. Bouyuklieva and I. Bouyukliev
+4 Examples
+We use the presented algorithms implemented in the programsLengthExten-
+sion and DimExtension to obtain a systematic classiﬁcation of linear codes
+with speciﬁc properties and parameters over ﬁelds with 2, 3 and 4 elements.
+Besides specifying the parameters such as length ( n), dimension (k) and mini-
+mum distance (d), many other constraints can be considered. We give two exam-
+ples, both over the ﬁled F2, but the ﬁrst one uses the program LengthExten-
+sion and the second one DimExtension. All calculations have been done on
+2 × Intel Xeon E5-2620 V4 , 32 thread computer.
+Example 1. We construct all inequivalent [45,8,20]2 codes from their residual
+[25,7,10]2 codes with respect to a codeword of minimum weight 20. Since no
+[44,8,20]2 code exists, the dual distance d⊥ must be at least 2. Using the pro-
+gram Generation, we obtain 188572 inequivalent [25,7,10]2 codes. Six of these
+codes have dual distance 1 (these codes have a zero coordinate) and therefore
+we cannot use them as residual codes. The other 188566 have dual distances 2
+(30522 codes), 3 (158036 codes), and 4 (only 8 codes). Considering these codes
+as residual codes, the program LengthExtension constructs 424208 inequiva-
+lent [45,8,20]2 codes. The calculations took 459 min. All doubly-even [45,8,20]2
+codes are classiﬁed in [ 11] and their number is 424207. There is only one code
+(up to equivalence) with these parameters which is not doubly-even. This code
+has a generator matrix
+⎛
+⎜⎜⎜⎜⎜⎜⎜⎜⎜⎜⎝
+111111111111111111110000000000000000000000000
+000000000001111111100001111111111111111000000
+000000011110011111101110000000001111110100000
+000111100010100011100110000111110001110010000
+011001100100101100100110011001110110010001000
+100110101101000101100010101110011010010000100
+101011010010110101000101100010110110100000010
+101010101011010110001001010110101000110000001
+⎞
+⎟⎟⎟⎟⎟⎟⎟⎟⎟⎟⎠
+and weight enumerator W(y)=1+9 9 y20 +9 0y22 +1 5y24 +4 5y28 +6 y30.I t s
+automorphism group is isomorphic to (C15 : C4)×S3, where C15 : C4 is the semi-
+direct product of the cyclic groups of orders 15 and 4, and S3 is the symmetric
+group (calculated by GAP Computer Algebra System [6]). The group acts
+transitively on the coordinates and has order 360. The code is not self-orthogonal.
+The following proposition allows one to reduce the number of cases that need
+to be considered for an exhaustive search for a certain class of codes.
+Proposition 1. If binary linear [n, k,2d] codes exist then at least one of these
+codes is even.
+Proof. Let C be a binary linear [ n, k,2d] code. Suppose that C contains code-
+words of odd weight. IfC∗ is the punctured code of C on the right-most coordi-
+nate then C∗ is an [n − 1,k,d ∗] code where d∗ =2 d − 1o r2 d. Then we extend
+
+=== PDF page 7, printed page 179 ===
+Classiﬁcation of Linear Codes by Extending Their Residuals 179
+C∗ with one coordinate by adding an overall parity check. The resulting code
+ˆC∗ is even and its parameters are [n, k,2d].
+Proposition 2. Binary linear [41,14,14] codes do not exist.
+Proof. According to Proposition1, it is enough to prove the nonexistence of even
+codes with these parameters. Feulner proved in [5] that binary [35,10,13] code
+does not exist. We prove that binary [36 ,11,13] and [37 ,12,13] codes do not
+exist. The nonexistence of codes with these parameters proves that binary linear
+[36,10,14], [37,11,14] and [38,12,14] codes do not exist. This gives us that no
+linear [41−i,15−i,14]2 codes exist for 1 ≤ i ≤ 5. According to Corollary 3,t h e
+dual distance of a binary [41 ,14,14] must be at least 6. Since no [41 ,27,≥ 7]2
+codes exist [7], d⊥ = 6. Therefore we are looking for binary even [41,14,14] codes
+with dual distance 6 and we try to construct them by extending all possible
+even [35,9,14]2 codes with dual distance ≥ 3. The program Generation shows
+that there are exactly 209 inequivalent even [35,9,14]2 codes with needed dual
+distance. Then we try to extend them using the program DimExtension.T h e
+result is ‘ RES 0, Elapsed time: 432m ’ which means that these codes cannot
+be extended to [41,14,14] codes and this result is obtained in 432 min.
+Remark 1. The table of optimal codes [ 7] indicates that the existence of
+[40,13,14] binary codes is also unknown. If a code with these parameters exists,
+its dual distance can be 5 or 6. IfC is a [40,13,14] binary even code with dual dis-
+tance 5, it contains an even [35,9,14] shortened code with dual distance≥ 3. By
+the program DimExtension, we obtain that these codes cannot be extended to
+[40,13,14] binary codes. This means that if a [40,13,14] binary even code exists,
+its dual distance is 6. Then this code contains a shortened code with parameters
+[34,8,14] and dual distance ≥ 3. There are 10 607 917 inequivalent [34 ,8,14]
+codes with needed dual distance. We were not able to extend all these codes for
+a reasonable time and therefore we have no result for the codes with parameters
+[40,13,14].
+Acknowledgements. We are greatly indebted to the unknown referees for their useful
+suggestions.
+References
+1. Bouyukliev, I.: About the code equivalence. In: Shaska, T., Huﬀman, W., Joyner,
+D., Ustimenko, V. (eds.) Advances in Coding Theory and Cryptology, pp. 126–151
+(2007)
+2. Bouyukliev, I., Bouyuklieva, S., Kurz, S.: Computer classiﬁcation of linear codes.
+arXiv:2002.07826 [cs.IT] (2020)
+3. Bouyukliev, I., Simonis, J.: Some new results for optimal ternary linear codes.
+IEEE Trans. Inf. Theory 48(4), 981–985 (2002)
+4. Bouyuklieva, S., Bouyukliev, I.: Classiﬁcation of the extremal formally self-dual
+even codes of length 30. Adv. Math. Commun. 4(3), 433–439 (2010)
+5. Feulner, T.: Classiﬁcation and nonexistence results for linear codes with prescribed
+minimum distances. Des. Codes Cryptogr. 70, 127–138 (2014)

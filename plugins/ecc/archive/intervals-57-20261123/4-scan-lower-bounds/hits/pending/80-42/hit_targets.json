@@ -1,0 +1,56 @@
+{
+ "id": "80-42",
+ "base": [
+  80,
+  42
+ ],
+ "d0": 13,
+ "rho": 38,
+ "targets": [
+  {
+   "type": "L",
+   "cell": [
+    81,
+    43
+   ],
+   "new_d": 13,
+   "depth": 12,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 525,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "all_targets": [
+  {
+   "type": "A",
+   "cell": [
+    80,
+    43
+   ],
+   "new_d": 13,
+   "depth": 13,
+   "closes": false,
+   "hit": false,
+   "uncovered_count": 0,
+   "incomplete": false,
+   "one_short": true
+  },
+  {
+   "type": "L",
+   "cell": [
+    81,
+    43
+   ],
+   "new_d": 13,
+   "depth": 12,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 525,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "raw_sha256": "e6225f38255638af9741b425cd6584cee7c023667a96fe9ae9e83cdc482c0537"
+}

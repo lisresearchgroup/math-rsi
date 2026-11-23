@@ -1,0 +1,382 @@
+{
+  "pass": true,
+  "count": 47,
+  "codes": [
+    {
+      "idx": 1,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 2,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 3,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 4,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 5,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 6,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 7,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 8,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 9,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 10,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 11,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 12,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 13,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 14,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 15,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 16,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 17,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 18,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 19,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 20,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 21,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 22,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 23,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 24,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 25,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 26,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 27,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 28,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 29,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 30,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 31,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 32,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 33,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 34,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 35,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 36,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 37,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 38,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 39,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 40,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 41,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 42,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 43,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 44,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 45,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 46,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    },
+    {
+      "idx": 47,
+      "rank": 9,
+      "N": 38,
+      "nonzero_messages": 511,
+      "min_distance": 16,
+      "canonical_coordinates_match": true
+    }
+  ]
+}

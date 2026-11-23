@@ -1,0 +1,5 @@
+SetColumns(0);
+C := BKLC(GF(2),42,12);
+C;
+MinimumDistance(C);
+GeneratorMatrix(C);

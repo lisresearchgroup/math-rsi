@@ -1,0 +1,306 @@
+{
+ "lemma": "PARITY-2SHORT",
+ "statement": "binary [n,k,d>=13] with k >= 16  =>  binary [n-1,k-2], min distance exactly 14  (the condition k>=16 is needed: the S3 rank argument gives dim span{columns at the zero positions} >= k-|W| with |W| <= 14)",
+ "results": [
+  {
+   "source": "punctured simplex m=6, punctured t=18",
+   "n": 45,
+   "k": 6,
+   "d": 14,
+   "S1": {
+    "punctured": 1,
+    "n": 45,
+    "k": 6,
+    "d": 13
+   },
+   "S2": {
+    "n": 46,
+    "k": 6,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 32,
+    "rW": 5,
+    "rZ": 5,
+    "rank_all_columns": 6,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 44,
+     "k": 4,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 44,
+    "k": 4,
+    "d": 14
+   },
+   "PASS": true
+  },
+  {
+   "source": "punctured simplex m=6, punctured t=3",
+   "n": 60,
+   "k": 6,
+   "d": 29,
+   "S1": {
+    "punctured": 16,
+    "n": 60,
+    "k": 6,
+    "d": 13
+   },
+   "S2": {
+    "n": 61,
+    "k": 6,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 47,
+    "rW": 5,
+    "rZ": 5,
+    "rank_all_columns": 6,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 59,
+     "k": 4,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 59,
+    "k": 4,
+    "d": 14
+   },
+   "PASS": true
+  },
+  {
+   "source": "punctured simplex m=5, punctured t=3",
+   "n": 28,
+   "k": 5,
+   "d": 13,
+   "S1": {
+    "punctured": 0,
+    "n": 28,
+    "k": 5,
+    "d": 13
+   },
+   "S2": {
+    "n": 29,
+    "k": 5,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 15,
+    "rW": 5,
+    "rZ": 4,
+    "rank_all_columns": 5,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 27,
+     "k": 3,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 27,
+    "k": 3,
+    "d": 14
+   },
+   "PASS": true
+  },
+  {
+   "source": "punctured simplex m=5, punctured t=2",
+   "n": 29,
+   "k": 5,
+   "d": 14,
+   "S1": {
+    "punctured": 1,
+    "n": 29,
+    "k": 5,
+    "d": 13
+   },
+   "S2": {
+    "n": 30,
+    "k": 5,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 16,
+    "rW": 5,
+    "rZ": 4,
+    "rank_all_columns": 5,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 28,
+     "k": 3,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 28,
+    "k": 3,
+    "d": 14
+   },
+   "PASS": true
+  },
+  {
+   "source": "punctured simplex m=5, punctured t=1",
+   "n": 30,
+   "k": 5,
+   "d": 15,
+   "S1": {
+    "punctured": 2,
+    "n": 30,
+    "k": 5,
+    "d": 13
+   },
+   "S2": {
+    "n": 31,
+    "k": 5,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 17,
+    "rW": 5,
+    "rZ": 4,
+    "rank_all_columns": 5,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 29,
+     "k": 3,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 29,
+    "k": 3,
+    "d": 14
+   },
+   "PASS": true
+  },
+  {
+   "source": "punctured simplex m=5, punctured t=0",
+   "n": 31,
+   "k": 5,
+   "d": 16,
+   "S1": {
+    "punctured": 3,
+    "n": 31,
+    "k": 5,
+    "d": 13
+   },
+   "S2": {
+    "n": 32,
+    "k": 5,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 18,
+    "rW": 5,
+    "rZ": 4,
+    "rank_all_columns": 5,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 30,
+     "k": 3,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 30,
+    "k": 3,
+    "d": 14
+   },
+   "PASS": true
+  },
+  {
+   "source": "punctured simplex m=7, punctured t=50",
+   "n": 77,
+   "k": 7,
+   "d": 14,
+   "S1": {
+    "punctured": 1,
+    "n": 77,
+    "k": 7,
+    "d": 13
+   },
+   "S2": {
+    "n": 78,
+    "k": 7,
+    "d": 14,
+    "all_even": true
+   },
+   "S3": {
+    "m": 13,
+    "nZ": 64,
+    "rW": 5,
+    "rZ": 6,
+    "rank_all_columns": 7,
+    "parity_bit": 1,
+    "pair": [
+     0,
+     1
+    ],
+    "D": {
+     "n": 76,
+     "k": 5,
+     "d": 14
+    }
+   },
+   "result": {
+    "n": 76,
+    "k": 5,
+    "d": 14
+   },
+   "PASS": true
+  }
+ ],
+ "controls": [
+  {
+   "control": "simplex m=4 has d=8 < 13",
+   "d": 8,
+   "PASS": true
+  },
+  {
+   "control": "double shortening of [31,5,16] does not yield d=14",
+   "PASS": true,
+   "raised": "AssertionError (min distance is not 14) - as expected"
+  }
+ ],
+ "all_pass": true
+}

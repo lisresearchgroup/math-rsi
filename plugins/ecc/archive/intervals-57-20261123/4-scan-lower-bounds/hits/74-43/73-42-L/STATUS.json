@@ -1,0 +1,12 @@
+{
+ "status": "verified",
+ "note": "rank ok, verify_A and verify_B true, new_d 12 > live lower bound 11",
+ "utc": "2026-11-22T16:16:45Z",
+ "checks": {
+  "rank": true,
+  "verify_A": true,
+  "verify_B": true,
+  "codetables_live_lb": 11,
+  "improves_live": true
+ }
+}

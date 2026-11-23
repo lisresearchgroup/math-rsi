@@ -1,0 +1,42 @@
+{
+ "id": "74-42",
+ "base": [
+  74,
+  42
+ ],
+ "d0": 12,
+ "rho": 32,
+ "targets": [
+  {
+   "type": "A",
+   "cell": [
+    74,
+    43
+   ],
+   "new_d": 12,
+   "depth": 12,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 34,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "all_targets": [
+  {
+   "type": "A",
+   "cell": [
+    74,
+    43
+   ],
+   "new_d": 12,
+   "depth": 12,
+   "closes": false,
+   "hit": true,
+   "uncovered_count": 34,
+   "incomplete": false,
+   "one_short": false
+  }
+ ],
+ "raw_sha256": "47b9feaa9e114f7c564c442285ec158119ca819b242b64ef06088414ac3b3c6f"
+}

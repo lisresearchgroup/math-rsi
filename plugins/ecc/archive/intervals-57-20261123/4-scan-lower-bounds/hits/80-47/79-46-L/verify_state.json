@@ -1,0 +1,18 @@
+{
+ "A": {
+  "G_sha": "3f0c447ce97c94d3b10805189c8b690d8fed9180493b0b240d87bf14fcbc2980",
+  "D": 12,
+  "exe_sha": "ed6ae432ccf2f1abe64f4fac00d90841ebcc25976b77db131d05eb29d82ce6a5",
+  "rc": 0,
+  "wall_sec": 1.575,
+  "utc": "2026-11-22T16:12:45Z"
+ },
+ "B": {
+  "G_sha": "3f0c447ce97c94d3b10805189c8b690d8fed9180493b0b240d87bf14fcbc2980",
+  "D": 12,
+  "exe_sha": "2d7175807e1d14718577c2cbb4eef651c021faf32bdfbe8a48f4cc0d020d87d8",
+  "rc": 0,
+  "wall_sec": 30.81,
+  "utc": "2026-11-22T16:13:16Z"
+ }
+}

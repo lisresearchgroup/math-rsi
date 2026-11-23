@@ -1,0 +1,15 @@
+{
+ "cell": [
+  137,
+  100
+ ],
+ "url": "https://www.codetables.de/BKLC/BKLC.php?q=2&n=137&k=100",
+ "fetched_utc": "2026-11-22T17:47:13Z",
+ "lower_bound": 11,
+ "upper_bound": 14,
+ "parse_ok": true,
+ "html_sha256": "c3fd52cbc3d85f0f091f3b704fe48497af051800a40915048746e86ea05f3d8b",
+ "error": null,
+ "new_d": 12,
+ "improves_live": true
+}

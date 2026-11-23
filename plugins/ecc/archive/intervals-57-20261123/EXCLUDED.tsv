@@ -1,0 +1,24 @@
+path	bytes	reason
+4-scan-lower-bounds/hits/75-37/74-36-L/cluster_inputs.json	423	operational record (cluster job data)
+4-scan-lower-bounds/hits/75-37/74-36-L/cluster_job.json	635	operational record (cluster job data)
+4-scan-lower-bounds/hits/75-37/74-36-L/cluster_run.json	373	operational record (cluster job data)
+4-scan-lower-bounds/hits/75-37/74-36-L/cluster_step_A.json	128	operational record (cluster job data)
+4-scan-lower-bounds/hits/75-37/74-36-L/cluster_step_B.json	131	operational record (cluster job data)
+4-scan-lower-bounds/hits/81-43/80-42-L/cluster_inputs.json	423	operational record (cluster job data)
+4-scan-lower-bounds/hits/81-43/80-42-L/cluster_job.json	635	operational record (cluster job data)
+4-scan-lower-bounds/hits/81-43/80-42-L/cluster_run.json	371	operational record (cluster job data)
+4-scan-lower-bounds/hits/81-43/80-42-L/cluster_step_A.json	127	operational record (cluster job data)
+4-scan-lower-bounds/hits/81-43/80-42-L/cluster_step_B.json	130	operational record (cluster job data)
+4-scan-lower-bounds/hits/cluster_ledger.json	495	operational record (cluster job data)
+4-scan-lower-bounds/tools/verify_a/verify_a	1143176	compiled binary
+4-scan-lower-bounds/tools/verify_b/verify_b	2549016	compiled binary
+4-scan-lower-bounds/tools/verify_b/verify_b_v1	2536200	compiled binary
+4-scan-lower-bounds/tools/verify_b/verify_b_v3	2548992	compiled binary
+4-scan-lower-bounds/tools/verify_b/verify_b_v4	2549016	compiled binary
+5-theorem-41-12/work/20261122-catalog/check/36_7_16.2.check.v1.json	4931166	superseded first version
+5-theorem-41-12/work/20261122-catalog/check/37_8_16.2.check.v1.json	10322472	superseded first version
+5-theorem-41-12/work/20261122-catalog/check/38_9_16.2.check.v1.json	30713	superseded first version
+5-theorem-41-12/work/20261122-catalog/check/catalog_check.v1.py	16306	superseded first version
+5-theorem-41-12/work/20261122-catalog/check2/audit	249736	compiled binary
+5-theorem-41-12/work/20261122-catalog/check2/test_exact	264872	compiled binary
+5-theorem-41-12/work/20261123-witness5/witness_2004.txt.gz	17031956	large witness list (17 MB, already compressed)

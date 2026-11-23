@@ -1,0 +1,24 @@
+{
+ "A": {
+  "G_sha": "a94807589efceb0972766bcc1b635eadf14aee805c476c9a5e33c12cbcb71858",
+  "D": 15,
+  "exe_sha": "ed6ae432ccf2f1abe64f4fac00d90841ebcc25976b77db131d05eb29d82ce6a5",
+  "rc": 0,
+  "wall_sec": 19,
+  "utc": "2026-11-22T19:16:40Z",
+  "where": "cluster",
+  "job": "job-A",
+  "host": "job-A-master-0"
+ },
+ "B": {
+  "G_sha": "a94807589efceb0972766bcc1b635eadf14aee805c476c9a5e33c12cbcb71858",
+  "D": 15,
+  "exe_sha": "2d7175807e1d14718577c2cbb4eef651c021faf32bdfbe8a48f4cc0d020d87d8",
+  "rc": 0,
+  "wall_sec": 15137,
+  "utc": "2026-11-22T23:28:58Z",
+  "where": "cluster",
+  "job": "job-A",
+  "host": "job-A-master-0"
+ }
+}

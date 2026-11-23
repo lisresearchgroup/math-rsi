@@ -1,0 +1,43 @@
+{
+ "base_id": "73-42",
+ "type": "A",
+ "cell": [
+  73,
+  43
+ ],
+ "new_d": 11,
+ "depth": 11,
+ "closes": false,
+ "base": [
+  73,
+  42
+ ],
+ "rho": 31,
+ "n": 73,
+ "k": 43,
+ "s": 540375009,
+ "free_t": 10,
+ "rank_evidence": {
+  "rho": 31,
+  "rank_H": 31,
+  "rank_H_is_rho": true,
+  "k0": 42,
+  "rows_GB": 42,
+  "rank_GB": 42,
+  "GB_HT_zero": true,
+  "Hx_eq_s": true,
+  "rows_G": 43,
+  "rank_G": 43,
+  "rank_G_expected": 43,
+  "rank_ok": true
+ },
+ "raw_sha256": "e367459405c41ba66d690f3e1369fa9259f5e6f8424b3b5ef66fdf2920e3fbd9",
+ "file_sha256": {
+  "G.txt": "60729a527e46f7308d2bb4476d4c48e76f98f626277642c83fc00e7efe359f31",
+  "base.cols": "0401bb35712bd4abb8112c63fb9af0b433a85fa04c21ea3431342f3cf452e2e6",
+  "s.txt": "13e2857bcad5caa542dcecdc9da6523556915a63a3402e043c1fed308b429075",
+  "x.txt": "08b367ca814f3d9ce70e9e73f54fb7f4dfa75c085085e2555a1cd99315a7cb35",
+  "DERIVATION.md": "971592e08c5f0e432a86fd17db984b0b533484998422d654247d38b9da9c8e56"
+ },
+ "built_utc": "2026-11-22T16:16:24Z"
+}

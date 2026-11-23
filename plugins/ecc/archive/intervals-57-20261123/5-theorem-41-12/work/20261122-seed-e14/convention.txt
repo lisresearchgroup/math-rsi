@@ -1,0 +1,4 @@
+generator_12x41.txt: 12 lines x 41 chars of 0/1; leftmost char = coordinate 1 (1-based) = coefficient of x^0 in the cyclic [43,15] codeword, coordinate j = coeff of x^(j-1).
+Construction: rows x^i*g(x), i=0..14 (length 43) -> append overall parity as coordinate 44 -> Gaussian-eliminate on coordinates 42,43,44 to get the 12-dim subcode vanishing there -> delete those coordinates.
+Row basis is the output of that deterministic elimination (construct.py), not systematic form.
+For verify_code: row integer bit j (0-based) = coordinate j+1 = character index j of the line.

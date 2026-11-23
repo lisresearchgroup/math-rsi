@@ -1,0 +1,1511 @@
+{
+ "lemma": "PARITY-2SHORT",
+ "statement": "binary [42,16,d>=13]  =>  binary [41,14, min distance EXACTLY 14]",
+ "generated": "2026-10-20T18:48:21",
+ "instances": [
+  {
+   "label": "extended simplex [32,5,16]",
+   "input": {
+    "n": 32,
+    "k": 5,
+    "d": 16
+   },
+   "note": "k=5 < 16: the sufficient condition is not met, but the chain still succeeds here (rZ=4). k>=16 is sufficient, not necessary.",
+   "S1": {
+    "step": "S1",
+    "n_in": 32,
+    "k": 5,
+    "tau": 13,
+    "d_in": 16,
+    "T": [
+     1,
+     3,
+     5
+    ],
+    "T_inside_support": true,
+    "punctured": 3,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 32,
+    "k": 5,
+    "n_out": 33,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 33,
+    "k": 5,
+    "rank_of_columns": 5,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 19,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 5,
+    "rZ": 4,
+    "pair": [
+     1,
+     2
+    ],
+    "D_n": 31,
+    "D_k": 3,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "k_below_sufficient_bound": true
+  },
+  {
+   "label": "extended simplex + zero column",
+   "input": {
+    "n": 33,
+    "k": 5,
+    "d": 16
+   },
+   "note": "EXPECTED S3 failure (k=5)",
+   "S1": {
+    "step": "S1",
+    "n_in": 33,
+    "k": 5,
+    "tau": 13,
+    "d_in": 16,
+    "T": [
+     1,
+     3,
+     5
+    ],
+    "T_inside_support": true,
+    "punctured": 3,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 33,
+    "k": 5,
+    "n_out": 34,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 34,
+    "k": 5,
+    "rank_of_columns": 5,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 20,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 5,
+    "rZ": 4,
+    "pair": [
+     1,
+     2
+    ],
+    "D_n": 32,
+    "D_k": 3,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "k_below_sufficient_bound": true
+  },
+  {
+   "label": "extended simplex + repeated column",
+   "input": {
+    "n": 33,
+    "k": 5,
+    "d": 16
+   },
+   "note": "EXPECTED S3 failure (k=5)",
+   "S1": {
+    "step": "S1",
+    "n_in": 33,
+    "k": 5,
+    "tau": 13,
+    "d_in": 16,
+    "T": [
+     1,
+     2,
+     5
+    ],
+    "T_inside_support": true,
+    "punctured": 3,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 33,
+    "k": 5,
+    "n_out": 34,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 34,
+    "k": 5,
+    "rank_of_columns": 5,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 20,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 5,
+    "rZ": 4,
+    "pair": [
+     1,
+     2
+    ],
+    "D_n": 32,
+    "D_k": 3,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "k_below_sufficient_bound": true
+  },
+  {
+   "label": "Hamming [15,11,3], tau=3 (analogue)",
+   "input": {
+    "n": 15,
+    "k": 11,
+    "d": 3
+   },
+   "note": "mechanism analogue: d=3 odd, k=11 >= d+3=6",
+   "S1": {
+    "step": "S1",
+    "n_in": 15,
+    "k": 11,
+    "tau": 3,
+    "d_in": 3,
+    "punctured": 0,
+    "criteria": {}
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 15,
+    "k": 11,
+    "n_out": 16,
+    "min_dist": 4,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 16,
+    "k": 11,
+    "rank_of_columns": 11,
+    "min_dist_of_extension": 4,
+    "witness_weight": 4,
+    "W_size": 3,
+    "Z_size": 12,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 3,
+    "rZ": 10,
+    "pair": [
+     1,
+     2
+    ],
+    "D_n": 14,
+    "D_k": 9,
+    "D_min_dist": 4,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true
+  },
+  {
+   "label": "BCH [127,16,15] (k=16; S1 lowers 15 -> 13, the d=13 branch)",
+   "input": {
+    "n": 127,
+    "k": 16,
+    "d": 15
+   },
+   "note": "k=16 and d=13: the parameters of the case, at length 127. This is the only way to exercise S1/S2/S3 at k=16, d=13 without assuming the (open) existence of a [42,16,13] code.",
+   "S1": {
+    "step": "S1",
+    "n_in": 127,
+    "k": 16,
+    "tau": 13,
+    "d_in": 15,
+    "T": [
+     0,
+     1
+    ],
+    "T_inside_support": true,
+    "punctured": 2,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 127,
+    "k": 16,
+    "n_out": 128,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 128,
+    "k": 16,
+    "rank_of_columns": 16,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 114,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 13,
+    "rZ": 15,
+    "pair": [
+     2,
+     5
+    ],
+    "D_n": 126,
+    "D_k": 14,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "input_spectrum": {
+    "15": 4,
+    "16": 19,
+    "17": 53,
+    "18": 99,
+    "19": 233,
+    "20": 392,
+    "21": 795,
+    "22": 1374,
+    "23": 1855,
+    "24": 2779,
+    "25": 4052,
+    "26": 5134,
+    "27": 5812,
+    "28": 6491,
+    "29": 7208,
+    "30": 6908,
+    "31": 5754,
+    "32": 4780,
+    "33": 3957,
+    "34": 2943,
+    "35": 2009,
+    "36": 1294,
+    "37": 779,
+    "38": 430,
+    "39": 195,
+    "40": 109,
+    "41": 50,
+    "42": 8,
+    "43": 10,
+    "44": 7,
+    "45": 2
+   }
+  },
+  {
+   "label": "genuine [127,16,13] (S1 output of the BCH subcode)",
+   "input": {
+    "n": 127,
+    "k": 16,
+    "d": 13
+   },
+   "note": "S1 is a no-op here: the min distance is already exactly 13, so this instance exercises the d=13 branch at k=16; the minimum weight codeword of the extension has parity bit 1 (|W| = 13), i.e. exactly the configuration in which the draft's counting '|W| = 14, |Z| = 28' is false.",
+   "S1": {
+    "step": "S1",
+    "n_in": 127,
+    "k": 16,
+    "tau": 13,
+    "d_in": 13,
+    "punctured": 0,
+    "criteria": {}
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 127,
+    "k": 16,
+    "n_out": 128,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 128,
+    "k": 16,
+    "rank_of_columns": 16,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 114,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 13,
+    "rZ": 15,
+    "pair": [
+     2,
+     5
+    ],
+    "D_n": 126,
+    "D_k": 14,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "input_spectrum": {
+    "13": 1,
+    "14": 2,
+    "15": 10,
+    "16": 43,
+    "17": 97,
+    "18": 205,
+    "19": 386,
+    "20": 733,
+    "21": 1235,
+    "22": 1926,
+    "23": 2800,
+    "24": 3833,
+    "25": 5183,
+    "26": 6087,
+    "27": 6552,
+    "28": 7143,
+    "29": 7087,
+    "30": 5982,
+    "31": 4778,
+    "32": 3872,
+    "33": 2871,
+    "34": 2003,
+    "35": 1250,
+    "36": 715,
+    "37": 413,
+    "38": 170,
+    "39": 92,
+    "40": 43,
+    "41": 9,
+    "42": 9,
+    "43": 4,
+    "44": 1
+   }
+  },
+  {
+   "label": "BCH + trailing zero column",
+   "input": {
+    "n": 128,
+    "k": 16,
+    "d": 15
+   },
+   "S1": {
+    "step": "S1",
+    "n_in": 128,
+    "k": 16,
+    "tau": 13,
+    "d_in": 15,
+    "T": [
+     0,
+     1
+    ],
+    "T_inside_support": true,
+    "punctured": 2,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 128,
+    "k": 16,
+    "n_out": 129,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 129,
+    "k": 16,
+    "rank_of_columns": 16,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 115,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 13,
+    "rZ": 15,
+    "pair": [
+     2,
+     5
+    ],
+    "D_n": 127,
+    "D_k": 14,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true
+  },
+  {
+   "label": "BCH + repeated column (duplicates the ZERO last column)",
+   "input": {
+    "n": 128,
+    "k": 16,
+    "d": 15
+   },
+   "S1": {
+    "step": "S1",
+    "n_in": 128,
+    "k": 16,
+    "tau": 13,
+    "d_in": 15,
+    "T": [
+     0,
+     1
+    ],
+    "T_inside_support": true,
+    "punctured": 2,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 128,
+    "k": 16,
+    "n_out": 129,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 129,
+    "k": 16,
+    "rank_of_columns": 16,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 115,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 13,
+    "rZ": 15,
+    "pair": [
+     2,
+     5
+    ],
+    "D_n": 127,
+    "D_k": 14,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "note": "the BCH generator's last column is zero -> this duplicates a zero column"
+  },
+  {
+   "label": "BCH + repeated NONZERO column (duplicates column 0)",
+   "input": {
+    "n": 128,
+    "k": 16,
+    "d": 15
+   },
+   "S1": {
+    "step": "S1",
+    "n_in": 128,
+    "k": 16,
+    "tau": 13,
+    "d_in": 15,
+    "T": [
+     1,
+     2
+    ],
+    "T_inside_support": true,
+    "punctured": 2,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 128,
+    "k": 16,
+    "n_out": 129,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 129,
+    "k": 16,
+    "rank_of_columns": 16,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 14,
+    "Z_size": 114,
+    "parity_bit": 0,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 13,
+    "rZ": 15,
+    "pair": [
+     2,
+     5
+    ],
+    "D_n": 127,
+    "D_k": 14,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true,
+   "note": "duplicates a nonzero column -> the two coordinates are dependent"
+  },
+  {
+   "label": "BCH + leading zero column",
+   "input": {
+    "n": 128,
+    "k": 16,
+    "d": 15
+   },
+   "S1": {
+    "step": "S1",
+    "n_in": 128,
+    "k": 16,
+    "tau": 13,
+    "d_in": 15,
+    "T": [
+     1,
+     2
+    ],
+    "T_inside_support": true,
+    "punctured": 2,
+    "punctured_min_dist": 13,
+    "after_min_dist": 13,
+    "criteria": {
+     "S1.a_dim_preserved": true,
+     "S1.b_lower_bound": true,
+     "S1.c_upper_bound_minword": true,
+     "S1.d_zeropad_params": true
+    }
+   },
+   "S2": {
+    "step": "S2",
+    "n_in": 128,
+    "k": 16,
+    "n_out": 129,
+    "min_dist": 14,
+    "criteria": {
+     "S2.a_all_even": true,
+     "S2.b_min_dist_is_even_roundup": true,
+     "S2.c_rank_length": true,
+     "S2.d_parity_column_is_column_sum": true
+    }
+   },
+   "S3": {
+    "step": "S3",
+    "n_in": 129,
+    "k": 16,
+    "rank_of_columns": 16,
+    "min_dist_of_extension": 14,
+    "witness_weight": 14,
+    "W_size": 13,
+    "Z_size": 115,
+    "parity_bit": 1,
+    "draft_claim_W_eq_14_and_Z_eq_28": false,
+    "rW": 13,
+    "rZ": 15,
+    "pair": [
+     3,
+     6
+    ],
+    "D_n": 127,
+    "D_k": 14,
+    "D_min_dist": 14,
+    "criteria": {
+     "S3.b_rank_of_columns_is_k": true,
+     "S3.a_witness_is_min_weight": true,
+     "S3.a_parity_bit_consistent": true,
+     "S3.c_span_argument": true,
+     "S3.d_two_independent_columns_in_Z": true,
+     "S3.pair_is_independent": true,
+     "S3.e_dim_exactly_k_minus_2": true,
+     "S3.f_params": true,
+     "S3.g_witness_survives": true,
+     "S3.f_witness_weight_in_D": true,
+     "S3.h_shortened_is_even": true
+    }
+   },
+   "failures": [],
+   "PASS": true
+  }
+ ],
+ "mutants": [
+  {
+   "mutant": "S1_puncture_outside",
+   "step": "S1",
+   "description": "S1 punctures coordinates OUTSIDE supp(c): the upper bound wt(c^T) = tau breaks",
+   "detected": true,
+   "failing_criteria_of_own_step": [
+    "S1.c_upper_bound_minword",
+    "S1.d_zeropad_params"
+   ],
+   "n_failures_total": 2
+  },
+  {
+   "mutant": "S2_no_extension",
+   "step": "S2",
+   "description": "S2 omits the parity extension: the min distance stays tau instead of tau+1",
+   "detected": true,
+   "failing_criteria_of_own_step": [
+    "S2.a_all_even",
+    "S2.b_min_dist_is_even_roundup"
+   ],
+   "n_failures_total": 4
+  },
+  {
+   "mutant": "S3_first_two_Z",
+   "step": "S3",
+   "description": "S3 takes the first two columns of Z without checking independence (a leading zero column makes them dependent)",
+   "detected": true,
+   "failing_criteria_of_own_step": [
+    "S3.pair_is_independent",
+    "S3.e_dim_exactly_k_minus_2"
+   ],
+   "n_failures_total": 2
+  },
+  {
+   "mutant": "S3_any_two",
+   "step": "S3",
+   "description": "S3 takes an arbitrary coordinate pair instead of a pair inside Z",
+   "detected": true,
+   "failing_criteria_of_own_step": [
+    "S3.pair_is_independent",
+    "S3.e_dim_exactly_k_minus_2",
+    "S3.g_witness_survives"
+   ],
+   "n_failures_total": 3
+  }
+ ],
+ "exhaustive": {
+  "ranges": "all 2^(k*n) matrices for k<=2,n<=8 and k=3,n<=5",
+  "matrices_enumerated": 124208,
+  "full_rank_matrices": 114424,
+  "distinct_codes": 10981,
+  "distinct_codes_with_d_ge_3": 6785,
+  "s1_lowering_applied": 6785,
+  "codes_entering_the_sufficient_condition_branch": 0,
+  "violations": [],
+  "violations_in_sufficient_regime": [],
+  "violations_S1_or_S2": [],
+  "boundary_failures_examples": [
+   {
+    "k": 1,
+    "n": 4,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 2,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 4,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 2,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 4,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 2,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 4,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 2,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 4,
+    "d": 4,
+    "tau": 3,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 3,
+    "Z_size": 1,
+    "parity_bit": 1
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 3,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 3,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 3,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 4,
+    "tau": 3,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 3,
+    "Z_size": 2,
+    "parity_bit": 1
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 3,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 3,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 4,
+    "tau": 3,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 3,
+    "Z_size": 2,
+    "parity_bit": 1
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 3,
+    "tau": 2,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 2,
+    "Z_size": 3,
+    "parity_bit": 0
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 4,
+    "tau": 3,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 3,
+    "Z_size": 2,
+    "parity_bit": 1
+   },
+   {
+    "k": 1,
+    "n": 5,
+    "d": 4,
+    "tau": 3,
+    "bad": [
+     "S3.d_two_independent_columns_in_Z",
+     "S3.e_dim_exactly_k_minus_2",
+     "S3.f_params",
+     "S3.g_witness_survives",
+     "S3.h_shortened_is_even"
+    ],
+    "rZ": 0,
+    "rW": 1,
+    "W_size": 3,
+    "Z_size": 2,
+    "parity_bit": 1
+   }
+  ],
+  "coverage_note": "This tiny-parameter sweep exercises the MECHANISM of S1/S2/S3 (with S1 actually lowering the distance by 1). Because every object here has k <= 3, the sufficient condition k >= tau+3 is NEVER satisfied (codes_entering_the_sufficient_condition_branch = 0), so the S3 part of this sweep is a MECHANISM check only, NOT a check of the sufficient condition. The sufficient-condition regime (k >= tau+3) is covered by the k=16 BCH instances and by the randomized search below (see random_search.codes_in_sufficient_regime)."
+ },
+ "random_search": {
+  "trials": 40000,
+  "samples_kept_full_rank_d_ge_2": 18161,
+  "codes_entering_the_sufficient_condition_branch": 6946,
+  "violations": [],
+  "violations_in_sufficient_regime": [],
+  "note": "S1 lowers the distance by 1 (tau = d-1). The S3 count refers to the branch where the sufficient condition k >= tau+3 actually holds; violations there would contradict the lemma."
+ },
+ "summary": {
+  "instances": [
+   {
+    "label": "extended simplex [32,5,16]",
+    "PASS": true,
+    "k_below_sufficient_bound": true,
+    "S3_rZ": 4,
+    "S3_rW": 5,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 31,
+     "D_k": 3,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "extended simplex + zero column",
+    "PASS": true,
+    "k_below_sufficient_bound": true,
+    "S3_rZ": 4,
+    "S3_rW": 5,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 32,
+     "D_k": 3,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "extended simplex + repeated column",
+    "PASS": true,
+    "k_below_sufficient_bound": true,
+    "S3_rZ": 4,
+    "S3_rW": 5,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 32,
+     "D_k": 3,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "Hamming [15,11,3], tau=3 (analogue)",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 10,
+    "S3_rW": 3,
+    "S3_W_size": 3,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 14,
+     "D_k": 9,
+     "D_min_dist": 4
+    }
+   },
+   {
+    "label": "BCH [127,16,15] (k=16; S1 lowers 15 -> 13, the d=13 branch)",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 15,
+    "S3_rW": 13,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 126,
+     "D_k": 14,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "genuine [127,16,13] (S1 output of the BCH subcode)",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 15,
+    "S3_rW": 13,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 126,
+     "D_k": 14,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "BCH + trailing zero column",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 15,
+    "S3_rW": 13,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 127,
+     "D_k": 14,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "BCH + repeated column (duplicates the ZERO last column)",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 15,
+    "S3_rW": 13,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 127,
+     "D_k": 14,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "BCH + repeated NONZERO column (duplicates column 0)",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 15,
+    "S3_rW": 13,
+    "S3_W_size": 14,
+    "S3_parity_bit": 0,
+    "D": {
+     "D_n": 127,
+     "D_k": 14,
+     "D_min_dist": 14
+    }
+   },
+   {
+    "label": "BCH + leading zero column",
+    "PASS": true,
+    "k_below_sufficient_bound": false,
+    "S3_rZ": 15,
+    "S3_rW": 13,
+    "S3_W_size": 13,
+    "S3_parity_bit": 1,
+    "D": {
+     "D_n": 127,
+     "D_k": 14,
+     "D_min_dist": 14
+    }
+   }
+  ],
+  "all_mutants_detected": true,
+  "exhaustive_matrices_enumerated": 124208,
+  "exhaustive_distinct_codes": 10981,
+  "exhaustive_distinct_codes_with_d_ge_3": 6785,
+  "exhaustive_codes_entering_sufficient_regime": 0,
+  "exhaustive_violations": 0,
+  "exhaustive_violations_in_sufficient_regime": 0,
+  "random_violations": 0,
+  "random_codes_entering_sufficient_regime": 6946,
+  "random_samples_kept": 18161,
+  "every_min_weight_word_ok": true,
+  "elapsed_s": 23.0
+ },
+ "every_min_weight_word_of_extension": {
+  "extension_min_dist": 16,
+  "n_min_words": 23,
+  "records": [
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 16,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 16,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 15,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 15,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 15,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 15,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 0,
+    "W_size": 16,
+    "Z_size": 111,
+    "rZ": 15,
+    "rW": 15,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   },
+   {
+    "witness_weight": 16,
+    "parity_bit": 1,
+    "W_size": 15,
+    "Z_size": 112,
+    "rZ": 15,
+    "rW": 15,
+    "D_k": 14,
+    "D_n": 126,
+    "D_min_dist": 16,
+    "bad_criteria": []
+   }
+  ],
+  "n_records": 23,
+  "all_ok": true
+ },
+ "D_from_raw_bch_extension_NOT_the_tau13_path": {
+  "n": 126,
+  "k": 14,
+  "min_dist": 16,
+  "spectrum": {
+   "16": 11,
+   "18": 81,
+   "20": 259,
+   "22": 809,
+   "24": 1637,
+   "26": 2879,
+   "28": 3378,
+   "30": 3294,
+   "32": 2108,
+   "34": 1235,
+   "36": 515,
+   "38": 145,
+   "40": 27,
+   "42": 5
+  },
+  "all_even": true,
+  "pair": [
+   1,
+   3
+  ],
+  "rW": 16,
+  "rZ": 15,
+  "W_size": 16,
+  "Z_size": 111,
+  "parity_bit": 0,
+  "draft_claim_W_eq_14_and_Z_eq_28": false
+ },
+ "D_at_tau13_path_exact_parameters": {
+  "input": "S1 output of the BCH [127,16,15] subcode, i.e. [127,16,13] (d exactly 13)",
+  "extension_min_dist": 14,
+  "n": 126,
+  "k": 14,
+  "min_dist": 14,
+  "spectrum": {
+   "14": 2,
+   "16": 25,
+   "18": 131,
+   "20": 462,
+   "22": 1181,
+   "24": 2213,
+   "26": 3311,
+   "28": 3476,
+   "30": 2872,
+   "32": 1590,
+   "34": 757,
+   "36": 286,
+   "38": 65,
+   "40": 11,
+   "42": 1
+  },
+  "all_even": true,
+  "pair": [
+   2,
+   5
+  ],
+  "rW": 13,
+  "rZ": 15,
+  "W_size": 13,
+  "Z_size": 114,
+  "parity_bit": 1,
+  "all_criteria_pass": true
+ }
+}

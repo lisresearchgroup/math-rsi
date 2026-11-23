@@ -1,0 +1,187 @@
+{
+ "catalog": "/home/user/math/aris4math_v2/cases/41-12/work/20261122-catalog/zenodo/extracted/38_9_16.2",
+ "catalog_sha256": "a0b9f898feba30b6fc07764a0b3a538ec5f8af6305bdefbb79e3c42f34ad8c4b",
+ "w": 4,
+ "D": 16,
+ "dirA": "/home/user/math/aris4math_v2/cases/41-12/work/20261122-o6/run_38_9",
+ "dirB": "/home/user/math/aris4math_v2/cases/41-12/work/20261122-o7/run_38_9",
+ "counts": {
+  "codes": 47,
+  "even": 47,
+  "odd": 0,
+  "complete_in_A": 47,
+  "complete_in_B": 47,
+  "compared": 47,
+  "identical": 47
+ },
+ "catalog_parse_errors": [],
+ "mismatching": [],
+ "catalog_check_failures": [],
+ "missing_files": {
+  "A": [],
+  "B": []
+ },
+ "unexpected_files": {
+  "A": [],
+  "B": []
+ },
+ "unreadable_json": [],
+ "odd_idx": [],
+ "totals": {
+  "A": {
+   "codes_loaded": 47,
+   "sum_F_size": 13565,
+   "max_F_size": {
+    "value": 559,
+    "idx": 3
+   },
+   "sum_edges": 15,
+   "max_edges": {
+    "value": 6,
+    "idx": 6
+   },
+   "sum_c3": 0,
+   "max_c3": {
+    "value": 0,
+    "idx": 1
+   },
+   "sum_c4": 0,
+   "max_c4": null,
+   "sum_c5": 0,
+   "max_c5": null,
+   "sum_solutions": 0,
+   "max_solutions": {
+    "value": 0,
+    "idx": 1
+   },
+   "idx_with_solutions": [],
+   "last_but_one_level_field": "edges",
+   "top10_last_but_one_level": [
+    {
+     "idx": 6,
+     "value": 6
+    },
+    {
+     "idx": 8,
+     "value": 6
+    },
+    {
+     "idx": 41,
+     "value": 3
+    },
+    {
+     "idx": 1,
+     "value": 0
+    },
+    {
+     "idx": 2,
+     "value": 0
+    },
+    {
+     "idx": 3,
+     "value": 0
+    },
+    {
+     "idx": 4,
+     "value": 0
+    },
+    {
+     "idx": 5,
+     "value": 0
+    },
+    {
+     "idx": 7,
+     "value": 0
+    },
+    {
+     "idx": 9,
+     "value": 0
+    }
+   ],
+   "sum_seconds": 264.60499999999996,
+   "impl_names": [
+    "extsearch.c"
+   ]
+  },
+  "B": {
+   "codes_loaded": 47,
+   "sum_F_size": 13565,
+   "max_F_size": {
+    "value": 559,
+    "idx": 3
+   },
+   "sum_edges": 15,
+   "max_edges": {
+    "value": 6,
+    "idx": 6
+   },
+   "sum_c3": 0,
+   "max_c3": {
+    "value": 0,
+    "idx": 1
+   },
+   "sum_c4": 0,
+   "max_c4": null,
+   "sum_c5": 0,
+   "max_c5": null,
+   "sum_solutions": 0,
+   "max_solutions": {
+    "value": 0,
+    "idx": 1
+   },
+   "idx_with_solutions": [],
+   "last_but_one_level_field": "edges",
+   "top10_last_but_one_level": [
+    {
+     "idx": 6,
+     "value": 6
+    },
+    {
+     "idx": 8,
+     "value": 6
+    },
+    {
+     "idx": 41,
+     "value": 3
+    },
+    {
+     "idx": 1,
+     "value": 0
+    },
+    {
+     "idx": 2,
+     "value": 0
+    },
+    {
+     "idx": 3,
+     "value": 0
+    },
+    {
+     "idx": 4,
+     "value": 0
+    },
+    {
+     "idx": 5,
+     "value": 0
+    },
+    {
+     "idx": 7,
+     "value": 0
+    },
+    {
+     "idx": 9,
+     "value": 0
+    }
+   ],
+   "sum_seconds": 392.17398815,
+   "impl_names": [
+    "sol-direct"
+   ]
+  }
+ },
+ "sum_seconds": {
+  "A": 264.60499999999996,
+  "B": 392.17398815
+ },
+ "all_even_codes_compared_identical": true
+}

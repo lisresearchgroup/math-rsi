@@ -1,0 +1,93 @@
+{
+ "audit_skill": "proof-checker",
+ "verdict": "PASS",
+ "reason_code": "all_proofs_complete",
+ "summary": "Sol/xhigh formal audit, round 2: no open FATAL/CRITICAL/MAJOR issue; main theorem (no binary linear [41,12,>=15] code) closes modulo imports I1, I2 and computational claims CC1-CC3. FORMAL_SPEC additionally requires MiniMax and Gemini reviews: MiniMax PASS; Gemini unavailable (HTTP 429 on 3 calls, 11 attempts) - acceptance per FORMAL_SPEC therefore NOT complete.",
+ "audited_input_hashes": {
+  "PROOF.tex": "sha256:527139569b6db947c3d1b1b27cac69d813927b26db2d7bbe2e557faa94c897f3"
+ },
+ "trace_path": "reviews/20261123-054242-sol-formal-audit-r2-xljug60d/",
+ "round1_trace_path": "reviews/20261123-024211-sol-formal-audit-r1-ergj3j0n/",
+ "thread_id": "01a20490-db61-7a01-b1b5-2ea082c2526a",
+ "reviewer_model": "gpt-6.1-sol",
+ "reviewer_reasoning": "xhigh",
+ "executor_model": "claude-fable-5-2",
+ "cross_family": true,
+ "generated_at": "2026-11-22T22:48:36Z",
+ "details": {
+  "theorems_audited": 14,
+  "rounds": 2,
+  "round1_verdict": "NEEDS_REVISION",
+  "round2_verdict": "PASS (research_complete=false: supplementary review records pending)",
+  "issues": [
+   {
+    "id": "R1-1",
+    "severity": "MAJOR",
+    "category": "hypothesis-discharge",
+    "location": "PROOF.tex: Proposition cover",
+    "note": "I2 counts optimal codes; step 'no [N,kappa,>=17]' (Griesmer) was implicit. Fixed; CLOSED in round 2."
+   },
+   {
+    "id": "R1-2",
+    "severity": "MAJOR",
+    "category": "computational-evidence",
+    "location": "work/20261122-catalog/check/catalog_check.py",
+    "note": "individualization colour not guaranteed fresh. Exact search rewritten without hashing; all decisions unchanged; CLOSED in round 2."
+   },
+   {
+    "id": "R1-3",
+    "severity": "MAJOR",
+    "category": "computational-evidence",
+    "location": "size-5 threshold path (w=6)",
+    "note": "no strict size-5 rejection in small-domain tests. Relaxed-5 search on all 3408 mothers + 1748736 explicit weight-12 witnesses + kappa>=1 unit tests; CLOSED in round 2."
+   },
+   {
+    "id": "R1-4",
+    "severity": "CRITICAL",
+    "category": "process",
+    "location": "FORMAL_SPEC acceptance",
+    "note": "audit and MiniMax/Gemini reviews were incomplete at round 1. Audit completed (round 2 PASS); MiniMax PASS; Gemini REVIEW_UNAVAILABLE (429). PARTIALLY closed - procedural, not mathematical."
+   },
+   {
+    "id": "R1-5",
+    "severity": "MAJOR",
+    "category": "scope",
+    "location": "Corollary bounds",
+    "note": "d2(42,12)>=15 lacked local evidence. Explicit [42,12,15] matrix verified by two implementations and re-enumerated by the reviewer; CLOSED in round 2."
+   }
+  ],
+  "open_issues": [],
+  "counterexample_pass": "executed in round 1 on lemmas dual, mother(c)(d), standard(ii), transport, bridge, proposition cover: no counterexample; one algebraically verified toy showing the strict size-5 rejection path exists (used for R1-3)",
+  "imports": [
+   "I1: Bouyukliev-Bouyuklieva-Gulliver-Ostergard 2006 Lemma 4 (no [39,10,16])",
+   "I2: Bouyuklieva-Dzhumalieva-Stoeva 2025 Tables A5-A7 (class counts 8170/17276/47)"
+  ],
+  "supplementary_reviews": {
+   "minimax": {
+    "model": "MiniMax-M3.1-Flash",
+    "verdict": "PASS",
+    "path": "reviews/20261123-054242-flash-minimax-supp-qh07b_5j/"
+   },
+   "gemini": {
+    "model": "gemini-3.8-flash",
+    "verdict": "REVIEW_UNAVAILABLE",
+    "detail": "429 Too Many Requests; ping 03:43 (3 attempts), review 05:42 (4 attempts), review 06:50 (4 attempts)",
+    "paths": [
+     "reviews/20261123-034349-gemini-gemini-ping-bfuw1s31/",
+     "reviews/20261123-054242-gemini-gemini-supp-rzki36b4/",
+     "reviews/20261123-064941-gemini-gemini-supp2-fwjjb46b/"
+    ]
+   },
+   "deepseek_substitute": {
+    "model": "deepseek-v4.1-flash",
+    "verdict": "NEEDS_REVISION (sole issue: Gemini review missing; mathematics judged correct)",
+    "path": "reviews/20261123-055902-deepseek-deepseek-supp-tlo4gz7c/"
+   },
+   "grok_local": {
+    "model": "grok-4.7",
+    "verdict": "PASS (reduction draft + O6_SPEC)",
+    "path": "reviews/20261122-193252-grok-grok-reduction-d2_x3uj6/"
+   }
+  }
+ }
+}

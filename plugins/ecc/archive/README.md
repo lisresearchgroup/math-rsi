@@ -11,3 +11,5 @@
 两Lean工程不包含 `.lake`、`.olean` 或工具链；固定Lean4.34.1及mathlib锁不变。本轮没有新Lean构建，历史fresh构建和公理/类型日志原样保留。扫描器源码可用，当前轻量例子不运行2³²域。所有新任务与复算输出写当前任务scratch，不能写冻结副本；具体本轮执行见 [IMPLEMENTATION](../evidence/IMPLEMENTATION.md)。
 
 原项目许可与第三方说明在 [THIRD_PARTY_NOTICES](source/THIRD_PARTY_NOTICES.md)，论文样式说明在 [STYLE_SOURCE](source/paper/STYLE_SOURCE.md)。保留文献作者与出处，不代填作者、机构、投稿或开放许可证。
+
+`intervals-57-20261123/` 是 2026-11-23 整理的**轨迹与配图**：二元线性码界表中 MathRSI 推进的 57 个区间的逐格证据（证明、推导、矩阵、源码与验收记录）和中英两版汇总图。它是证据归档，不是结果发布；其中 `[41,12,15]` 一组的验收尚未走完，扫描下界一组当时仍在进行，各组的前提与限定见 [intervals-57-20261123/README](intervals-57-20261123/README.md)。该目录不属于上面的 `source/` 发布包，也不计入 INVENTORY。

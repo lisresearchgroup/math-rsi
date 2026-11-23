@@ -1,0 +1,6 @@
+# /home/user/math/aris4math_v2/cases/_scan-onestep/tools/verify_b/verify_b /home/user/math/aris4math_v2/cases/_scan-onestep/hits/79-47/78-46-L/G.txt 11 /home/user/math/aris4math_v2/cases/_scan-onestep/hits/79-47/78-46-L/verify_B.json.run 4  (started 2026-11-22T16:12:05Z)
+n=79 k=47 rho=32 D=11 threads=4
+rho=32 h=5 stored_max=5
+subsets: 20000000
+done
+# exit code 0, wall 19.26 s
