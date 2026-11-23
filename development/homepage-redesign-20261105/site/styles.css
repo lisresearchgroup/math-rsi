@@ -508,6 +508,11 @@ button{font:inherit;color:inherit}
 .intro-value,.intro-detail { font:500 12px var(--sans); fill:var(--ink); }
 .delta-leader { stroke:var(--c); stroke-width:1.2; opacity:.45; pointer-events:none; }
 .delta-tag text { pointer-events:none; }
+.bound-label { fill:#fff; font:650 10px var(--sans); pointer-events:none; }
+.bk[href]:focus-visible .b-res { stroke:var(--ink); stroke-width:2; }
+.callout-paper { fill:var(--ecc); font:600 10px var(--sans); }
+.callout-paper text { text-decoration:underline; }
+.callout-paper:focus-visible rect { stroke:var(--ecc); }
 .delta-tag.dim .delta-leader { opacity:0; }
 .delta-tag:hover .delta-surface,.delta-tag:focus-visible .delta-surface { stroke:var(--c); }
 .delta-tag:focus-visible { outline:none; }

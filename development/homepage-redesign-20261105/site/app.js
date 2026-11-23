@@ -11,6 +11,7 @@ const HE_V6_TIME = 11180;
 const Q7_FULL_TIME = 12600;
 const HE_V7_TIME = 12900;
 const ECC_V8_TIME = 14600;
+const ECC_PAPER = REPO + 'plugins/ecc/archive/source/paper/main.pdf';
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -34,10 +35,10 @@ const CASES = [
     status: 'Uniform k ≥ 12 theorem in Lean · small k scoped per parameter',
     read: REPO + 'case-studies/property-b/index.html', plugin: GH + '/tree/main/plugins/propertyb',
     quant: () => `<div class="qrow">${[35,67,131,267,543,1112,2275,4664].map((v,i)=>`<span><b>${v}</b><i>k = ${i+5}</i></span>`).join('')}</div><p class="qnote">Lower bounds on m(k), plus a uniform gain for every k ≥ 12.</p>` },
-  { id: 'ecc', short: 'ECC', title: () => t >= ECC_V8_TIME ? 'Constructions and exclusions tighten 57 intervals' : 'From three exact code distances to four',
+  { id: 'ecc', short: 'ECC', title: () => t >= ECC_V8_TIME ? 'From 4 to 13 exact code distances' : 'From three exact code distances to four',
     status: () => t >= ECC_V8_TIME ? 'v8 · 2 working upper bounds pending source-owner acceptance' : 'Exact distances · 45/11 remains open',
-    read: () => t >= ECC_V8_TIME ? 'ecc-intervals.html' : REPO + 'plugins/ecc/archive/source/paper/main.pdf', plugin: GH + '/tree/main/plugins/ecc',
-    quant: () => t >= ECC_V8_TIME ? `<div class="qrow"><span><b>18</b><i>new lower bounds</i></span><span><b>34</b><i>new upper bounds · 2 working</i></span><span><b>57</b><i>total intervals</i></span></div><p class="qnote">5 previous + 52 added = 57 intervals. 13 confirmed exact values + 2 pending exact closures. Lower bounds come from constructions and their derived codes; upper bounds come from exclusions and literature-derived corollaries. The 2 working upper bounds await source-owner acceptance.</p>` : `<p class="q-closed">${t >= 3400 ? '4' : '3'} exact optimal distances</p><div class="qrow">${[['43,10','16'],['44,10','17'],['44,11','16'],...(t >= 3400 ? [['42,16','12']] : [])].map(([p,v])=>`<span><b>${v}</b><i>d₂(${p})</i></span>`).join('')}<span class="open"><b>16–17</b><i>d₂(45,11) · open</i></span></div><p class="qnote">For each code length n and dimension k, d₂(n,k) is the largest achievable minimum distance. “Exact” means a construction meets the upper bound. ${t >= 3400 ? 'The fourth value, d₂(42,16)=12, applies a published 2020 theorem.' : 'The original exclusion fixes the three values shown.'}</p>` },
+    read: () => t >= ECC_V8_TIME ? 'ecc-intervals.html' : ECC_PAPER, plugin: GH + '/tree/main/plugins/ecc',
+    quant: () => t >= ECC_V8_TIME ? `<div class="qrow"><span><b>18</b><i>new lower bounds</i></span><span><b>32</b><i>new upper-bound deductions</i></span><span><b>57</b><i>total intervals</i></span></div><p class="qnote">MathRSI settled three settings in v0 and one more by v2. In v8, it connected published exclusions to known codes and settled nine more in one round.</p>` : `<p class="q-closed">${t >= 3400 ? '4' : '3'} exact optimal distances</p><div class="qrow">${[['43,10','16'],['44,10','17'],['44,11','16'],...(t >= 3400 ? [['42,16','12']] : [])].map(([p,v])=>`<span><b>${v}</b><i>d₂(${p})</i></span>`).join('')}<span class="open"><b>16–17</b><i>d₂(45,11) · open</i></span></div><p class="qnote">For each code length n and dimension k, d₂(n,k) is the largest achievable minimum distance. “Exact” means a construction meets the upper bound. ${t >= 3400 ? 'The fourth value, d₂(42,16)=12, applies a published 2020 theorem.' : 'The original exclusion fixes the three values shown.'}</p>` },
   { id: 'dd', short: 'Degree–Diameter', title: 'Our best constructions by setting',
     status: () => t >= DD_TIME ? 'Four showcased settings · D5 end-to-end Lean open' : t >= 6750 ? 'New (10,4) result produced with MathRSI v2 + DD' : 'Three dated table comparisons from earlier research',
     read: () => t >= DD_TIME ? 'dd-latest.html' : 'dd-10-4.html', plugin: GH + '/tree/main/plugins/degree-diameter',
@@ -70,7 +71,8 @@ const MS = [
   { c:'ecc', v:2, span:1, k:'evidence', e:'grow', t:2900, tag:'Proof connected', text:'Original matrices, parent data and reductions connected to Lean, with explicit external premises.' },
   { c:'ecc', v:2, span:1, k:'evidence', e:'grow', t:3150, tag:'Evidence replayed', text:'Portable proof and certificate package with fresh-copy build, audit and replay.' },
   { c:'ecc', v:2, span:1, k:'result', basis:'application', e:'grow', t:3400, tag:'Exact parameter · 4', text:'d₂(42,16)=12: a published 2020 theorem excludes distance 13, and an actual distance-12 matrix meets the bound.' },
-  { c:'ecc', v:8, k:'result', e:'grow', t:ECC_V8_TIME, tag:'52 added intervals · v8', text:'18 new lower-bound intervals and 34 new upper-bound intervals (2 working). Together with the previous 5: 57 intervals; 13 confirmed exact values plus 2 pending exact closures. Source-owner acceptance for the 2 working upper bounds remains pending.' },
+  { c:'ecc', v:8, k:'result', e:'grow', t:ECC_V8_TIME, bound:'lower', tag:'Constructive lower bounds', text:'18 settings have better codes with downloadable generator matrices.' },
+  { c:'ecc', v:8, k:'result', e:'grow', t:ECC_V8_TIME + 240, bound:'upper', tag:'Upper-bound deductions', text:'32 new upper bounds settle nine optimal distances. Two further proposed upper bounds await acceptance.' },
   { c:'dd', v:2, k:'result', e:'drop', t:3700, tag:'Construction · (11,5)', text:'37,628 → 37,631 vertices, constructive lower bound compared with the Comellas entry checked 2026-11-05.' },
   { c:'dd', v:2, k:'result', e:'drop', t:3780, tag:'Construction · (12,5)', text:'42,342 → 42,402 vertices under the same degree and diameter constraints; dated Comellas table comparison.' },
   { c:'dd', v:2, k:'result', e:'drop', t:3860, tag:'Construction · (16,4)', text:'16,384 → 16,416 vertices under the same degree and diameter constraints; dated Comellas table comparison.' },
@@ -110,7 +112,7 @@ const CALLOUTS = [
   { c:'ecc', v:0, t:700, kind:'intro', value:'3 exact code distances' },
   { c:'pb', v:1, t:1820, kind:'delta', value:'Pointwise → uniform', detail:'all k ≥ 12' },
   { c:'ecc', v:2, t:3400, kind:'delta', value:'3 → 4', detail:'exact code distances' },
-  { c:'ecc', v:8, t:ECC_V8_TIME, row:0, kind:'delta', value:'18 lower · 34 upper', value2:'57 intervals · 2 pending', detail:'13 exact + 2 pending · v8' },
+  { c:'ecc', v:8, t:ECC_V8_TIME + 240, row:0, kind:'delta', value:'4 → 13', value2:'settled optimal distances', detail:'9 more in this round', paper:ECC_PAPER },
   { c:'dd', v:2, t:3860, kind:'intro', value:'Larger graphs · 3 records' },
   { c:'e86', v:3, t:5050, kind:'intro', value:'C₄-free density ≤ 0.59155154' },
   { c:'q6', v:3, t:5200, kind:'intro', value:'Every Q₆ matching lies in', detail:'a Hamilton cycle' },
@@ -273,7 +275,7 @@ const VERS = [
     fullBase:['Carry constructive witnesses through transformations; deduplicate each setting by its strongest verified bound.', 'Independently test rarely triggered rejection branches, rather than relying on successful runs alone.', 'Propagate published upper exclusions with exact premises; separate established results from source-pending claims.'],
     plug:[['deep','ECC','ecc'],['note','Other 5 domains retained']],
     pluginNote:'v8 · constructive witnesses, rejection branches and exclusion propagation.',
-    sum:'ECC adds 52 table intervals to the previous 5: 18 lower-bound improvements and 34 upper-bound improvements, including 2 working upper bounds awaiting source-owner acceptance. Total: 57 intervals, with 13 confirmed exact values and 2 pending exact closures. The 32 literature-derived upper bounds and the 2 new working exclusions retain separate evidence and status. The v8 release preserves that source-pending status.' },
+    sum:'MathRSI went from four settled code distances to thirteen. This round alone settled nine by matching known codes with tighter upper bounds. New constructions improved the lower bound at 18 other settings. Two further upper bounds await final acceptance.' },
   { tag:'v9+', state:'Future', name:'Next research, next evolution',
     base:[["Learn from the next problem", "", "Use new research successes and failures to identify the next concrete workflow improvement."]],
     fullBase:['Open continuation — next research cycle feeds the next workflow evolution'],
@@ -328,7 +330,10 @@ function shape(g, m) {
   const c = `var(--${m.c})`;
   // All outcome blocks share one visual meaning; provenance and checks stay in the details.
   el('rect', { class:'b-res', width:BW, height:BH, rx:5, style:`fill:${c}` }, g);
-  el('title', {}, g).textContent = `${CN[m.c]} · ${m.tag} — ${m.text}`;
+  if (m.bound) {
+    el('text', { class:'bound-label', x:BW / 2, y:BH / 2, 'text-anchor':'middle', dy:'.35em' }, g).textContent = m.bound === 'lower' ? 'LB' : 'UB';
+  }
+  el('title', {}, g).textContent = m.bound ? m.text : `${CN[m.c]} · ${m.tag} — ${m.text}`;
 }
 
 function buildSky() {
@@ -358,7 +363,9 @@ function buildSky() {
     const st = [];
     items.forEach(([m, idx], i) => {
       const y = BASE - (i + 1) * STEP + 5;
-      const g = el('g', { class: 'bk', 'data-c': c.id, 'data-m': idx, 'data-v': col, transform: `translate(${slotX(col, s)} ${y})` }, blocks);
+      const attrs = { class:'bk', 'data-c':c.id, 'data-m':idx, 'data-v':col, transform:`translate(${slotX(col, s)} ${y})` };
+      if (m.bound) Object.assign(attrs, { href:`ecc-intervals.html#${m.bound}`, 'aria-label':m.text });
+      const g = el(m.bound ? 'a' : 'g', attrs, blocks);
       blockPositions.push({ el:g, col, s, y });
       const a = el('g', { class: 'anim' }, g);
       shape(a, m);
@@ -398,15 +405,16 @@ function buildDeltaTag(d) {
   // The archived upper bound is separate from the abstract 25-point witness.
   const endY = d.kind === 'intro' && d.c === 'he' ? 160 + HEADROOM : BASE - (blockIndex + 1) * STEP;
   const intro = d.kind === 'intro', badge = intro ? (d.v === 0 ? 'Origins' : 'New') : 'Improved';
+  const group = el('g', { transform:`translate(${tagX} ${d.y})`, style:'display:none;opacity:0' }, sky);
   const g = el('g', { class:`delta-tag bk ${intro ? 'intro-tag' : 'change-tag'}${d.value2 ? ' multiline-tag' : ''}`, 'data-c':d.c, 'data-m':mi,
     'data-kind':d.kind, 'data-v':d.v, 'data-t':d.t,
-    transform:`translate(${tagX} ${d.y})`, style:`--c:var(--${d.c});opacity:0;visibility:hidden;pointer-events:none`,
-    role:'button', tabindex:'-1', 'aria-hidden':'true', 'aria-label':`${CN[d.c]}: ${d.value}${d.value2 ? '; ' + d.value2 : ''}${d.detail ? ', ' + d.detail : ''}. Inspect this result.` }, sky);
+    style:`--c:var(--${d.c})`,
+    role:'button', tabindex:'-1', 'aria-hidden':'true', 'aria-label':`${CN[d.c]}: ${d.value}${d.value2 ? '; ' + d.value2 : ''}${d.detail ? ', ' + d.detail : ''}. Inspect this result.` }, group);
   const leader = el('line', { class:'delta-leader', x1:ownX-tagX, x2:ownX-tagX, y1:d.height, y2:endY-d.y, style:'visibility:hidden' }, g);
   el('rect', { class:'delta-surface', width, height:d.height, rx:10 }, g);
   el('rect', { class:'callout-color', x:6, y:7, width:3, height:d.height-14, rx:1.5, fill:`var(--${d.c})` }, g);
   el('text', { class:'delta-kicker', x:15, y:intro ? 15 : 16 }, g).textContent = CN[d.c];
-  el('text', { class:'callout-badge', x:width-10, y:intro ? 15 : 16, 'text-anchor':'end' }, g).textContent = badge;
+  if (!d.paper) el('text', { class:'callout-badge', x:width-10, y:intro ? 15 : 16, 'text-anchor':'end' }, g).textContent = badge;
   if (intro) {
     el('text', { class:'intro-value', x:15, y:30 }, g).textContent = d.value;
     if (d.detail) el('text', { class:'intro-detail', x:15, y:45 }, g).textContent = d.detail;
@@ -415,7 +423,12 @@ function buildDeltaTag(d) {
     if (d.value2) el('text', { class:'delta-value', x:15, y:54 }, g).textContent = d.value2;
     el('text', { class:'delta-detail', x:15, y:d.value2 ? 72 : 50 }, g).textContent = d.detail;
   }
-  deltaTags.push({ ...d, tagX, el:g, leader, endY });
+  if (d.paper) {
+    const link = el('a', { href:d.paper, class:'callout-paper', 'aria-label':'Original five-parameter paper (PDF)' }, group);
+    el('rect', { x:width-125, y:1, width:120, height:22, rx:4, fill:'transparent' }, link);
+    el('text', { x:width-10, y:16, 'text-anchor':'end' }, link).textContent = 'Five-parameter paper ↗';
+  }
+  deltaTags.push({ ...d, tagX, group, el:g, leader, endY });
 }
 
 function fromTag(ids) {
@@ -465,6 +478,8 @@ function selAt() { if (future) return FUTURE; let s = 0; for (let i = 0; i <= LA
 
 function paint(a, p) {
   const s = a.el.style;
+  const block = a.el.parentNode;
+  if (block.localName === 'a') block.style.display = p > 0 ? '' : 'none';
   switch (a.type) {
     case 'grow': s.transform = `scaleY(${E.out(p)})`; s.opacity = p > 0 ? 1 : 0; break;
     case 'drop': s.transform = `translateY(${(1 - E.back(p)) * -40}px)`; s.opacity = clamp(p * 2.2); break;
@@ -488,9 +503,8 @@ function apply() {
   const activeCase = trajectoryCase();
   deltaTags.forEach(d => {
     const visible = t >= d.t && (!activeCase || activeCase === d.c);
-    d.el.style.opacity = visible ? E.out(clamp((t - d.t) / 280)) : 0;
-    d.el.style.visibility = visible ? 'visible' : 'hidden';
-    d.el.style.pointerEvents = visible ? 'auto' : 'none';
+    d.group.style.opacity = visible ? E.out(clamp((t - d.t) / 280)) : 0;
+    d.group.style.display = visible ? '' : 'none';
     d.el.setAttribute('tabindex', visible ? '0' : '-1');
     d.el.setAttribute('aria-hidden', String(!visible));
     d.leader.style.visibility = visible && activeCase === d.c ? 'visible' : 'hidden';
@@ -582,7 +596,7 @@ function paintTraceHint(id) {
   if (overview) { overview.classList.toggle('on', !focus); overview.setAttribute('aria-pressed', String(!focus)); }
   if (!hint) return;
   if (!id) hint.textContent = 'Choose a case to follow its results across versions.';
-  else if (id === 'ecc' && t >= ECC_V8_TIME) hint.textContent = 'ECC · 5 previous + 52 added = 57 intervals; 18 new lower, 34 new upper (2 working). 13 confirmed exact + 2 pending. v8.';
+  else if (id === 'ecc' && t >= ECC_V8_TIME) hint.textContent = 'ECC · From 4 to 13 exact distances. Nine more settled in v8. Select a block for lower or upper bounds.';
   else if (id === 'he') hint.textContent = t >= HE_V7_TIME ? 'Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7.' : t >= HE_V6_TIME ? 'Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in v7.' : 'Happy Ending · ES(7) upper bound 78 → 77; the 25-point witness is separate.';
   else if (id === 'q6') hint.textContent = 'Ruskey–Savage · Q₆ → Q₇ ≥57 (v5) → ≥56 (fixed v6) → every matching (v6 main author working proof). Run: v3 local adaptation.';
   else if (id === 'e86') hint.textContent = 'Erdős 86 · v3 asymptotic Q₄ bound → v6 Q₇ 304 (≤ source), Q₈ 682–683 & Q∞ ≤ 0.5912405943. Run: v3 + coevolution.';
@@ -619,7 +633,7 @@ function renderPanel(sel) {
   if (key === panelKey) return; panelKey = key;
   if (!focus) {
     const V = VERS[sel];
-    panel.innerHTML = `<div><p class="p-eye">MathRSI harness · ${V.tag} · ${V.state}</p><h3>${V.name}</h3><p class="p-sum">${V.sum}</p>${sel === 4 ? eccMaintenance() : sel === 5 ? '<p class="p-links"><a href="q7.html">Q7 result & methods ↗</a> · <a href="dd-latest.html">DD latest results ↗</a></p>' : V.tag === 'v6' ? '<p class="p-links"><a href="erdos-86-latest.html">Erdős 86 results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a> · <a href="happy-ending-latest.html">Happy Ending results & methods ↗</a></p>' : V.tag === 'v8' ? '<p class="p-links"><a href="ecc-intervals.html">ECC intervals & methods ↗</a></p>' : V.tag === 'v7' ? '<p class="p-links"><a href="happy-ending-latest.html">Happy Ending results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a></p>' : ''}</div>
+    panel.innerHTML = `<div><p class="p-eye">MathRSI harness · ${V.tag} · ${V.state}</p><h3>${V.name}</h3><p class="p-sum">${V.sum}</p>${sel === 4 ? eccMaintenance() : sel === 5 ? '<p class="p-links"><a href="q7.html">Q7 result & methods ↗</a> · <a href="dd-latest.html">DD latest results ↗</a></p>' : V.tag === 'v6' ? '<p class="p-links"><a href="erdos-86-latest.html">Erdős 86 results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a> · <a href="happy-ending-latest.html">Happy Ending results & methods ↗</a></p>' : V.tag === 'v8' ? `<p class="p-links"><a href="ecc-intervals.html">ECC intervals & methods ↗</a><a href="${ECC_PAPER}">Five-parameter paper ↗</a></p>` : V.tag === 'v7' ? '<p class="p-links"><a href="happy-ending-latest.html">Happy Ending results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a></p>' : ''}</div>
       <div><p class="p-eye">Shared base &amp; workflow details in ${V.tag}</p>
       <ul class="p-vlist">${V.fullBase.map(item => `<li>${item}</li>`).join('')}</ul>
       <p class="p-foot">Choose a change label or colored result block to inspect its conclusions and proof evidence.</p></div>`;
@@ -777,7 +791,11 @@ function bind() {
     if (n !== null) { e.preventDefault(); goTo(n); }
   });
 
-  sky.addEventListener('click', e => { const b = e.target.closest('.bk[data-m]'); if (b) focusCase(b.dataset.c, +b.dataset.m, true); });
+  sky.addEventListener('click', e => {
+    if (e.target.closest('a')) return;
+    const block = e.target.closest('.bk[data-m]');
+    if (block) focusCase(block.dataset.c, +block.dataset.m, true);
+  });
   sky.addEventListener('keydown', e => {
     const b = e.target.closest('.delta-tag[data-m]');
     if (b && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); focusCase(b.dataset.c, +b.dataset.m, true); }
