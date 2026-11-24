@@ -145,3 +145,9 @@ Ruofeng&nbsp;Yang<sup>&#42;</sup>, Haitong&nbsp;Ma<sup>&#42;</sup>, Kaitao&nbsp;
 Listed alphabetically by surname.
 
 Haitham&nbsp;Bou&nbsp;Ammar, Dimitris&nbsp;Tsaras, Rasul&nbsp;Tutunov, Jun&nbsp;Wang, Kuan&nbsp;Yang, Qiaosheng&nbsp;Zhang, Zhinuo&nbsp;Zhou
+
+<a id="acknowledgements"></a>
+
+### 🙏 Acknowledgements
+
+Thank you to [@mizopl](https://github.com/mizopl) and the we\* project (PROOFER) for contributing ten square-free graphs of the 8-cube, an independent checker for Case 5A, and Lean 4 counting lemmas. [Explore the contribution](plugins/hypercube-extremal/tools/q8-forcing/README.md) · [Issue #60](https://github.com/lisresearchgroup/math-rsi/issues/60)

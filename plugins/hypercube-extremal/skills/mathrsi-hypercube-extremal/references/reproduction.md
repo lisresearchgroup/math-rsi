@@ -90,3 +90,7 @@ rm -rf "$run_dir"
 ```
 
 **外部归档依赖边界：** `q8-683/replay.py` 的 `reconstruct` 模式依赖省略的搜索特征池 `.npz` 及 `scipy`，`q6` 模式依赖约 555 MiB 的 25 份 `q6_sources/*.drat` 原轨迹；未挂载外部原包 `C4-Free进展.zip :: Q8_C4_upper683_20261116/` 时，两个模式均明确报错退出并指向 [q8-683/INVENTORY.json](../../../archive/q8-683/INVENTORY.json)。各目录 `INVENTORY.json` 中的 SHA-256 仅记录外部文件身份，不能代替证书或 DRAT/DRUP 轨迹重放。本轮实际核验回执保存在 `development/evolution/v6-c4free-rs7-20261117/checks/`。
+
+## Q₈ 社区构造与 Case 5A
+
+运行 `python3 plugins/hypercube-extremal/tools/q8-forcing/verify.py` 可核验 10 份构造并重放 Case 5A 的有限枚举。用 `--corrupt` 可检查程序能否拒绝边数相同但含四边形的图。Lean 计数引理的前提、运行命令和原作者的纸面归约见[复现说明](../../../tools/q8-forcing/README.md)。
