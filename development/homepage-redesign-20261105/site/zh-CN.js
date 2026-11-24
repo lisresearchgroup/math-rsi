@@ -1,5 +1,12 @@
 /* Chinese homepage copy, drafted by Gemini 4 and checked against the English source. */
 window.MATHRSI_ZH = {
+  "Launch the mathematics workbench with Git, Python 3.10+, pipx and a signed-in agent CLI.": "准备好 Git、Python 3.10+、pipx 和已登录的 Agent 客户端，在终端启动数学工作台。",
+  "Choose your problem directory and the cloned math-rsi folder in the wizard. Next time, just run mathrsi.": "在向导中分别选择课题目录和克隆的 math-rsi 文件夹。以后启动，只需输入 mathrsi。",
+  "To work directly in the clone, enter": "也可以在客户端打开克隆的仓库，输入",
+  "(Claude Code) or": "（Claude Code）或",
+  "(Codex), followed by your problem.": "（Codex），在技能名后写上你的数学问题。",
+  "Full setup guide ↗": "完整安装指南 ↗",
+  "Connect an optional MCP reviewer ↗": "按需连接 MCP 审阅者 ↗",
   "Mathematics workbench · Coding theory": "数学工作台 · 纠错码",
   "Distance 16 is possible. Why is 17 out of reach?": "距离 16 已经达到，为什么 17 不可能？",
   "For binary codes of length 43 and dimension 10, one generator matrix proves the lower bound. Ruling out 17 takes all 172 parent classes.": "对长度 43、维数 10 的二元线性码，一份生成矩阵就能证明距离可达 16。要排除 17，却要覆盖全部 172 类母码。",

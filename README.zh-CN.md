@@ -44,31 +44,19 @@ MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Cl
 
 ## 1. 🚀 快速开始
 
-克隆仓库并完成[配置](docs/QUICKSTART.md)后，在 **Claude Code** 或 **Codex** 中打开本仓库，并允许访问任务目录。Codex 将 `/skill` 换成 `$skill`。下列示例路径请替换为自己的路径。
+**一键启动数学工作台。** 准备好 Git、Python 3.10+、[pipx](https://pipx.pypa.io/stable/installation/) 和已登录的 Agent 客户端，在终端运行：
 
-**从数学问题开始**
-
-```text
-/mathrsi-research 研究 k 元超图二染色的边数下界；工作目录 ../my-problem/
+```sh
+git clone --depth 1 https://github.com/lisresearchgroup/math-rsi.git
+pipx install "git+https://github.com/wanshuiyin/SuperARIS.git"
+mathrsi
 ```
 
-自动串联文献调研、路线探索、证明推进、验证与交付，全程复用任务 wiki。已有题面时，也可直接给 `../my-problem/problem.md`。
+在向导里选择自己的课题目录；提示填写 MathRSI 仓库时，选择刚克隆的 `math-rsi` 文件夹，再选团队和模型。以后打开工作台，直接输入 `mathrsi`。
 
-**检查候选证明或局部引理**
+**直接用 Claude Code 或 Codex。** 在客户端打开克隆的 `math-rsi` 文件夹，并允许访问课题目录。在 Claude Code 输入 `/mathrsi-research 研究 ../my-problem/problem.md 中的问题`；在 Codex 用 `$mathrsi-research` 接同一句请求。
 
-```text
-/mathrsi-verify 检查 ../my-problem/proof.tex
-```
-
-检查证明稿或其中一条引理，补全局部省略的步骤，或定位仍需继续攻关的数学缺口。
-
-**接着已有研究继续**（Codex 示例）
-
-```text
-$mathrsi-research 继续 ../my-problem/ 中的研究
-```
-
-读取任务目录已有的规格、wiki 与断点记录，从当前证据接续推进。Claude Code 使用 `/mathrsi-research`。
+**按需接入独立审阅。** 例如，Claude Code 可以通过 MCP 请 Codex 检查一份证明。[连接 MCP 审阅者](docs/REVIEWER_MCP.md) · [完整安装、验稿与恢复指南](docs/QUICKSTART.md)
 
 <a id="六个数学方向"></a>
 

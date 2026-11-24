@@ -1,5 +1,19 @@
 # Start a mathematical task with MathRSI
 
+## Open the mathematics workbench
+
+The SuperARIS package provides the `mathrsi` command; the MathRSI checkout supplies the mathematical workflows and domain plugins. Have Git, Python 3.10+, [pipx](https://pipx.pypa.io/stable/installation/) and a signed-in Claude Code or Codex CLI ready. Use your existing MathRSI clone or clone it once:
+
+```sh
+git clone --depth 1 https://github.com/lisresearchgroup/math-rsi.git
+pipx install "git+https://github.com/wanshuiyin/SuperARIS.git"
+mathrsi
+```
+
+In the wizard, choose the directory for your problem and enter the path to the MathRSI checkout when prompted. Choose your workbench, team and models. Run `mathrsi` again for the next session. If you already use a pipx installation of SuperARIS that only exposes `superaris`, add `--force` to the install line above to refresh that installation and expose both commands. If your shell cannot find pipx-installed apps, run `pipx ensurepath` and reopen your terminal.
+
+## Start directly in Claude Code or Codex
+
 After completing [setup](#get-the-repository-and-choose-a-workspace), open this repository in **Claude Code** or **Codex** with access to your task directory. In Codex, replace `/skill` with `$skill`. Replace the example paths below with your own.
 
 **Start from a mathematical problem**
@@ -28,7 +42,7 @@ Reads the task's existing specification, wiki and resumption notes, then continu
 
 ## Get the repository and choose a workspace
 
-Use `main` for the current v6 workflow, or choose a fixed v1/v2/v3/v4/v5/v6 snapshot and record the revision in your task handoff. See [v6 changes](V6_CHANGES.md), [v5 history](V5_CHANGES.md) and [evolution records](../development/README.md).
+Use `main` for the current workflow, or clone a [tagged release](https://github.com/lisresearchgroup/math-rsi/releases) and record its revision in your task handoff. See the [evolution records](../development/README.md).
 
 You need Git and an installed, authenticated agent host (Claude Code or Codex). Python 3.9+ runs the included replay and reviewer bridges. Additional tools are needed only for the actions you choose: reviewer CLIs and accounts for external reviews, network/search access for literature work, TeX for PDF compilation, or a task-specific Lean environment for formalization. None of these accounts or toolchains is supplied by cloning the repository.
 

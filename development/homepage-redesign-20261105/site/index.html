@@ -297,12 +297,13 @@
   <div class="wrap foot-in">
     <div class="qs">
       <h2>Quick start</h2>
-      <p>Clone the repository, open it in Claude Code or Codex, and start from the main research workflow.</p>
-<pre><code>git clone https://github.com/lisresearchgroup/math-rsi.git
-cd math-rsi
-# in Claude Code or Codex:
-Use mathrsi-research on &lt;your problem&gt;</code></pre>
-      <p class="fine">Setup and skill discovery are described in the <a href="https://github.com/lisresearchgroup/math-rsi#readme">README ↗</a></p>
+      <p>Launch the mathematics workbench with Git, Python 3.10+, pipx and a signed-in agent CLI.</p>
+<pre><code>git clone --depth 1 https://github.com/lisresearchgroup/math-rsi.git
+pipx install "git+https://github.com/wanshuiyin/SuperARIS.git"
+mathrsi</code></pre>
+      <p>Choose your problem directory and the cloned math-rsi folder in the wizard. Next time, just run mathrsi.</p>
+      <p>To work directly in the clone, enter <code>/mathrsi-research</code> (Claude Code) or <code>$mathrsi-research</code> (Codex), followed by your problem.</p>
+      <p class="fine"><a href="../../../docs/QUICKSTART.md">Full setup guide ↗</a> · <a href="../../../docs/REVIEWER_MCP.md">Connect an optional MCP reviewer ↗</a></p>
     </div>
     <div class="foot-links">
       <div><h3>Project</h3>
