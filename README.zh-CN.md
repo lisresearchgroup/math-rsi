@@ -48,7 +48,7 @@ MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Cl
 
 ```sh
 git clone --depth 1 https://github.com/lisresearchgroup/math-rsi.git
-pipx install "git+https://github.com/wanshuiyin/SuperARIS.git@48ad483"
+pipx install "git+https://github.com/wanshuiyin/SuperARIS.git"
 mathrsi
 ```
 

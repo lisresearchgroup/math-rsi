@@ -6,11 +6,11 @@ The SuperARIS package provides the `mathrsi` command; the MathRSI checkout suppl
 
 ```sh
 git clone --depth 1 https://github.com/lisresearchgroup/math-rsi.git
-pipx install "git+https://github.com/wanshuiyin/SuperARIS.git@48ad483"
+pipx install "git+https://github.com/wanshuiyin/SuperARIS.git"
 mathrsi
 ```
 
-In the wizard, choose the directory for your problem and enter the path to the MathRSI checkout when prompted. Choose your workbench, team and models. Run `mathrsi` again for the next session. If you already use a pipx installation of SuperARIS that only exposes `superaris`, add `--force` to the install line above to replace that installation with the linked revision. If your shell cannot find pipx-installed apps, run `pipx ensurepath` and reopen your terminal.
+In the wizard, choose the directory for your problem and enter the path to the MathRSI checkout when prompted. Choose your workbench, team and models. Run `mathrsi` again for the next session. If you already use a pipx installation of SuperARIS that only exposes `superaris`, add `--force` to the install line above to refresh that installation and expose both commands. If your shell cannot find pipx-installed apps, run `pipx ensurepath` and reopen your terminal.
 
 ## Start directly in Claude Code or Codex
 
