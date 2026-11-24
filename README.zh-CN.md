@@ -8,6 +8,18 @@
 
 </div>
 
+MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Claude Code 或 Codex 完成文献调研、路线探索、证明、审阅、验证与交付。研究成果和失败经验持续用于改进工作流与插件。
+
+[![MathRSI 历史主页 v0 → v6 演进回放](figures/mathrsi/media/evolution.gif?v=6-q7-20261120)](figures/mathrsi/media/evolution.mp4?v=6-q7-20261120)
+
+*历史主页 v0 → v6 演进回放；画面中的“Current”指当时的 v6。点击观看 MP4；[完整交互主页](https://lisresearchgroup.github.io/math-rsi/) · [六个数学案例与核验范围](case-studies/README.md)。*
+
+**43 位码研究回放**
+
+[![MathRSI 工作台总览](figures/mathrsi/media/workbench-zh.webp)](figures/mathrsi/media/workbench-zh.mp4)
+
+*打开[交互工作台](https://lisresearchgroup.github.io/math-rsi/workbench/index.html?lang=zh#wb-demo) · [观看中文 MP4](figures/mathrsi/media/workbench-zh.mp4)。三位研究角色重演已完成的证明，回放中的生成矩阵和排除见证来自项目归档。*
+
 <a id="news"></a>
 
 ## 📢 版本动态
@@ -27,11 +39,6 @@
 
 </details>
 
-[![MathRSI 历史主页 v0 → v6 演进回放](figures/mathrsi/media/evolution.gif?v=6-q7-20261120)](figures/mathrsi/media/evolution.mp4?v=6-q7-20261120)
-
-*历史主页 v0 → v6 演进回放；画面中的“Current”指当时的 v6。点击观看 MP4；[完整交互主页](https://lisresearchgroup.github.io/math-rsi/) · [六个数学案例与核验范围](case-studies/README.md)。*
-
-MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Claude Code 或 Codex 完成文献调研、路线探索、证明、审阅、验证与交付。研究成果和失败经验持续用于改进工作流与插件。
 
 <a id="开始使用"></a>
 

@@ -1,0 +1,33 @@
+# 全域覆盖 / Full-domain coverage
+
+任意假想[43,10,≥17]经偶扩展为[44,10,≥18]，再由三列独立和对偶重量4结构，缩短到满支撑偶[40,7,18]。实际172份母码矩阵各有127个非零码字，共21,844次重量检查；图规范化核得172个不同坐标等价类。配合已发表“至多172类”，目录覆盖全部母码。
+
+Any hypothetical [43,10,≥17] code extends to an even [44,10,≥18] code; three-column independence and a weight-4 dual structure yield a full-support even [40,7,18] shortening. The 172 actual parent matrices contribute 21,844 nonzero-codeword weight checks (127 each). Graph canonicalization distinguishes 172 coordinate-equivalence classes; the published upper bound of 172 classes makes the catalogue exhaustive.
+
+E1：已发表[41,8,18]不存在；Bouyukliev–Jaffe–Vavrek，IEEE TIT 46(4),1539–1544 (2000)，DOI 10.1109/18.850690。归档实际定理定位在Bouyukliev 2008博士论文§6.2.2 Theorem6.3（印刷147/PDF149页）。
+
+E1 imports published nonexistence of [41,8,18]. The journal attribution is above; the theorem/page locator comes from Bouyukliev’s 2008 thesis, not the journal.
+
+E2：满支撑[40,7,18]至多172个坐标等价类；Bouyukliev–Jaffe，Discrete Mathematics226,51–70 (2001)，DOI 10.1016/S0012-365X(00)00125-4。作者论文Table6.2（印刷158/PDF160页）列172。原作者历史分类计算作为进口。
+
+E2 imports at most 172 coordinate-equivalence classes of full-support [40,7,18] codes. The author’s thesis Table6.2 lists 172. The original classification computation remains an external dependency.
+
+令F_K为与K距离至少16的完整偶陪集代表集。标准尾部扩张迫使目标在同一个F_K中产生三个两两兼容顶点。对每个无序对(a,b)，实际消息u提供wt(a⊕b⊕uG_K)<16的拒绝见证，故图无边，更没有兼容三点。
+
+Let F_K be the complete even coset representatives at distance at least 16 from K. A target extension requires three mutually compatible vertices in the same F_K. Each unordered pair (a,b) has an actual message u with wt(a⊕b⊕uG_K)<16, so the graph has no edge and therefore no such triple.
+
+|范围 / Scope|接受代表之和 / Accepted total|母码内配对之和 / Within-parent pairs|兼容边 / Edges|
+|---|---:|---:|---:|
+|前170类 / First170|422,725|608,733,728|0|
+|第171类 / 171st|2,514|3,158,841|0|
+|第172类 / 172nd|3,785|7,161,220|0|
+|合计 / Total|429,024|619,053,789|0|
+
+配对数为各母码内部无序对数之和，不是binom(429,024,2)。历史独立checker另核54,915,072条F—母码字距离，并逐对重放619,053,789拒绝见证，严格核EOF。
+
+Pairs are summed within each parent, not chosen across all 429,024 representatives. The historical independent checker also checked 54,915,072 F-to-parent-word distances and replayed all 619,053,789 rejection witnesses with strict EOF checks.
+
+[数学连接与完整清单 / Mathematical connection and complete catalogue](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md)
+
+
+固定来源 / Pinned source: MathRSI `ef509148c8e5c77de1ec80980b4cf10639bd825b`.

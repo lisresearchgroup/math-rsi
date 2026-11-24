@@ -1,0 +1,26 @@
+# 阅读与复核 / Reading and verification
+
+从[原题](problem.txt)读起，分别查看[构造与枚举](enumeration.txt)、[全域覆盖](coverage.txt)和[结论与范围](result.txt)。原题已经闭合；这里沿用公开成果。
+
+Start with the [problem](problem.txt), then read [construction and enumeration](enumeration.txt), [full-domain coverage](coverage.txt), and [result and scope](result.txt). This problem is closed; the material reuses the published result.
+
+## 自己复核一条拒绝 / Check one rejection
+
+[witness.json](witness.json)取自index169原始字节流的前8字节，按原词典序对应pair(0,1)…(0,8)。原F文件是33位压缩代表，按扫描输入的free坐标展开成40位a,b；u是原字节消息，ku由扫描矩阵原7行XOR得到。40位串左为坐标39、右为坐标0；7位消息右端位选择第0行。
+
+[witness.json](witness.json) takes the first eight bytes of parent169’s original stream, corresponding to lexicographic pairs (0,1)…(0,8). The original 33-bit packed F representatives are expanded through the input’s free-coordinate list. The byte is message u; ku is the XOR of the selected seven original scan-generator rows. Strings are MSB first: coordinate39 at left and coordinate0 at right. The rightmost message bit selects generator row0.
+
+逐位XOR a、b、ku，再数1，结果等于weight且小于16。这给出一个低权见证，足以拒绝该pair；无需证明它是最小权。原始生成行、pair序号、字节偏移和固定来源保存在JSON中。
+
+XOR a, b and ku bit by bit, then count ones. The result equals weight and is below16, proving this pair incompatible without needing a minimum-weight claim. Original generator rows, pair indices, byte offsets and pinned sources are included in the JSON.
+
+```js
+const weight = [...e.a].reduce((n, bit, i) =>
+  n + (Number(bit) ^ Number(e.b[i]) ^ Number(e.ku[i])), 0);
+console.assert(weight === e.weight && weight < 16);
+```
+
+[原始拒绝字节流 / Original rejection stream](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/evidence/cases/169-catalog_after163_169/pair_graph-rejection_witness.bin) · [完整母码输入 / Parent scan input](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/evidence/cases/169-catalog_after163_169/original_scan-input.json) · [原F列表 / Original F list](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/evidence/cases/169-catalog_after163_169/original_scan-F.txt) · [公开完整证明 / Public proof](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md)
+
+
+固定来源 / Pinned source: MathRSI `ef509148c8e5c77de1ec80980b4cf10639bd825b`.

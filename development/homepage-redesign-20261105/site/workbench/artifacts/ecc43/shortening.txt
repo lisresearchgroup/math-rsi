@@ -1,0 +1,61 @@
+# 为什么一定有40位母码？ / Why a 40-coordinate parent must exist
+
+假设存在距离≥17的二元线性[43,10]码。加总奇偶位，得到偶[44,10,≥18]码T。以下从任意这样的T出发，不假设特殊构造。
+
+Suppose a binary linear [43,10] code has distance ≥17. Adding a parity coordinate gives an even [44,10,≥18] code T. The argument starts from any such T, without a special construction assumption.
+
+## 1. 任意三列独立 / Every three columns are independent
+
+若某三列秩r≤2，在这三位上缩短会得到长度41、维数10−r≥8、距离≥18的码。取其中8维子码：距离恰为18违反已发表的[41,8,18]不存在定理E1；距离≥19又违反Griesmer界g₂(8,19)=42>41。因此每组三列秩均为3，任意一列、两列也独立。
+
+If three columns had rank r≤2, shortening on them would leave length 41, dimension 10−r≥8 and distance≥18. An 8-dimensional subcode cannot have distance 18 by the published nonexistence theorem E1; distance≥19 would require g₂(8,19)=42>41. Thus every three columns—and every subset of one or two—are independent.
+
+令A_w为T的重量w码字数，B_j为对偶T⊥的重量j码字数。这给出B₁=B₂=B₃=0，且ΣA_w=1024。
+
+Write A_w for the weight distribution of T and B_j for that of T⊥. Then B₁=B₂=B₃=0 and ΣA_w=1024.
+
+## 2. 一个四次式强迫四列相关 / A quartic forces a dependent four-set
+
+长度44的Krawtchouk多项式满足Σ_w A_w K_j(w)=1024B_j。取
+
+For length 44, the MacWilliams identities give Σ_w A_w K_j(w)=1024B_j. Choose
+
+\[
+P(w)=(w-18)(w-20)(w-24)(w-26)
+=\tfrac32K_4(w)+22K_2(w)+\tfrac{403}{2}K_0(w).
+\]
+
+T的非零重量只能为18,20,22,…,44；这些值上P(w)≥0，而P(0)=224640。于是
+
+Every nonzero weight of T lies in 18,20,22,…,44, where P(w)≥0; P(0)=224640. Therefore
+
+\[
+224640\le\sum_w A_wP(w)=1536B_4+206336,
+\qquad B_4\ge\frac{18304}{1536}=\frac{143}{12}.
+\]
+
+B₄是整数，故B₄≥12，至少存在一个重量4的对偶字。
+
+Since B₄ is integral, B₄≥12: at least one weight-4 dual word exists.
+
+## 3. 所选四列秩3，缩短后满支撑 / Rank3 and full support after shortening
+
+取该对偶字的支撑S。四列和为零，秩≤3；任意三列独立又给秩≥3。因此所选S恰好秩3，缩短留下维数10−3=7、长度40的偶码K，距离≥18。若距离>18，偶性使它≥20，但g₂(7,20)=42>40。因此K实际为[40,7,18]。
+
+Choose the support S of that dual word. Its four columns sum to zero, so their rank is at most 3; independence of any three makes it exactly3. Shortening leaves an even length 40, dimension 7 code K with distance≥18. A larger distance would be at least 20 by parity, requiring g₂(7,20)=42>40. Thus K is exactly [40,7,18].
+
+再证没有恒零坐标。写四尾列为v₁,v₂,v₃,v₁+v₂+v₃，令U=span(v₁,v₂,v₃)。U中的向量都是零、某根尾列或两根尾列之和。外部列v若属于U，便产生一列、两列或三列相关，与第1步矛盾。
+
+To rule out a zero coordinate after shortening, write the four tail columns as v₁,v₂,v₃,v₁+v₂+v₃ and let U span v₁,v₂,v₃. Every vector of U is zero, a tail column, or a sum of two tail columns. Any outside column in U would therefore create a dependence on one, two or three columns, contradicting step 1.
+
+缩短后的消息空间是U⊥。外部坐标恒零等价于v∈(U⊥)⊥=U，刚被排除。因此K满支撑；这不要求K的列仍两两不同。
+
+The shortened message space is U⊥. An outside coordinate vanishes identically exactly when v∈(U⊥)⊥=U, already excluded. Hence K has full support. Its columns need not remain pairwise distinct.
+
+## 固定原文 / Pinned original
+
+MathRSI `ef509148c8e5c77de1ec80980b4cf10639bd825b`：
+
+- [§三／7–8：偶扩展与三列独立 / Parity extension and three-column independence](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md#rank)
+- [§四／9–11：MacWilliams、P(w)与B₄ / Quartic and dual words](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md#dual4)
+- [§五／12–13：秩与满支撑 / Rank and full support](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md#catalogue)

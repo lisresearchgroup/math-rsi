@@ -1,0 +1,22 @@
+# 结论与范围 / Result and scope
+
+显式构造给d₂(43,10)≥16；覆盖原域的归约、完整母码分类和全部扩张排除给d₂(43,10)≤16。因此d₂(43,10)=16。
+
+The explicit construction gives d₂(43,10)≥16. The full-domain reduction, complete parent classification and exclusion of every extension give d₂(43,10)≤16. Hence d₂(43,10)=16.
+
+这是依赖文献E1/E2、图规范化和外部有限计算的计算机辅助证明。公开Lean归约仍显式接受这些进口、目录两两不等价及所有母码pair不兼容等参数；外部陪集扫描没有在Lean内执行。
+
+This computer-assisted proof depends on literature imports E1/E2, graph canonicalization and external finite computations. The published Lean reduction retains explicit parameters for these imports, catalogue inequivalence and pair incompatibility; it does not execute the external coset scans inside Lean.
+
+精简公开包保留全部172例输入、扫描结果及接受集，但完整pair流仅保留index169：546个成员、148,785个pair。其余171大流未分发，原路径与字节数在清单中保留。历史全域证明、当前分发内容和本页少量见证核算是三个不同范围。
+
+The compact public release includes all 172 inputs, scan results and accepted sets, but distributes a complete pair stream only for index169: 546 members and 148,785 pairs. The other 171 large streams are omitted with their original paths and sizes recorded. The historical full proof, the distributed subset and this page’s small witness checks have different scopes.
+
+本页材料复用公开归档，没有新扫描或模型审阅记录。下方[witness.json](witness.json)提取原流前8条记录并复算XOR重量，只核这些实际pair。
+
+These materials reuse the public archive; they contain no new scan or model-review record. [witness.json](witness.json) extracts the first eight original stream entries and checks their XOR weights, covering only those actual pairs.
+
+[主证明 / Main proof](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md) · [精简发布边界 / Compact release scope](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/evidence/IMPLEMENTATION.md) · [Lean接口 / Lean interfaces](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/formal/README.md)
+
+
+固定来源 / Pinned source: MathRSI `ef509148c8e5c77de1ec80980b4cf10639bd825b`.

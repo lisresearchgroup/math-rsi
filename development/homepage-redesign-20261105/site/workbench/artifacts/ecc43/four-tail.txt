@@ -1,0 +1,62 @@
+# 从四尾扩张到无边图 / From a four-coordinate extension to an edgeless graph
+
+固定满支撑偶[40,7,18]母码K，令δ_K(x)=min_{c∈K}wt(x+c)。假想44位目标在选定四坐标上的像恰是三维偶空间；只换生成行基、重排坐标，就能写成
+
+Fix a full-support even [40,7,18] parent K, with δ_K(x)=min_{c∈K}wt(x+c). The hypothetical target projects onto the three-dimensional even space on its four chosen coordinates. A row-basis change and coordinate permutation give
+
+\[
+G_T=\begin{pmatrix}
+G_K&0000\\
+a_1&1001\\
+a_2&0101\\
+a_3&0011
+\end{pmatrix},\qquad a_i\text{ are even 40-bit vectors}.
+\]
+
+## 七个消息，七条精确要求 / Seven messages, seven exact conditions
+
+每个非零尾消息的总重量必须≥18：40位部分的最小重量，加上四位尾重量。
+
+For every nonzero tail message, the minimum weight on the first 40 coordinates plus its tail weight must be ≥18.
+
+|消息 / Message ε|四位尾 / Tail|尾重量 / Tail weight|40位要求 / 40-bit condition|
+|---|---|---:|---|
+|100|1001|2|δ_K(a₁)≥16|
+|010|0101|2|δ_K(a₂)≥16|
+|001|0011|2|δ_K(a₃)≥16|
+|110|1100|2|δ_K(a₁+a₂)≥16|
+|101|1010|2|δ_K(a₁+a₃)≥16|
+|011|0110|2|δ_K(a₂+a₃)≥16|
+|111|1111|4|δ_K(a₁+a₂+a₃)≥14|
+
+对三个偶向量，这七条既必要也充分：尾部三行独立保证总秩7+3=10；零尾消息来自距离18的K，其他消息由表逐个保证距离≥18。
+
+For three even vectors these seven conditions are necessary and sufficient. The independent tail rows give total rank 7+3=10; zero-tail messages belong to K, and the table handles every other message.
+
+## 为什么只剩配对？ / Why pairs suffice for the exclusion
+
+把每个偶陪集取唯一零主元代表，得到32维空间V_K（2³²个代表）。规范化是线性的，且只加K中的字，所以单个、两两和及三重和的陪集距离均不变。
+
+Choose the unique zero-pivot representative of every even coset. These form a 32-dimensional space V_K with 2³² elements. Normalization is linear and adds only words of K, preserving all the individual, pair-sum and triple-sum coset distances.
+
+令F_K={a∈V_K:δ_K(a)≥16}；不同顶点a,b在δ_K(a+b)≥16时连边。合法扩张必须给出三个不同顶点组成三角形。三角形本身还不充分：三重和仍须≥14。但如果图根本无边，就已排除扩张，无需枚举三重和。
+
+Let F_K={a∈V_K:δ_K(a)≥16}, joining distinct a,b when δ_K(a+b)≥16. Any valid extension requires three distinct vertices forming a triangle. A triangle alone is insufficient—the triple-sum condition ≥14 remains. An edgeless graph, however, already rules out every extension without enumerating triple sums.
+
+## 一条真实拒绝见证 / One actual rejection witness
+
+对任何pair，只需一个母码字uG_K使wt(a+b+uG_K)<16，便证明δ_K(a+b)<16；不必求精确最小值。index169的原流首条pair(0,1)取u=0000110，实际异或重量14，故该pair不连边。[40位原数据与生成行 / Original bits and generator rows](witness.json)
+
+For a pair, one parent word uG_K with wt(a+b+uG_K)<16 proves δ_K(a+b)<16; an exact minimum is unnecessary. The first archived pair (0,1) for index 169 uses u=0000110 and has XOR weight 14, ruling out that edge. [Original bits and generator rows](witness.json)
+
+一条见证只排除一对。index169有546个F成员、148,785对；全部172母码累计619,053,789对的历史拒绝记录才给出全体无边。F_K本身无遗漏仍由完整陪集扫描负责，不能从这些pair见证推出。
+
+One witness excludes one pair. Parent 169 has 546 F-members and 148,785 pairs. The historical rejection records for all 619,053,789 pairs across 172 parents establish that every graph is edgeless. Completeness of each F_K still comes from the exhaustive coset scans, not from these pair certificates.
+
+## 固定原文 / Pinned original
+
+MathRSI `ef509148c8e5c77de1ec80980b4cf10639bd825b`：
+
+- [§六／16–17：标准尾部与七条件 / Standard tail and seven conditions](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md#tail)
+- [§七／18–20：线性规范化、完整域与图 / Normalization, full domain and graph](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md#quotient)
+- [§九／25–27：见证格式、全配对检查与原题 / Certificates, all-pair checks and original target](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md#closure)
