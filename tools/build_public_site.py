@@ -22,7 +22,7 @@ ATTR = re.compile(r'(?<![\w:-])(?P<key>href|src|poster)\s*=\s*(?P<q>["\'])(?P<va
 CSS_URL = re.compile(r'url\(\s*(?P<q>["\']?)(?P<value>[^\)"\']+)(?P=q)\s*\)')
 JS_URL = re.compile(r'(?P<q>["\'])(?P<value>(?:\.\.?/|assets/|readers/)[^"\'\r\n<>`]+)(?P=q)')
 REPO_URL = re.compile(r'REPO\s*\+\s*(?P<q>["\'])(?P<value>[^"\']+)(?P=q)')
-ALLOWED_SUFFIXES = {'.html', '.css', '.js', '.svg', '.png', '.pdf', '.woff2', '.txt', '.json'}
+ALLOWED_SUFFIXES = {'.html', '.css', '.js', '.svg', '.png', '.webp', '.mp4', '.pdf', '.woff2', '.txt', '.json'}
 FORBIDDEN_DEST_PARTS = {'plugins', 'archive', 'reviews', 'research', '.git', '.trellis', 'evidence', 'source-tree'}
 
 

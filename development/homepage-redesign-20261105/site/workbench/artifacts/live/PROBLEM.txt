@@ -1,0 +1,5 @@
+# Hamming(7,4) · a small MathRSI workbench demonstration
+
+For the 3 by 7 binary parity-check matrix H whose columns in order are 110, 101, 011, 111, 100, 010, 001, characterize its kernel's dimension and minimum Hamming distance. Work over GF(2). Give a physical artifact to each other. A claim about the optimum of all binary linear codes is outside the question.
+
+This is a bounded teaching example. Main dispatches computation and proof in the three existing sessions. Each collaborator owns only its outputs directory. Return both artifacts to main; main must independently compare them before recording project conclusions in notes/RESULT.txt and NEXT_SESSION.txt. No external models or sub-agents for this small case in addition to the three existing terminals. No network, installation, or changes outside this problem. Stop once those files are complete.

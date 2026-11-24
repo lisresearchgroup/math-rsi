@@ -83,6 +83,27 @@
     <div class="panel" id="panel" aria-live="polite"></div>
   </section>
 
+  <section id="workbench" class="wrap wb-feature" aria-labelledby="wb-heading">
+    <div class="wb-feature-inner">
+      <div class="wb-feature-copy">
+        <p class="wb-topic">Mathematics workbench · Coding theory</p>
+        <h2 id="wb-heading">Distance 16 is possible. Why is 17 out of reach?</h2>
+        <p>For binary codes of length 43 and dimension 10, one generator matrix proves the lower bound. Ruling out 17 takes all 172 parent classes.</p>
+        <p class="wb-origin">This replay uses today’s three research roles to walk through the archived proof and its computational witnesses.</p>
+        <a class="wb-open" data-workbench-link href="workbench/index.html?lang=en#wb-demo">Enter the workbench →</a>
+      </div>
+      <a class="wb-preview" data-workbench-link href="workbench/index.html?lang=en#wb-demo" aria-label="Open the interactive 43-bit code replay">
+          <video lang="en" muted playsinline preload="none" poster="../../../figures/mathrsi/media/workbench-en.webp" src="../../../figures/mathrsi/media/workbench-en.mp4" aria-hidden="true"></video>
+          <video lang="zh-CN" muted playsinline preload="none" poster="../../../figures/mathrsi/media/workbench-zh.webp" src="../../../figures/mathrsi/media/workbench-zh.mp4" aria-hidden="true"></video>
+        <span class="wb-film-caption">Explore the nine-stage replay ↗</span>
+      </a>
+      <a class="wb-sample" data-workbench-link href="workbench/index.html?lang=en&amp;scene=witness#ecc-witness">
+        <span>Inspect a rejection witness ↗</span>
+        <span class="wb-sample-id">K₁₆₉ · (0, 1)</span><strong>20 → 14 &lt; 16</strong>
+      </a>
+    </div>
+  </section>
+
   <section id="news" class="sec wrap news" aria-labelledby="news-heading">
     <h2 id="news-heading">News</h2>
     <div>
@@ -160,6 +181,7 @@
           </section>
         </div>
         <div class="meta"><a href="ecc-intervals.html">All 57 entries ↗</a><a href="../../../plugins/ecc/archive/source/paper/main.pdf">Five-parameter paper ↗<span class="source-language" data-no-i18n>EN</span></a><button class="trace" type="button" data-case="ecc">Trace in evolution ↑</button></div>
+        <div class="meta wb-result-links"><a data-workbench-link href="workbench/index.html?lang=en#wb-demo">Replay the 43-bit study ↗</a><a data-workbench-link href="workbench/index.html?lang=en#evidence">Read the proof &amp; certificates ↗</a></div>
         <div id="ecc-research-demo"></div>
         <details><summary>Scope &amp; verification</summary><p>The 57 entries include five earlier upper bounds, 32 new consequences of published results, 18 constructions and two further upper bounds awaiting final acceptance in the source project. Thirteen optimal distances are settled. The original five-parameter paper includes Lean reductions with explicit assumptions.</p></details>
       </article>
@@ -337,5 +359,28 @@ Use mathrsi-research on &lt;your problem&gt;</code></pre>
 <script src="app.js"></script>
 <script src="result-visuals.js"></script>
 <script src="ecc-research-demo.js"></script>
+<script>
+(() => {
+  const preview = document.querySelector('.wb-preview');
+  const clips = [...preview.querySelectorAll('video')];
+  function syncLanguage() {
+    const lang = window.MathRSII18n.lang === 'zh-CN' ? 'zh' : 'en';
+    clips.forEach(clip => clip.pause());
+    document.querySelectorAll('[data-workbench-link]').forEach(link => {
+      const url = new URL(link.href);
+      url.searchParams.set('lang', lang);
+      link.href = url.href;
+    });
+  }
+  syncLanguage();
+  window.addEventListener('languagechange', syncLanguage);
+  preview.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const clip = clips.find(video => video.getClientRects().length);
+    if (clip) clip.play().catch(() => {});
+  });
+  preview.addEventListener('pointerleave', () => clips.forEach(clip => clip.pause()));
+})();
+</script>
 </body>
 </html>

@@ -8,6 +8,18 @@
 
 </div>
 
+MathRSI pairs a shared base workflow with domain plugins and a per-problem research wiki, guiding Claude Code and Codex from literature survey and route selection through proof development, review, verification, and handoff. Validated results and diagnosed failures feed back to refine both the workflow and plugins.
+
+[![Historical MathRSI v0 through v6 homepage evolution](figures/mathrsi/media/evolution.gif?v=6-q7-20261120)](figures/mathrsi/media/evolution.mp4?v=6-q7-20261120)
+
+*Historical v0 → v6 homepage replay; “Current” in the recording refers to v6 at that time. Click for MP4; [interactive homepage](https://lisresearchgroup.github.io/math-rsi/) · [six case studies and verification status](case-studies/README.md).*
+
+**43-bit code research replay**
+
+[![MathRSI workbench overview](figures/mathrsi/media/workbench-en.webp)](figures/mathrsi/media/workbench-en.mp4)
+
+*Explore the [interactive workbench](https://lisresearchgroup.github.io/math-rsi/workbench/index.html?lang=en#wb-demo) · [watch the English MP4](figures/mathrsi/media/workbench-en.mp4). Three research roles retrace the completed proof using its archived generator matrix and rejection witnesses.*
+
 <a id="news"></a>
 
 ## 📢 News
@@ -27,11 +39,6 @@
 
 </details>
 
-[![Historical MathRSI v0 through v6 homepage evolution](figures/mathrsi/media/evolution.gif?v=6-q7-20261120)](figures/mathrsi/media/evolution.mp4?v=6-q7-20261120)
-
-*Historical v0 → v6 homepage replay; “Current” in the recording refers to v6 at that time. Click for MP4; [interactive homepage](https://lisresearchgroup.github.io/math-rsi/) · [six case studies and verification status](case-studies/README.md).*
-
-MathRSI pairs a shared base workflow with domain plugins and a per-problem research wiki, guiding Claude Code and Codex from literature survey and route selection through proof development, review, verification, and handoff. Validated results and diagnosed failures feed back to refine both the workflow and plugins.
 
 <a id="quick-start"></a>
 

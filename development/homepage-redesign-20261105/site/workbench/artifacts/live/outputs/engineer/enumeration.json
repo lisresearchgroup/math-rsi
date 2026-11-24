@@ -1,0 +1,46 @@
+{
+  "field": "GF(2)",
+  "columns": [
+    "110",
+    "101",
+    "011",
+    "111",
+    "100",
+    "010",
+    "001"
+  ],
+  "coordinate_order": "The leftmost bit is x1 and selects the first column.",
+  "method": "Enumerate all seven-bit strings in lexicographic order and retain those whose selected columns XOR to 000.",
+  "vectors_enumerated": 128,
+  "kernel_size": 16,
+  "kernel_vectors": [
+    "0000000",
+    "0001111",
+    "0010011",
+    "0011100",
+    "0100101",
+    "0101010",
+    "0110110",
+    "0111001",
+    "1000110",
+    "1001001",
+    "1010101",
+    "1011010",
+    "1100011",
+    "1101100",
+    "1110000",
+    "1111111"
+  ],
+  "weight_distribution": {
+    "0": 1,
+    "1": 0,
+    "2": 0,
+    "3": 7,
+    "4": 7,
+    "5": 0,
+    "6": 0,
+    "7": 1
+  },
+  "kernel_dimension": 4,
+  "minimum_distance": 3
+}

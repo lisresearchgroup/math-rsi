@@ -1,0 +1,11 @@
+# 43 位码的距离能达到 17 吗？ / Can a length-43 code reach distance 17?
+
+给定一个秩为 10 的二元 10×43 生成矩阵 G，能否让全部 1,023 个非零消息 u 都满足 wt(uG) ≥ 17？允许零列、重复列和任意坐标次序。已知有一个具体构造能达到距离 16。
+
+Does there exist a rank-10 binary 10×43 generator matrix G such that wt(uG) ≥ 17 for every one of the 1,023 nonzero messages u? Zero columns, repeated columns and arbitrary coordinate order are allowed. An explicit code attains distance 16.
+
+若答案为是，给出矩阵并检查全部非零消息。若答案为否，须证明排除覆盖任意假想的矩阵。仅核查距离为 16 的构造，还不能决定最优距离。
+
+A positive answer takes a matrix and a check of every nonzero message. A negative answer takes an argument covering every possible matrix. Verifying the distance-16 example alone leaves the optimum open.
+
+[原题与归档论文 / Problem statement and archived proof](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md)

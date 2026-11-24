@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "parameters": [
+    7,
+    4,
+    3
+  ],
+  "generator": [
+    [
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "parity_check": [
+    [
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+    ]
+  ],
+  "words": [
+    {
+      "message": "0000",
+      "word": "0000000",
+      "weight": 0
+    },
+    {
+      "message": "0001",
+      "word": "0001111",
+      "weight": 4
+    },
+    {
+      "message": "0010",
+      "word": "0010011",
+      "weight": 3
+    },
+    {
+      "message": "0011",
+      "word": "0011100",
+      "weight": 3
+    },
+    {
+      "message": "0100",
+      "word": "0100101",
+      "weight": 3
+    },
+    {
+      "message": "0101",
+      "word": "0101010",
+      "weight": 3
+    },
+    {
+      "message": "0110",
+      "word": "0110110",
+      "weight": 4
+    },
+    {
+      "message": "0111",
+      "word": "0111001",
+      "weight": 4
+    },
+    {
+      "message": "1000",
+      "word": "1000110",
+      "weight": 3
+    },
+    {
+      "message": "1001",
+      "word": "1001001",
+      "weight": 3
+    },
+    {
+      "message": "1010",
+      "word": "1010101",
+      "weight": 4
+    },
+    {
+      "message": "1011",
+      "word": "1011010",
+      "weight": 4
+    },
+    {
+      "message": "1100",
+      "word": "1100011",
+      "weight": 4
+    },
+    {
+      "message": "1101",
+      "word": "1101100",
+      "weight": 4
+    },
+    {
+      "message": "1110",
+      "word": "1110000",
+      "weight": 3
+    },
+    {
+      "message": "1111",
+      "word": "1111111",
+      "weight": 7
+    }
+  ],
+  "histogram": {
+    "0": 1,
+    "3": 7,
+    "4": 7,
+    "7": 1
+  },
+  "witness": "0010011",
+  "checks": {
+    "generator_words": 16,
+    "kernel_candidates": 128,
+    "kernel_words": 16,
+    "pairs_checked": 120,
+    "min_distance": 3,
+    "orthogonal": true,
+    "distinct_nonzero_columns": true,
+    "kernel_equals_generated": true
+  },
+  "provenance": {
+    "kind": "deterministic Python replay",
+    "command": "python3 replay.txt",
+    "models_called": 0
+  }
+}

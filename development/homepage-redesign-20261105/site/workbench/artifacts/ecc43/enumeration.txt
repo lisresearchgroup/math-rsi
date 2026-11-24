@@ -1,0 +1,22 @@
+# 构造与枚举 / Construction and enumeration
+
+归档10×43矩阵的GF(2)秩为10；遍历全部1023个非零消息得到精确距离16，重量16码字有12个。消息整数6生成码字整数6930735513698，重量16。
+
+The archived 10×43 matrix has GF(2) rank 10. Exhausting its 1,023 nonzero messages gives exact minimum distance 16, attained by 12 codewords. Message integer 6 produces codeword integer 6930735513698 of weight 16.
+
+该次回执请求距离17，故原status=FAIL；它仍是距离16的有效构造，不是距离≥17目标，也不承担全域不存在证明。
+
+That receipt requested distance 17, hence its original status=FAIL. It remains a valid distance-16 construction; it neither meets the distance-17 target nor proves nonexistence over the full domain.
+
+对每个满支撑偶[40,7,18]母码K，偶商空间E₄₀/K维数39−7=32。算法A以27+6位掩码分块；算法B以相反主元、独立基和Gray遍历逐个检查实际40位距离。
+
+For each full-support even [40,7,18] parent K, E₄₀/K has dimension 39−7=32. Algorithm A uses exact 27+6-bit mask blocks; algorithm B uses opposite pivots, an independent basis and Gray traversal with literal 40-bit distances.
+
+172个母码×两算法=344次历史完整扫描。每次覆盖2³²个偶陪集代表，每种算法合计738,734,374,912个代表。运输到相同坐标后的完整接受集合逐例相等，成员累计429,024；这不是仅比较集合大小。
+
+The historical run contains 344 complete scans: 172 parents × two algorithms. Each scans 2³² even coset representatives, totaling 738,734,374,912 per algorithm. Full accepted sets agree for each parent after coordinate transport, with 429,024 entries in total; agreement is not merely equality of cardinalities.
+
+[实际矩阵、谱与回执 / Matrix, spectrum and receipt](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/evidence/scratch/matrix43-target17-result.json) · [扫描算法与完整条件 / Scan algorithms and completeness](https://github.com/lisresearchgroup/math-rsi/blob/ef509148c8e5c77de1ec80980b4cf10639bd825b/plugins/ecc/archive/source/proofs/01-main-43-10.md)
+
+
+固定来源 / Pinned source: MathRSI `ef509148c8e5c77de1ec80980b4cf10639bd825b`.

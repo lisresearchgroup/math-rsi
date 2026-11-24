@@ -1,0 +1,5 @@
+# Hamming(7,4) 教学演示
+
+**已完成。** 题面矩阵的核维数为 4，最小汉明距离为 3。证明、重量分布和复算方法见[验收结果](notes/RESULT.txt)。
+
+原工程角色提交了[完整枚举](outputs/engineer/enumeration.json)，原写作角色提交了[校验矩阵短证明](outputs/writer/proof.txt)。主角色已读回两份产物，独立重建全部 16 个码字，并核实了证明中的重量 3 见证。两个结果句柄为 `enumerate` 和 `proof`，本题已验收收束。

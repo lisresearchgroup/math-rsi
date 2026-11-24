@@ -699,3 +699,30 @@ html:lang(zh-CN) :is(.sub,.sec-head h2,.card h3,.panel h3,.evo-title){line-heigh
 #results .e86-slist .r-n{font-size:18px;color:color-mix(in srgb,var(--c) 80%,#000)}
 #results .e86-slist .e86-scope{width:100%;font-size:12.5px;color:var(--muted);line-height:1.4}
 @media(max-width:720px){.e86-setting-table th,.e86-setting-table td{display:block;padding:6px 0;border-bottom:0}.e86-setting-table tr{display:block;padding:10px 0;border-bottom:1px solid var(--hair)}.e86-setting-table thead{display:none}}
+
+/* A single study follows the full evolution figure. */
+.wb-feature {margin-top:44px;scroll-margin-top:72px}
+.wb-feature-inner {border-block:1px solid var(--hair-2);padding:32px 0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,76px);align-items:center}
+.wb-feature-copy {max-width:48ch}
+.wb-topic {color:#087568;font:600 14px/1.4 var(--sans);margin:0 0 12px}
+.wb-feature h2 {font-size:clamp(27px,3vw,40px);line-height:1.12;letter-spacing:-.032em;margin:0 0 14px;text-wrap:balance}
+.wb-feature-copy > p:not(.wb-topic) {color:var(--ink-2);margin:10px 0}
+.wb-feature-copy .wb-origin {font-size:14px}
+.wb-open {display:inline-block;margin-top:10px;padding:8px 15px;background:var(--ink);color:white;border-radius:5px;font-weight:580;text-decoration:none}
+.wb-preview {position:relative;display:block;overflow:hidden;border-radius:6px;background:#151b22;box-shadow:0 6px 24px #10192518;isolation:isolate}
+.wb-preview video {width:100%;height:auto;aspect-ratio:1360/940;display:block}
+html:lang(en) .wb-preview video[lang="zh-CN"],html:lang(zh) .wb-preview video[lang=en] {display:none}
+.wb-film-caption {display:block;background:#151b22;color:#f4f6fa;padding:6px 12px;font-size:13px}
+.wb-sample {display:none}
+@media(max-width:700px){
+  .wb-feature {margin-top:24px}
+  .wb-feature-inner {display:flex;flex-direction:column;align-items:stretch;gap:14px;padding:20px 0}
+  .wb-feature-copy {max-width:none}
+  .wb-feature h2 {font-size:26px}
+  .wb-feature .wb-topic {margin-bottom:7px}
+  .wb-preview {display:none}
+  .wb-sample {display:flex;align-items:center;flex-wrap:wrap;gap:3px 13px;background:#151b22;color:#f5f7f8;padding:10px 12px;text-decoration:none;border-radius:4px;font:13px/1.5 var(--mono)}
+  .wb-sample > :first-child {width:100%;font-family:var(--sans)}
+  .wb-sample-id {color:#bcc8d1}
+  .wb-sample strong {color:#a2e6cc}
+}

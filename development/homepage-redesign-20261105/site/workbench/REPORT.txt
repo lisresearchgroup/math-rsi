@@ -1,0 +1,13 @@
+MathRSI public workbench / 公开数学工作台
+
+The 43-bit walkthrough is a source-grounded historical reconstruction, not a verbatim transcript or new live run. Links identify the pinned public MathRSI archive; local excerpts are curated mathematical summaries. Archived rejection samples are genuine selected witnesses, not a replay of the entire nonexistence computation.
+
+The Hamming walkthrough illustrates Claude Code / Codex / Gemini role allocation. Its attached mathematical artifacts and sanitized dispatch snapshot come from an actual three-Codex teaching run. Local semantic dispatch labels are retained; native session identifiers, host paths, capture scripts, browser logs and raw runtime records are excluded. Member completion and lead acceptance are reported separately.
+
+Hamming evidence checks 16 generated codewords, all 128 kernel candidates, 120 distances, GH^T=0 and the nonzero distinct parity columns. Algorithmic independence means two definitions in one Python program, not a second researcher or machine. Save replay.txt as replay.py and run python3 replay.py to recompute evidence-recomputed.json using Python 3 standard library. The public script recomputes mathematical evidence; it does not reconstruct the UI or capture sessions.
+
+43 位叙事是基于公开来源的历史重演，不是逐字对话或新实跑。Hamming 多模型分工是示意，附属教学证据来自三个 Codex 会话。公开快照只保留角色、语义任务标签、相对产物路径与收件状态；不含原生会话标识、个人路径或原始宿主日志。见证实验只重算所选低权见证，不替代完整不存在性证明。
+
+No network fetch, polling, service worker or remote snapshot loading is used. Evidence and the fixed sanitized snapshot are inlined. Selecting a local JSON file updates only the current page's snapshot; it is neither uploaded nor persisted. Only language preference is stored in localStorage (mathrsi.demo.language). External source links navigate to GitHub on user action. UI fonts are local; four SIL OFL notices and source attribution are included under assets/fonts/.
+
+Code and curated demo content follow the repository LICENSE. Font assets retain their individual OFL notices. See the pinned public archive links for original research attribution and proof dependencies.

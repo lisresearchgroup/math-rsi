@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+"""Deterministic local evidence replay; no model calls or external dependencies."""
+import json
+from collections import Counter
+from pathlib import Path
+root=Path(__file__).resolve().parent
+G=[[1,0,0,0,1,1,0],[0,1,0,0,1,0,1],[0,0,1,0,0,1,1],[0,0,0,1,1,1,1]]
+H=[[1,1,0,1,1,0,0],[1,0,1,1,0,1,0],[0,1,1,1,0,0,1]]
+words=[]
+for n in range(16):
+ m=[(n>>(3-i))&1 for i in range(4)]
+ c=[sum(m[i]*G[i][j] for i in range(4))%2 for j in range(7)]
+ words.append(dict(message=''.join(map(str,m)),word=''.join(map(str,c)),weight=sum(c)))
+assert len({w['word'] for w in words})==16
+hist=dict(sorted(Counter(w['weight'] for w in words).items()))
+assert hist=={0:1,3:7,4:7,7:1}
+# Independent kernel enumeration, using H rather than G.
+kernel=[]
+for n in range(128):
+ v=[(n>>(6-i))&1 for i in range(7)]
+ if all(sum(a*b for a,b in zip(row,v))%2==0 for row in H):kernel.append(''.join(map(str,v)))
+assert set(kernel)=={w['word'] for w in words}
+columns=list(zip(*H))
+assert all(any(c) for c in columns) and len(set(columns))==7
+assert all(sum(G[i][j]*H[k][j] for j in range(7))%2==0 for i in range(4) for k in range(3))
+witness=next(w['word'] for w in words if w['weight']==3)
+pair_distances=[sum(a!=b for a,b in zip(u['word'],v['word'])) for i,u in enumerate(words) for v in words[i+1:]]
+assert min(pair_distances)==3 and len(pair_distances)==120
+result=dict(schema=1,parameters=[7,4,3],generator=G,parity_check=H,words=words,histogram=hist,witness=witness,checks=dict(generator_words=16,kernel_candidates=128,kernel_words=16,pairs_checked=120,min_distance=3,orthogonal=True,distinct_nonzero_columns=True,kernel_equals_generated=True),provenance=dict(kind='deterministic Python replay',command='python3 replay.py',models_called=0))
+(root/'evidence-recomputed.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+print('Verified Hamming [7,4,3]; wrote evidence-recomputed.json')

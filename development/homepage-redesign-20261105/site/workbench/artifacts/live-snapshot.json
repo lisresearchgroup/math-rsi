@@ -1,0 +1,31 @@
+{
+  "kind": "persisted real-run snapshot",
+  "captured_at": "2026-11-24T09:42:20.537726+00:00",
+  "members": [
+    {
+      "acknowledged": true,
+      "role": "engineer",
+      "assignment": "assign-enumeration",
+      "receipt": "enumerate",
+      "output": "outputs/engineer/enumeration.json",
+      "exists": true,
+      "outcome": "completed",
+      "acceptance": "not_evaluated",
+      "time": "2026-11-24T09:40:27.681265+00:00"
+    },
+    {
+      "acknowledged": true,
+      "role": "writer",
+      "assignment": "assign-proof",
+      "receipt": "proof",
+      "output": "outputs/writer/proof.txt",
+      "exists": true,
+      "outcome": "completed",
+      "acceptance": "not_evaluated",
+      "time": "2026-11-24T09:40:33.812410+00:00"
+    }
+  ],
+  "result_exists": true,
+  "acceptance_owner": "数学主研",
+  "acceptance_note": "成员 completed 仅表示交件；最终验收需主研明确回执。"
+}

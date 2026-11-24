@@ -1,5 +1,15 @@
 /* Chinese homepage copy, drafted by Gemini 4 and checked against the English source. */
 window.MATHRSI_ZH = {
+  "Mathematics workbench · Coding theory": "数学工作台 · 纠错码",
+  "Distance 16 is possible. Why is 17 out of reach?": "距离 16 已经达到，为什么 17 不可能？",
+  "For binary codes of length 43 and dimension 10, one generator matrix proves the lower bound. Ruling out 17 takes all 172 parent classes.": "对长度 43、维数 10 的二元线性码，一份生成矩阵就能证明距离可达 16。要排除 17，却要覆盖全部 172 类母码。",
+  "This replay uses today’s three research roles to walk through the archived proof and its computational witnesses.": "用今天的三角色数学工作台，重演已归档的证明，逐步核对当时留下的计算见证。",
+  "Enter the workbench →": "进入数学工作台 →",
+  "Open the interactive 43-bit code replay": "打开 43 位码交互回放",
+  "Explore the nine-stage replay ↗": "打开九幕交互回放 ↗",
+  "Inspect a rejection witness ↗": "核对一对候选被排除的见证 ↗",
+  "Replay the 43-bit study ↗": "看 43 位码的研究过程 ↗",
+  "Read the proof & certificates ↗": "读证明与证书 ↗",
   "News": "版本动态",
   "News ↓": "版本动态 ↓",
   "Earlier versions (v1–v4)": "早期版本（v1–v4）",
