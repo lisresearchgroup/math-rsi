@@ -44,31 +44,19 @@ MathRSI pairs a shared base workflow with domain plugins and a per-problem resea
 
 ## 1. 🚀 Quick Start
 
-After completing [setup](docs/QUICKSTART.md), open this repository in **Claude Code** or **Codex** with access to your task directory. In Codex, replace `/skill` with `$skill`. Replace the example paths below with your own.
+**Launch the mathematics workbench.** With Git, Python 3.10+, [pipx](https://pipx.pypa.io/stable/installation/) and a signed-in agent CLI, run this in your terminal:
 
-**Start from a mathematical problem**
-
-```text
-/mathrsi-research Study edge-count lower bounds for k-uniform hypergraph two-coloring; work in ../my-problem/
+```sh
+git clone --depth 1 https://github.com/lisresearchgroup/math-rsi.git
+pipx install "git+https://github.com/wanshuiyin/SuperARIS.git@48ad483"
+mathrsi
 ```
 
-Connects literature research, route exploration, proof work, verification and handoff, reusing the task wiki throughout. If you already have a problem statement, you can pass `../my-problem/problem.md` instead.
+Choose your problem directory in the wizard. For the MathRSI repository, select the `math-rsi` folder you cloned, then choose your team and models. Next time, just run `mathrsi`.
 
-**Check a candidate proof or local lemma**
+**Use Claude Code or Codex directly.** Open the cloned `math-rsi` folder in your client and grant it access to your problem directory. In Claude Code, enter `/mathrsi-research Study the problem in ../my-problem/problem.md`. In Codex, use `$mathrsi-research` with the same request.
 
-```text
-/mathrsi-verify Check ../my-problem/proof.tex
-```
-
-Checks the proof or a specific obligation, repairs local omissions and identifies substantive mathematical gaps that need further proof work.
-
-**Resume an existing study** (Codex example)
-
-```text
-$mathrsi-research Continue the study in ../my-problem/
-```
-
-Reads the task's existing specification, wiki and resumption notes, then continues from the current evidence. In Claude Code, use `/mathrsi-research`.
+**Add an independent reviewer (optional).** For example, Claude Code can ask Codex to review a proof via MCP. [Connect a reviewer](docs/REVIEWER_MCP.md) · [Setup, proof checks and resuming a study](docs/QUICKSTART.md)
 
 <a id="six-mathematical-frontiers"></a>
 
