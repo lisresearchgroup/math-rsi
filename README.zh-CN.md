@@ -145,3 +145,9 @@ Ruofeng&nbsp;Yang<sup>&#42;</sup>, Haitong&nbsp;Ma<sup>&#42;</sup>, Kaitao&nbsp;
 按姓氏字母顺序排列。
 
 Haitham&nbsp;Bou&nbsp;Ammar, Dimitris&nbsp;Tsaras, Rasul&nbsp;Tutunov, Jun&nbsp;Wang, Kuan&nbsp;Yang, Qiaosheng&nbsp;Zhang, Zhinuo&nbsp;Zhou
+
+<a id="acknowledgements"></a>
+
+### 🙏 致谢
+
+感谢 [@mizopl](https://github.com/mizopl) 和 we\* 项目（PROOFER）分享八维超立方体的 10 份无四边形子图构造、Case 5A 的独立核验程序，以及用 Lean 4 证明的计数引理。[查看这项贡献](plugins/hypercube-extremal/tools/q8-forcing/README.md) · [Issue #60](https://github.com/lisresearchgroup/math-rsi/issues/60)
