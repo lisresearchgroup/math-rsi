@@ -24,6 +24,9 @@ MathRSI pairs a shared base workflow with domain plugins and a per-problem resea
 
 ## 📢 News
 
+[November 2026 mathematical results](https://lisresearchgroup.github.io/math-rsi/november-2026.html)
+
+
 - **[v8](https://github.com/lisresearchgroup/math-rsi/releases/tag/v8)** · 2026-11-23 — Download binary linear codes for 18 improved lower bounds. On the upper-bound side, 32 new deductions settle nine optimal distances. Two further entries await final acceptance in the source project.
 - **[v7](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7)** · 2026-11-22 — The working proof now extends every matching in the seven-dimensional cube to a Hamilton cycle. The Happy Ending manuscripts give ES(8) ≤ 294, ES(9) ≤ 1,100 and ES(10) ≤ 3,980.
 - **[v6](https://github.com/lisresearchgroup/math-rsi/releases/tag/v6)** · 2026-11-20 — The Q₇ matching threshold fell from 57 edges to 56. For square-free subgraphs of Q₈, the maximum number of edges was narrowed to 682 or 683.
