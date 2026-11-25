@@ -24,7 +24,7 @@ MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Cl
 
 ## 📢 版本动态
 
-[2026 年 11 月数学成果（英文）](https://lisresearchgroup.github.io/math-rsi/november-2026.html)
+[2026 年 11 月数学成果](https://lisresearchgroup.github.io/math-rsi/november-2026-zh.html)
 
 - **[v8](https://github.com/lisresearchgroup/math-rsi/releases/tag/v8)** · 2026-11-23 — 18 组参数有了更好的二元线性码，生成矩阵可以直接下载。上界方面，从已发表的定理推出了 32 项改进，其中 9 项确定了最优距离。另有两项等待原研究项目最终验收。
 - **[v7](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7)** · 2026-11-22 — 七维超立方体的工作证明已覆盖所有匹配，每个匹配都能延拓为哈密顿圈。凸多边形研究的新稿给出了 ES(8) ≤ 294、ES(9) ≤ 1,100、ES(10) ≤ 3,980 三个上界。

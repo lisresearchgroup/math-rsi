@@ -1,0 +1,24 @@
+@font-face{font-family:Geist;src:url("assets/fonts/geist-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-display:swap}
+*{box-sizing:border-box}
+html{background:#f6f8fa;color:#172330}
+body{margin:0;font:17px/1.45 Geist,system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+main{background:#fff;border:1px solid #ccd6da;border-top:4px solid #147a78;border-radius:10px;max-width:965px;margin:40px auto;padding:34px 45px 24px}
+header{border-bottom:1px solid #d7e2e1;padding-bottom:20px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:7px;color:#122638;text-decoration:none;font-size:23px;font-weight:720;letter-spacing:-1px}
+.brand img{width:58px;height:29px;object-fit:contain}
+time{color:#416767;font-size:17px;font-weight:580}
+h1{font:normal 49px/1.05 Georgia,serif;letter-spacing:-1.9px;margin:17px 0 0}
+ul{list-style:none;padding:0;margin:10px 0 0}
+li{padding:11px 0 10px 20px;position:relative}
+li::before{content:"";position:absolute;top:23px;left:1px;width:5px;height:5px;border-radius:50%;background:#148078}
+a{color:#16559a;text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover,a:focus-visible{color:#075b57}
+li>a{font-weight:600;font-size:20px;letter-spacing:-.035em}
+small{display:block;color:#4f5b65;font-size:15px;line-height:1.45;margin-top:2px}
+@media(max-width:1000px){main{margin:20px}}
+@media(max-width:600px){main{margin:10px;padding:22px 18px 17px}h1{font-size:36px}time{font-size:14px}li>a{font-size:18px}li{padding-left:15px}small{font-size:14px}}
+:lang(zh-CN) h1{font-family:"Songti SC","Noto Serif CJK SC",serif;font-weight:700;letter-spacing:0}
+:lang(zh-CN) li>a{letter-spacing:0}
+nav{max-width:965px;margin:15px auto;padding:0 16px;text-align:right;font-size:15px}
+nav a+a{margin-left:20px}
