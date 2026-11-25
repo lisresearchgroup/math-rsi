@@ -18,7 +18,7 @@ window.MATHRSI_ZH = {
   "Replay the 43-bit study ↗": "看 43 位码的研究过程 ↗",
   "Read the proof & certificates ↗": "读证明与证书 ↗",
   "News": "版本动态",
-  "November 2026 mathematical results": "2026 年 11 月数学成果（英文）",
+  "November 2026 mathematical results": "2026 年 11 月数学成果",
   "News ↓": "版本动态 ↓",
   "Earlier versions (v1–v4)": "早期版本（v1–v4）",
   "The working proof now extends every matching in the seven-dimensional cube to a Hamilton cycle. The Happy Ending manuscripts give ES(8) ≤ 294, ES(9) ≤ 1,100 and ES(10) ≤ 3,980.": "七维超立方体的工作证明已覆盖所有匹配，每个匹配都能延拓为哈密顿圈。凸多边形研究的新稿给出了 ES(8) ≤ 294、ES(9) ≤ 1,100、ES(10) ≤ 3,980 三个上界。",
