@@ -71,7 +71,7 @@ mathrsi
 - **Property B：** $k=5,\ldots,12$ 的具体下界，以及所有 $k\ge12$ 随参数指数增长的加性增益。[成果与证明范围](case-studies/property-b/README.md)
 - **纠错码。** 18 组参数的生成矩阵可下载。在 37 项有证据支持的上界改进中，13 项与已有码的距离相等，确定了最优值。另有两项等待原项目最终验收。 [查看构造与矩阵](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#lower) · [查看上界与证明](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#upper)
 - **Degree–Diameter：** 四组展示参数的构造： $(10,4)$ 为 2,567 点； $(11,5)$ 为 37,632 点； $(12,5)$ 为 42,433 点； $(16,4)$ 为 16,416 点。[构造、日期比较与核验范围](case-studies/degree-diameter/README.zh-CN.md)
-- **Erdős 第 86 题：** $Q_7$ 为 $304$（304 边构造已验证；304 上界按原包报告，本次未复验），$682\le\mathrm{ex}(Q_8,C_4)\le683$，渐近密度上界从 $0.60318$ 推进至 $\le0.5912405943$（`T3`）／$\le0.5912405942$（`T4`）。[结果与核验范围](case-studies/erdos-86/README.md)
+- **Erdős 第 86 题：** 七维超立方体的无四边形子图最多有 [304 条边](https://arxiv.org/abs/2611.27284)，$682\le\mathrm{ex}(Q_8,C_4)\le683$，渐近密度上界从 $0.60318$ 推进至 $\le0.5912405943$（`T3`）／$\le0.5912405942$（`T4`）。[结果与核验范围](case-studies/erdos-86/README.md)
 - **Ruskey–Savage：** 完整作者工作证明覆盖 $Q_7$ 的任意匹配（包括空匹配与完美匹配），保留 $Q_6$ 全称结果；待外部同行评议，无 Lean。[证明、局部复算与版本历史](case-studies/ruskey-savage-q7/README.md)
 - **Happy Ending 与 $N(m,r,s)$：** 新同输入扇区缺额工作稿给出平面工作推论 $\mathrm{ES}(7)\le77$、$\mathrm{ES}(8)\le294$、$\mathrm{ES}(9)\le1100$、$\mathrm{ES}(10)\le3980$；独立数学审阅尚未完成。先前可重放的有限证书保留各自范围与来源。[现值、证据与复现](plugins/happy-ending/archive/nmrs-20261120/HANDOFF.md) · [案例导读](case-studies/happy-ending/README.md)
 

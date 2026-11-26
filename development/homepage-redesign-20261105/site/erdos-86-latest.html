@@ -17,17 +17,19 @@
 <table class="dd-setting-table e86-setting-table">
 <thead><tr><th scope="col">Setting</th><th scope="col">Bound</th><th scope="col">Verification scope</th></tr></thead>
 <tbody>
-<tr><th scope="row">Q₇ (n = 7)</th><td><b>304</b></td><td>304-edge construction verified; 304 upper bound as reported in the source package, not re-verified in this pass.</td></tr>
+<tr><th scope="row">Q₇ (n = 7)</th><td><b>304</b></td><td>304 edges are possible. Every 305-edge subgraph contains a four-cycle.</td></tr>
 <tr><th scope="row">Q₈ (n = 8)</th><td><b>682 ≤ ex(Q₈, C₄) ≤ 683</b></td><td>Four 682-edge constructions &amp; C++17 Q₄ replay verified; Theorem B reviewed in the same model family (independent refereeing pending); ex(Q₈, C₄) ≤ 682 open.</td></tr>
 <tr><th scope="row">Q∞ (asymptotic)</th><td><b>≤ 0.5912405943</b></td><td>T3 (≤ 0.5912405943) and T4 with m = 1024 degree potential (≤ 0.5912405942) proved and rechecked in 128-bit C++20. Conjecture 1/2 open.</td></tr>
 </tbody>
 </table>
 
 <div class="dd-latest-results e86-cards">
-<article>
+<article id="q7-paper">
 <h2>Q₇ · 128 vertices</h2>
 <p class="dd-latest-order">304</p>
-<p>Two explicit 304-edge C₄-free subgraphs (A.edges, B.edges) are checked directly in-repo (ex(Q₇, C₄) ≥ 304); 304 upper bound as reported in the source package, not re-verified in this pass.</p>
+<p>Minamoto’s construction attains 304 edges. Zhou and coauthors rule out 305 using three computational lemmas on the six-cube.</p>
+<p><a href="https://arxiv.org/abs/2611.27284" lang="en" data-no-i18n><cite>The Four-Cycle Extremal Number of the Seven-Cube</cite></a><br><span lang="en" data-no-i18n>Zheli Zhou, Haitong Ma, Ruofeng Yang, Tianzhi Ren, Kuan Yang and Shuai Li</span><br><span>arXiv preprint · 20 November 2026</span></p>
+<p><a href="https://github.com/zhelizhou/hypercube-c4/tree/13c4ac5b2269383d36e5fb0da303f0a5cd2d1b03/q7">Verification code</a> · <a href="https://github.com/zhelizhou/hypercube-c4/releases/tag/q7-artifacts-v0.1">21 proof certificates</a></p>
 </article>
 <article>
 <h2>Q₈ · 256 vertices</h2>

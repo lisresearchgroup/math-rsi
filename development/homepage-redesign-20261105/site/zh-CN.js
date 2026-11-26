@@ -1,5 +1,18 @@
 /* Chinese homepage copy, drafted by Gemini 4 and checked against the English source. */
 window.MATHRSI_ZH = {
+  "304 edges are possible. Every 305-edge subgraph contains a four-cycle.": "304 条边可以做到。只要有 305 条边，就一定包含一个四边形。",
+  "Q₇ paper on arXiv ↗": "Q₇ 论文 · arXiv ↗",
+  "Q₈: four 682-edge constructions and C++17 13,150,453-completion replay verified; Theorem B uses 83 active cuts and 25 imported Q₆ DRAT certificates (reviewed in the same model family; independent refereeing pending), and ex(Q₈, C₄) ≤ 682 remains open. Q∞: T3 = 681653995482306581 / 1152921504606846976 ≤ 0.5912405943 and T4 = 9701859764505653085708308080340303 / 16409326186106551516455239680000000 ≤ 0.5912405942 (via a 5-line hypergeometric tower for all n ≥ 1024), both proved and rechecked in 128-bit C++20; exploratory 0.5907 is an approximate fit (residual ≈ 3.9 × 10⁻⁴), and an earlier 0.5899 claim was refuted and withdrawn.": "Q₈：四份 682 边构造与 C++17 全部 13,150,453 个补全重放已验证；定理 B 使用 83 条活跃割与 25 份 Q₆ DRAT 证书（经同系模型审阅，待独立审稿），ex(Q₈, C₄) ≤ 682 仍开放。Q∞：T3 = 681653995482306581 / 1152921504606846976 ≤ 0.5912405943 与 T4 = 9701859764505653085708308080340303 / 16409326186106551516455239680000000 ≤ 0.5912405942（经对一切 n ≥ 1024 成立的五行超几何塔）均已证并经 128 位 C++20 复核；探索值 0.5907 为近似拟合（残差约 3.9 × 10⁻⁴），早期 0.5899 结论已反驳撤回。",
+  "The MathRSI repository checks two 304-edge constructions. The authors report checking all 21 refutations for the upper bound in the paper’s companion repository.": "MathRSI 仓库核验了两份 304 边构造。论文作者在配套仓库中记录了对上界所用全部 21 份反驳证书的核验。",
+  "Preprint": "预印本",
+  "The exact maximum in Q₇ is 304 edges.": "七维超立方体中，无四边形子图的最大边数为 304。",
+  "Erdős Problem 86 results by setting: exactly 304 edges in Q7 (arXiv:2611.27284), Q8 narrowed to 682–683, and asymptotic C4-free density lowered from 0.60318 to at most 0.5912405943 (T3) and 0.5912405942 (T4).": "Erdős 第 86 题各参数结果：Q₇ 精确为 304 条边（arXiv:2611.27284），Q₈ 为 682 至 683，渐近密度上界由 0.60318 降至 0.5912405943（T3）及 0.5912405942（T4）。",
+  "Results · Q₇ exactly 304, Q₈ 682–683 and asymptotic Q∞ ≤ 0.5912405943": "成果 · Q₇ 精确为 304，Q₈ 为 682–683，渐近密度 Q∞ ≤ 0.5912405943",
+  "exact maximum": "精确最大值",
+  "Minamoto’s construction attains 304 edges. Zhou and coauthors rule out 305 using three computational lemmas on the six-cube.": "Minamoto 的构造保留了 304 条边。论文作者用六维超立方体上的三个计算引理排除了 305 条边的可能。",
+  "arXiv preprint · 20 November 2026": "arXiv 预印本 · 2026 年 11 月 20 日",
+  "Verification code": "核验代码",
+  "21 proof certificates": "21 份证明证书",
   "Launch the mathematics workbench with Git, Python 3.10+, pipx and a signed-in agent CLI.": "准备好 Git、Python 3.10+、pipx 和已登录的 Agent 客户端，在终端启动数学工作台。",
   "Choose your problem directory and the cloned math-rsi folder in the wizard. Next time, just run mathrsi.": "在向导中分别选择课题目录和克隆的 math-rsi 文件夹。以后启动，只需输入 mathrsi。",
   "To work directly in the clone, enter": "也可以在客户端打开克隆的仓库，输入",
