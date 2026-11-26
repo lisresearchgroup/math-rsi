@@ -132,9 +132,9 @@
 
     e86: {
       resultLabel:
-        'Erdős Problem 86 results by setting: Q7 construction 304 verified (304 upper bound source-reported), Q8 narrowed to 682–683, and asymptotic C4-free density lowered from 0.60318 to at most 0.5912405943 (T3) and 0.5912405942 (T4).',
+        'Erdős Problem 86 results by setting: exactly 304 edges in Q7 (arXiv:2611.27284), Q8 narrowed to 682–683, and asymptotic C4-free density lowered from 0.60318 to at most 0.5912405943 (T3) and 0.5912405942 (T4).',
       resultCap:
-        'Results · Q₇ 304 (≤ source), Q₈ 682–683 and asymptotic Q∞ ≤ 0.5912405943',
+        'Results · Q₇ exactly 304, Q₈ 682–683 and asymptotic Q∞ ≤ 0.5912405943',
       links: [
         { label: 'Results by setting ↗', href: 'erdos-86-latest.html', sourceLanguage: 'EN + 中文' },
         { label: 'Historical Q₄ ↗', href: '../../../plugins/hypercube-extremal/archive/source/START_HERE.html', sourceLanguage: '中文', sub: true }
@@ -159,8 +159,8 @@
 
           <rect x="22" y="36" width="102" height="68" rx="7" fill="#F8F9FB" stroke="var(--hair)"/>
           <text class="rv-sub" x="73" y="52" text-anchor="middle">Q₇ (n = 7)</text>
-          <text x="73" y="75" text-anchor="middle" font-size="17.5" font-weight="680" class="rv-accent">≥ 304</text>
-          <text class="rv-sub" x="73" y="94" text-anchor="middle">≤304 in source</text>
+          <text x="73" y="75" text-anchor="middle" font-size="17.5" font-weight="680" class="rv-accent">304</text>
+          <text class="rv-sub" x="73" y="94" text-anchor="middle">exact maximum</text>
 
           <rect x="130" y="36" width="108" height="68" rx="7" fill="#F8F9FB" stroke="var(--hair)"/>
           <text class="rv-sub" x="184" y="52" text-anchor="middle">Q₈ (n = 8)</text>

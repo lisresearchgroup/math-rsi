@@ -39,7 +39,7 @@ On the Comellas table checked 2026-11-16, (10,4) is 2,612 and (16,4) is 16,848, 
 ## Erdős Problem 86
 
 **Finite and asymptotic $C_4$-free hypercube bounds:**
-- **$Q_7$ ($n = 7$):** **`304`** — **304-edge construction verified; 304 upper bound as reported in the source package, not re-verified in this pass** (two explicit 304-edge $C_4$-free subgraphs checked in-repo; 21 raw `.cnf`/`.drup` traces were omitted in the upstream 2026-10-31 compilation).
+- **$Q_7$ ($n = 7$):** **`304`** — **[Zhou et al. rule out 305 edges](https://arxiv.org/abs/2611.27284), matching Minamoto’s 304-edge construction** (two explicit 304-edge $C_4$-free subgraphs checked in-repo; 21 raw `.cnf`/`.drup` traces were omitted in the upstream 2026-10-31 compilation).
 - **$Q_8$ ($n = 8$):** **`682 ≤ ex(Q₈, C₄) ≤ 683`** — four 682-edge constructions verified in-repo; Theorem B rules out 684 edges via a same-subgraph 3-measure pullback over 83 active cuts and 25 imported $Q_6$ DRAT certificates (checked computationally and reviewed in the same model family; independent refereeing is pending, and $\mathrm{ex}(Q_8, C_4) \le 682$ remains open).
 - **$Q_\infty$ (asymptotic):** **T3** $\le 681653995482306581 / 1152921504606846976 \le 0.5912405943$ and **T4** $\le 9701859764505653085708308080340303 / 16409326186106551516455239680000000 \le 0.5912405942$ ($m=1024$ degree potential via a 5-line hypergeometric tower), both proved and rechecked in 128-bit C++20, improving the v3 $Q_4$ bound ($< 0.59155154$) and the `0.60318` reference. Exploratory `0.5907` is an approximate fit (residual $\approx 3.9\times 10^{-4}$), an earlier `0.5899` claim was refuted and withdrawn, and $\pi_\square(C_4) = 1/2$ remains open.
 
