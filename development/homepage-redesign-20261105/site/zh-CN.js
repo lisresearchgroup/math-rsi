@@ -1536,6 +1536,16 @@ Object.assign(window.MATHRSI_ZH, {
 
 /* AJT preprint · 2026-11-27. */
 Object.assign(window.MATHRSI_ZH, {
+  "Alon–Jaeger–Tarsi conjecture (AJT)": "Alon–Jaeger–Tarsi 猜想（AJT）",
+  "Given an invertible matrix, can you choose a vector with no zero entries whose image also has no zero entries?": "给定一个可逆矩阵，能否找到一个每项都非零的向量，让它乘上矩阵后每项仍然非零？",
+  "TCSExam reports GPT-6 Astra’s Lean proof through dimension 9.": "TCSExam 论文报告了 GPT-6 Astra 给出的 Lean 证明，覆盖 9 维及以下。",
+  "TCSExam, Appendix F.3, Eq. (9) ↗": "TCSExam 附录 F.3，式（9）↗",
+  "The SII MathRSI Team proved the next two cases over the five-element field, dimensions 10 and 11. The Lean proof covers every invertible matrix through dimension 11 over each prime field of order at least five.": "SII MathRSI Team 在五元域上证明了接下来的 10 维和 11 维。经 Lean 核验，定理覆盖每个至少有五个元素的素域上 11 维及以下的所有可逆矩阵。",
+  "9 → 11 dimensions over F₅": "五元域从 9 维到 11 维",
+  "For every invertible A, choose x so": "任给可逆矩阵 A，都能找到 x，",
+  "that x and Ax have no zero entries": "使 x 和 Ax 的每个坐标都非零。",
+  "Over the five-element field, MathRSI extends the TCSExam result from dimension 9 to dimension 11.": "在五元域上，MathRSI 将 TCSExam 报告的 9 维结果推进到了 11 维。",
+  "Alon–Jaeger–Tarsi over the five-element field": "五元域上的 Alon–Jaeger–Tarsi 猜想",
   "SII MathRSI Team proves the AJT theorem for every invertible n × n matrix over every prime field Fₚ with p ≥ 5 and n ≤ 11, with Lean formalization.": "SII MathRSI Team 给出 AJT 定理的 Lean 形式化证明，覆盖所有 p ≥ 5 素域上 n ≤ 11 的任意可逆矩阵。",
   "Over F₅, this extends the cited n ≤ 9 result to dimensions 10 and 11.": "在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 结果。",
   "Over F₅, the general 12-dimensional case remains open, while symmetric 12 × 12 matrices are covered.": "F₅ 上的一般 12 维仍开放，对称 12 × 12 矩阵已覆盖。",
@@ -1546,10 +1556,10 @@ Object.assign(window.MATHRSI_ZH, {
 
 /* AJT as the seventh research case · v8 main, 2026-11-27. */
 Object.assign(window.MATHRSI_ZH, {
-  "AJT through dimension eleven": "AJT：推进至十一维",
+  "A vector that stays zero-free": "乘上矩阵后，每个坐标仍非零",
   "Lean-checked theorem · preprint by SII MathRSI Team": "Lean 核验定理 · SII MathRSI Team 预印本",
   "For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero.": "对于每个素数 p ≥ 5、n ≤ 11 的任意可逆矩阵 A，存在向量 x，使 x 与 Ax 的每个坐标都非零。",
-  "Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.": "在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 范围。论文及 Lean 工程覆盖每个原始可逆矩阵。",
+  "TCSExam reported the five-element result through dimension 9. MathRSI proved dimensions 10 and 11.": "TCSExam 报告了五元域上 9 维及以下的结果。MathRSI 证明了 10 维和 11 维。",
   "Run: MathRSI v8 · received on main, 2026-11-27 (#67). Fixed v8 release and earlier snapshots stay unchanged.": "运行：MathRSI v8 · 2026-11-27 经 #67 并入主线；固定 v8 发布及更早快照不变。",
   "Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered.": "F₅ 上的一般 12 维和任意维猜想仍开放；对称 12 维矩阵已覆盖。",
   "Lean project ↗": "Lean 工程 ↗",
@@ -1558,12 +1568,12 @@ Object.assign(window.MATHRSI_ZH, {
   "Preprint (PDF) ↗": "预印本（PDF）↗",
   "all prime fields": "所有素域",
   "every invertible matrix": "任意可逆矩阵",
-  "AJT · all primes p ≥ 5, n ≤ 11": "AJT · 全部 p ≥ 5 素域、n ≤ 11",
+  "All primes p ≥ 5 through dimension 11": "所有素数 p ≥ 5，覆盖至 11 维",
   "Lean proof and original-coordinate audit": "Lean 证明与原坐标命题核验",
   "Lean connects the ordinary split-weight certificate and the five-marked-coordinate Fourier certificate to the original matrix. The marker is derived from a hypothetical counterexample, not assumed as an extra input.": "Lean 将普通联合重量证书与五标记坐标 Fourier 证书接回原矩阵；标记来自假设的反例，并非额外假设的输入。",
   "General F₅ dimension 12 remains open": "F₅ 一般 12 维仍开放",
   "Exact rational tables in dimensions 12 and 16 show the limits of the specified unmarked real-valued relaxation; they are not counterexamples to the AJT conjecture.": "12、16 维精确有理表展示指定的无标记实数松弛的局限，并非 AJT 猜想的反例。",
-  "For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.": "对于每个素数 p ≥ 5、n ≤ 11 的任意可逆矩阵 A，存在向量 x，使 x 与 Ax 的每个坐标都非零。在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 范围。论文及 Lean 工程覆盖每个原始可逆矩阵。",
+  "For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. TCSExam reported the five-element result through dimension 9. MathRSI proved dimensions 10 and 11.": "对于每个素数 p ≥ 5、n ≤ 11 的任意可逆矩阵 A，存在向量 x，使 x 与 Ax 的每个坐标都非零。TCSExam 报告了五元域上 9 维及以下的结果。MathRSI 证明了 10 维和 11 维。",
   "Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered. Exact rational tables in dimensions 12 and 16 show the limits of the specified unmarked real-valued relaxation; they are not counterexamples to the AJT conjecture.": "F₅ 上的一般 12 维和任意维猜想仍开放；对称 12 维矩阵已覆盖。12、16 维精确有理表展示指定的无标记实数松弛的局限，并非 AJT 猜想的反例。",
   "F₅: 9 → 11 · Lean": "F₅：9 → 11 · Lean",
   "Carry witnesses and test rejection paths": "携带见证并测试拒绝分支",
@@ -1606,8 +1616,8 @@ Object.assign(window.MATHRSI_ZH, {
   "Keep the constraints from one matrix": "保留来自同一矩阵的约束",
   "Shared Base action ↗": "共享 Base 动作 ↗",
   "ECC graph-code method ↗": "ECC 图码方法 ↗",
-  "AJT · AJT · all primes p ≥ 5, n ≤ 11 — For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.": "AJT · AJT · 全部 p ≥ 5 素域、n ≤ 11 — 对于每个素数 p ≥ 5、n ≤ 11 的任意可逆矩阵 A，存在向量 x，使 x 与 Ax 的每个坐标都非零。在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 范围。论文及 Lean 工程覆盖每个原始可逆矩阵。",
-  "AJT · Lean proof and original-coordinate audit — Lean connects the ordinary split-weight certificate and the five-marked-coordinate Fourier certificate to the original matrix. The marker is derived from a hypothetical counterexample, not assumed as an extra input.": "AJT · Lean 证明与原坐标命题核验 — Lean 将普通联合重量证书与五标记坐标 Fourier 证书接回原矩阵；标记来自假设的反例，并非额外假设的输入。",
-  "AJT · General F₅ dimension 12 remains open — Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered. Exact rational tables in dimensions 12 and 16 show the limits of the specified unmarked real-valued relaxation; they are not counterexamples to the AJT conjecture.": "AJT · F₅ 一般 12 维仍开放 — F₅ 上的一般 12 维和任意维猜想仍开放；对称 12 维矩阵已覆盖。12、16 维精确有理表展示指定的无标记实数松弛的局限，并非 AJT 猜想的反例。",
-  "AJT: n ≤ 11 · p ≥ 5, F₅: 9 → 11 · Lean. Inspect this result.": "AJT：n ≤ 11 · p ≥ 5，F₅ 从 9 维推进至 11 维 · Lean。查看此成果。"
+  "Alon–Jaeger–Tarsi conjecture · All primes p ≥ 5 through dimension 11 — For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. TCSExam reported the five-element result through dimension 9. MathRSI proved dimensions 10 and 11.": "Alon–Jaeger–Tarsi 猜想 · 所有素数 p ≥ 5，覆盖至 11 维 — 对于每个素数 p ≥ 5、n ≤ 11 的任意可逆矩阵 A，存在向量 x，使 x 与 Ax 的每个坐标都非零。TCSExam 报告了五元域上 9 维及以下的结果。MathRSI 证明了 10 维和 11 维。",
+  "Alon–Jaeger–Tarsi conjecture · Lean proof and original-coordinate audit — Lean connects the ordinary split-weight certificate and the five-marked-coordinate Fourier certificate to the original matrix. The marker is derived from a hypothetical counterexample, not assumed as an extra input.": "Alon–Jaeger–Tarsi 猜想 · Lean 证明与原坐标命题核验 — Lean 将普通联合重量证书与五标记坐标 Fourier 证书接回原矩阵；标记来自假设的反例，并非额外假设的输入。",
+  "Alon–Jaeger–Tarsi conjecture · General F₅ dimension 12 remains open — Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered. Exact rational tables in dimensions 12 and 16 show the limits of the specified unmarked real-valued relaxation; they are not counterexamples to the AJT conjecture.": "Alon–Jaeger–Tarsi 猜想 · F₅ 一般 12 维仍开放 — F₅ 上的一般 12 维和任意维猜想仍开放；对称 12 维矩阵已覆盖。12、16 维精确有理表展示指定的无标记实数松弛的局限，并非 AJT 猜想的反例。",
+  "Alon–Jaeger–Tarsi conjecture: 9 → 11 dimensions over F₅, For every invertible A, choose x so that x and Ax have no zero entries. Inspect this result.": "Alon–Jaeger–Tarsi 猜想。五元域从 9 维推进到 11 维。任给可逆矩阵 A，都能找到 x，使 x 和 Ax 的每个坐标都非零。查看此成果。"
 });

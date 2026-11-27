@@ -14,12 +14,12 @@
       links:[{label:'Preprint (PDF) ↗',href:'../../../case-studies/ajt/paper.pdf',sourceLanguage:'EN'},{label:'Lean project ↗',href:'https://github.com/lisresearchgroup/math-rsi/blob/main/case-studies/ajt/formal/README.md',sourceLanguage:'EN'}],
       render() { return svgWrap(this.resultLabel, `
         <rect class="rv-panel" x="14" y="12" width="352" height="232" rx="10"/>
-        <text class="rv-kicker" x="28" y="35">AJT over F₅</text>
+        <text class="rv-kicker" x="28" y="35">Alon–Jaeger–Tarsi over the five-element field</text>
         <text x="92" y="100" text-anchor="middle" font-size="38" font-weight="650" fill="var(--muted)">9</text>
         <text x="189" y="97" text-anchor="middle" font-size="28" fill="var(--ajt)">→</text>
         <text x="285" y="100" text-anchor="middle" font-size="38" font-weight="650" fill="var(--ajt)">11</text>
-        <text class="rv-sub" x="92" y="125" text-anchor="middle">cited range</text>
-        <text class="rv-sub" x="285" y="125" text-anchor="middle">Lean proof</text>
+        <text class="rv-sub" x="92" y="125" text-anchor="middle">TCSExam</text>
+        <text class="rv-sub" x="285" y="125" text-anchor="middle">MathRSI</text>
         <line x1="28" y1="145" x2="352" y2="145" stroke="var(--hair)"/>
         <text x="28" y="172" font-size="14" font-weight="650" fill="var(--ajt)">p ≥ 5 · n ≤ 11</text>
         <text class="rv-sub" x="28" y="192">Every invertible matrix over each prime field</text>
