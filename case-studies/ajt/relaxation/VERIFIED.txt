@@ -1,0 +1,4 @@
+PASS n=12 exact rational primal and dual; dual-zero mode=row; positive upper-triangle primal entries=70
+PASS n=24 exact rational primal and dual; dual-zero mode=row; positive upper-triangle primal entries=279
+PASS n=16 exact rational primal and dual; dual-zero mode=strong; positive upper-triangle primal entries=128
+PASS n=32 exact rational primal and dual; dual-zero mode=strong; positive upper-triangle primal entries=503

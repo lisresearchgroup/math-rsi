@@ -1,0 +1,146 @@
+\section{A marked certificate in dimension eleven}
+\label{sec:marked}
+
+The ordinary weight distribution records the two block weights of a graph code. In dimension eleven we refine this distribution around the support of a short dual word. Orthogonality to that word restricts the five marked coordinates of every primal word. Translation by the same word imposes an additional symmetry on the dual distribution. These two facts allow a small integer certificate on the refined tables.
+
+\subsection{Orientation and normalization}
+
+For \(A\in\GL_{11}(\F)\), write \(C_A=\{(x,Ax):x\in\F^{11}\}\), so that \(C_A^\perp=\{(-A^{\mathsf T}y,y):y\in\F^{11}\}\). Suppose that \(A\) has no AJT vector. The ordinary certificate in Section~\ref{sec:ordinary} gives a word in \(C_A^\perp\) of block weights \((3,2)\) or \((2,3)\). In the second case exchange the two blocks. The exchanged primal code is \(C_{A^{-1}}\), and a nowhere-zero pair in it would give a nowhere-zero pair in \(C_A\). We thus work with a counterexample whose dual has a word of weights \((3,2)\).
+
+For \(r\le 11\) let \(\mathbf 1_r\in\F^{11}\) have ones in its first \(r\) positions and zeros elsewhere. A monomial coordinate change on each of the two blocks moves the chosen dual word to \(h=(\mathbf 1_3,\mathbf 1_2)\). More explicitly, if the primal coordinate change is \((x,z)\mapsto(Lx,Rz)\), where \(L,R\) are monomial matrices, the transformed code is the graph of \(B=RAL^{-1}\) and dual words transform by \(L^{-\mathsf T}\) and \(R^{-\mathsf T}\). These latter maps can move each support to its initial positions and rescale its entries to one. The transformation preserves invertibility and the existence of a nowhere-zero pair. We therefore have a counterexample \(B\) satisfying
+\begin{equation}\label{eq:marked-normalized}
+ -B^{\mathsf T}\mathbf 1_2=\mathbf 1_3.
+\end{equation}
+We write \(C=C_B\) and mark the first three left coordinates and first two right coordinates.
+
+\subsection{Local classes and enumerators}
+
+Split the five marked coordinates as \(3+2\). By \eqref{eq:marked-normalized}, the marked tuple of a primal word belongs to
+\[
+ H=\{t\in\F^5:\textstyle\sum_{i=1}^5t_i=0\}.
+\]
+Let \(G\) act by permutations within each marked block and multiplication of the entire tuple by a common nonzero scalar. Classify primal marked tuples by \(G\)-orbits on \(H\). Classify dual marked tuples on all of \(\F^5\) by allowing the same actions and the shifts \(u\mapsto u+a\mathbf 1\), where \(\mathbf 1=(1,1,1,1,1)\). The permutations and scaling organize the weights and the Fourier kernel. Shifts act on the dual code itself because \(h\in C^\perp\).
+
+There are \(29\) classes on each side. Here is a finite enumeration rule that also determines their cardinalities. For a tuple \(t\) and \(s\in\F^\times\), form \(s t+a\mathbf 1\) and sort each block separately, using the integer order on the residues \(0,\ldots,4\). Take the lexicographically least concatenation over \(s\) and the allowed \(a\), using only \(a=0\) on the primal side and all five \(a\) on the dual side. Two tuples give the same key exactly when they belong to the same class, since the sort is a choice of representative for the within-block permutations. Counting keys among the \(5^4=625\) tuples of \(H\) and the \(5^5=3125\) dual tuples gives
+\begin{center}
+\begin{tabular}{lrrrrrr}
+\toprule
+Number of classes of a given size & \(1\) & \(2\) & \(2\) & \(6\) & \(14\) & \(4\)\\
+\midrule
+Primal class size & \(1\) & \(4\) & \(8\) & \(12\) & \(24\) & \(48\)\\
+Dual class size   & \(5\) & \(20\) & \(40\) & \(60\) & \(120\) & \(240\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example, the dual class of \((0,0,0,0,1)\) consists of tuples with left block \((a,a,a)\) and right block \((a,a+s)\) in either order, with \(a\in\F\) and \(s\in\F^\times\). Its size is \(40\).
+
+Use \(O=\{0,\ldots,28\}\) to index the two sets of classes separately, with zero the class of the zero tuple on each side. Let \(X=\{0,\ldots,8\}\) and \(Y=\{0,\ldots,9\}\) index the weights on the unmarked left and right coordinates, respectively. Let \(W_{obd}\) count primal words of class \(o\) and unmarked weights \(b,d\), and let \(V_{pbd}\) count dual words of dual class \(p\) with the same unmarked weights. Each table has \(29\cdot9\cdot10=2610\) cells. The corner \(W_{000}=1\) counts the zero word. The dual zero class consists of the five constant tuples, so \(V_{000}=5\), counting the multiples of \(h\). In particular, the class index \(0\) on the two sides has different meanings beyond the zero tuple itself.
+
+\subsection{Fourier transform and marginals}
+
+For a primal class \(o\), choose a representative \(t_o\). For a dual class \(p\), write \(\mathcal U_p\) for its set of tuples. Define
+\begin{equation}\label{eq:marked-local-kernel}
+ K_{po}
+ =
+ \#\{u\in\mathcal U_p:u\cdot t_o=0\}
+ -
+ \#\{u\in\mathcal U_p:u\cdot t_o=1\}.
+\end{equation}
+If \(\zeta\) is a primitive fifth root of unity, the sum of \(\zeta^{u\cdot t_o}\) over \(\mathcal U_p\) equals \(K_{po}\). Indeed, multiplication by a nonzero scalar permutes the class, so the four nonzero dot products all occur equally often, and \(\zeta+\zeta^2+\zeta^3+\zeta^4=-1\). Replacing \(t_o\) by another representative changes the dot products by a permutation of \(\mathcal U_p\), through the transpose of the corresponding block permutation and scalar action. For the example above, take \(t_o=(0,0,0,1,4)\). The dot products are \(\pm s\), with each nonzero value appearing ten times. Therefore this kernel entry is \(-10\).
+
+For an unmarked block of length \(m\) define
+\[
+ P_m(k,b)=
+ \sum_{i=0}^k(-1)^i4^{k-i}\binom bi\binom{m-b}{k-i}.
+\]
+For a fixed vector of weight \(b\) this is the sum of the characters paired with all target vectors of weight \(k\). At a zero coordinate the generating factor is \(1+4z\). At a nonzero coordinate it is \(1-z\), since the character sum over the four nonzero choices is \(-1\). Taking the coefficient of \(z^k\) gives the displayed formula. Fourier orthogonality for \(C\) now yields
+\begin{equation}\label{eq:marked-fourier}
+ 5^{11}V_{pkl}
+  =\sum_{o\in O}\sum_{b\in X}\sum_{d\in Y}
+       W_{obd}\,K_{po}\,P_8(k,b)\,P_9(l,d).
+\end{equation}
+To see the equality, sum \(\sum_{c\in C}\zeta^{u\cdot c}\) over every ambient vector \(u\) of class \(p\) on the marked sites and weights \((k,l)\) off them. The inner sum is \(5^{11}\) when \(u\in C^\perp\) and zero otherwise. Summing instead in the opposite order factors the character sum into the three kernels on the right.
+
+Write \(L_o,R_o\) for the marked left and right weights in primal class \(o\). For a dual representative \(u_p\), let \(L_p(a),R_p(a)\) be the weights of its marked blocks after adding \(a\mathbf 1\). Put \(S_m(j)=4^j\binom mj\) and define
+\[
+ M_L(j,b)=S_3(j)S_8(b),\qquad
+ M_R(j,d)=S_2(j)S_9(d).
+\]
+The projections of \(C\) and \(C^\perp\) onto either block are bijections. On the primal side this gives
+\begin{align}
+ \sum_{o,d} [L_o=j]\, W_{obd}&=M_L(j,b),&
+ \sum_{o,b} [R_o=j]\, W_{obd}&=M_R(j,d).
+ \label{eq:marked-primal-marg}
+\end{align}
+Here \([E]\) is \(1\) when \(E\) holds and \(0\) otherwise. On the dual side put
+\(
+ N_L(p,j)=\#\{a:L_p(a)=j\}
+\)
+and similarly \(N_R(p,j)=\#\{a:R_p(a)=j\}\).
+These values are invariant on a dual class: an affine scalar change on the marked tuple permutes the five shifts, and the remaining block permutations preserve each weight. The marginal identities are
+\begin{align}
+ \sum_{p,d}N_L(p,j)V_{pbd}&=5M_L(j,b),&
+ \sum_{p,b}N_R(p,j)V_{pbd}&=5M_R(j,d).
+ \label{eq:marked-dual-marg}
+\end{align}
+Indeed, for each shift \(a\), addition of \(ah\) permutes the dual code and leaves both unmarked weights fixed. Summing these five copies of the corresponding projection count gives \eqref{eq:marked-dual-marg}.
+
+\subsection{Forbidden cells and the integer contradiction}
+
+On the primal side a cell vanishes if the total weights \((L_o+b,R_o+d)\) lie on either axis away from \((0,0)\), equal \((11,11)\), or belong to
+\begin{equation}\label{eq:marked-primal-small}
+ \{(i,j):i,j>0,\ i+j<5\}\ \cup\ \{(2,3),(3,2),(3,3)\}.
+\end{equation}
+The axes use invertibility, the cell of total weights \((11,11)\) uses the counterexample hypothesis, and \eqref{eq:marked-primal-small} follows from the smaller-dimensional obstructions of Lemma~\ref{lem:support}. On the dual side a total-weight pair is forbidden if it lies on either axis away from \((0,0)\), or lies in
+\[
+ \{(1,1),(1,2),(2,1),(1,3),(3,1),(2,2)\}.
+\]
+The latter exclusions likewise use Lemma~\ref{lem:support}. A dual cell is therefore zero if \((L_p(a)+b,R_p(a)+d)\) is forbidden for any \(a\in\F\). To check this implication for an arbitrary representative of \(p\), use the fact that affine scalar changes permute the five shifted weight pairs. A word in the cell would then have a translate by \(ah\) of forbidden total weights.
+
+We use integer multipliers \(\phi_{pkl}\) for \eqref{eq:marked-fourier}, \(w_L,w_R,v_L,v_R\) for the four marginals, and \(w_c,v_c\) for the corner equations. The full arrays are fixed in \texttt{PolynomialMarkedValues.lean}. Their entries combine into the following coefficients, where \(\delta\) is the indicator of the corner:
+\begin{align}
+ \alpha_{obd}
+ &=\sum_{p,k,l} K_{po}P_8(k,b)P_9(l,d)\phi_{pkl}
+   +w_L(L_o,b)+w_R(R_o,d)+w_c\delta_{obd}, \notag\\
+ \beta_{pbd}
+ &=-5^{11}\phi_{pbd}
+   +\sum_{a\in\F}\bigl(v_L(L_p(a),b)+v_R(R_p(a),d)\bigr)
+   +v_c\delta_{pbd}.
+ \label{eq:marked-multipliers}
+\end{align}
+By \eqref{eq:marked-fourier} the terms in \(\phi\) cancel after pairing against \(W,V\). Equations \eqref{eq:marked-primal-marg} and \eqref{eq:marked-dual-marg} and the corners give
+\begin{equation}\label{eq:marked-rhs}
+ \sum_{o,b,d}W_{obd}\alpha_{obd}+\sum_{p,b,d}V_{pbd}\beta_{pbd}
+ = w_c+5v_c+\langle w_L,M_L\rangle+\langle w_R,M_R\rangle
+   +5\langle v_L,M_L\rangle+5\langle v_R,M_R\rangle ,
+\end{equation}
+with \(\langle\cdot,\cdot\rangle\) the entrywise pairing. For the prescribed arrays the corner terms \(w_c=10^{31}\) and \(5v_c=-10^{31}\) cancel. Integer evaluation of the four marginal terms gives
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Term & Value \\
+\midrule
+\(\langle w_L,M_L\rangle\) & \(3443757053923174209775368141760\)\\
+\(\langle w_R,M_R\rangle\) & \(-10042287594608000000000056523360\)\\
+\(5\langle v_L,M_L\rangle\)& \(8125598499961871048877267250400\)\\
+\(5\langle v_R,M_R\rangle\)& \(-1758096222910000000000167210200\)\\
+\midrule
+Right-hand side of \eqref{eq:marked-rhs} & \(-231028263632954741347588341400\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The same certificate satisfies the required signs on every cell that may remain nonzero:
+\begin{center}
+\begin{tabular}{lrrrl}
+\toprule
+Table & Forbidden & Allowed & Zeros on allowed cells & Least positive coefficient \\
+\midrule
+Primal & \(168\) & \(2442\) & \(1\) & \(39039288019293480\)\\
+Dual & \(233\) & \(2377\) & \(0\) & \(1708473306757384580\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+These counts and values were independently replayed by decoding the integer arrays in the formal sources. For fixed \(p,k\), the source stores the row of \(\phi_{pkl}\) as one nonnegative integer. Extracting the \(l\)-th base-\(2^{77}\) digit and subtracting \(2^{76}\) recovers the signed entry. The two adjoint arrays use the same representation with widths \(84\) and \(95\), respectively. The replay enumerated all \(625+3125\) local tuples, recalculated the \(29^2=841\) entries of \(K\) from \eqref{eq:marked-local-kernel}, and checked both intermediate adjoint tables of \(2610\) cells apiece. The adjoints first contract against \(K\), then against \(P_9\); the final contraction against \(P_8\) gives the transform term in \(\alpha\). The sign test evaluated every cell on both sides, with no sign condition needed on forbidden cells. This replay checks the integer arithmetic. The Lean development also verifies that the structural and Fourier equations apply to the graph of an arbitrary hypothetical counterexample.
+
+Every summand on the left of \eqref{eq:marked-rhs} is nonnegative: the forbidden cells vanish, and the remaining cells and their coefficients are nonnegative. The negative right-hand side is a contradiction. Hence a counterexample in dimension eleven over \(\F\) cannot exist.

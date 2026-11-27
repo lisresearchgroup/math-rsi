@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amsthm,amssymb,booktabs}
+\usepackage[letterpaper,textwidth=6.22in,textheight=8.75in,centering]{geometry}
+\usepackage[colorlinks,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{xcolor}
+\hypersetup{pdftitle={The Alon-Jaeger-Tarsi conjecture over the five-element field in dimensions ten and eleven},pdfauthor={SII MathRSI Team}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\F}{\mathbb F_5}
+\DeclareMathOperator{\wt}{wt}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\AJT}{AJT}
+\title{The Alon--Jaeger--Tarsi conjecture over the five-element field in dimensions ten and eleven}
+\author{SII MathRSI Team}
+\date{November 27, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove that every invertible matrix of order ten or eleven over the field of five elements sends some nowhere-zero vector to a nowhere-zero vector. In dimension ten we count the words in the graph of the matrix according to the Hamming weights of their two blocks. An integer inequality for these counts forces a word of full weight in both blocks. In dimension eleven the analogous inequality yields an alternative: a hypothetical counterexample has a dual word supported on three coordinates in one block and two in the other. Marking those five coordinates makes their linear relation visible to a second weight enumerator. A local Fourier transform and an integer certificate then exclude the counterexample. Both arguments are formalized in Lean. Together with the known permanent-rank bound, they give the conjecture through dimension eleven for every prime field of order at least five.
+\end{abstract}
+
+\section{Introduction}
+Given two bases of the same vector space, can one choose a linear functional that vanishes on no vector of either basis? Over an infinite field the answer follows at once: finitely many proper hyperplanes cannot cover the dual space. Over a finite field these hyperplanes can cover it. The Alon--Jaeger--Tarsi conjecture says that, for two bases, a field of four or more elements already suffices \cite[Conjecture~1]{alontarsi}. Alon and Tarsi credit Jaeger with posing the question over the five-element field \cite[p.~393]{alontarsi}. We prove two cases over this field.
+
+\begin{theorem}\label{thm:main}
+Let $n=10$ or $n=11$. For every $A\in\GL_n(\F)$ there exists $x\in(\F^\times)^n$ such that $Ax\in(\F^\times)^n$.
+\end{theorem}
+
+The two formulations agree. In coordinates given by the first basis, write the second basis as the rows of $A$. The values of a functional on the two bases then form the vectors $x$ and $Ax$. The choice of field matters even in dimension two. Over $\mathbb F_3$, if $a,b$ are both nonzero, either $a=b$ or $a=-b$. Thus the invertible map $(a,b)\mapsto(a+b,a-b)$ has no nowhere-zero point with nowhere-zero image.
+
+Alon and Tarsi proved the conjecture in all dimensions over proper extension fields $\mathbb F_{p^r}$, $r\ge2$ \cite[Theorem~1]{alontarsi}. Nagy and Pach proved even the affine statement, which permits one prescribed forbidden value at each input and output coordinate, for primes $p>61$ with $p\ne79$ \cite[Theorem~A in the arXiv version]{nagypach}. For smaller primes, permanent rank gives a bound on the dimension. Yu proved the strict bound $n<2^{p-2}$ \cite{yu}. This gives seven over $\F$. A preprint of Zeng, Liu and Ratnavelu includes the endpoint $n=2^{p-2}$ for primes $p\ge5$, giving eight over $\F$ \cite[Theorem~1.1 and Corollary~1.2]{zeng}. Luo et al.\ report a Lean proof through nine for every prime $p\ge5$ in the TCSExam paper \cite[Appendix~F.3, Eq.~(9)]{tcsexam}. For $p\ge7$, Yu's bound already includes dimensions ten and eleven. The advance here is for $p=5$.
+
+To see what changes between the two dimensions, regard the pairs $(x,Ax)$ as codewords. A table that records only the two Hamming weights still detects the desired pair: it is enough to show that cell $(n,n)$ is occupied. The dimension-nine proof reported in TCSExam also uses Fourier-related weight counts and an exact certificate, together with constraints on pairs of columns \cite[Appendix~F.3]{tcsexam}. We use induction on the dimension to rule out words with small supports in the graph and its dual. In dimension ten these exclusions and a split-weight MacWilliams identity force the full-weight cell to be occupied.
+
+The same argument in dimension eleven produces a useful alternative. If the full-weight cell were empty, the dual would contain a word with just five nonzero entries, divided $3+2$ between the blocks after possibly exchanging them. The support of this word singles out five positions. Every word of the graph obeys the same equation on them. After rescaling and permuting coordinates we can write it as
+\[
+       x_1+x_2+x_3+(Ax)_1+(Ax)_2=0.
+\]
+Two block weights tell us how many coordinates are nonzero, but do not record their values at these positions. We keep the five entries up to their natural symmetries and count the other coordinates by weight. On the graph side the marked entries sum to zero; on the dual side we can translate all five by a common scalar. Together these restrictions give a second, finite contradiction.
+
+\input{paper-ordinary}
+\input{paper-eleven}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Corollary~\ref{cor:ten} settles dimension ten. For an eleven-dimensional counterexample the same corollary supplies a dual word of the required shape. Section~\ref{sec:marked} shows that its marked counts would have a negative weighted sum in which every term is nonnegative. This rules out the remaining dimension.
+\end{proof}
+
+\section{Consequences and the next dimension}
+Combining Theorem~\ref{thm:main} and Corollary~\ref{cor:ten} with Yu's theorem gives a single statement valid for every prime $p\ge5$: every invertible matrix over $\mathbb F_p$ of order at most eleven has a nowhere-zero point with nowhere-zero image. Allowing independent forbidden values in the two blocks costs no dimension.
+
+\begin{corollary}\label{cor:affine}
+Let $p\ge5$ be prime, $n\le11$, and $A\in\GL_n(\mathbb F_p)$. For any $a,b\in\mathbb F_p^n$ there is an $x$ with $x_i\ne a_i$ and $(Ax)_i\ne b_i$ for every $i$.
+\end{corollary}
+\begin{proof}
+Write $x=a+y$ and $t=Aa-b$. We need both $y$ and $Ay+t$ nowhere zero. When $n>0$, fix an index $i$. The determinant of $B=A+c\,t e_i^{\mathsf T}$ is affine linear in $c$ and nonzero at $c=0$. Choose $c\ne0$ with $\det B\ne0$. The homogeneous result supplies $z$ with $z$ and $Bz$ nowhere zero. Set $y=z/(c z_i)$. Then $Ay+t=Bz/(c z_i)$, as required. The case $n=0$ is immediate.
+\end{proof}
+
+The accompanying formalization also gives the affine conclusion for symmetric invertible matrices through dimension $23$. The separate argument in \texttt{TransposeHalf.lean} proves that if the affine property holds for every matrix through dimension $k$, then through dimension $2k+1$ at least one of $A$ and $A^{\mathsf T}$ has the property for every choice of forbidden values. For a symmetric matrix the two orientations agree. Thus at dimension twelve the remaining question over $\F$ concerns general nonsymmetric matrices.
+
+A difficulty with going one dimension further is already visible in the ordinary counts. In dimension twelve there is a symmetric nonnegative rational table $H$ with the true integer marginals $\mu_i$, the correct origin and axes, and $H_{12,12}=0$. In fact its positive-index cells vanish if $i+j\le5$ or if $\min(i,j)=1$ and $\max(i,j)\le5$. Its formal transform $5^{-12}KHK^{\mathsf T}$ is nonnegative, has the same margins and axes, and vanishes when $1\le i,j\le2$. The accompanying rational data give an exact example of this system of constraints. Its entries are formal multiplicities; there is no matrix construction behind the example. To obtain a twelve-dimensional proof by the marked method, one possible starting point is an argument forcing a small dual support in every counterexample, as Corollary~\ref{cor:ten} does in eleven dimensions. We do not know such an argument in dimension twelve.
+
+\appendix
+\section{Checking the certificates}\label{sec:replay}
+The electronic supplement contains the integer multipliers, their finite verification, and the connection to the coordinate statement of Theorem~\ref{thm:main}. We indicate how to repeat each part. All source paths below are relative to the directory containing this paper.
+
+\paragraph{Ordinary certificates.} Run \texttt{python3 replay\_ordinary.py}. This standard-library script reads $u,v,T$ from the Lean source arrays, computes $K$ from its polynomial coefficients and checks both sign conditions in every cell before recomputing the six gaps in Table~\ref{tab:gaps}. The ordinary multipliers are in two files under \texttt{formal/Task/}: \texttt{Polynomial\-Certificate\-Values.lean} for six through ten, and \texttt{Polynomial\-Certificate\-Eleven.lean} for eleven.
+
+\paragraph{Five marked coordinates.} Run \texttt{python3 replay\_marked.py} for an independent integer check of the local classes, Fourier kernel and all marked coefficients. The local class assignments, dot-product counts and integer multipliers are in the \texttt{PolynomialMarked} files under \texttt{formal/Task/}. The row and column order used in those arrays is fixed by the supplied class assignments. The finite sign tests are in \texttt{PolynomialMarkedValues.lean}. The link from an arbitrary counterexample to those particular tables is proved in \texttt{MarkedCounterexample.lean} and \texttt{DimensionEleven.lean}.
+
+\paragraph{Coordinate statement.} In \texttt{formal/}, run \texttt{lake exe cache get} to fetch the pinned Mathlib build cache if desired, then \texttt{bash check.sh}. The latter builds the bundled project and checks two independent callers against the original coordinate conditions. The supplied build record uses Lean 4.33.0-rc1. All 44 local dependency modules and the root module were rebuilt from their delivered sources in an empty project build directory, reusing a pinned Mathlib cache. The nineteen printed declarations have just the standard Lean axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. For the rational example in dimension twelve, run \texttt{python3 relaxation/verify.py}; that calculation uses integer arithmetic after clearing denominators.
+
+\input{paper-refs}
+\end{document}
