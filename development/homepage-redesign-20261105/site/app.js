@@ -59,12 +59,12 @@ const CASES = [
     status: () => t >= HE_V7_TIME ? 'Bounded macOS replay passed · mathematical review pending' : t >= HE_V6_TIME ? 'Replayed duals/DRAT · assembly review pending' : '75/76/77 working manuscripts · independent review pending',
     read: () => t >= HE_V6_TIME ? 'happy-ending-latest.html' : REPO + 'case-studies/happy-ending/n7-20261103/START_HERE.html', plugin: GH + '/tree/main/plugins/happy-ending',
     quant: () => t >= HE_V7_TIME ? `<div class="qrow"><span><b>≤ 77</b><i>ES(7)</i></span><span><b>≤ 294</b><i>ES(8)</i></span><span><b>≤ 1100</b><i>ES(9)</i></span><span><b>≤ 3980</b><i>ES(10)</i></span></div><p class="qnote">Working manuscripts · review pending</p><a href="happy-ending-latest.html">Results & methods ↗</a>` : t >= HE_V6_TIME ? `<div class="qrow"><span><b>≤ 77</b><i>ES(7) · working</i></span><span><b>≤ 61</b><i>N(8,6,6) · DRAT</i></span><span><b>≤ 1148</b><i>ES(9) · working</i></span></div><p class="qnote">Replayed certificates prove N(8,6,6) ≤ 61, N(9,8,8) ≤ 688 and restricted D₉ ≤ 458. Signotope N(8,8,8) ≤ 318 (planar ES(8) ≤ 319 is Schroeder’s bound) and working corollaries ES(7) ≤ 77, ES(9) ≤ 1148 (vs. 1508 / 1501*) await independent review. Run: Trellis + ARIS + v3 → v6 main.</p><div class="qrow he-witness"><span><b>25</b><i>abstract cup–cap witness, checked separately</i></span></div>` : `<div class="qrow"><span><b>≤ 75</b><i>N(7,6,7)</i></span><span><b>≤ 76</b><i>N(7,7,7)</i></span><span><b>≤ 77</b><i>ES(7)</i></span></div><p class="qnote">Working manuscripts (independent mathematical review pending; no Lean), tightening our earlier 76 / 77 / 78 draft.</p><div class="qrow he-witness"><span><b>25</b><i>abstract cup–cap witness, checked separately</i></span></div>` },
-  { id:'ajt', short:'AJT', title:"AJT through dimension eleven",
+  { id:'ajt', short:'Alon–Jaeger–Tarsi', title:"A vector that stays zero-free",
     status:"Lean-checked theorem · preprint by SII MathRSI Team",
     read:AJT_PAPER, readLabel:'Preprint (PDF) ↗', readLanguage:'EN', plugin:GH + '/blob/main/plugins/ecc/skills/mathrsi-ecc/SKILL.md#ajt',
-    quant: () => `<div class="qrow"><span><b>p ≥ 5</b><i>all prime fields</i></span><span><b>n ≤ 11</b><i>every invertible matrix</i></span></div><p class="qnote">For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero.</p><p class="qnote">Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.</p><p class="qnote">Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered.</p><p class="qnote">Run: MathRSI v8 · received on main, 2026-11-27 (#67). Fixed v8 release and earlier snapshots stay unchanged.</p><p class="p-links"><a href="${AJT_LEAN}">Lean project ↗<span class="source-language" data-no-i18n>EN</span></a><a href="${AJT_CASE}">Bilingual case guide ↗<span class="source-language" data-no-i18n>EN + 中文</span></a><a href="${GH}/pull/67">Discussion ↗</a></p>` }
+    quant: () => `<div class="qrow"><span><b>p ≥ 5</b><i>all prime fields</i></span><span><b>n ≤ 11</b><i>every invertible matrix</i></span></div><p class="qnote">For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero.</p><p class="qnote"><span>Over the five-element field, MathRSI extends the TCSExam result from dimension 9 to dimension 11.</span> <a href="https://arxiv.org/html/2611.07962v1#A6.SS3">TCSExam, Appendix F.3, Eq. (9) ↗</a></p><p class="qnote">Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered.</p><p class="qnote">Run: MathRSI v8 · received on main, 2026-11-27 (#67). Fixed v8 release and earlier snapshots stay unchanged.</p><p class="p-links"><a href="${AJT_LEAN}">Lean project ↗<span class="source-language" data-no-i18n>EN</span></a><a href="${AJT_CASE}">Bilingual case guide ↗<span class="source-language" data-no-i18n>EN + 中文</span></a><a href="${GH}/pull/67">Discussion ↗</a></p>` }
 ];
-const CN = { pb: 'Property B', ecc: 'ECC', dd: 'Degree–Diameter', e86: 'Erdős 86', q6: 'Ruskey–Savage', he: 'Happy Ending', ajt: 'AJT' };
+const CN = { pb: 'Property B', ecc: 'ECC', dd: 'Degree–Diameter', e86: 'Erdős 86', q6: 'Ruskey–Savage', he: 'Happy Ending', ajt: 'Alon–Jaeger–Tarsi conjecture' };
 const CI = {}; CASES.forEach((c, i) => { CI[c.id] = i; });
 
 // k: result | draft (working result family) | evidence | open | progress   e: grow (built in workflow) | drop (research incorporated) | fade
@@ -113,7 +113,7 @@ const MS = [
   {"c": "q6", "v": 7, "intake": true, "k": "result", "e": "drop", "t": 12600, "tag": "Q₇ · full R7 author working proof", "text": "Every ordinary short-edge matching in Q₇, including empty and perfect matchings, extends to a 128-vertex Hamilton cycle retaining all its edges. E36 covers ≥46 edges; double counting gives ≥45 for maximal matchings, and E38 excludes exactly 45; add free edges to reach a maximal matching. Source acceptance: 2026-11-19, sound-modulo-imports / same-family / provisional; external review pending, no Lean. Run: v3 local adaptation → v6 main follow-up, 2026-11-20."},
   {"c": "q6", "v": 7, "intake": true, "k": "evidence", "e": "grow", "t": 12800, "tag": "E38 local C++ recomputation", "text": "Two original C++ programs run on Mac: 35,360 legal single faces and 18,237,120 ordered face pairs; zero pairs satisfy the directional necessary conditions for a maximal 45-edge matching. Some large older-layer certificates are omitted; the full imported proof chain was not replayed end to end."},
   {"c": "he", "v": 7, "intake": true, "k": "draft", "e": "drop", "t": HE_V7_TIME, "tag": "Same-input sector deficits", "text": "Working ES(7) ≤ 77 unchanged; ES(8) ≤ 294 versus Schroeder 319, ES(9) ≤ 1100 versus previous working 1148, ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."},
-  {"c": "ajt", "v": 8, "maintenance": true, "k": "result", "e": "grow", "tag": "AJT · all primes p ≥ 5, n ≤ 11", "text": "For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.", "t": AJT_V8_TIME},
+  {"c": "ajt", "v": 8, "maintenance": true, "k": "result", "e": "grow", "tag": "All primes p ≥ 5 through dimension 11", "text": "For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. TCSExam reported the five-element result through dimension 9. MathRSI proved dimensions 10 and 11.", "t": AJT_V8_TIME},
   {"c": "ajt", "v": 8, "maintenance": true, "k": "evidence", "e": "grow", "tag": "Lean proof and original-coordinate audit", "text": "Lean connects the ordinary split-weight certificate and the five-marked-coordinate Fourier certificate to the original matrix. The marker is derived from a hypothetical counterexample, not assumed as an extra input.", "t": AJT_V8_TIME + 200},
   {"c": "ajt", "v": 8, "maintenance": true, "k": "open", "e": "fade", "tag": "General F₅ dimension 12 remains open", "text": "Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered. Exact rational tables in dimensions 12 and 16 show the limits of the specified unmarked real-valued relaxation; they are not counterexamples to the AJT conjecture.", "t": AJT_V8_TIME + 400}
 ];
@@ -137,7 +137,7 @@ const CALLOUTS = [
   {"c": "he", "v": 6, "t": 11180, "row": 2, "kind": "delta", "value": "N(8,6,6) ≤ 61 · ES(9) ≤ 1148", "detail": "m = 7–9 working · Run: v3"},
   {"c": "q6", "v": 7, "t": 12600, "row": 0, "kind": "delta", "value": "Q₇ · every matching", "detail": "v6 main result → v7 method intake"},
   {"c": "he", "v": 7, "t": HE_V7_TIME, "row": 1, "kind": "delta", "value": "ES(8) ≤ 294 · ES(9) ≤ 1100", "value2": "ES(10) ≤ 3980", "detail": "Working manuscripts · review pending"},
-  { c:'ajt', v:8, t:AJT_V8_TIME, row:1, kind:'intro', value:'n ≤ 11 · p ≥ 5', detail:'F₅: 9 → 11 · Lean' }
+  { c:'ajt', v:8, t:AJT_V8_TIME, row:1, kind:'intro', value:'9 → 11 dimensions over F₅', detail:'For every invertible A, choose x so', detail2:'that x and Ax have no zero entries' }
 ];
 
 const VERS = [
@@ -298,7 +298,7 @@ const VERS = [
 /* -------------------------------------------------------------- geometry */
 const LAST = VERS.length - 2, FUTURE = VERS.length - 1;
 const BW = 26, BH = 28, STEP = 32, PITCH = 36, X0 = 92;
-const calloutHeight = d => d.value2 ? 80 : d.kind === 'delta' ? 58 : d.detail ? 54 : 40;
+const calloutHeight = d => d.value2 || d.detail2 ? 80 : d.kind === 'delta' ? 58 : d.detail ? 54 : 40;
 const columnCards = v => CALLOUTS.filter(d => d.v === v).sort((a, b) => (a.row ?? 0) - (b.row ?? 0) || a.t - b.t);
 const cardStackHeight = cards => cards.reduce((sum, d) => sum + calloutHeight(d), 0) + Math.max(0, cards.length - 1) * 4;
 const columnDepth = v => Math.max(...CASES.map(c => MS.filter(m => m.c === c.id && isOutcome(m) && m.v <= v).length));
@@ -413,7 +413,7 @@ function buildSky() {
 
 function buildDeltaTag(d) {
   const mi = MS.findIndex(m => m.c === d.c && m.v === d.v && m.t === d.t);
-  const width = d.value2 || (d.c === 'dd' && d.v === 4) || (d.c === 'he' && d.v === 6) ? 220 : 200;
+  const width = COL - 12;
   const tagX = cx(d.v) - width / 2, ownX = slotX(d.v, CI[d.c]) + BW / 2;
   const items = MS.filter(m => m.c === d.c && isOutcome(m) && m.v <= d.v);
   const blockIndex = items.indexOf(MS[mi]);
@@ -424,19 +424,20 @@ function buildDeltaTag(d) {
   const g = el('g', { class:`delta-tag bk ${intro ? 'intro-tag' : 'change-tag'}${d.value2 ? ' multiline-tag' : ''}`, 'data-c':d.c, 'data-m':mi,
     'data-kind':d.kind, 'data-v':d.v, 'data-t':d.t,
     style:`--c:var(--${d.c})`,
-    role:'button', tabindex:'-1', 'aria-hidden':'true', 'aria-label':`${CN[d.c]}: ${d.value}${d.value2 ? '; ' + d.value2 : ''}${d.detail ? ', ' + d.detail : ''}. Inspect this result.` }, group);
+    role:'button', tabindex:'-1', 'aria-hidden':'true', 'aria-label':`${CN[d.c]}: ${d.value}${d.value2 ? '; ' + d.value2 : ''}${d.detail ? ', ' + d.detail : ''}${d.detail2 ? ' ' + d.detail2 : ''}. Inspect this result.` }, group);
   const leader = el('line', { class:'delta-leader', x1:ownX-tagX, x2:ownX-tagX, y1:d.height, y2:endY-d.y, style:'visibility:hidden' }, g);
   el('rect', { class:'delta-surface', width, height:d.height, rx:10 }, g);
   el('rect', { class:'callout-color', x:6, y:7, width:3, height:d.height-14, rx:1.5, fill:`var(--${d.c})` }, g);
   el('text', { class:'delta-kicker', x:15, y:intro ? 15 : 16 }, g).textContent = CN[d.c];
   if (!d.paper) el('text', { class:'callout-badge', x:width-10, y:intro ? 15 : 16, 'text-anchor':'end' }, g).textContent = badge;
-  if (intro) {
+  if (intro && !d.detail2) {
     el('text', { class:'intro-value', x:15, y:30 }, g).textContent = d.value;
     if (d.detail) el('text', { class:'intro-detail', x:15, y:45 }, g).textContent = d.detail;
   } else {
     el('text', { class:`delta-value${d.c === 'pb' ? ' delta-word-value' : ''}`, x:15, y:35 }, g).textContent = d.value;
     if (d.value2) el('text', { class:'delta-value', x:15, y:54 }, g).textContent = d.value2;
-    el('text', { class:'delta-detail', x:15, y:d.value2 ? 72 : 50 }, g).textContent = d.detail;
+    el('text', { class:'delta-detail', x:15, y:d.value2 ? 72 : d.detail2 ? 54 : 50 }, g).textContent = d.detail;
+    if (d.detail2) el('text', { class:'delta-detail', x:15, y:69 }, g).textContent = d.detail2;
   }
   if (d.paper) {
     const link = el('a', { href:d.paper, class:'callout-paper', 'aria-label':'Original five-parameter paper (PDF)' }, group);

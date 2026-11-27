@@ -109,8 +109,8 @@
     <div>
       <p><span>November 2026 mathematical results</span> · <a href="november-2026.html" lang="en" data-no-i18n>English</a> / <a href="november-2026-zh.html" lang="zh-CN" data-no-i18n>中文</a></p>
       <ul class="news-list">
-        <li><div class="news-meta"><span>AJT</span><time datetime="2026-11-27">2026-11-27</time></div>
-          <span><span>SII MathRSI Team proves the AJT theorem for every invertible n × n matrix over every prime field Fₚ with p ≥ 5 and n ≤ 11, with Lean formalization.</span> <span>Over F₅, this extends the cited n ≤ 9 result to dimensions 10 and 11.</span> <span>Over F₅, the general 12-dimensional case remains open, while symmetric 12 × 12 matrices are covered.</span> <a href="../../../case-studies/ajt/paper.pdf">Preprint (PDF) ↗</a> · <a href="../../../case-studies/ajt/README.md">Case &amp; Lean source ↗</a> · <a href="https://github.com/lisresearchgroup/math-rsi/pull/67">Discussion ↗</a></span></li>
+        <li><div class="news-meta"><span>Preprint</span><time datetime="2026-11-27">2026-11-27</time></div>
+          <span><strong>Alon–Jaeger–Tarsi conjecture (AJT)</strong> <span>Given an invertible matrix, can you choose a vector with no zero entries whose image also has no zero entries?</span> <span>TCSExam reports GPT-6 Astra’s Lean proof through dimension 9.</span> <a href="https://arxiv.org/html/2611.07962v1#A6.SS3">TCSExam, Appendix F.3, Eq. (9) ↗</a> <span>The SII MathRSI Team proved the next two cases over the five-element field, dimensions 10 and 11. The Lean proof covers every invertible matrix through dimension 11 over each prime field of order at least five.</span> <span>Over F₅, the general 12-dimensional case remains open, while symmetric 12 × 12 matrices are covered.</span> <a href="../../../case-studies/ajt/paper.pdf">Preprint (PDF) ↗</a> · <a href="../../../case-studies/ajt/README.md">Case &amp; Lean source ↗</a> · <a href="https://github.com/lisresearchgroup/math-rsi/pull/67">Discussion ↗</a></span></li>
         <li><div class="news-meta"><a href="https://github.com/lisresearchgroup/math-rsi/releases/tag/v8">v8</a><time datetime="2026-11-23">2026-11-23</time></div>
           <span>Download binary linear codes for 18 improved lower bounds. On the upper-bound side, 32 new deductions settle nine optimal distances. Two further entries await final acceptance in the source project.</span></li>
         <li><div class="news-meta"><a href="https://github.com/lisresearchgroup/math-rsi/releases/tag/v7">v7</a><time datetime="2026-11-22">2026-11-22</time></div>
@@ -264,9 +264,9 @@
         <div class="viz" data-viz="ajt" role="img" aria-label="AJT problem: given an invertible matrix A, find a vector x with both x and Ax nowhere zero."></div>
         <p class="vcap">Problem schematic · one vector must satisfy both conditions</p>
         <p class="r-problem"><b>Alon–Jaeger–Tarsi conjecture</b><span>Can both x and Ax have no zero entries?</span></p>
-        <h3>AJT through dimension eleven</h3>
+        <h3>A vector that stays zero-free</h3>
         <div class="r-fig"><p class="r-thm">For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero.</p><p class="r-sub">Lean-checked theorem · preprint by SII MathRSI Team</p></div>
-        <p class="r-why"><b>New scope</b> Over F₅: 9 → 11 dimensions, compared with the cited result through dimension nine.</p>
+        <p class="r-why"><b>New scope</b> <span>Over the five-element field, MathRSI extends the TCSExam result from dimension 9 to dimension 11.</span> <a href="https://arxiv.org/html/2611.07962v1#A6.SS3">TCSExam, Appendix F.3, Eq. (9) ↗</a></p>
         <p class="r-how"><b>Method</b> Refine split-weight counts with five marked coordinates forced by the hypothetical counterexample.</p>
         <p class="r-sub">Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered.</p>
         <div class="meta"><a href="../../../case-studies/ajt/paper.pdf">Preprint (PDF) ↗<span class="source-language" data-no-i18n>EN</span></a><a href="https://github.com/lisresearchgroup/math-rsi/blob/main/case-studies/ajt/formal/README.md">Lean project ↗<span class="source-language" data-no-i18n>EN</span></a><button class="trace" type="button" data-case="ajt">Trace in evolution ↑</button></div>
