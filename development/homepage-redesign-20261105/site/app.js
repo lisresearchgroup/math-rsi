@@ -11,6 +11,10 @@ const HE_V6_TIME = 11180;
 const Q7_FULL_TIME = 12600;
 const HE_V7_TIME = 12900;
 const ECC_V8_TIME = 14600;
+const AJT_V8_TIME = 15200;
+const AJT_PAPER = REPO + 'case-studies/ajt/paper.pdf';
+const AJT_LEAN = GH + '/blob/main/case-studies/ajt/formal/README.md';
+const AJT_CASE = GH + '/blob/main/case-studies/ajt/README.md';
 const ECC_PAPER = REPO + 'plugins/ecc/archive/source/paper/main.pdf';
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s);
@@ -54,9 +58,13 @@ const CASES = [
   { id: 'he', short: 'Happy Ending', title: () => t >= HE_V7_TIME ? 'Signotope capacities and planar bounds across m = 7–10' : t >= HE_V6_TIME ? 'Signotope capacities and m = 7–9 thresholds' : 'A tighter upper bound for convex heptagons',
     status: () => t >= HE_V7_TIME ? 'Bounded macOS replay passed · mathematical review pending' : t >= HE_V6_TIME ? 'Replayed duals/DRAT · assembly review pending' : '75/76/77 working manuscripts · independent review pending',
     read: () => t >= HE_V6_TIME ? 'happy-ending-latest.html' : REPO + 'case-studies/happy-ending/n7-20261103/START_HERE.html', plugin: GH + '/tree/main/plugins/happy-ending',
-    quant: () => t >= HE_V7_TIME ? `<div class="qrow"><span><b>≤ 77</b><i>ES(7)</i></span><span><b>≤ 294</b><i>ES(8)</i></span><span><b>≤ 1100</b><i>ES(9)</i></span><span><b>≤ 3980</b><i>ES(10)</i></span></div><p class="qnote">Working manuscripts · review pending</p><a href="happy-ending-latest.html">Results & methods ↗</a>` : t >= HE_V6_TIME ? `<div class="qrow"><span><b>≤ 77</b><i>ES(7) · working</i></span><span><b>≤ 61</b><i>N(8,6,6) · DRAT</i></span><span><b>≤ 1148</b><i>ES(9) · working</i></span></div><p class="qnote">Replayed certificates prove N(8,6,6) ≤ 61, N(9,8,8) ≤ 688 and restricted D₉ ≤ 458. Signotope N(8,8,8) ≤ 318 (planar ES(8) ≤ 319 is Schroeder’s bound) and working corollaries ES(7) ≤ 77, ES(9) ≤ 1148 (vs. 1508 / 1501*) await independent review. Run: Trellis + ARIS + v3 → v6 main.</p><div class="qrow he-witness"><span><b>25</b><i>abstract cup–cap witness, checked separately</i></span></div>` : `<div class="qrow"><span><b>≤ 75</b><i>N(7,6,7)</i></span><span><b>≤ 76</b><i>N(7,7,7)</i></span><span><b>≤ 77</b><i>ES(7)</i></span></div><p class="qnote">Working manuscripts (independent mathematical review pending; no Lean), tightening our earlier 76 / 77 / 78 draft.</p><div class="qrow he-witness"><span><b>25</b><i>abstract cup–cap witness, checked separately</i></span></div>` }
+    quant: () => t >= HE_V7_TIME ? `<div class="qrow"><span><b>≤ 77</b><i>ES(7)</i></span><span><b>≤ 294</b><i>ES(8)</i></span><span><b>≤ 1100</b><i>ES(9)</i></span><span><b>≤ 3980</b><i>ES(10)</i></span></div><p class="qnote">Working manuscripts · review pending</p><a href="happy-ending-latest.html">Results & methods ↗</a>` : t >= HE_V6_TIME ? `<div class="qrow"><span><b>≤ 77</b><i>ES(7) · working</i></span><span><b>≤ 61</b><i>N(8,6,6) · DRAT</i></span><span><b>≤ 1148</b><i>ES(9) · working</i></span></div><p class="qnote">Replayed certificates prove N(8,6,6) ≤ 61, N(9,8,8) ≤ 688 and restricted D₉ ≤ 458. Signotope N(8,8,8) ≤ 318 (planar ES(8) ≤ 319 is Schroeder’s bound) and working corollaries ES(7) ≤ 77, ES(9) ≤ 1148 (vs. 1508 / 1501*) await independent review. Run: Trellis + ARIS + v3 → v6 main.</p><div class="qrow he-witness"><span><b>25</b><i>abstract cup–cap witness, checked separately</i></span></div>` : `<div class="qrow"><span><b>≤ 75</b><i>N(7,6,7)</i></span><span><b>≤ 76</b><i>N(7,7,7)</i></span><span><b>≤ 77</b><i>ES(7)</i></span></div><p class="qnote">Working manuscripts (independent mathematical review pending; no Lean), tightening our earlier 76 / 77 / 78 draft.</p><div class="qrow he-witness"><span><b>25</b><i>abstract cup–cap witness, checked separately</i></span></div>` },
+  { id:'ajt', short:'AJT', title:"AJT through dimension eleven",
+    status:"Lean-checked theorem · preprint by SII MathRSI Team",
+    read:AJT_PAPER, readLabel:'Preprint (PDF) ↗', readLanguage:'EN', plugin:GH + '/blob/main/plugins/ecc/skills/mathrsi-ecc/SKILL.md#ajt',
+    quant: () => `<div class="qrow"><span><b>p ≥ 5</b><i>all prime fields</i></span><span><b>n ≤ 11</b><i>every invertible matrix</i></span></div><p class="qnote">For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero.</p><p class="qnote">Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.</p><p class="qnote">Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered.</p><p class="qnote">Run: MathRSI v8 · received on main, 2026-11-27 (#67). Fixed v8 release and earlier snapshots stay unchanged.</p><p class="p-links"><a href="${AJT_LEAN}">Lean project ↗<span class="source-language" data-no-i18n>EN</span></a><a href="${AJT_CASE}">Bilingual case guide ↗<span class="source-language" data-no-i18n>EN + 中文</span></a><a href="${GH}/pull/67">Discussion ↗</a></p>` }
 ];
-const CN = { pb: 'Property B', ecc: 'ECC', dd: 'Degree–Diameter', e86: 'Erdős 86', q6: 'Ruskey–Savage', he: 'Happy Ending' };
+const CN = { pb: 'Property B', ecc: 'ECC', dd: 'Degree–Diameter', e86: 'Erdős 86', q6: 'Ruskey–Savage', he: 'Happy Ending', ajt: 'AJT' };
 const CI = {}; CASES.forEach((c, i) => { CI[c.id] = i; });
 
 // k: result | draft (working result family) | evidence | open | progress   e: grow (built in workflow) | drop (research incorporated) | fade
@@ -104,7 +112,10 @@ const MS = [
   {"c": "he", "v": 6, "intake": true, "k": "evidence", "e": "grow", "t": 11480, "tag": "Native-trace dual & DRAT replays", "text": "Cross-platform stdlib & drat-trim checks verify N(9,8,8) ≤ 688, D₉ ≤ 458 (plus the 47,635-row depth-≤3 LP ceiling), N(8,6,6) ≤ 61 (115 rows + 9-hole matrix witness), Schroeder’s 15-file octagon trees (193 / 124) and m = 7 lock-block ≤4."},
   {"c": "q6", "v": 7, "intake": true, "k": "result", "e": "drop", "t": 12600, "tag": "Q₇ · full R7 author working proof", "text": "Every ordinary short-edge matching in Q₇, including empty and perfect matchings, extends to a 128-vertex Hamilton cycle retaining all its edges. E36 covers ≥46 edges; double counting gives ≥45 for maximal matchings, and E38 excludes exactly 45; add free edges to reach a maximal matching. Source acceptance: 2026-11-19, sound-modulo-imports / same-family / provisional; external review pending, no Lean. Run: v3 local adaptation → v6 main follow-up, 2026-11-20."},
   {"c": "q6", "v": 7, "intake": true, "k": "evidence", "e": "grow", "t": 12800, "tag": "E38 local C++ recomputation", "text": "Two original C++ programs run on Mac: 35,360 legal single faces and 18,237,120 ordered face pairs; zero pairs satisfy the directional necessary conditions for a maximal 45-edge matching. Some large older-layer certificates are omitted; the full imported proof chain was not replayed end to end."},
-  {"c": "he", "v": 7, "intake": true, "k": "draft", "e": "drop", "t": HE_V7_TIME, "tag": "Same-input sector deficits", "text": "Working ES(7) ≤ 77 unchanged; ES(8) ≤ 294 versus Schroeder 319, ES(9) ≤ 1100 versus previous working 1148, ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."}
+  {"c": "he", "v": 7, "intake": true, "k": "draft", "e": "drop", "t": HE_V7_TIME, "tag": "Same-input sector deficits", "text": "Working ES(7) ≤ 77 unchanged; ES(8) ≤ 294 versus Schroeder 319, ES(9) ≤ 1100 versus previous working 1148, ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."},
+  {"c": "ajt", "v": 8, "maintenance": true, "k": "result", "e": "grow", "tag": "AJT · all primes p ≥ 5, n ≤ 11", "text": "For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero. Over F₅, dimensions 10 and 11 extend the cited n ≤ 9 range. The paper and its Lean project cover each original invertible matrix.", "t": AJT_V8_TIME},
+  {"c": "ajt", "v": 8, "maintenance": true, "k": "evidence", "e": "grow", "tag": "Lean proof and original-coordinate audit", "text": "Lean connects the ordinary split-weight certificate and the five-marked-coordinate Fourier certificate to the original matrix. The marker is derived from a hypothetical counterexample, not assumed as an extra input.", "t": AJT_V8_TIME + 200},
+  {"c": "ajt", "v": 8, "maintenance": true, "k": "open", "e": "fade", "tag": "General F₅ dimension 12 remains open", "text": "Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered. Exact rational tables in dimensions 12 and 16 show the limits of the specified unmarked real-valued relaxation; they are not counterexamples to the AJT conjecture.", "t": AJT_V8_TIME + 400}
 ];
 const isOutcome = m => m.k === 'result' || m.k === 'draft';
 const CALLOUTS = [
@@ -125,7 +136,8 @@ const CALLOUTS = [
   {"c": "q6", "v": 6, "t": 10950, "row": 1, "kind": "delta", "value": "Q₇ · ≥56 edges", "detail": "Author working proof · v3"},
   {"c": "he", "v": 6, "t": 11180, "row": 2, "kind": "delta", "value": "N(8,6,6) ≤ 61 · ES(9) ≤ 1148", "detail": "m = 7–9 working · Run: v3"},
   {"c": "q6", "v": 7, "t": 12600, "row": 0, "kind": "delta", "value": "Q₇ · every matching", "detail": "v6 main result → v7 method intake"},
-  {"c": "he", "v": 7, "t": HE_V7_TIME, "row": 1, "kind": "delta", "value": "ES(8) ≤ 294 · ES(9) ≤ 1100", "value2": "ES(10) ≤ 3980", "detail": "Working manuscripts · review pending"}
+  {"c": "he", "v": 7, "t": HE_V7_TIME, "row": 1, "kind": "delta", "value": "ES(8) ≤ 294 · ES(9) ≤ 1100", "value2": "ES(10) ≤ 3980", "detail": "Working manuscripts · review pending"},
+  { c:'ajt', v:8, t:AJT_V8_TIME, row:1, kind:'intro', value:'n ≤ 11 · p ≥ 5', detail:'F₅: 9 → 11 · Lean' }
 ];
 
 const VERS = [
@@ -271,11 +283,11 @@ const VERS = [
     "sum": "Full Q7 R7 was already received in v6 main maintenance; v7 distills its terminal-completion method. Happy Ending retains ES(7) ≤ 77 and adds working ES(8) ≤ 294 (Schroeder comparator 319), ES(9) ≤ 1100 (previous working 1148), and ES(10) ≤ 3980. Bounded macOS finite replay passed; independent mathematical review pending, no Lean."
   },
   { tag:'v8', state:'Current', name:'Constructions, exclusions & exact closures',
-    base:[['Carry the constructive witness', 'ecc', 'Carry a verified witness through transformations and keep the strongest result for each setting.'], ['Test rarely triggered rejection branches', 'ecc', 'Independently exercise rejection branches that routine successful runs rarely reach.'], ['Propagate exclusions with exact premises', 'ecc', 'Derive upper bounds from published exclusions while preserving each theorem’s precise assumptions.']],
-    fullBase:['Carry constructive witnesses through transformations; deduplicate each setting by its strongest verified bound.', 'Independently test rarely triggered rejection branches, rather than relying on successful runs alone.', 'Propagate published upper exclusions with exact premises; separate established results from source-pending claims.'],
-    plug:[['deep','ECC','ecc'],['note','Other 5 domains retained']],
-    pluginNote:'v8 · constructive witnesses, rejection branches and exclusion propagation.',
-    sum:'MathRSI went from four settled code distances to thirteen. This round alone settled nine by matching known codes with tighter upper bounds. New constructions improved the lower bound at 18 other settings. Two further upper bounds await final acceptance.' },
+    base:[["Carry witnesses and test rejection paths", 'ecc', "Carry verified constructions through transformations and independently exercise rarely triggered rejection branches."], ['Propagate exclusions with exact premises', 'ecc', 'Derive upper bounds from published exclusions while preserving each theorem’s precise assumptions.'], ["Test the first open dimension", 'ajt', "Use exact counterexample tables to test a statistical relaxation before scaling it; recover a missing common constraint when the table still permits failure."]],
+    fullBase:['Carry constructive witnesses through transformations; deduplicate each setting by its strongest verified bound.', 'Independently test rarely triggered rejection branches, rather than relying on successful runs alone.', 'Propagate published upper exclusions with exact premises; separate established results from source-pending claims.', "v8 main follow-up · 2026-11-27: test exact counterexample tables at the first open dimension; if products preserve the obstruction, recover missing shared structure before extending the same relaxation."],
+    plug:[['deep','ECC','ecc'],['deep','AJT · ECC methods','ajt'],['note','Other 5 domains retained']],
+    pluginNote:"Seven research cases; AJT deepens the shared Base and ECC graph-code methods.",
+    sum:'MathRSI went from four settled code distances to thirteen. This round alone settled nine by matching known codes with tighter upper bounds. New constructions improved the lower bound at 18 other settings. Two further upper bounds await final acceptance. The 2026-11-27 main follow-up adds AJT through dimension eleven over every prime field p ≥ 5, proved with MathRSI v8 and formalized in Lean. The fixed v8 release remains unchanged; v9+ is future work.' },
   { tag:'v9+', state:'Future', name:'Next research, next evolution',
     base:[["Learn from the next problem", "", "Use new research successes and failures to identify the next concrete workflow improvement."]],
     fullBase:['Open continuation — next research cycle feeds the next workflow evolution'],
@@ -286,7 +298,7 @@ const VERS = [
 /* -------------------------------------------------------------- geometry */
 const LAST = VERS.length - 2, FUTURE = VERS.length - 1;
 const BW = 26, BH = 28, STEP = 32, PITCH = 36, X0 = 92;
-const calloutHeight = d => d.value2 ? 80 : d.kind === 'delta' ? 58 : d.c === 'q6' ? 54 : 40;
+const calloutHeight = d => d.value2 ? 80 : d.kind === 'delta' ? 58 : d.detail ? 54 : 40;
 const columnCards = v => CALLOUTS.filter(d => d.v === v).sort((a, b) => (a.row ?? 0) - (b.row ?? 0) || a.t - b.t);
 const cardStackHeight = cards => cards.reduce((sum, d) => sum + calloutHeight(d), 0) + Math.max(0, cards.length - 1) * 4;
 const columnDepth = v => Math.max(...CASES.map(c => MS.filter(m => m.c === c.id && isOutcome(m) && m.v <= v).length));
@@ -297,7 +309,7 @@ const HEADROOM = Math.max(0, ...Array.from({ length: LAST + 1 }, (_, v) =>
 const H = 326 + HEADROOM, GUT = 80, COL = 232, W = GUT + COL * VERS.length;
 const SPINE = 296 + HEADROOM, BASE = 284 + HEADROOM;
 const cx = i => GUT + COL * i + COL / 2;
-const R = [300, 1700, 3600, 5000, 6600, 8000, 10200, 12400, 14200], STOP = [1100, 2400, 4400, 6000, 7400, 9600, 12200, 14000, 15800], T = STOP[LAST];
+const R = [300, 1700, 3600, 5000, 6600, 8000, 10200, 12400, 14200], STOP = [1100, 2400, 4400, 6000, 7400, 9600, 12200, 14000, 16400], T = STOP[LAST];
 const MOVE = [null, [1100, 600], [2400, 600], [4400, 600], [6000, 600], [7400, 600], [9600, 600], [12200, 200], [14000, 200]];
 const KEYS = [[0,0],[1100,0],[1700,1],[2400,1],[3600,2],[4400,2],[5000,3],[6000,3],[6600,4],[7400,4],[8000,5],[9600,5],[10200,6],[12200,6],[12400,7],[14000,7],[14200,8],[T,8]];
 const SEGS = [[1100,1700],[2400,3600],[4400,5000],[6000,6600],[7400,8000],[9600,10200],[12200,12400],[14000,14200]];
@@ -312,7 +324,8 @@ function slotX(col, s, time = T) {
   });
   const total = widths.reduce((a, b) => a + b, 0);
   const before = widths.slice(0, s).reduce((a, b) => a + b, 0);
-  return cx(col) - BW / 2 + PITCH * (before - (total - 1) / 2);
+  const pitch = Math.min(PITCH, (COL - BW - 14) / Math.max(1, total - 1));
+  return cx(col) - BW / 2 + pitch * (before - (total - 1) / 2);
 }
 
 const sky = $('#sky'), lanes = $('#lanes'), stage = $('#stage'), scroller = $('#scroller');
@@ -344,8 +357,10 @@ function buildSky() {
   bands = VERS.map((V, i) => el('path', { class: 'band', d: topRound(cx(i) - 110, 8, 220, H - 8, 14) }, sky));
   el('text', { class: 'gut', x: 4, y: 172 + HEADROOM }, sky).textContent = 'Mathematical';
   el('text', { class: 'gut', x: 4, y: 190 + HEADROOM }, sky).textContent = 'results';
-  for (let i = 0; i < VERS.length; i++) for (let s = 0; s < CASES.length; s++)
+  for (let i = 0; i < VERS.length; i++) for (let s = 0; s < CASES.length; s++) {
+    if (domainDebuts[s].v > i && i !== FUTURE) continue;
     el('rect', { class: i === FUTURE ? 'ghost fut' : 'ghost', x: slotX(i, s), y: BASE + 3, width: BW, height: 3, rx: 1.5 }, sky);
+  }
   el('line', { class: 'spine-base', x1: X0, y1: SPINE, x2: cx(LAST), y2: SPINE }, sky);
   el('line', { class: 'spine-fut', x1: cx(LAST) + 10, y1: SPINE, x2: W - 14, y2: SPINE, 'marker-end': 'url(#sky-arrow)' }, sky);
   prog = el('line', { class: 'spine-prog', x1: X0, y1: SPINE, x2: X0, y2: SPINE }, sky);
@@ -452,6 +467,7 @@ function buildLanes() {
       : `<button class="chip" type="button" data-case="${p[2]}" aria-pressed="false" style="--i:${j};--c:var(--${p[2]})"><b>${p[0] === 'add' ? '+' : '↑'}</b>${p[1]}</button>`).join('')}</div>${V.pluginNote ? `<p class="plugin-note">${V.pluginNote}</p>` : ''}</div>`;
   });
   lanes.innerHTML = h;
+  $('#evolution').classList.toggle('needs-scroll', scroller.scrollWidth > scroller.clientWidth + 1);
   $('#chips').innerHTML = CASES.map(c => `<button class="case-chip" type="button" data-case="${c.id}" aria-pressed="false" style="--c:var(--${c.id})">${c.short}</button>`).join('');
 }
 
@@ -600,6 +616,7 @@ function paintTraceHint(id) {
   else if (id === 'he') hint.textContent = t >= HE_V7_TIME ? 'Happy Ending · ES(7) ≤ 77 unchanged; working ES(8) ≤ 294, ES(9) ≤ 1100, ES(10) ≤ 3980. Same-input deficits → v7.' : t >= HE_V6_TIME ? 'Happy Ending · fixed v6: m = 7–9 capacities, working ES(9) ≤ 1148; later sector deficits appear in v7.' : 'Happy Ending · ES(7) upper bound 78 → 77; the 25-point witness is separate.';
   else if (id === 'q6') hint.textContent = 'Ruskey–Savage · Q₆ → Q₇ ≥57 (v5) → ≥56 (fixed v6) → every matching (v6 main author working proof). Run: v3 local adaptation.';
   else if (id === 'e86') hint.textContent = 'Erdős 86 · v3 asymptotic Q₄ bound → v6 Q₇ 304 (≤ source), Q₈ 682–683 & Q∞ ≤ 0.5912405943. Run: v3 + coevolution.';
+  else if (id === 'ajt') hint.textContent = "AJT · F₅ 9 → 11, all primes p ≥ 5 through n = 11. Run: v8 → main follow-up, 2026-11-27.";
   else if (id === 'dd') hint.textContent = 'Degree–Diameter · v2 historical results → v4 + local DD updates → two D5 improvements feeding v5 maintenance.';
   else hint.textContent = `${CN[id]} · follow this case; repeated blocks carry earlier results forward.`;
 }
@@ -612,7 +629,7 @@ function focusCase(id, mi = null, force = false) {
   if (!focus) fline.setAttribute('points', '');
   panelKey = ''; apply();
 }
-function vlabel(m) { return m.intake ? `${VERS[m.v].tag} intake` : m.span ? 'v1–v2' : VERS[m.v].tag; }
+function vlabel(m) { return m.maintenance ? 'v8 main' : m.intake ? `${VERS[m.v].tag} intake` : m.span ? 'v1–v2' : VERS[m.v].tag; }
 function ddPath() {
   const later = t < 6750 ? ' later' : '';
   return `<ol class="p-path" aria-label="Degree–diameter research and harness feedback">
@@ -626,6 +643,9 @@ function ddPath() {
 function eccMaintenance() {
   return `<section class="p-plugin-update"><p class="p-eye">ECC · historical main maintenance</p><h4>Place each step in the research tree</h4><p>Identify the branch before searching, reuse existing exclusions, and share computations across branches. Close a parent problem only after checking full coverage.</p><a href="${GH}/blob/main/plugins/ecc/skills/mathrsi-ecc/references/node-research.md">Read the node protocol ↗</a></section>`;
 }
+function ajtMaintenance() {
+  return `<section class="p-plugin-update"><p class="p-eye">AJT · v8 main follow-up (#67)</p><h4>Keep the constraints from one matrix</h4><p><b>Base.</b> At the first open dimension, check whether a table can meet every constraint yet contain no solution. If it can, look for a relation that holds in the original matrix and is missing from the table.</p><p><b>ECC.</b> For graph codes (x, Ax), use primal/dual split weights. A forced low-weight dual word supplies three marked input coordinates and two output coordinates; rebuild the marked transform and reconnect the certificate to the same matrix.</p><p class="p-links"><a href="${GH}/blob/main/base/skills/mathrsi-route-loop/SKILL.md">Shared Base action ↗</a><a href="${GH}/blob/main/plugins/ecc/skills/mathrsi-ecc/SKILL.md#ajt">ECC graph-code method ↗</a></p></section>`;
+}
 function renderPanel(sel) {
   const list = focus ? MS.map((m, i) => [m, i]).filter(([m]) => m.c === focus) : [];
   const reached = list.filter(([m]) => t >= m.t).length;
@@ -633,17 +653,20 @@ function renderPanel(sel) {
   if (key === panelKey) return; panelKey = key;
   if (!focus) {
     const V = VERS[sel];
-    panel.innerHTML = `<div><p class="p-eye">MathRSI harness · ${V.tag} · ${V.state}</p><h3>${V.name}</h3><p class="p-sum">${V.sum}</p>${sel === 4 ? eccMaintenance() : sel === 5 ? '<p class="p-links"><a href="q7.html">Q7 result & methods ↗</a> · <a href="dd-latest.html">DD latest results ↗</a></p>' : V.tag === 'v6' ? '<p class="p-links"><a href="erdos-86-latest.html">Erdős 86 results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a> · <a href="happy-ending-latest.html">Happy Ending results & methods ↗</a></p>' : V.tag === 'v8' ? `<p class="p-links"><a href="ecc-intervals.html">ECC intervals & methods ↗</a><a href="${ECC_PAPER}">Five-parameter paper ↗</a></p>` : V.tag === 'v7' ? '<p class="p-links"><a href="happy-ending-latest.html">Happy Ending results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a></p>' : ''}</div>
+    panel.innerHTML = `<div><p class="p-eye">MathRSI harness · ${V.tag} · ${V.state}</p><h3>${V.name}</h3><p class="p-sum">${V.sum}</p>${sel === 4 ? eccMaintenance() : sel === 5 ? '<p class="p-links"><a href="q7.html">Q7 result & methods ↗</a> · <a href="dd-latest.html">DD latest results ↗</a></p>' : V.tag === 'v6' ? '<p class="p-links"><a href="erdos-86-latest.html">Erdős 86 results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a> · <a href="happy-ending-latest.html">Happy Ending results & methods ↗</a></p>' : V.tag === 'v8' ? `<p class="p-links"><a href="ecc-intervals.html">ECC intervals & methods ↗</a><a href="${ECC_PAPER}">Five-parameter paper ↗</a><a href="${AJT_PAPER}">AJT preprint ↗</a><a href="${AJT_LEAN}">Lean project ↗</a><a href="${GH}/pull/67">AJT workflow uptake (#67) ↗</a></p>` : V.tag === 'v7' ? '<p class="p-links"><a href="happy-ending-latest.html">Happy Ending results & methods ↗</a> · <a href="q7.html">Q7 result & methods ↗</a></p>' : ''}${V.tag === 'v8' ? ajtMaintenance() : ''}</div>
       <div><p class="p-eye">Shared base &amp; workflow details in ${V.tag}</p>
       <ul class="p-vlist">${V.fullBase.map(item => `<li>${item}</li>`).join('')}</ul>
       <p class="p-foot">Choose a change label or colored result block to inspect its conclusions and proof evidence.</p></div>`;
     return;
   }
   const c = CASES[CI[focus]];
+  const currentReader = (c.id === 'ecc' && t >= ECC_V8_TIME) || (c.id === 'q6' && t >= Q7_TIME) || (c.id === 'dd' && t >= DD_TIME) || (c.id === 'e86' && t >= E86_V6_TIME);
+  const readLabel = c.readLabel || (currentReader ? 'Result & methods ↗' : 'Read the proof ↗');
+  const readLanguage = c.readLanguage || (currentReader ? 'EN + 中文' : ['pb','ecc','dd'].includes(c.id) ? 'EN' : '中文');
   const items = list.slice().sort((a, b) => a[0].v - b[0].v || a[0].t - b[0].t);
   panel.innerHTML = `<div style="--c:var(--${c.id})"><p class="p-eye"><span class="dot"></span>${CN[c.id]}</p><h3>${typeof c.title === 'function' ? c.title() : c.title}</h3>${c.quant()}
       <p class="p-status">${typeof c.status === 'function' ? c.status() : c.status}</p>${c.id === 'dd' ? ddPath() : ''}${c.id === 'ecc' && t < ECC_V8_TIME ? eccMaintenance() : ''}
-      <p class="p-links"><a href="${typeof c.read === 'function' ? c.read() : c.read}">${((c.id === "ecc" && t >= ECC_V8_TIME) || (c.id === "q6" && t >= Q7_TIME) || (c.id === "dd" && t >= DD_TIME) || (c.id === "e86" && t >= E86_V6_TIME)) ? "Result & methods ↗" : "Read the proof ↗"}<span class="source-language" data-no-i18n>${((c.id === "ecc" && t >= ECC_V8_TIME) || (c.id === "q6" && t >= Q7_TIME) || (c.id === "dd" && t >= DD_TIME) || (c.id === "e86" && t >= E86_V6_TIME)) ? "EN + 中文" : ["pb", "ecc", "dd"].includes(c.id) ? "EN" : "中文"}</span></a><a href="${c.plugin}">Plugin source ↗</a><button class="p-close" type="button" data-close>Close ✕</button></p></div>
+      <p class="p-links"><a href="${typeof c.read === 'function' ? c.read() : c.read}">${readLabel}<span class="source-language" data-no-i18n>${readLanguage}</span></a><a href="${c.plugin}">Plugin source ↗</a><button class="p-close" type="button" data-close>Close ✕</button></p></div>
     <div style="--c:var(--${c.id})"><p class="p-eye">Mathematical results</p><ol class="p-ms">${items.filter(([m]) => isOutcome(m)).map(([m, i]) => {
       const on = t >= m.t;
       return `<li class="${on ? '' : 'later'}${hl === i ? ' hl' : ''}"><span class="p-v">${vlabel(m)}</span><span class="p-k k-${m.k}">${m.tag}</span><span class="p-t">${m.text}${on ? '' : `<em>appears at ${vlabel(m)}</em>`}</span></li>`;
@@ -653,6 +676,9 @@ function renderPanel(sel) {
 /* ---------------------------------------------------------- card visuals */
 const wrap = s => `<svg viewBox="0 0 320 200" aria-hidden="true" focusable="false">${s}</svg>`;
 const VIZ = {
+  ajt() {
+    return wrap(`<text class="vt" x="160" y="30" text-anchor="middle">Given invertible A, find one vector x</text><rect x="20" y="65" width="118" height="60" rx="10" fill="var(--surface)" stroke="var(--ajt)"/><text x="79" y="101" text-anchor="middle" fill="var(--ajt)" font-size="22">x</text><path d="M145 95h29m-7-6 8 6-8 6" fill="none" stroke="var(--ajt)" stroke-width="2"/><text x="160" y="73" text-anchor="middle" fill="var(--ink)">A</text><rect x="182" y="65" width="118" height="60" rx="10" fill="var(--surface)" stroke="var(--ajt)"/><text x="241" y="101" text-anchor="middle" fill="var(--ajt)" font-size="22">Ax</text><text class="vt" x="160" y="160" text-anchor="middle">No zero coordinate in either vector</text>`);
+  },
   pb() {
     const xs = [110, 160, 210], ys = [50, 100, 150], col = [[0,1,0],[1,0,1],[1,1,0]];
     let s = '';
@@ -772,6 +798,7 @@ function uFromEvent(e) {
   return Math.max(0, Math.min(FUTURE, (p.x - cx(0)) / COL));
 }
 function bind() {
+  window.addEventListener('resize', () => $('#evolution').classList.toggle('needs-scroll', scroller.scrollWidth > scroller.clientWidth + 1), { passive:true });
   playBtn.addEventListener('click', () => { touched = true; playing ? pause() : play(); });
   $('#replay').addEventListener('click', () => { touched = true; t = 0; play(); });
 
@@ -804,7 +831,7 @@ function bind() {
   if (overview) overview.addEventListener('click', () => focusCase(null, null, true));
   document.addEventListener('click', e => {
     const tr = e.target.closest('.trace');
-    if (tr) { focusCase(tr.dataset.case, null, true); $('#evolution').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; }
+    if (tr) { if (tr.dataset.case === 'ajt' && t < AJT_V8_TIME) goTo(LAST); focusCase(tr.dataset.case, null, true); $('#evolution').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); return; }
     const b = e.target.closest('button[data-case]'); if (b) { focusCase(b.dataset.case); return; }
     const g = e.target.closest('[data-goto]'); if (g) { goTo(+g.dataset.goto); return; }
     if (e.target.closest('[data-close]')) focusCase(null, null, true);

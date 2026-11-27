@@ -49,7 +49,7 @@
 
   <section id="evolution" class="evo wrap" aria-labelledby="evo-h">
     <h2 id="evo-h" class="evo-title">MathRSI evolution: base workflow &amp; domain plugins</h2>
-    <p class="evo-deck">MathRSI v8 carries constructive witnesses, tests rejection branches and propagates published exclusions with exact premises. v9+ remains open.</p>
+    <p class="evo-deck">MathRSI v8 settled nine more optimal code distances. The same framework helped extend the Alon–Jaeger–Tarsi theorem over the five-element field from dimension 9 to 11.</p>
     <div class="fig-head">
       <div class="ctls">
         <button class="ctl primary" id="play" type="button"></button>
@@ -67,7 +67,7 @@
     <p class="scroll-hint">Swipe to explore versions →</p>
     <div class="scroller" id="scroller">
       <div class="stage" id="stage">
-        <svg class="sky" id="sky" viewBox="0 0 1936 326" role="group" aria-label="Research results across v0–v8 and v9+ future work. In ECC, v8 takes the number of settled optimal distances from 4 to 13. Select the lower-bound and upper-bound blocks to explore the results."></svg>
+        <svg class="sky" id="sky" viewBox="0 0 1936 326" role="group" aria-label="Seven research cases across v0–v8 and v9+ future work. AJT joins only at the v8 main follow-up; ECC retains its separate lower-bound and upper-bound results."></svg>
         <div class="lanes" id="lanes"></div>
       </div>
     </div>
@@ -258,6 +258,18 @@
         <p class="r-how"><b>Method</b> Keep actual source sets, shared locks and all penultimate choices on the same input; charge row slack and sector deficits together.</p>
         <div class="meta"><span class="status">Replayed duals/DRAT · assembly review pending</span><a href="happy-ending-latest.html">Results &amp; methods ↗<span class="source-language" data-no-i18n>EN + 中文</span></a><a href="../../../case-studies/happy-ending/n7-20261103/START_HERE.html">Earlier m = 7 ↗<span class="source-language" data-no-i18n>中文</span></a><button class="trace" type="button" data-case="he">Trace in evolution ↑</button></div>
         <details><summary>Scope &amp; verification</summary><p>Five finite suites are replayed directly in-repo: milestone9 N(8,6,6) ≤ 61 (115 shared-label rows + DRAT; the 9-hole hitting vector is a matrix witness, not a 61-point signotope), zero-float native-trace integer duals N(9,8,8) ≤ 688 and junction-restricted D₉ ≤ 458 (matching the 47,635-row depth-≤3 LP ceiling), Schroeder’s 15-file octagon omission trees (193 / 124), DRAT exclusion of 5 common m = 7 lock blocks, and the 25-point E21 abstract witness (with historical same-family/provisional acceptance of N(7,5,6) ≤ 25). Planar ES(8) ≤ 319 is Schroeder’s published preprint bound; all structural, cyclic-sign transfer (N(8,8,8) ≤ 318) and R7/R20 assembly manuscripts (ES(7) ≤ 77, ES(9) ≤ 1148) remain working proofs pending independent mathematical review, with no Lean formalization.</p></details>
+      </article>
+
+      <article class="card" style="--c:var(--ajt)">
+        <div class="viz" data-viz="ajt" role="img" aria-label="AJT problem: given an invertible matrix A, find a vector x with both x and Ax nowhere zero."></div>
+        <p class="vcap">Problem schematic · one vector must satisfy both conditions</p>
+        <p class="r-problem"><b>Alon–Jaeger–Tarsi conjecture</b><span>Can both x and Ax have no zero entries?</span></p>
+        <h3>AJT through dimension eleven</h3>
+        <div class="r-fig"><p class="r-thm">For every prime p ≥ 5 and invertible n × n matrix A with n ≤ 11, there is a vector x with every coordinate of both x and Ax nonzero.</p><p class="r-sub">Lean-checked theorem · preprint by SII MathRSI Team</p></div>
+        <p class="r-why"><b>New scope</b> Over F₅: 9 → 11 dimensions, compared with the cited result through dimension nine.</p>
+        <p class="r-how"><b>Method</b> Refine split-weight counts with five marked coordinates forced by the hypothetical counterexample.</p>
+        <p class="r-sub">Over F₅, general dimension 12 and arbitrary dimension remain open; symmetric 12-dimensional matrices are covered.</p>
+        <div class="meta"><a href="../../../case-studies/ajt/paper.pdf">Preprint (PDF) ↗<span class="source-language" data-no-i18n>EN</span></a><a href="https://github.com/lisresearchgroup/math-rsi/blob/main/case-studies/ajt/formal/README.md">Lean project ↗<span class="source-language" data-no-i18n>EN</span></a><button class="trace" type="button" data-case="ajt">Trace in evolution ↑</button></div>
       </article>
 
     </div>

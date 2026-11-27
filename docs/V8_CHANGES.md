@@ -29,3 +29,7 @@ The last two entries concern a single computer-assisted exclusion of a binary [4
 - **Retain the premises of propagated bounds.** The ECC plugin separates a supplied matrix, an imported theorem and a dated table entry. This lets a reader reproduce an upper-bound deduction or recover a constructive witness for one setting. [ECC plugin](../plugins/ecc/README.md)
 
 PR #56 updates the original five-parameter paper and its reproducibility instructions. PR #57 supplies the interval ledger, code matrices, derivations and scan records. Results are compared with the archived table snapshot. [Manuscript update](https://github.com/lisresearchgroup/math-rsi/pull/56) · [Evidence archive](https://github.com/lisresearchgroup/math-rsi/pull/57)
+
+## AJT follow-up · 27 November 2026
+
+Using v8, the team proved the Alon–Jaeger–Tarsi conjecture in dimensions 10 and 11 over the five-element field. The dimension-11 proof extracts a relation among five coordinates of the same matrix and counts again with those coordinates marked. The ECC plugin now explains how to reuse that step for graph codes. The shared route workflow also records what to do when a table of counts loses too much information: test its limits with an exact rational example, then return to the matrix for a relation the table omitted. These updates landed on main after the v8 release. [Paper and Lean proofs](../case-studies/ajt/README.md) · [ECC method](../plugins/ecc/skills/mathrsi-ecc/SKILL.md#ajt) · [Route workflow](../base/skills/mathrsi-route-loop/SKILL.md)

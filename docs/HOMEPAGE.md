@@ -1,8 +1,8 @@
 # MathRSI visual tour / 可视化导览
 
-The interactive **English / 中文 homepage** presents six mathematical research threads, their results, the evolution of the base and domain plugins, and a historical research-workflow replay.
+The interactive **English / 中文 homepage** presents seven mathematical research cases, their results, the evolution of the base and domain plugins, and a historical research-workflow replay.
 
-**[Public homepage / 公开主页](https://lisresearchgroup.github.io/math-rsi/)** — interactive bilingual homepage and selected six-topic readers, linked directly to the public GitHub repository. Publication runs automatically when changes merge into main.
+**[Public homepage / 公开主页](https://lisresearchgroup.github.io/math-rsi/)** — interactive bilingual homepage and selected research papers and case readers, linked directly to the public GitHub repository. Publication runs automatically when changes merge into main.
 
 [Public build scope and workflow](PAGES.md)
 
@@ -40,7 +40,7 @@ Keep the server rooted at the complete clone; no npm build or regeneration is ne
 
 The source stays at its existing location so its relative figure, case-reader and proof links keep working. This guide links the public Pages entry and preserves local viewing of the original clone.
 
-中文：克隆或下载后，在浏览器中打开上述 HTML。右上角可切换中英文；页面包含六题成果、Base／Plugins 演进和历史研究回放。GitHub 上的 HTML 链接显示源码，交互阅读需打开本地文件。
+中文：克隆或下载后，在浏览器中打开上述 HTML。右上角可切换中英文；页面包含七个案例的成果、Base／Plugins 演进和历史研究回放。GitHub 上的 HTML 链接显示源码，交互阅读需打开本地文件。
 
 - [Six results, methods and evidence scopes](../case-studies/README.md)
 - [Start your own task](QUICKSTART.md)

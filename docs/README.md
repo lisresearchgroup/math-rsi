@@ -1,13 +1,13 @@
 # MathRSI documentation
 
-[English entry](../README.md) · [中文入口](../README.zh-CN.md) · [Visual tour](HOMEPAGE.md) · [Six research cases](../case-studies/README.md)
+[English entry](../README.md) · [中文入口](../README.zh-CN.md) · [Visual tour](HOMEPAGE.md) · [Research cases](../case-studies/README.md)
 
 Choose the path that matches your task. The entry pages and quick start are bilingual or English; many detailed workflow and domain references are in Chinese.
 
 | Your purpose | Read next |
 | --- | --- |
 | Try MathRSI and start a task | [Quick start](QUICKSTART.md) · [Runnable proof-repair example](../examples/proof-repair/README.md) |
-| Understand the mathematics and evidence | [Six-case index](../case-studies/README.md) · [Public visual tour](https://lisresearchgroup.github.io/math-rsi/) · [Local viewing](HOMEPAGE.md) |
+| Understand the mathematics and evidence | [Case index](../case-studies/README.md) · [Public visual tour](https://lisresearchgroup.github.io/math-rsi/) · [Local viewing](HOMEPAGE.md) |
 | Continue a research workspace | [Five workflows and return paths](WORKFLOWS.md) · [Workspace, wiki and recovery](WORKSPACE.md) |
 | Choose domain methods | [Six-domain routing](DOMAIN_ROUTING.md) · [Plugin contract](PLUGIN_CONTRACT.md) |
 | Connect external reviewers or use bundled ARIS | [Reviewer MCP](REVIEWER_MCP.md) · [ARIS reuse and dual-host layout](ARIS_REUSE.md) |
@@ -23,7 +23,7 @@ Choose the path that matches your task. The entry pages and quick start are bili
 | [`base/skills/skills-codex/`](../base/skills/skills-codex/) | The Codex implementation of the bundled ARIS skills. |
 | [`base/tools/`](../base/tools/) | Bundled helpers; set `ARIS_REPO` to this clone's `base`. |
 | [`plugins/`](../plugins/) | Six domains and fourteen direct domain skills, mathematical references, failure knowledge and executable checkers. |
-| [`case-studies/`](../case-studies/) | One overview of all six research threads, with existing case readers and links into plugin evidence. |
+| [`case-studies/`](../case-studies/) | An index of the seven research cases, with existing case readers and links into plugin evidence. |
 | [`examples/`](../examples/) | A bounded proof-repair exercise and reference output. |
 | [`mcp-servers/`](../mcp-servers/) | Four reviewer bridge implementations; selected CLIs and authentication are external dependencies. |
 | [`figures/mathrsi/`](../figures/mathrsi/README.md) | Editable architecture, GPT Image alternative, source instructions and historical diagrams. |

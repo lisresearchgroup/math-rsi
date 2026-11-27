@@ -4,7 +4,7 @@
 
 **面向数学探索与证明的自进化智能体系统。**<br>让 Claude Code 与 Codex 执行可读的 Markdown 技能与领域核验器。
 
-[![项目主页 / EN + 中文](figures/mathrsi/badges/visual-tour.zh-CN.svg)](https://lisresearchgroup.github.io/math-rsi/ "项目主页 / EN + 中文")&nbsp; [![快速开始 / 立即上手](figures/mathrsi/badges/quick-start.zh-CN.svg)](#开始使用)&nbsp; [![数学成果 / 6 大方向](figures/mathrsi/badges/results.zh-CN.svg)](case-studies/README.md)&nbsp; [![Agent 指南 / 工作流 + Wiki](figures/mathrsi/badges/agent-guide.zh-CN.svg)](docs/WORKFLOWS.md)&nbsp; [![贡献者 / 团队](figures/mathrsi/badges/contributors.zh-CN.svg)](#contributors)&nbsp; [![EN / English](figures/mathrsi/badges/lang-en.svg)](README.md)
+[![项目主页 / EN + 中文](figures/mathrsi/badges/visual-tour.zh-CN.svg)](https://lisresearchgroup.github.io/math-rsi/ "项目主页 / EN + 中文")&nbsp; [![快速开始 / 立即上手](figures/mathrsi/badges/quick-start.zh-CN.svg)](#开始使用)&nbsp; [![数学成果 / 7 个案例](figures/mathrsi/badges/results.zh-CN.svg)](case-studies/README.md)&nbsp; [![Agent 指南 / 工作流 + Wiki](figures/mathrsi/badges/agent-guide.zh-CN.svg)](docs/WORKFLOWS.md)&nbsp; [![贡献者 / 团队](figures/mathrsi/badges/contributors.zh-CN.svg)](#contributors)&nbsp; [![EN / English](figures/mathrsi/badges/lang-en.svg)](README.md)
 
 </div>
 
@@ -12,7 +12,7 @@ MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Cl
 
 [![MathRSI 历史主页 v0 → v6 演进回放](figures/mathrsi/media/evolution.gif?v=6-q7-20261120)](figures/mathrsi/media/evolution.mp4?v=6-q7-20261120)
 
-*历史主页 v0 → v6 演进回放；画面中的“Current”指当时的 v6。点击观看 MP4；[完整交互主页](https://lisresearchgroup.github.io/math-rsi/) · [六个数学案例与核验范围](case-studies/README.md)。*
+*历史主页 v0 → v6 演进回放；画面中的“Current”指当时的 v6。点击观看 MP4；[完整交互主页](https://lisresearchgroup.github.io/math-rsi/) · [七个数学案例与核验范围](case-studies/README.md)。*
 
 **43 位码研究回放**
 
@@ -65,9 +65,11 @@ mathrsi
 
 ## 2. 🧮 数学成果
 
-六个领域的研究同时积累数学结果和可复用方法。[公开主页](https://lisresearchgroup.github.io/math-rsi/) · [本地运行方法](docs/HOMEPAGE.md)。**[中英可视化导览](https://lisresearchgroup.github.io/math-rsi/)**展示问题、成果与演进；**[六题统一索引](case-studies/README.md)**连接证明、核验范围和可运行工具。
+七个数学案例同时积累数学结果和可复用方法，由六个领域插件支持。AJT 复用 ECC 插件。[公开主页](https://lisresearchgroup.github.io/math-rsi/) · [本地运行方法](docs/HOMEPAGE.md)。**[中英可视化导览](https://lisresearchgroup.github.io/math-rsi/)**展示问题、成果与演进；**[七案例统一索引](case-studies/README.md)**连接证明、核验范围和可运行工具。
 
-[![六题数学成果速览](figures/mathrsi/results-overview/results-overview.zh.svg?v=8-ecc)](case-studies/README.md)
+[![历史六题数学成果速览](figures/mathrsi/results-overview/results-overview.zh.svg?v=8-ecc)](case-studies/README.md)
+
+*上图保留 AJT 加入前的六题展示；下列文字包含全部七个案例。*
 
 - **Property B：** $k=5,\ldots,12$ 的具体下界，以及所有 $k\ge12$ 随参数指数增长的加性增益。[成果与证明范围](case-studies/property-b/README.md)
 - **纠错码。** 18 组参数的生成矩阵可下载。在 37 项有证据支持的上界改进中，13 项与已有码的距离相等，确定了最优值。另有两项等待原项目最终验收。 [查看构造与矩阵](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#lower) · [查看上界与证明](https://lisresearchgroup.github.io/math-rsi/ecc-intervals.html#upper)
@@ -75,6 +77,7 @@ mathrsi
 - **Erdős 第 86 题：** 七维超立方体的无四边形子图最多有 [304 条边](https://arxiv.org/abs/2611.27284)，$682\le\mathrm{ex}(Q_8,C_4)\le683$，渐近密度上界从 $0.60318$ 推进至 $\le0.5912405943$（`T3`）／$\le0.5912405942$（`T4`）。[结果与核验范围](case-studies/erdos-86/README.md)
 - **Ruskey–Savage：** 完整作者工作证明覆盖 $Q_7$ 的任意匹配（包括空匹配与完美匹配），保留 $Q_6$ 全称结果；待外部同行评议，无 Lean。[证明、局部复算与版本历史](case-studies/ruskey-savage-q7/README.md)
 - **Happy Ending 与 $N(m,r,s)$：** 新同输入扇区缺额工作稿给出平面工作推论 $\mathrm{ES}(7)\le77$、$\mathrm{ES}(8)\le294$、$\mathrm{ES}(9)\le1100$、$\mathrm{ES}(10)\le3980$；独立数学审阅尚未完成。先前可重放的有限证书保留各自范围与来源。[现值、证据与复现](plugins/happy-ending/archive/nmrs-20261120/HANDOFF.md) · [案例导读](case-studies/happy-ending/README.md)
+- **Alon–Jaeger–Tarsi（AJT）：** Lean 证明覆盖所有 $p\ge5$ 素域上 $n\le11$ 的任意可逆矩阵，将参考文献中的 $\mathbb F_5$ 结论推进到 10、11 维；$\mathbb F_5$ 上的一般 12 维仍开放。[案例与 Lean 源码](case-studies/ajt/README.md) · [预印本（PDF）](case-studies/ajt/paper.pdf)
 
 <a id="三层架构"></a>
 
@@ -122,7 +125,7 @@ v0 记录通用框架形成前的 Property B 和编码研究。首个版本标�
 
 ## 6. 📚 文档与来源
 
-**[按目的选择阅读路径](docs/README.md)** · [六题研究案例](case-studies/README.md) · [仓库地图](docs/README.md#repository-map) · [验证记录](development/README.md#validation-and-implementation) · [技能验收](docs/SKILL_ACCEPTANCE.md) · [参与贡献](CONTRIBUTING.zh-CN.md)
+**[按目的选择阅读路径](docs/README.md)** · [七个研究案例](case-studies/README.md) · [仓库地图](docs/README.md#repository-map) · [验证记录](development/README.md#validation-and-implementation) · [技能验收](docs/SKILL_ACCEPTANCE.md) · [参与贡献](CONTRIBUTING.zh-CN.md)
 
 基于 **[ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)** 和插件／案例保留的研究原件。随仓 ARIS 快照为 `c485faa59a68e51c6575dea67ca57abc7a6a2b9c`。[来源说明](docs/PROVENANCE.md) · [快照清单](base/ARIS_SNAPSHOT.json) · [桥接来源](mcp-servers/SOURCE.md)
 

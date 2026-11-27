@@ -2,7 +2,7 @@
 
 **[Open the public homepage](https://lisresearchgroup.github.io/math-rsi/)** · [Local clone viewing](HOMEPAGE.md)
 
-The public site serves the interactive bilingual homepage and selected six-topic readers alongside the public GitHub repository, linking source and evidence files directly on GitHub.
+The public site serves the interactive bilingual homepage and selected papers and case readers alongside the public GitHub repository, linking source and evidence files directly on GitHub.
 
 ## What is published
 
@@ -10,7 +10,7 @@ The public site serves the interactive bilingual homepage and selected six-topic
 
 The curated bilingual `q7.html`, `erdos-86-latest.html` and `happy-ending-latest.html` pages present the seven-dimensional working proof for every matching (the fixed v6 milestone covered at least 56 edges), the per-setting C4-free bounds ($Q_7$, $Q_8$, $Q_\infty$), and the Happy Ending / $N(m,r,s)$ bounds across $m = 7, 8, 9$ and general $m$, together with their exact verification boundaries and `v3` → `v5`/`v6` provenance. They add no raw research logs or certificate archives. Mathematical text and its stated assurance remain those of the selected readers.
 
-The old offline packager is broader and recursively follows small linked files. It is not used for public publication. [`tools/build_public_site.py`](../tools/build_public_site.py) reuses its URL-adaptation approach with this explicit list. It rewrites local HTML/CSS/JS references, including the dynamic six-topic Read links. Selected materials resolve locally; other available repository sources link directly to GitHub. Unavailable references retain their labels with disabled links. No linked file is automatically added.
+The old offline packager is broader and recursively follows small linked files. It is not used for public publication. [`tools/build_public_site.py`](../tools/build_public_site.py) reuses its URL-adaptation approach with this explicit list. It rewrites local HTML/CSS/JS references, including the dynamic case-reader links. Selected materials resolve locally; other available repository sources link directly to GitHub. Unavailable references retain their labels with disabled links. No linked file is automatically added.
 
 ## Build and preview
 

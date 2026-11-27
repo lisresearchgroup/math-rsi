@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="24" viewBox="0 0 128 24" role="img" aria-label="数学成果 / 6 大方向">
-  <title>数学成果 / 6 大方向</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="24" viewBox="0 0 128 24" role="img" aria-label="数学成果 / 7 个案例">
+  <title>数学成果 / 7 个案例</title>
   <clipPath id="r"><rect width="128" height="24" rx="4"/></clipPath>
   <g clip-path="url(#r)">
     <path fill="#0F172A" d="M0 0h64v24H0z"/>
@@ -7,6 +7,6 @@
   </g>
   <g fill="#fff" text-anchor="middle" font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="12">
     <text x="32" y="16">数学成果</text>
-    <text x="96" y="16">6 大方向</text>
+    <text x="96" y="16">7 个案例</text>
   </g>
 </svg>

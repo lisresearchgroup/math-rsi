@@ -9,6 +9,8 @@
 
 数学工具从 [结构归约](skills/mathrsi-ecc/references/reductions.md) 开始；卡点查 [真实失败与重试条件](skills/mathrsi-ecc/references/failures.md)；按义务找原件用 [阅读地图](skills/mathrsi-ecc/references/source-map.md)；形式结果读 [Lean显式参数与实际数据边界](skills/ecc-certificate/references/lean-boundary.md)。完整固定母码示例见 [fixed-parent](skills/mathrsi-ecc/examples/fixed-parent.md)。
 
+有限域矩阵的处处非零向量问题可调用同一插件的 [AJT 图码方法](skills/mathrsi-ecc/SKILL.md#ajt)。这里按输入、输出两块分别计数，从实际对偶词中取标记坐标；五元域的证书和复算入口见 [AJT 案例](../../case-studies/ajt/README.md)。
+
 ## 按节点推进与避免重复研究
 
 每次新推进先匹配已有分枝；未匹配时说明父域、未覆盖余类或共用依赖，归属未知则先核对。实际流程接在 mathrsi-ecc，范围验收接在 ecc-certificate。读[节点研究协议](skills/mathrsi-ecc/references/node-research.md)、[可填写工作包](skills/mathrsi-ecc/examples/node-work-package.md)与[72/36分枝示例](skills/mathrsi-ecc/examples/node-research.md)。沿用任务的节点账本和 ARIS wiki，固定身份而非预设统一分枝数量；局部排除与全域解答分开，共用计算不重复派发。

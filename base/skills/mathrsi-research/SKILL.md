@@ -94,7 +94,7 @@ ARIS双端实现及helper见 [ARIS_REUSE](../../../docs/ARIS_REUSE.md)。Codex�
 
 ## 加载领域能力并保持返回点
 
-按原题对象读取[领域调用与返回](../../../docs/DOMAIN_ROUTING.md)的选择表，加载一个适用的完整领域入口；现有Property B、DD、ECC、极值超立方体、Hamilton超立方体、Happy Ending六类。ECC为既有插件的证据升级，不再按旧draft排除。这里的选择基于数学对象和当前义务，不能仅按“图论”自动混用所有插件。
+按原题对象读取[领域调用与返回](../../../docs/DOMAIN_ROUTING.md)的选择表，加载一个适用的完整领域入口；现有Property B、DD、ECC、极值超立方体、Hamilton超立方体、Happy Ending六类。遇到 Alon–Jaeger–Tarsi（AJT）的可逆矩阵与处处非零向量问题，调用 ECC 插件的[图码与标记坐标方法](../../../plugins/ecc/skills/mathrsi-ecc/SKILL.md#ajt)，并从[已证维数](../../../case-studies/ajt/README.md)接续。这里的选择基于数学对象和当前义务，不能仅按“图论”自动混用所有插件。
 
 将选择及对应阶段交给下级workflow：prepare/survey消费定义与来源；route-loop执行领域诊断/探针；prove执行数学或证书义务；verify核领域范围；handoff取复现入口。该参考逐领域给定真实输入、动作和返回消费者；每阶段执行其对应部分再回本主流程。收到结果先检查它究竟改变了原义务哪一条，尚缺覆盖/进口就留开，已有成熟局部证据立即接入，不等待其它插件。
 
