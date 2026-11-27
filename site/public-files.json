@@ -147,6 +147,7 @@
     "figures/mathrsi/media/workbench-en.mp4": "media/workbench-en.mp4",
     "figures/mathrsi/media/workbench-en.webp": "media/workbench-en.webp",
     "figures/mathrsi/media/workbench-zh.mp4": "media/workbench-zh.mp4",
-    "figures/mathrsi/media/workbench-zh.webp": "media/workbench-zh.webp"
+    "figures/mathrsi/media/workbench-zh.webp": "media/workbench-zh.webp",
+    "case-studies/ajt/paper.pdf": "readers/ajt/paper.pdf"
   }
 }

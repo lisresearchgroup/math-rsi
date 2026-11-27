@@ -1533,3 +1533,13 @@ Object.assign(window.MATHRSI_ZH, {
   "settled optimal distances": "已确定最优距离",
   "ECC: 4 → 13; settled optimal distances, 9 more in this round. Inspect this result.": "ECC 已确定的最优距离从 4 组增至 13 组，本轮新增 9 组。查看详情。"
 });
+
+/* AJT preprint · 2026-11-27. */
+Object.assign(window.MATHRSI_ZH, {
+  "SII MathRSI Team proves the AJT theorem for every invertible n × n matrix over every prime field Fₚ with p ≥ 5 and n ≤ 11, with Lean formalization.": "SII MathRSI Team 给出 AJT 定理的 Lean 形式化证明，覆盖所有 p ≥ 5 素域上 n ≤ 11 的任意可逆矩阵。",
+  "Over F₅, this extends the cited n ≤ 9 result to dimensions 10 and 11.": "在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 结果。",
+  "Over F₅, the general 12-dimensional case remains open, while symmetric 12 × 12 matrices are covered.": "F₅ 上的一般 12 维仍开放，对称 12 × 12 矩阵已覆盖。",
+  "Preprint (PDF) ↗": "预印本（PDF）↗",
+  "Case & Lean source ↗": "案例与 Lean 源码 ↗",
+  "Discussion ↗": "讨论 ↗"
+});

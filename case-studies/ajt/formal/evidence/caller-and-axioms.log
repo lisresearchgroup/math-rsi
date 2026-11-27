@@ -1,0 +1,87 @@
+def AlonJaegerTarsi.NowhereZero.{u_1, u_2} : {α : Type u_1} → {F : Type u_2} → [Zero F] → (α → F) → Prop :=
+fun {α} {F} [Zero F] x => ∀ (i : α), x i ≠ 0
+def AlonJaegerTarsi.HasAJTVector.{u_1} : {n : ℕ} → {F : Type u_1} → [CommRing F] → Matrix (Fin n) (Fin n) F → Prop :=
+fun {n} {F} [CommRing F] A => ∃ x, AlonJaegerTarsi.NowhereZero x ∧ AlonJaegerTarsi.NowhereZero (A *ᵥ x)
+def AlonJaegerTarsi.AJTConjecture : Prop :=
+∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  5 ≤ p → ∀ (n : ℕ) (A : Matrix (Fin n) (Fin n) (ZMod p)), A.det ≠ 0 → AlonJaegerTarsi.HasAJTVector A
+AlonJaegerTarsi.hasAJTVector_five_dim_eleven (A : AlonJaegerTarsi.MarkedEleven.Matrix11) (hA : det A ≠ 0) :
+  AlonJaegerTarsi.HasAJTVector A
+AlonJaegerTarsi.hasAJTVector_dim_le_eleven {p n : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p) (hn : n ≤ 11)
+  (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) : AlonJaegerTarsi.HasAJTVector A
+IndependentN11Audit.original_shape_all_n_le_11 (p n : ℕ) [Fact (Nat.Prime p)] (hp : 5 ≤ p) (hn : n ≤ 11)
+  (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) :
+  ∃ x, (∀ (i : Fin n), x i ≠ 0) ∧ ∀ (i : Fin n), ∑ j, A i j * x j ≠ 0
+IndependentN11Audit.original_shape_n11 (p : ℕ) [Fact (Nat.Prime p)] (hp : 5 ≤ p) (A : Matrix (Fin 11) (Fin 11) (ZMod p))
+  (hA : A.det ≠ 0) : ∃ x, (∀ (i : Fin 11), x i ≠ 0) ∧ ∀ (i : Fin 11), ∑ j, A i j * x j ≠ 0
+IndependentN11Audit.original_shape_F5_n11 (A : Matrix (Fin 11) (Fin 11) (ZMod 5)) (hA : A.det ≠ 0) :
+  ∃ x, (∀ (i : Fin 11), x i ≠ 0) ∧ ∀ (i : Fin 11), ∑ j, A i j * x j ≠ 0
+'AlonJaegerTarsi.hasAJTVector_five_dim_eleven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlonJaegerTarsi.hasAJTVector_dim_le_eleven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IndependentN11Audit.original_shape_all_n_le_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IndependentN11Audit.original_shape_n11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IndependentN11Audit.original_shape_F5_n11' depends on axioms: [propext, Classical.choice, Quot.sound]
+AlonJaegerTarsi.PermanentApproach.hasAJTVector_prime_dim_lt {n p : ℕ} [Fact (Nat.Prime p)]
+  (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) (h : n < 2 ^ (p - 2)) : AlonJaegerTarsi.HasAJTVector A
+IndependentN11Audit.original_shape_below_power (p n : ℕ) [Fact (Nat.Prime p)] (hn : n < 2 ^ (p - 2))
+  (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) :
+  ∃ x, (∀ (i : Fin n), x i ≠ 0) ∧ ∀ (i : Fin n), ∑ j, A i j * x j ≠ 0
+IndependentN11Audit.original_shape_n12_prime_ge_7 (p : ℕ) [Fact (Nat.Prime p)] (hp : 7 ≤ p)
+  (A : Matrix (Fin 12) (Fin 12) (ZMod p)) (hA : A.det ≠ 0) :
+  ∃ x, (∀ (i : Fin 12), x i ≠ 0) ∧ ∀ (i : Fin 12), ∑ j, A i j * x j ≠ 0
+'AlonJaegerTarsi.PermanentApproach.hasAJTVector_prime_dim_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IndependentN11Audit.original_shape_below_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IndependentN11Audit.original_shape_n12_prime_ge_7' depends on axioms: [propext, Classical.choice, Quot.sound]
+def AlonJaegerTarsi.AffineBasisTools.AtDim.{u_5} : (K : Type u_5) → [Field K] → ℕ → Prop :=
+fun K [Field K] d => ∀ (M : Matrix (Fin d) (Fin d) K), M.det ≠ 0 → AffineAJT M
+def AlonJaegerTarsi.AffineReduction.AffineAJT.{u_1} : {K : Type u_1} →
+  [Field K] → {n : ℕ} → Matrix (Fin n) (Fin n) K → Prop :=
+fun {K} [Field K] {n} A => ∀ (b : Fin n → K), ∃ x, NowhereZero x ∧ NowhereZero (A *ᵥ x + b)
+def SolSameDimensionAudit.RawHomogeneous : {p n : ℕ} → Matrix (Fin n) (Fin n) (ZMod p) → Prop :=
+fun {p n} A => ∃ x, (∀ (j : Fin n), x j ≠ 0) ∧ ∀ (i : Fin n), ∑ j, A i j * x j ≠ 0
+def SolSameDimensionAudit.RawAffine : {p n : ℕ} → Matrix (Fin n) (Fin n) (ZMod p) → Prop :=
+fun {p n} A => ∀ (a b : Fin n → ZMod p), ∃ x, (∀ (j : Fin n), x j ≠ a j) ∧ ∀ (i : Fin n), ∑ j, A i j * x j ≠ b i
+AlonJaegerTarsi.AffineReduction.affine_of_same_dimension.{u_1} {K : Type u_1} [Field K] [Fintype K]
+  (hq : 2 < Fintype.card K) {n : ℕ} (hom : ∀ (M : Matrix (Fin n) (Fin n) K), M.det ≠ 0 → HasAJTVector M) : AtDim K n
+AlonJaegerTarsi.AffineReduction.affine_prime_dim_le_eleven {p n : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p) (hn : n ≤ 11) :
+  AtDim (ZMod p) n
+AlonJaegerTarsi.AffineReduction.symmetric_affine_dim_le_twenty_three {p n : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p)
+  (hn : n ≤ 23) (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) (hs : A.IsSymm) : AffineAJT A
+AlonJaegerTarsi.TransposeHalf.affine_or_transpose {p n k : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p)
+  (hsmall : ∀ d ≤ k, AtDim (ZMod p) d) (hn : n ≤ 2 * k + 1) (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) :
+  AffineAJT A ∨ AffineAJT Aᵀ
+AlonJaegerTarsi.TransposeHalf.affine_symmetricLift_iff.{u_1} {K : Type u_1} [Field K] {d : ℕ}
+  (A : Matrix (Fin d) (Fin d) K) : AffineAJT (symmetricLift A) ↔ AffineAJT A ∧ AffineAJT Aᵀ
+AlonJaegerTarsi.TransposeHalf.symmetric_dimensions_iff {p k : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p) :
+  (∀ d ≤ 2 * k + 1, ∀ (A : Matrix (Fin d) (Fin d) (ZMod p)), A.det ≠ 0 → A.IsSymm → AffineAJT A) ↔
+    ∀ d ≤ k, AtDim (ZMod p) d
+SolSameDimensionAudit.raw_same_dimension_iff {p n : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p) :
+  (∀ (A : Matrix (Fin n) (Fin n) (ZMod p)), A.det ≠ 0 → SolSameDimensionAudit.RawHomogeneous A) ↔
+    ∀ (A : Matrix (Fin n) (Fin n) (ZMod p)), A.det ≠ 0 → SolSameDimensionAudit.RawAffine A
+SolSameDimensionAudit.raw_affine_eleven {p n : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p) (hn : n ≤ 11)
+  (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) (a b : Fin n → ZMod p) :
+  ∃ x, (∀ (j : Fin n), x j ≠ a j) ∧ ∀ (i : Fin n), ∑ j, A i j * x j ≠ b i
+SolSameDimensionAudit.raw_symmetric_affine_twenty_three {p n : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p) (hn : n ≤ 23)
+  (A : Matrix (Fin n) (Fin n) (ZMod p)) (hA : A.det ≠ 0) (hs : ∀ (i j : Fin n), A i j = A j i) (a b : Fin n → ZMod p) :
+  ∃ x, (∀ (j : Fin n), x j ≠ a j) ∧ ∀ (i : Fin n), ∑ j, A i j * x j ≠ b i
+SolSameDimensionAudit.raw_least_symmetric_affine_failure {p r : ℕ} [Fact (Nat.Prime p)] (hp : 5 ≤ p)
+  (below : ∀ d < r, ∀ (A : Matrix (Fin d) (Fin d) (ZMod p)), A.det ≠ 0 → SolSameDimensionAudit.RawHomogeneous A)
+  (bad : ∃ A, A.det ≠ 0 ∧ ¬SolSameDimensionAudit.RawHomogeneous A) :
+  (∀ d < r + r, ∀ (S : Matrix (Fin d) (Fin d) (ZMod p)), S.det ≠ 0 → S.IsSymm → SolSameDimensionAudit.RawAffine S) ∧
+    ∃ S, S.det ≠ 0 ∧ S.IsSymm ∧ ¬SolSameDimensionAudit.RawAffine S
+'AlonJaegerTarsi.AffineReduction.affine_of_same_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlonJaegerTarsi.AffineReduction.affine_prime_dim_le_eleven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlonJaegerTarsi.AffineReduction.symmetric_affine_dim_le_twenty_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'AlonJaegerTarsi.TransposeHalf.affine_or_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlonJaegerTarsi.TransposeHalf.affine_symmetricLift_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlonJaegerTarsi.TransposeHalf.symmetric_dimensions_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolSameDimensionAudit.raw_same_dimension_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolSameDimensionAudit.raw_affine_eleven' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolSameDimensionAudit.raw_symmetric_affine_twenty_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SolSameDimensionAudit.raw_least_symmetric_affine_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+SolSameDimensionAudit.raw_affine_twelve_prime_ge_seven {p : ℕ} [Fact (Nat.Prime p)] (hp : 7 ≤ p)
+  (A : Matrix (Fin 12) (Fin 12) (ZMod p)) (hA : A.det ≠ 0) (a b : Fin 12 → ZMod p) :
+  ∃ x, (∀ (j : Fin 12), x j ≠ a j) ∧ ∀ (i : Fin 12), ∑ j, A i j * x j ≠ b i
+'SolSameDimensionAudit.raw_affine_twelve_prime_ge_seven' depends on axioms: [propext, Classical.choice, Quot.sound]

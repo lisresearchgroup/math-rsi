@@ -1,0 +1,131 @@
+Lean (version 4.33.0-rc1, x86_64-unknown-linux-gnu, commit 62eed1db4d67327ec8120be05f1a1b0847d74561, Release)
+✔ [8689/8734] Built Task.Basic (5.1s)
+✔ [8690/8734] Built Task.PolynomialCharacters (17s)
+✔ [8691/8734] Built Task.PermanentApproach (18s)
+✔ [8692/8734] Built Task.CoverApproach (19s)
+⚠ [8693/8734] Built Task.PermanentDiagonal (22s)
+warning: Task/PermanentDiagonal.lean:247:24: This simp argument is unused:
+  diagonal_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [partialRows, Matrix.one_apply, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Task/PermanentDiagonal.lean:247:39: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [partialRows, diagonal_apply, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8694/8734] Built Task.WeightTransform (21s)
+✔ [8695/8734] Built Task.CoverProjective (20s)
+⚠ [8696/8734] Built Task.BalancedRepair (22s)
+warning: Task/BalancedRepair.lean:18:0: automatically included section variable(s) unused in theorem `AlonJaegerTarsi.BalancedCover.represents_of_coeff_ne`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8697/8734] Built Task.PermanentRank (24s)
+✔ [8698/8734] Built Task.PermanentSymmetric (22s)
+✔ [8699/8734] Built Task.PolynomialCertificate (29s)
+⚠ [8700/8734] Built Task.WeightFourier (29s)
+warning: Task/WeightFourier.lean:26:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [8701/8734] Built Task.MarkedNormalization (30s)
+✔ [8702/8734] Built Task.CoverMinimal (31s)
+✔ [8703/8734] Built Task.DualReductions (31s)
+✔ [8704/8734] Built Task.WeightTables (24s)
+✔ [8705/8734] Built Task.CoverWeightZeros (22s)
+✔ [8706/8734] Built Task.PolynomialMarkedData (26s)
+✔ [8707/8734] Built Task.CoverSeparation (27s)
+✔ [8708/8734] Built Task.PolynomialCertificateEleven (45s)
+✔ [8709/8734] Built Task.PolynomialCertificateValues (49s)
+✔ [8710/8734] Built Task.MarkedFourier (25s)
+✔ [8711/8734] Built Task.PolynomialMarkedScore (24s)
+✔ [8712/8734] Built Task.CoverEssential (26s)
+✔ [8713/8734] Built Task.PermanentPrimalBox (27s)
+✔ [8714/8734] Built Task.DimensionTen (18s)
+✔ [8715/8734] Built Task.BalancedAJT (17s)
+✔ [8716/8734] Built Task.MarkedCounts (26s)
+✔ [8717/8734] Built Task.AffineReduction (13s)
+✔ [8718/8734] Built Task.MarkedSemanticFourier (13s)
+✔ [8719/8734] Built Task.BalancedTranspose (9.2s)
+⚠ [8720/8734] Built Task.AffineIrredundance (6.5s)
+warning: Task/AffineIrredundance.lean:72:35: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [g, d, u]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8721/8734] Built Task.AffineBasisTools (8.8s)
+warning: Task/AffineBasisTools.lean:15:8: automatically included section variable(s) unused in theorem `_private.Task.AffineBasisTools.0.AlonJaegerTarsi.AffineBasisTools.containsBasis`:
+  [FiniteDimensional K E]
+  [Finite E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K E] [Finite E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Task/AffineBasisTools.lean:24:8: automatically included section variable(s) unused in theorem `_private.Task.AffineBasisTools.0.AlonJaegerTarsi.AffineBasisTools.extendsToBasis`:
+  [FiniteDimensional K E]
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K E] [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Task/AffineBasisTools.lean:70:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Task/AffineBasisTools.lean:63:8: automatically included section variable(s) unused in theorem `_private.Task.AffineBasisTools.0.AlonJaegerTarsi.AffineBasisTools.addAt_ne`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Task/AffineBasisTools.lean:73:8: automatically included section variable(s) unused in theorem `_private.Task.AffineBasisTools.0.AlonJaegerTarsi.AffineBasisTools.addAt_sum`:
+  [FiniteDimensional K E]
+  [Finite E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K E] [Finite E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [8722/8734] Built Task.PolynomialMarkedValues (142s)
+✔ [8723/8734] Built Task.MarkedCounterexample (7.6s)
+✔ [8724/8734] Built Task.PolynomialMarkedTagValues (349s)
+✔ [8725/8734] Built Task.PolynomialMarkedTags (5.2s)
+✔ [8726/8734] Built Task.PolynomialMarkedDotData (194s)
+✔ [8727/8734] Built Task.PolynomialMarkedDotValues (262s)
+✔ [8728/8734] Built Task.PolynomialMarkedDot (3.7s)
+✔ [8729/8734] Built Task.DimensionEleven (3.7s)
+⚠ [8730/8734] Built Task.TransposeHalf (4.9s)
+warning: Task/TransposeHalf.lean:181:49: Variable name `d` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _d
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8731/8734] Built Task.SameDimensionAffine (3.9s)
+warning: Task/SameDimensionAffine.lean:39:16: This simp argument is unused:
+  updateCol_ne hk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [C, vecMulVec_apply, Pi.single_apply, hk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Task/SameDimensionAffine.lean:39:48: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [C, updateCol_ne hk, vecMulVec_apply, hk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [8732/8734] Built Task.SymmetricDimensions (3.8s)
+✔ [8733/8734] Built Task (3.2s)
+Build completed successfully (8734 jobs).
