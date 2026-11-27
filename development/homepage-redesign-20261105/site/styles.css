@@ -4,7 +4,7 @@
 :root{
   --bg:#fff;--surface:#F6F7F9;--band:#F3F5F8;--hair:#E4E7EC;--hair-2:#D3D8E0;
   --ink:#0B1220;--ink-2:#3D4655;--muted:#667085;--accent:#2B59FF;--accent-soft:#EEF2FF;
-  --pb:#4C5BD4;--ecc:#0E9384;--dd:#D9822B;--e86:#D9467A;--q6:#0EA5E9;--he:#65A30D;
+  --pb:#4C5BD4;--ecc:#0E9384;--dd:#D9822B;--e86:#D9467A;--q6:#0EA5E9;--he:#65A30D;--ajt:#8B5CF6;
   --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --ease-out:cubic-bezier(.16,1,.3,1);
@@ -63,6 +63,7 @@ button{font:inherit;color:inherit}
 .trace-hint{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.5;min-height:18px}
 
 /* stage */
+.evo.needs-scroll .scroll-hint{display:block}
 .scroll-hint{display:none;font-size:13px;color:var(--muted);margin:0 0 6px}
 .scroller{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
 .evo.wrap{max-width:1760px}

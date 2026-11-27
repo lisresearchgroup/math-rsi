@@ -9,6 +9,23 @@
     `<svg class="rv-svg" viewBox="0 0 380 256" role="img" aria-label="${ariaLabel}">${body}</svg>`;
 
   const CONFIG = {
+    ajt: {
+      resultLabel:"AJT: all invertible matrices through dimension eleven over every prime field p ≥ 5, formalized in Lean; general F5 dimension twelve remains open.", resultCap:"Results · F₅ 9 → 11; all primes p ≥ 5, n ≤ 11",
+      links:[{label:'Preprint (PDF) ↗',href:'../../../case-studies/ajt/paper.pdf',sourceLanguage:'EN'},{label:'Lean project ↗',href:'https://github.com/lisresearchgroup/math-rsi/blob/main/case-studies/ajt/formal/README.md',sourceLanguage:'EN'}],
+      render() { return svgWrap(this.resultLabel, `
+        <rect class="rv-panel" x="14" y="12" width="352" height="232" rx="10"/>
+        <text class="rv-kicker" x="28" y="35">AJT over F₅</text>
+        <text x="92" y="100" text-anchor="middle" font-size="38" font-weight="650" fill="var(--muted)">9</text>
+        <text x="189" y="97" text-anchor="middle" font-size="28" fill="var(--ajt)">→</text>
+        <text x="285" y="100" text-anchor="middle" font-size="38" font-weight="650" fill="var(--ajt)">11</text>
+        <text class="rv-sub" x="92" y="125" text-anchor="middle">cited range</text>
+        <text class="rv-sub" x="285" y="125" text-anchor="middle">Lean proof</text>
+        <line x1="28" y1="145" x2="352" y2="145" stroke="var(--hair)"/>
+        <text x="28" y="172" font-size="14" font-weight="650" fill="var(--ajt)">p ≥ 5 · n ≤ 11</text>
+        <text class="rv-sub" x="28" y="192">Every invertible matrix over each prime field</text>
+        <text class="rv-meta" x="28" y="223">General F₅ dimension 12 remains open</text>
+      `); }
+    },
     pb: {
       resultLabel:
         'Property B results: pointwise lower-bound gains +3 to +31 for k = 5 to 12 on a linear scale, and certified uniform-theorem lower-bound gains from at least 2 at k = 12 to at least 152,837,269 at k = 64 on an independent log10 scale.',

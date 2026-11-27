@@ -7,6 +7,7 @@
 | 均匀超图二染色、Property B、m(k) | [mathrsi-propertyb](../plugins/propertyb/skills/mathrsi-propertyb/SKILL.md) | literature、bound-lab、certificate三项按原契约调用 |
 | 最大度与直径约束下的图构造/排除 | [mathrsi-degree-diameter](../plugins/degree-diameter/skills/mathrsi-degree-diameter/SKILL.md) | construction、transfer-diagnosis、obstruction-certificate |
 | 二元线性码的构造、全域不存在性、码表参数 | [mathrsi-ecc](../plugins/ecc/skills/mathrsi-ecc/SKILL.md) | [ecc-certificate](../plugins/ecc/skills/ecc-certificate/SKILL.md) |
+| AJT（Alon–Jaeger–Tarsi）、可逆有限域矩阵的处处非零向量 | [mathrsi-ecc 的图码方法](../plugins/ecc/skills/mathrsi-ecc/SKILL.md#ajt) | 以同一矩阵的输入、输出为两块，按需要标记对偶关系中的坐标；用[原坐标 Lean 定理](../case-studies/ajt/formal/Audit.lean)核对结论和维数范围 |
 | Q_n禁子图密度、共同局部补全、旗代数证书 | [mathrsi-hypercube-extremal](../plugins/hypercube-extremal/skills/mathrsi-hypercube-extremal/SKILL.md) | 同技能的优化、整数证书和高维平均分支 |
 | Q_n匹配的Hamilton延拓、带根路径、森林连通 | [mathrsi-hypercube-hamilton](../plugins/hypercube-hamilton/skills/mathrsi-hypercube-hamilton/SKILL.md) | 同技能的保标记归约、森林秩与局部正证书分支 |
 | 杯帽、凸多边形、rank-3 signotope的路径容量 | [mathrsi-happy-ending](../plugins/happy-ending/skills/mathrsi-happy-ending/SKILL.md) | [happy-ending-certificate](../plugins/happy-ending/skills/happy-ending-certificate/SKILL.md) |

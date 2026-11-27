@@ -1,10 +1,8 @@
-# Six mathematical research threads
+# Seven mathematical research cases
 
 [English entry](../README.md) · [中文入口](../README.zh-CN.md) · [Bilingual visual tour](../docs/HOMEPAGE.md) · [Domain routing](../docs/DOMAIN_ROUTING.md)
 
-This page indexes all six research threads, summarizing what has been established and linking to each case's proofs, verification checks and runnable tools. Local HTML readers can be opened directly in a browser after cloning.
-
-The Alon–Jaeger–Tarsi preprint extends the five-element-field result to dimensions 10 and 11. [Paper and proof supplement](ajt/README.md)
+This page indexes all seven mathematical cases, summarizing what has been established and linking to each case's proofs, verification checks and runnable tools. AJT draws on the ECC plugin, one of the six domain plugins. Local HTML readers can be opened directly in a browser after cloning.
 
 ## Property B
 
@@ -79,6 +77,14 @@ The proof joins E36 (every matching of at least 46 edges extends) with a maximal
 The new chains are same-session, unreviewed and unaccepted analytical manuscripts, with no Lean formalization. The corrected portable checker and its negative control were run on macOS, together with repository links and public staging checks; Linux execution remains pending. Finite arithmetic, color-table and receipt checks do not establish the structural and R7/R20 mathematical bridges or rerun historical DRAT proofs. [Verification scope](../plugins/happy-ending/archive/nmrs-20261120/VERIFICATION.md).
 
 [Case summary & verification table](happy-ending/README.md) · [Bilingual public reader](../development/homepage-redesign-20261105/site/happy-ending-latest.html) · [Earlier `m = 7` reader](happy-ending/n7-20261103/START_HERE.html) · [Plugin & runnable checkers](../plugins/happy-ending/README.md)
+
+## Alon–Jaeger–Tarsi (AJT)
+
+**Every invertible matrix over a prime field $\mathbb F_p$ with $p\ge5$ in dimensions $n\le11$ admits a vector whose coordinates and image coordinates are all nonzero.** The Lean proofs extend the cited five-element-field result from dimension nine to dimensions ten and eleven. General invertible 12-dimensional matrices over $\mathbb F_5$ remain open. For symmetric matrices the proof extends through dimension 23.
+
+The team used MathRSI v8 with GPT-6.2 Astra and Gemini Neon, reusing the ECC plugin. The supplement includes coordinate-level Lean statements and scripts to replay the integer certificates. The all-dimensional conjecture remains open.
+
+[Case, proof supplement & replay](ajt/README.md) · [Preprint (PDF)](ajt/paper.pdf) · [Lean project](ajt/formal/README.md) · [Merged contribution #67](https://github.com/lisresearchgroup/math-rsi/pull/67)
 
 ## Research lineage and workflow feedback
 
