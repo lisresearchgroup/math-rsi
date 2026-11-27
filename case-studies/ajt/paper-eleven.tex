@@ -5,7 +5,7 @@ The ordinary weight distribution records the two block weights of a graph code. 
 
 \subsection{Orientation and normalization}
 
-For \(A\in\GL_{11}(\F)\), write \(C_A=\{(x,Ax):x\in\F^{11}\}\), so that \(C_A^\perp=\{(-A^{\mathsf T}y,y):y\in\F^{11}\}\). Suppose that \(A\) has no AJT vector. The ordinary certificate in Section~\ref{sec:ordinary} gives a word in \(C_A^\perp\) of block weights \((3,2)\) or \((2,3)\). In the second case exchange the two blocks. The exchanged primal code is \(C_{A^{-1}}\), and a nowhere-zero pair in it would give a nowhere-zero pair in \(C_A\). We thus work with a counterexample whose dual has a word of weights \((3,2)\).
+For \(A\in\GL_{11}(\F)\), write \(C_A=\{(x,Ax):x\in\F^{11}\}\), so that \(C_A^\perp=\{(-A^{\mathsf T}y,y):y\in\F^{11}\}\). Suppose that \(A\) has no solution. The ordinary certificate in Section~\ref{sec:ordinary} gives a word in \(C_A^\perp\) of block weights \((3,2)\) or \((2,3)\). In the second case exchange the two blocks. The exchanged primal code is \(C_{A^{-1}}\), and a nowhere-zero pair in it would give a nowhere-zero pair in \(C_A\). We thus work with a counterexample whose dual has a word of weights \((3,2)\).
 
 For \(r\le 11\) let \(\mathbf 1_r\in\F^{11}\) have ones in its first \(r\) positions and zeros elsewhere. A monomial coordinate change on each of the two blocks moves the chosen dual word to \(h=(\mathbf 1_3,\mathbf 1_2)\). More explicitly, if the primal coordinate change is \((x,z)\mapsto(Lx,Rz)\), where \(L,R\) are monomial matrices, the transformed code is the graph of \(B=RAL^{-1}\) and dual words transform by \(L^{-\mathsf T}\) and \(R^{-\mathsf T}\). These latter maps can move each support to its initial positions and rescale its entries to one. The transformation preserves invertibility and the existence of a nowhere-zero pair. We therefore have a counterexample \(B\) satisfying
 \begin{equation}\label{eq:marked-normalized}
@@ -89,7 +89,7 @@ Indeed, for each shift \(a\), addition of \(ah\) permutes the dual code and leav
 
 On the primal side a cell vanishes if the total weights \((L_o+b,R_o+d)\) lie on either axis away from \((0,0)\), equal \((11,11)\), or belong to
 \begin{equation}\label{eq:marked-primal-small}
- \{(i,j):i,j>0,\ i+j<5\}\ \cup\ \{(2,3),(3,2),(3,3)\}.
+ \{(i,j):1\le i,j\le3\}.
 \end{equation}
 The axes use invertibility, the cell of total weights \((11,11)\) uses the counterexample hypothesis, and \eqref{eq:marked-primal-small} follows from the smaller-dimensional obstructions of Lemma~\ref{lem:support}. On the dual side a total-weight pair is forbidden if it lies on either axis away from \((0,0)\), or lies in
 \[

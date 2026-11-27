@@ -26,7 +26,7 @@ MathRSI 结合通用工作流、领域插件与单题研究知识库，引导 Cl
 
 [2026 年 11 月数学成果](https://lisresearchgroup.github.io/math-rsi/november-2026-zh.html)
 
-- **Alon–Jaeger–Tarsi（AJT）预印本** · 2026-11-27 — SII MathRSI Team 给出 AJT 定理的 Lean 形式化证明，覆盖所有 p ≥ 5 素域上 n ≤ 11 的任意可逆矩阵。在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 结果。F₅ 上的一般 12 维仍开放，对称 12 × 12 矩阵已覆盖。 [预印本（PDF）](case-studies/ajt/paper.pdf) · [案例与 Lean 源码](case-studies/ajt/README.md)
+- **Alon–Jaeger–Tarsi（AJT）预印本** · 2026-11-27 — SII MathRSI Team 给出 AJT 定理的 Lean 形式化证明，覆盖所有 p ≥ 5 素域上 n ≤ 11 的任意可逆矩阵。在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 结果。F₅ 上的一般 12 维仍开放，对称 12 × 12 矩阵已覆盖。 [预印本（PDF）](case-studies/ajt/paper.pdf) · [案例与 Lean 源码](case-studies/ajt/README.md) · [讨论](https://github.com/lisresearchgroup/math-rsi/pull/67)
 - **[v8](https://github.com/lisresearchgroup/math-rsi/releases/tag/v8)** · 2026-11-23 — 18 组参数有了更好的二元线性码，生成矩阵可以直接下载。上界方面，从已发表的定理推出了 32 项改进，其中 9 项确定了最优距离。另有两项等待原研究项目最终验收。
 - **[v7](https://github.com/lisresearchgroup/math-rsi/releases/tag/v7)** · 2026-11-22 — 七维超立方体的工作证明已覆盖所有匹配，每个匹配都能延拓为哈密顿圈。凸多边形研究的新稿给出了 ES(8) ≤ 294、ES(9) ≤ 1,100、ES(10) ≤ 3,980 三个上界。
 - **[v6](https://github.com/lisresearchgroup/math-rsi/releases/tag/v6)** · 2026-11-20 — 七维超立方体中，保证匹配能延拓为哈密顿圈的门槛从至少 57 条边降至至少 56 条。八维超立方体中，无四边形子图的最大边数被限定在 682 与 683 之间。

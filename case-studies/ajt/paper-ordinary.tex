@@ -6,10 +6,10 @@ Write $T_n=(\F^\times)^n$, and denote the number of nonzero coordinates of a vec
  \quad\text{has orthogonal complement}\quad
  C_A^\perp=\{(-A^{\mathsf T}y,y):y\in\F^n\}.
 \]
-Both coordinate projections on each code are bijective. We call $(\wt(x),\wt(z))$ the split weight of $(x,z)$. A solution for $A$ is precisely a word of $C_A$ of split weight $(n,n)$.
+Both coordinate projections on each code are bijective. We call $(\wt(x),\wt(z))$ the split weight of $(x,z)$. We call $x$ a solution for $A$ if $x$ and $Ax$ both lie in $T_n$. Such a solution is precisely the input of a word of $C_A$ of split weight $(n,n)$.
 
 \begin{lemma}[Support exclusions]\label{lem:support}
-Suppose that every invertible matrix of dimension less than $n$ over $\F$ has a nowhere-zero point. If $A\in\GL_n(\F)$ has none, then
+Suppose that every invertible matrix of dimension less than $n$ over $\F$ has a solution. If $A\in\GL_n(\F)$ has none, then
 \begin{enumerate}
 \item $C_A$ contains no word of split weight $(i,j)$ with $1\le i,j\le3$.
 \item $C_A^\perp$ contains no word of split weight $(1,1),(1,2),(2,1),(1,3),(3,1)$ or $(2,2)$.
@@ -50,7 +50,7 @@ over an ambient split-weight class, and then adding the transposed identity, giv
 MacWilliams showed how the ordinary weight distribution of a binary linear code determines the distribution of its dual \cite{macwilliams}. Here the same character argument keeps the two block weights separate, which is what allows us to single out the cell $(n,n)$.
 
 \begin{proposition}[An integer certificate]\label{prop:ordinary}
-In dimensions $6\le n\le10$, the marginals, \eqref{eq:ordinary-transform}, nonnegativity and the support exclusions of Lemma~\ref{lem:support} imply $W_{nn}>0$. In dimension $11$ the same conclusion holds under the additional assumption $V_{23}=0$.
+Let $W,V$ be symmetric nonnegative tables with $W_{00}=V_{00}=m>0$ and row sums $m\mu_i$ in each table. In dimensions $6\le n\le10$, \eqref{eq:ordinary-transform} and the support exclusions of Lemma~\ref{lem:support} imply $W_{nn}>0$. In dimension $11$ the same conclusion holds under the additional assumption $V_{23}=0$.
 \end{proposition}
 \begin{proof}
 Choose the two integer vectors $u,v$ and the integer matrix $T$ specified for $n$ in the accompanying certificate. Set
@@ -80,8 +80,8 @@ $n$ & Gap & $n$ & Gap \\\midrule
 For clarity, the ordinary certificate uses only a subset of Lemma~\ref{lem:support}. The primal sign test exempts the origin, $(n,n)$, and $1\le\min(i,j)\le2$, $\max(i,j)\le3$. The dual test exempts the origin and the pairs $\min(i,j)=1$, $\max(i,j)\le2$, together with the extra pair and its transpose for $n=11$. All signs and all six gaps can be checked from the integer arrays by the short replay in Appendix~\ref{sec:replay}. They require no optimization or rounding.
 
 \begin{corollary}\label{cor:ten}
-Every $A\in\GL_n(\F)$ with $n\le10$ has a nowhere-zero point. If an eleven-dimensional counterexample exists, its dual graph contains a word with block weights $(2,3)$ or $(3,2)$.
+Every $A\in\GL_n(\F)$ with $n\le10$ has a solution. If an eleven-dimensional counterexample exists, its dual code contains a word with block weights $(2,3)$ or $(3,2)$.
 \end{corollary}
 \begin{proof}
-For $n\le5$ the assertion follows from Yu's bound \cite{yu}. In a least failing dimension between six and ten, Lemma~\ref{lem:support} applies. Proposition~\ref{prop:ordinary} now gives $H_{nn}>0$, a contradiction. In dimension eleven the proposition implies $V_{23}>0$ in a counterexample. Since $V_{23}=D_{23}+D_{32}$, at least one of these counts in the actual dual graph is positive.
+For $n\le5$ the assertion follows from Yu's bound \cite{yu}. In a least failing dimension between six and ten, Lemma~\ref{lem:support} applies. Proposition~\ref{prop:ordinary} now gives $H_{nn}>0$, a contradiction. In dimension eleven the proposition implies $V_{23}>0$ in a counterexample. Since $V_{23}=D_{23}+D_{32}$, at least one of these counts in the actual dual code is positive.
 \end{proof}

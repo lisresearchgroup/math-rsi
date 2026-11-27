@@ -1540,5 +1540,6 @@ Object.assign(window.MATHRSI_ZH, {
   "Over F₅, this extends the cited n ≤ 9 result to dimensions 10 and 11.": "在 F₅ 上，10、11 维推进了参考文献中的 n ≤ 9 结果。",
   "Over F₅, the general 12-dimensional case remains open, while symmetric 12 × 12 matrices are covered.": "F₅ 上的一般 12 维仍开放，对称 12 × 12 矩阵已覆盖。",
   "Preprint (PDF) ↗": "预印本（PDF）↗",
-  "Case & Lean source ↗": "案例与 Lean 源码 ↗"
+  "Case & Lean source ↗": "案例与 Lean 源码 ↗",
+  "Discussion ↗": "讨论 ↗"
 });
