@@ -4,6 +4,8 @@
 
 This page indexes all six research threads, summarizing what has been established and linking to each case's proofs, verification checks and runnable tools. Local HTML readers can be opened directly in a browser after cloning.
 
+The Alon–Jaeger–Tarsi preprint extends the five-element-field result to dimensions 10 and 11. [Paper and proof supplement](ajt/README.md)
+
 ## Property B
 
 **Hypergraph two-coloring:** concrete lower bounds for $m(5),\ldots,m(12)$ reach $35,67,131,267,543,1112,2275,4664$, and a uniform theorem gives a stronger explicit lower bound with an exponentially growing additive gain over the Radhakrishnan–Srinivasan baseline for every $k\ge12$.
